@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Premium button — used across hero, masterplan, final CTA */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5
+           bg-brand-oro text-brand-verde-osc font-medium tracking-wide
+           rounded-full transition-all duration-300
+           hover:bg-brand-crema-osc hover:scale-[1.02]
+           focus:outline-none focus:ring-2 focus:ring-brand-oro/40 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5
+           border border-brand-crema/60 text-brand-crema tracking-wide
+           rounded-full transition-all duration-300
+           hover:bg-brand-crema/10 hover:scale-[1.02]
+           focus:outline-none focus:ring-2 focus:ring-brand-crema/40;
+  }
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5
+           border border-brand-verde/30 text-brand-verde-osc tracking-wide
+           rounded-full transition-all duration-300
+           hover:bg-brand-verde/5 hover:scale-[1.02];
+  }
+  .eyebrow {
+    @apply inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em]
+           uppercase text-brand-oro;
+  }
+  .section {
+    @apply py-20 sm:py-28 px-4 sm:px-6 lg:px-10;
+  }
+}

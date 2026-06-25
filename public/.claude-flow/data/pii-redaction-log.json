@@ -1,0 +1,252 @@
+[
+  {
+    "timestamp": "2026-06-25T17:31:56.416Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2267
+  },
+  {
+    "timestamp": "2026-06-25T17:31:36.487Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 9067
+  },
+  {
+    "timestamp": "2026-06-25T17:31:04.922Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 846
+  },
+  {
+    "timestamp": "2026-06-25T17:31:01.892Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1934
+  },
+  {
+    "timestamp": "2026-06-25T17:30:54.963Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1290
+  },
+  {
+    "timestamp": "2026-06-25T17:30:49.826Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2173
+  },
+  {
+    "timestamp": "2026-06-25T17:30:41.260Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2199
+  },
+  {
+    "timestamp": "2026-06-25T17:30:34.716Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2446
+  },
+  {
+    "timestamp": "2026-06-25T17:30:25.711Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1478
+  },
+  {
+    "timestamp": "2026-06-25T17:30:19.627Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1882
+  },
+  {
+    "timestamp": "2026-06-25T17:30:12.160Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1490
+  },
+  {
+    "timestamp": "2026-06-25T17:30:10.190Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1208
+  },
+  {
+    "timestamp": "2026-06-25T17:30:01.394Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1088
+  },
+  {
+    "timestamp": "2026-06-25T17:29:56.873Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1858
+  },
+  {
+    "timestamp": "2026-06-25T17:29:35.137Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1916
+  },
+  {
+    "timestamp": "2026-06-25T17:29:28.553Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2238
+  },
+  {
+    "timestamp": "2026-06-25T17:29:18.655Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 2324
+  },
+  {
+    "timestamp": "2026-06-25T17:29:09.314Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 4210
+  },
+  {
+    "timestamp": "2026-06-25T17:28:32.494Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 891
+  },
+  {
+    "timestamp": "2026-06-25T17:28:28.097Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Email Address",
+        "count": 4
+      },
+      {
+        "type": "Phone Number",
+        "count": 2
+      },
+      {
+        "type": "Large Amount",
+        "count": 2
+      }
+    ],
+    "inputLength": 22582
+  },
+  {
+    "timestamp": "2026-06-25T17:26:43.973Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 1739
+  },
+  {
+    "timestamp": "2026-06-25T17:26:35.249Z",
+    "tool": "write",
+    "redacted": [
+      {
+        "type": "Possible Mnemonic Seed",
+        "count": 1
+      }
+    ],
+    "inputLength": 653
+  }
+]

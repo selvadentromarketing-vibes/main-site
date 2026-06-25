@@ -1,0 +1,10 @@
+[
+  {
+    "id": "todo-without-ticket",
+    "severity": "INFO",
+    "description": "TODO/FIXME without ticket reference (e.g., TODO(#123) or TODO: GH-456)",
+    "file": "translations.ts",
+    "filePath": "/Users/wififunded/selvadentro/main-site/src/i18n/translations.ts",
+    "timestamp": "2026-06-25T17:28:28.097Z"
+  }
+]
