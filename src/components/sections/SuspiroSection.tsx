@@ -23,8 +23,9 @@ export default function SuspiroSection({ t, lang }: Props) {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <Reveal>
           <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
+            {/* PLACEHOLDER (low-res) — extracted from prototype HTML. Replace with high-res render when available. See ASSETS_PENDING.md. */}
             <img
-              src="/render-aerial.webp"
+              src="/suspiro-entrance.webp"
               alt="Acceso Suspiro"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
               loading="lazy"

@@ -25,9 +25,10 @@ export default function MasterplanSection({ t }: Props) {
         </Reveal>
 
         <Reveal delay={100}>
+          {/* PLACEHOLDER (low-res ~950KB) — extracted from prototype HTML. Replace with high-res masterplan render (013_260514_MP_AMENIDADES). See ASSETS_PENDING.md. */}
           <div className="group bg-brand-crema-osc rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl transition-all duration-700 hover:shadow-2xl">
             <img
-              src="/render-aerial.webp"
+              src="/masterplan.webp"
               alt="Masterplan Selvadentro"
               className="w-full h-auto block transition-transform duration-1000 group-hover:scale-105"
             />

@@ -240,7 +240,7 @@ export const translations: Record<Lang, Translation> = {
       cards: [
         {
           title: 'Naturaleza viva',
-          image: '/render-mirador.webp',
+          image: '/amenity-naturaleza.webp',
           items: [
             '9 cenotes',
             'Senderos entre la selva',
@@ -250,7 +250,7 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           title: 'Cuerpo y movimiento',
-          image: '/render-spa.webp',
+          image: '/amenity-cuerpo.webp',
           items: [
             'Wellness',
             'Jungle Gym',
@@ -260,7 +260,7 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           title: 'Vida en comunidad',
-          image: '/render-pool.webp',
+          image: '/amenity-comunidad.webp',
           items: [
             'Casa de los Cenotes',
             'Jungle Bar',
@@ -303,19 +303,19 @@ export const translations: Record<Lang, Translation> = {
           name: 'Shawn Khodadad',
           quote:
             'En un mundo que va demasiado rápido, Selvadentro se siente como paz construida dentro de la selva.',
-          photo: '/testimonials/shawn.webp',
+          photo: '/testimonial-shawn.webp',
         },
         {
           name: 'Angela Epstein',
           quote:
             'Selvadentro nos recordó la magia de México y la conexión tan especial con la naturaleza.',
-          photo: '/testimonials/ricardo-garza.webp', // TODO: swap when Angela's photo arrives
+          photo: '/testimonial-angela.webp',
         },
         {
           name: 'Ricardo Garza',
           quote:
             'La seguridad que sentí en el proyecto y la experiencia de recorrer Selvadentro hicieron que tomara la decisión.',
-          photo: '/testimonials/ricardo-garza.webp',
+          photo: '/testimonial-ricardo.webp',
         },
       ],
     },
@@ -461,17 +461,17 @@ export const translations: Record<Lang, Translation> = {
       cards: [
         {
           title: 'Living nature',
-          image: '/render-mirador.webp',
+          image: '/amenity-naturaleza.webp',
           items: ['9 cenotes', 'Jungle trails', 'Lookouts', 'Treehouse'],
         },
         {
           title: 'Body & movement',
-          image: '/render-spa.webp',
+          image: '/amenity-cuerpo.webp',
           items: ['Wellness', 'Jungle Gym', 'Pádel courts', 'Holistic pavilion'],
         },
         {
           title: 'Community life',
-          image: '/render-pool.webp',
+          image: '/amenity-comunidad.webp',
           items: [
             'Cenote House',
             'Jungle Bar',
@@ -514,19 +514,19 @@ export const translations: Record<Lang, Translation> = {
           name: 'Shawn Khodadad',
           quote:
             'In a world moving too fast, Selvadentro Tulum feels like peace built into the jungle.',
-          photo: '/testimonials/shawn.webp',
+          photo: '/testimonial-shawn.webp',
         },
         {
           name: 'Angela Epstein',
           quote:
             'Selvadentro reminded us of the magic of Mexico and the special connection with nature.',
-          photo: '/testimonials/ricardo-garza.webp',
+          photo: '/testimonial-ricardo.webp',
         },
         {
           name: 'Ricardo Garza',
           quote:
             'The confidence I felt in the project and the experience of walking through Selvadentro made me make the decision.',
-          photo: '/testimonials/ricardo-garza.webp',
+          photo: '/testimonial-ricardo.webp',
         },
       ],
     },

@@ -16,10 +16,11 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <Reveal>
           <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10 bg-brand-verde-osc/5">
+            {/* PLACEHOLDER (low-res) — extracted from prototype HTML. Replace with high-res lot diagram when available. See ASSETS_PENDING.md. */}
             <img
-              src="/render-mirador.webp"
-              alt="Lote en Selvadentro"
-              className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              src="/lot-diagram.webp"
+              alt="Diagrama de lote en Selvadentro"
+              className="w-full h-full object-contain p-6 transition-transform duration-1000 hover:scale-105"
               loading="lazy"
             />
           </div>
