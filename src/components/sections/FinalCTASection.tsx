@@ -2,6 +2,8 @@ import { useState, FormEvent } from 'react';
 import { Calendar, MessageCircle, Loader2, CheckCircle2 } from 'lucide-react';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import type { Value as PhoneValue } from 'react-phone-number-input';
+import Reveal from '../Reveal';
+import MagneticButton from '../MagneticButton';
 import type { Translation } from '../../i18n/translations';
 import 'react-phone-number-input/style.css';
 
@@ -83,39 +85,42 @@ export default function FinalCTASection({ t }: Props) {
       className="section bg-brand-verde-osc text-brand-crema"
     >
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-        <div>
-          <span className="eyebrow text-brand-oro mb-3">{t.finalCta.eyebrow}</span>
-          <h2
-            className="font-serif leading-tight mb-6"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
-          >
-            {t.finalCta.headline}
-          </h2>
-          <p className="text-brand-crema/85 leading-relaxed mb-10 max-w-xl">
-            {t.finalCta.body}
-          </p>
+        <Reveal>
+          <div>
+            <span className="eyebrow text-brand-oro mb-3">{t.finalCta.eyebrow}</span>
+            <h2
+              className="font-serif leading-tight mb-6"
+              style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
+            >
+              {t.finalCta.headline}
+            </h2>
+            <p className="text-brand-crema/85 leading-relaxed mb-10 max-w-xl">
+              {t.finalCta.body}
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <MessageCircle className="w-5 h-5" />
-              {t.finalCta.whatsappCta}
-            </a>
-            <a
-              href="https://api.leadconnectorhq.com/widget/booking/dummy"
-              className="btn-secondary"
-            >
-              <Calendar className="w-5 h-5" />
-              {t.finalCta.callCta}
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <MagneticButton
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <MessageCircle className="w-5 h-5" />
+                {t.finalCta.whatsappCta}
+              </MagneticButton>
+              <MagneticButton
+                href="https://api.leadconnectorhq.com/widget/booking/dummy"
+                className="btn-secondary"
+              >
+                <Calendar className="w-5 h-5" />
+                {t.finalCta.callCta}
+              </MagneticButton>
+            </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Form */}
+        <Reveal delay={150}>
         <div className="bg-brand-crema text-brand-negro rounded-2xl p-8 sm:p-10 shadow-2xl">
           {status === 'success' ? (
             <div className="text-center py-6">
@@ -215,6 +220,7 @@ export default function FinalCTASection({ t }: Props) {
             </form>
           )}
         </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import { ArrowDown } from 'lucide-react';
+import { useMousePosition } from '../../hooks/useMousePosition';
+import MagneticButton from '../MagneticButton';
 import type { Translation } from '../../i18n/translations';
 
 interface Props {
@@ -6,39 +8,71 @@ interface Props {
 }
 
 export default function HeroSection({ t }: Props) {
+  const mouse = useMousePosition();
+
+  // Subtle mouse parallax: background image shifts opposite the cursor.
+  const bgShift = {
+    x: -mouse.x * 12, // px
+    y: -mouse.y * 12,
+  };
+  // Cursor-tracked radial light. Position is in viewport % (0..100).
+  const lightX = ((mouse.x + 1) / 2) * 100;
+  const lightY = ((mouse.y + 1) / 2) * 100;
+
   return (
-    <section
-      className="relative min-h-[100svh] flex items-end overflow-hidden"
-      style={{
-        backgroundImage:
-          "linear-gradient(180deg, rgba(28,46,28,0.35) 0%, rgba(28,46,28,0.45) 60%, rgba(28,46,28,0.85) 100%), url('/hero-cenote.webp')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+    <section className="relative min-h-[100svh] flex items-end overflow-hidden bg-brand-verde-osc">
+      {/* Background image with mouse parallax */}
+      <div
+        className="absolute inset-0 will-change-transform"
+        style={{
+          transform: `translate3d(${bgShift.x}px, ${bgShift.y}px, 0) scale(1.06)`,
+          transition: 'transform 600ms cubic-bezier(0.22, 1, 0.36, 1)',
+          backgroundImage: "url('/hero-cenote.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      {/* Static gradient veil for legibility */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(28,46,28,0.30) 0%, rgba(28,46,28,0.35) 55%, rgba(28,46,28,0.88) 100%)',
+        }}
+      />
+
+      {/* Cursor-tracked spotlight — extra warmth where the cursor is */}
+      <div
+        className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+        style={{
+          background: `radial-gradient(600px circle at ${lightX}% ${lightY}%, rgba(200,169,110,0.35), transparent 60%)`,
+          transition: 'background 300ms ease-out',
+        }}
+      />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20 sm:pb-28 pt-32 w-full">
         <div className="max-w-3xl text-brand-crema">
           <h1
-            className="font-serif leading-[1.05] mb-6 text-brand-crema"
+            className="font-serif leading-[1.05] mb-6 text-brand-crema drop-shadow-[0_2px_30px_rgba(0,0,0,0.25)]"
             style={{ fontSize: 'clamp(2.4rem, 6vw, 4.6rem)' }}
           >
             {t.hero.headline}
           </h1>
-          <p className="text-lg sm:text-xl text-brand-crema/85 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-brand-crema/90 max-w-2xl mb-10 leading-relaxed drop-shadow-[0_2px_20px_rgba(0,0,0,0.2)]">
             {t.hero.subhead}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#contacto" className="btn-primary">
+            <MagneticButton href="#contacto" className="btn-primary">
               {t.hero.ctaPrimary}
-            </a>
-            <a href="#acerca" className="btn-secondary">
+            </MagneticButton>
+            <MagneticButton href="#acerca" className="btn-secondary">
               {t.hero.ctaSecondary}
-            </a>
+            </MagneticButton>
           </div>
         </div>
       </div>
 
-      {/* Scroll cue */}
       <a
         href="#stats"
         aria-label="Scroll"

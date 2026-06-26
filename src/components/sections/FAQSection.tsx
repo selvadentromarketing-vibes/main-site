@@ -1,4 +1,5 @@
 import Accordion from '../Accordion';
+import Reveal from '../Reveal';
 import type { Translation } from '../../i18n/translations';
 
 interface Props {
@@ -9,17 +10,21 @@ export default function FAQSection({ t }: Props) {
   return (
     <section id="faq" className="section bg-brand-crema">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="eyebrow mb-3">{t.faq.eyebrow}</span>
-          <h2
-            className="font-serif text-brand-verde-osc leading-tight"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
-          >
-            {t.faq.headline}
-          </h2>
-        </div>
+        <Reveal>
+          <div className="text-center mb-10">
+            <span className="eyebrow mb-3">{t.faq.eyebrow}</span>
+            <h2
+              className="font-serif text-brand-verde-osc leading-tight"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+            >
+              {t.faq.headline}
+            </h2>
+          </div>
+        </Reveal>
 
-        <Accordion items={t.faq.items} />
+        <Reveal delay={100}>
+          <Accordion items={t.faq.items} />
+        </Reveal>
       </div>
     </section>
   );
