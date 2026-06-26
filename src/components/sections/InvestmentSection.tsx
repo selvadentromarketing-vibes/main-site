@@ -1,12 +1,13 @@
 import { TrendingUp } from 'lucide-react';
 import Reveal from '../Reveal';
-import type { Translation } from '../../i18n/translations';
+import type { Translation, Lang } from '../../i18n/translations';
 
 interface Props {
   t: Translation;
+  lang: Lang;
 }
 
-export default function InvestmentSection({ t }: Props) {
+export default function InvestmentSection({ t, lang }: Props) {
   return (
     <section
       id="inversion"
@@ -52,6 +53,16 @@ export default function InvestmentSection({ t }: Props) {
               </p>
             </Reveal>
           ))}
+
+          {/* EN only: fideicomiso line — per the prototype */}
+          {lang === 'en' && (
+            <Reveal delay={400}>
+              <p className="font-serif italic text-brand-crema/90 text-base sm:text-lg leading-relaxed">
+                As a foreign buyer, you can own here securely through a bank trust
+                (fideicomiso) — fully legal, fully protected.
+              </p>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>

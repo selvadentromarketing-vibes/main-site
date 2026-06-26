@@ -236,7 +236,7 @@ export const translations: Record<Lang, Translation> = {
 
     amenities: {
       eyebrow: 'Amenidades',
-      headline: 'Una vida en tres dimensiones.',
+      headline: '+12 experiencias entre la selva',
       cards: [
         {
           title: 'Naturaleza viva',
@@ -297,7 +297,7 @@ export const translations: Record<Lang, Translation> = {
 
     testimonials: {
       eyebrow: 'Testimonios',
-      headline: 'Quienes ya están adentro lo cuentan mejor.',
+      headline: 'Quienes ya eligieron Selvadentro',
       items: [
         {
           name: 'Shawn Khodadad',
@@ -322,7 +322,7 @@ export const translations: Record<Lang, Translation> = {
 
     faq: {
       eyebrow: 'Preguntas frecuentes',
-      headline: 'Lo que necesitas saber antes de invertir.',
+      headline: 'Lo que necesitas saber',
       items: [
         {
           q: '¿Cuándo puedo construir mi casa?',
@@ -457,7 +457,7 @@ export const translations: Record<Lang, Translation> = {
 
     amenities: {
       eyebrow: 'Amenities',
-      headline: 'Life in three dimensions.',
+      headline: '12+ experiences within the jungle',
       cards: [
         {
           title: 'Living nature',
@@ -508,7 +508,7 @@ export const translations: Record<Lang, Translation> = {
 
     testimonials: {
       eyebrow: 'Testimonials',
-      headline: 'Those already inside tell it best.',
+      headline: 'Those who already chose Selvadentro',
       items: [
         {
           name: 'Shawn Khodadad',
@@ -533,7 +533,7 @@ export const translations: Record<Lang, Translation> = {
 
     faq: {
       eyebrow: 'Frequently asked questions',
-      headline: 'What you need to know before investing.',
+      headline: 'What you need to know',
       items: [
         {
           q: 'When can I build my home?',

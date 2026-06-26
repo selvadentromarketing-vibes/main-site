@@ -1,68 +1,70 @@
-import { useMousePosition } from '../../hooks/useMousePosition';
 import Reveal from '../Reveal';
 import MagneticButton from '../MagneticButton';
-import type { Translation } from '../../i18n/translations';
+import type { Translation, Lang } from '../../i18n/translations';
 
 interface Props {
   t: Translation;
+  lang: Lang;
 }
 
-export default function SuspiroSection({ t }: Props) {
-  const mouse = useMousePosition();
-  const bgShift = { x: -mouse.x * 8, y: -mouse.y * 8 };
+export default function SuspiroSection({ t, lang }: Props) {
+  // Lang-aware sub-eyebrow + protection label
+  const privLabel = lang === 'es' ? 'Una privada de Selvadentro' : 'A private enclave of Selvadentro';
+  const priceLarge = lang === 'es' ? 'Lotes desde $68,000 USD' : 'Lots from $68,000 USD';
+  const priceSub =
+    lang === 'es'
+      ? 'desde $167 USD/m² · Plan de pagos a 48 meses sin intereses'
+      : 'from $167 USD/m² · 48-month interest-free payment plan';
+  const protectLabel =
+    lang === 'es' ? 'Lo que protege tu inversión' : 'What protects your investment';
 
   return (
-    <section
-      id="suspiro"
-      className="relative section overflow-hidden text-brand-crema bg-brand-verde-osc"
-    >
-      <div
-        className="absolute inset-0 will-change-transform"
-        style={{
-          transform: `translate3d(${bgShift.x}px, ${bgShift.y}px, 0) scale(1.04)`,
-          transition: 'transform 600ms cubic-bezier(0.22, 1, 0.36, 1)',
-          backgroundImage:
-            "linear-gradient(180deg, rgba(28,46,28,0.85) 0%, rgba(28,46,28,0.92) 100%), url('/render-aerial.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
-
-      <div className="relative max-w-4xl mx-auto text-center">
+    <section id="suspiro" className="section bg-brand-crema">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <Reveal>
-          <span className="eyebrow text-brand-oro mb-4">{t.suspiro.eyebrow}</span>
-          <h2
-            className="font-serif leading-tight mb-7"
-            style={{ fontSize: 'clamp(2.6rem, 7vw, 5rem)' }}
-          >
-            {t.suspiro.headline}
-          </h2>
-          <p className="text-base sm:text-lg text-brand-crema/85 leading-relaxed mb-10 max-w-2xl mx-auto">
-            {t.suspiro.body}
-          </p>
+          <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
+            <img
+              src="/render-aerial.webp"
+              alt="Acceso Suspiro"
+              className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              loading="lazy"
+            />
+          </div>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 gap-6 mb-10 text-left">
-          <Reveal delay={100}>
-            <div className="bg-brand-verde-osc/60 backdrop-blur-sm border border-brand-crema/15 rounded-2xl p-6 transition-all duration-500 hover:border-brand-oro/40 hover:-translate-y-1">
-              <p className="text-sm text-brand-crema/85 leading-relaxed">
-                {t.suspiro.pricing}
-              </p>
+        <Reveal delay={150}>
+          <div>
+            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-oro mb-3">
+              {privLabel}
             </div>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="bg-brand-verde-osc/60 backdrop-blur-sm border border-brand-crema/15 rounded-2xl p-6 transition-all duration-500 hover:border-brand-oro/40 hover:-translate-y-1">
-              <p className="text-sm text-brand-crema/85 leading-relaxed">
+            <h2
+              className="font-serif text-brand-verde-osc leading-tight mb-6"
+              style={{ fontSize: 'clamp(2.6rem, 6vw, 4.5rem)' }}
+            >
+              {t.suspiro.headline}
+            </h2>
+            <p className="text-brand-negro/85 leading-relaxed mb-5 max-w-copy">
+              {t.suspiro.body}
+            </p>
+
+            <div className="font-serif text-3xl sm:text-4xl text-brand-verde-osc mt-8 mb-1">
+              {priceLarge}
+            </div>
+            <div className="text-sm text-brand-gris mb-8">{priceSub}</div>
+
+            <div className="bg-brand-crema-osc rounded-xl p-5 mb-8 border border-brand-verde/10">
+              <div className="text-xs font-semibold tracking-wider uppercase text-brand-verde-osc mb-2">
+                {protectLabel}
+              </div>
+              <p className="text-sm text-brand-negro/80 leading-relaxed">
                 {t.suspiro.protection}
               </p>
             </div>
-          </Reveal>
-        </div>
 
-        <Reveal delay={300}>
-          <MagneticButton href="#contacto" className="btn-primary">
-            {t.suspiro.cta}
-          </MagneticButton>
+            <MagneticButton href="#contacto" className="btn-ghost-dark">
+              {t.suspiro.cta}
+            </MagneticButton>
+          </div>
         </Reveal>
       </div>
     </section>

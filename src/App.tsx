@@ -39,19 +39,19 @@ export default function App({ lang }: AppProps) {
       <main>
         <HeroSection t={t} />
         <StatsBarSection t={t} />
-        <AboutSection t={t} />
-        <LocationSection t={t} />
-        <SuspiroSection t={t} />
-        <PieceOfJungleSection t={t} />
+        <AboutSection t={t} lang={lang} />
+        <LocationSection t={t} lang={lang} />
+        <SuspiroSection t={t} lang={lang} />
+        <PieceOfJungleSection t={t} lang={lang} />
         <MasterplanSection t={t} />
         <AmenitiesSection t={t} />
-        <InvestmentSection t={t} />
-        <CredentialsSection t={t} />
+        <InvestmentSection t={t} lang={lang} />
+        <CredentialsSection t={t} lang={lang} />
         <TestimonialsSection t={t} />
         <FAQSection t={t} />
         <FinalCTASection t={t} />
       </main>
-      <Footer t={t} />
+      <Footer t={t} lang={lang} />
     </div>
   );
 }
