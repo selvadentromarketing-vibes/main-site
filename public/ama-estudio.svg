@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AMA Estudio partner logo. Reproduced as SVG from the reference Hoshi
+     shared in WhatsApp (green geometric wordmark: "ESTUDIO" thin, "AMA"
+     bold). Colored black to match the Maat Handasa treatment so all three
+     partner logos in the Credentials section read as a coherent set. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 90" width="500" height="90" role="img" aria-label="Estudio AMA">
+  <style>
+    text { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+  <text x="0"   y="66" font-size="66" font-weight="300" fill="currentColor" letter-spacing="4">ESTUDIO</text>
+  <text x="290" y="66" font-size="66" font-weight="800" fill="currentColor" letter-spacing="2">AMA</text>
+</svg>

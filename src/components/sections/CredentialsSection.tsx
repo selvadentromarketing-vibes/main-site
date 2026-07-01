@@ -14,8 +14,8 @@ export default function CredentialsSection({ t, lang }: Props) {
     { name: 'JJF Creando', src: '/jjf-creando.webp', placeholder: false },
     // Fetched from mhandasa.com and recolored to black per Hoshi's request.
     { name: 'Maat Handasa', src: '/maat-handasa.webp', placeholder: false },
-    // TODO: AMA Estudio logo — Hoshi to re-send "Logo estudio AMA verde 01.png"
-    { name: 'AMA Estudio', src: null, placeholder: true },
+    // Reproduced from Hoshi's WhatsApp reference as SVG (colored black to match Maat's treatment).
+    { name: 'Estudio AMA', src: '/ama-estudio.svg', placeholder: false },
   ];
 
   return (
