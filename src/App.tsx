@@ -43,13 +43,13 @@ export default function App({ lang }: AppProps) {
         <LocationSection t={t} lang={lang} />
         <SuspiroSection t={t} lang={lang} />
         <PieceOfJungleSection t={t} lang={lang} />
-        <MasterplanSection t={t} />
+        <MasterplanSection t={t} lang={lang} />
         <AmenitiesSection t={t} />
         <InvestmentSection t={t} lang={lang} />
         <CredentialsSection t={t} lang={lang} />
         <TestimonialsSection t={t} />
         <FAQSection t={t} />
-        <FinalCTASection t={t} />
+        <FinalCTASection t={t} lang={lang} />
       </main>
       <Footer t={t} lang={lang} />
     </div>

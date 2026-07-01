@@ -9,6 +9,7 @@ import 'react-phone-number-input/style.css';
 
 interface Props {
   t: Translation;
+  lang: 'es' | 'en';
 }
 
 /**
@@ -20,9 +21,14 @@ interface Props {
 const GHL_WEBHOOK_URL =
   'https://services.leadconnectorhq.com/hooks/crN2IhAuOBAl7D8324yI/webhook-trigger/9270085e-204b-40e0-a565-b2bf60861970';
 
-const WHATSAPP_URL = 'https://wa.me/529994890237';
+const WHATSAPP_URL = 'https://wa.me/529994890828';
 
-export default function FinalCTASection({ t }: Props) {
+// Per Hoshi, two GHL calendar widgets — one per language sales rep.
+const CALENDAR_URL_ES = 'https://api.leadconnectorhq.com/widget/booking/8nXsnnlYWnit0JbwUFsJ';
+const CALENDAR_URL_EN = 'https://api.leadconnectorhq.com/widget/booking/jL5tqW1PsFp98HZOafHO';
+
+export default function FinalCTASection({ t, lang }: Props) {
+  const calendarUrl = lang === 'en' ? CALENDAR_URL_EN : CALENDAR_URL_ES;
   const [name, setName] = useState('');
   const [phone, setPhone] = useState<PhoneValue | undefined>(undefined);
   const [email, setEmail] = useState('');
@@ -109,7 +115,9 @@ export default function FinalCTASection({ t }: Props) {
                 {t.finalCta.whatsappCta}
               </MagneticButton>
               <MagneticButton
-                href="https://api.leadconnectorhq.com/widget/booking/dummy"
+                href={calendarUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary"
               >
                 <Calendar className="w-5 h-5" />

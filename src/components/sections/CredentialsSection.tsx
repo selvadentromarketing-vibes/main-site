@@ -12,9 +12,9 @@ export default function CredentialsSection({ t, lang }: Props) {
 
   const logos = [
     { name: 'JJF Creando', src: '/jjf-creando.webp', placeholder: false },
-    // Per the redesign guide PENDIENTE list, these two logos are awaiting
-    // upload from the design team. Placeholders match the prototype layout.
-    { name: 'Maat Handasa', src: null, placeholder: true },
+    // Fetched from mhandasa.com and recolored to black per Hoshi's request.
+    { name: 'Maat Handasa', src: '/maat-handasa.webp', placeholder: false },
+    // TODO: AMA Estudio logo — Hoshi to re-send "Logo estudio AMA verde 01.png"
     { name: 'AMA Estudio', src: null, placeholder: true },
   ];
 

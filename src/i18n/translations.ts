@@ -372,7 +372,7 @@ export const translations: Record<Lang, Translation> = {
       tagline: 'tierra de cenotes',
       copyright: 'Todos los derechos reservados',
       contactEmail: 'info@selvadentrotulum.com',
-      contactPhone: '+52 999 489 0237',
+      contactPhone: '+52 999 489 0828',
     },
   },
 
@@ -583,7 +583,7 @@ export const translations: Record<Lang, Translation> = {
       tagline: 'tierra de cenotes',
       copyright: 'All rights reserved',
       contactEmail: 'info@selvadentrotulum.com',
-      contactPhone: '+52 999 489 0237',
+      contactPhone: '+52 999 489 0828',
     },
   },
 };
