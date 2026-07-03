@@ -13,10 +13,24 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
   const buildLabel = lang === 'es' ? 'Para construir' : 'To build on';
   const jungleLabel = lang === 'es' ? 'Selva privada' : 'Private jungle';
   const forever = lang === 'es' ? 'Tuya, para siempre' : 'Yours, forever';
+  // Reglamento copy + lot diagram from Suspiro brochure p.19
+  const regQuote =
+    lang === 'es'
+      ? 'Un reglamento de construcción que te permite el contacto con la naturaleza, exclusividad y privacidad.'
+      : 'A building code designed for contact with nature, exclusivity, and privacy.';
+  const regNote =
+    lang === 'es'
+      ? 'Retiros perimetrales que garantizan selva entre tú y tus vecinos — cada casa respira sola.'
+      : 'Perimeter setbacks guarantee jungle between you and your neighbors — every home breathes on its own.';
+  const diagramAlt =
+    lang === 'es'
+      ? 'Diagrama de lote C-60 con retiros de construcción'
+      : 'Lot C-60 diagram with building setbacks';
 
   return (
     <section className="section bg-brand-crema">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div className="max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         {/* Copy — LEFT (7 cols) */}
         <Reveal className="lg:col-span-7 order-2 lg:order-1">
           <div>
@@ -88,6 +102,32 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
             </div>
           </div>
         </Reveal>
+      </div>
+
+      {/* Row 2 — lot diagram + reglamento (brochure p.19) */}
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-16 lg:mt-24">
+        <Reveal className="lg:col-span-7">
+          <div className="rounded-2xl overflow-hidden bg-white/50 ring-1 ring-brand-verde/10 shadow-lg">
+            <img
+              src="/lot-diagram-c60.webp"
+              alt={diagramAlt}
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={150} className="lg:col-span-5">
+          <div>
+            <p
+              className="font-serif text-brand-verde-osc leading-snug mb-6"
+              style={{ fontSize: 'clamp(1.4rem, 2.4vw, 1.8rem)' }}
+            >
+              {regQuote}
+            </p>
+            <p className="text-brand-gris max-w-md">{regNote}</p>
+          </div>
+        </Reveal>
+      </div>
       </div>
     </section>
   );

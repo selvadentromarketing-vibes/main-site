@@ -8,11 +8,10 @@ interface Props {
 }
 
 export default function LocationSection({ t, lang }: Props) {
-  const mapHeading = lang === 'es' ? 'El mapa va aquí' : 'Map goes here';
-  const mapBody =
+  const mapAlt =
     lang === 'es'
-      ? 'Mapa del brochure de Suspiro mostrando la relación con la playa, el Tren Maya y el pueblo. Pendiente de subir.'
-      : 'Suspiro brochure map showing the relationship with the beach, the Maya Train and town. Pending upload.';
+      ? 'Rutas de acceso a Suspiro — Carretera Federal, Tren Maya y Libramiento'
+      : 'Access routes to Suspiro — Federal Highway, Maya Train and bypass road';
 
   return (
     <section id="ubicacion" className="section bg-brand-crema-osc">
@@ -43,16 +42,15 @@ export default function LocationSection({ t, lang }: Props) {
           ))}
         </div>
 
-        {/* Map placeholder — per the redesign guide PENDIENTE list */}
+        {/* Rutas de acceso map — extracted from Suspiro brochure p.5 */}
         <Reveal delay={350}>
-          <div className="bg-white/60 border-2 border-dashed border-brand-verde/25 rounded-2xl p-12 max-w-4xl mx-auto">
-            <div className="text-4xl mb-3">📍</div>
-            <div className="font-serif text-xl text-brand-verde-osc mb-2">
-              {mapHeading}
-            </div>
-            <div className="text-sm text-brand-gris max-w-md mx-auto leading-relaxed">
-              {mapBody}
-            </div>
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-brand-verde/10 max-w-5xl mx-auto">
+            <img
+              src="/rutas-acceso.webp"
+              alt={mapAlt}
+              className="w-full h-auto block"
+              loading="lazy"
+            />
           </div>
         </Reveal>
       </div>
