@@ -12,8 +12,8 @@ interface Props {
 export default function MasterplanSection({ t, lang }: Props) {
   const hint =
     lang === 'es'
-      ? 'Arrastra para explorar · scroll o pellizca para acercar · toca los puntos'
-      : 'Drag to explore · scroll or pinch to zoom · tap the dots';
+      ? 'Arrastra para explorar · scroll o clic para acercar · toca los puntos'
+      : 'Drag to explore · scroll or click to zoom · tap the dots';
 
   return (
     <section id="masterplan" className="section bg-brand-crema">

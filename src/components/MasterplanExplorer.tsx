@@ -43,19 +43,19 @@ const KIDS = {
   labelEs: 'Kids Jungle', labelEn: 'Kids Jungle',
   descEs: 'Un pequeño mundo dentro de la selva, donde jugar, explorar y descubrir se vuelve parte de cada día.',
   descEn: 'A little world within the jungle, where playing, exploring, and discovering become part of every day.',
-  images: ['/amenity-parque-ninos.webp'],
+  images: ['/map-kids-jungle.webp'],
 };
 const PETS = {
   labelEs: 'Pets Jungle', labelEn: 'Pets Jungle',
   descEs: 'Es libertad entre árboles, senderos que invitan a explorar y momentos simples que se sienten más.',
   descEn: 'Freedom between trees, trails that invite exploration, and simple moments that feel like more.',
-  images: ['/amenity-parque-mascotas.webp'],
+  images: ['/map-pets-jungle.webp'],
 };
 const PABELLON = {
   labelEs: 'Pabellón Holístico', labelEn: 'Holistic Pavilion',
   descEs: 'Cada rincón fue pensado para sentirse. Aquí, la naturaleza no rodea, abraza.',
   descEn: 'Every corner designed to be felt. Here, nature doesn’t surround — it embraces.',
-  images: ['/amenity-pabellon-holistico.webp'],
+  images: ['/map-pabellon.webp'],
 };
 
 export const SPOTS: Spot[] = [
@@ -65,14 +65,14 @@ export const SPOTS: Spot[] = [
     labelEs: 'Acceso', labelEn: 'Access',
     descEs: 'Un ingreso enmarcado por la selva — donde comienza otra manera de llegar a casa.',
     descEn: 'A jungle-framed arrival — where a new way of coming home begins.',
-    category: 'experiencia', images: ['/suspiro-entrance.webp'],
+    category: 'experiencia', images: ['/map-acceso.webp'],
   },
   {
     id: 'mirador', n: 2, px: 2283, py: 664,
     labelEs: 'Mirador', labelEn: 'Lookout',
     descEs: 'Un mirador suspendido entre la selva y el cenote, donde cada paso revela una nueva perspectiva.',
     descEn: 'A lookout suspended between jungle and cenote, where every step reveals a new perspective.',
-    category: 'experiencia', images: ['/amenity-cenote-mirador.webp'],
+    category: 'experiencia', images: ['/map-mirador.webp'],
   },
   { id: 'kids-1', n: 3, px: 359,  py: 460, category: 'experiencia', ...KIDS },
   { id: 'kids-2', n: 3, px: 933,  py: 488, category: 'experiencia', ...KIDS },
@@ -88,14 +88,14 @@ export const SPOTS: Spot[] = [
     labelEs: 'Jungle Gym', labelEn: 'Jungle Gym',
     descEs: 'Un espacio para el cuerpo, rodeado de selva viva.',
     descEn: 'A space for the body, surrounded by living jungle.',
-    category: 'experiencia', images: [],
+    category: 'experiencia', images: ['/map-jungle-gym.webp'],
   },
   {
     id: 'padel', n: 6, px: 1713, py: 470,
     labelEs: 'Canchas de Pádel', labelEn: 'Padel Courts',
     descEs: 'Un espacio donde la energía y la naturaleza se encuentran. Canchas rodeadas de selva, pensadas para disfrutar el juego a otro ritmo.',
     descEn: 'Where energy meets nature. Courts framed by jungle — designed to play at a different pace.',
-    category: 'experiencia', images: ['/amenity-padel.webp'],
+    category: 'experiencia', images: ['/map-padel.webp'],
   },
   { id: 'pabellon-1', n: 7, px: 850,  py: 586, category: 'experiencia', ...PABELLON },
   { id: 'pabellon-2', n: 7, px: 1545, py: 460, category: 'experiencia', ...PABELLON },
@@ -104,35 +104,35 @@ export const SPOTS: Spot[] = [
     labelEs: 'Village Comercial', labelEn: 'Commercial Village',
     descEs: 'Un pequeño pueblo dentro de la selva — servicios y encuentros a un paso de casa.',
     descEn: 'A little village within the jungle — services and encounters a step from home.',
-    category: 'experiencia', images: [],
+    category: 'experiencia', images: ['/map-village.webp'],
   },
   {
     id: 'casa-arbol', n: 9, px: 764, py: 570,
     labelEs: 'Casa del Árbol', labelEn: 'Treehouse',
     descEs: 'Un refugio elevado entre las ramas — para contemplar la selva desde adentro.',
     descEn: 'An elevated refuge among the branches — to contemplate the jungle from within.',
-    category: 'experiencia', images: ['/amenity-naturaleza.webp'],
+    category: 'experiencia', images: ['/map-casa-arbol.webp'],
   },
   {
     id: 'jungle-bar', n: 10, px: 764, py: 611,
     labelEs: 'Jungle Bar', labelEn: 'Jungle Bar',
     descEs: 'Cócteles artesanales y textura natural — el punto de encuentro sin prisa.',
     descEn: 'Craft cocktails and natural texture — the unhurried meeting point.',
-    category: 'experiencia', images: ['/render-jungle-bar.webp'],
+    category: 'experiencia', images: ['/map-jungle-bar.webp'],
   },
   {
     id: 'casa-cenotes', n: 11, px: 514, py: 420,
     labelEs: 'Casa de los Cenotes', labelEn: 'Casa de los Cenotes',
     descEs: 'El alma social del entorno — restaurante, bar alberca y playas. Una alberca que se funde con los cenotes.',
     descEn: 'The social heart — restaurant, pool bar, and beaches. A pool that merges with the cenotes.',
-    category: 'experiencia', images: ['/amenity-casa-cenotes.webp', '/amenity-comunidad.webp'],
+    category: 'experiencia', images: ['/map-casa-cenotes.webp'],
   },
   {
     id: 'wellness', n: 12, px: 421, py: 395,
     labelEs: 'Wellness', labelEn: 'Wellness',
     descEs: 'Refugios escondidos entre la selva, donde el agua cristalina y el silencio crean un momento de calma absoluta.',
     descEn: 'Hidden refuges within the jungle, where crystalline water and silence create a moment of absolute calm.',
-    category: 'experiencia', images: ['/amenity-cuerpo.webp', '/render-spa.webp'],
+    category: 'experiencia', images: ['/map-wellness.webp'],
   },
 
   // ─── CENOTES (cyan dots 1-9) ─────────────────────────────────
@@ -141,7 +141,7 @@ export const SPOTS: Spot[] = [
     labelEs: 'Cenote Mirador', labelEn: 'Cenote Mirador',
     descEs: 'Un cenote contemplado desde una torre suspendida entre la selva.',
     descEn: 'A cenote contemplated from a tower suspended in the jungle.',
-    category: 'cenote', images: ['/amenity-cenote-mirador.webp'],
+    category: 'cenote', images: ['/map-cenote-mirador.webp'],
   },
   {
     id: 'cenote-playa', n: 2, px: 824, py: 500,
@@ -155,7 +155,7 @@ export const SPOTS: Spot[] = [
     labelEs: 'Cenote Piedra', labelEn: 'Cenote Piedra',
     descEs: 'El silencio de la roca antigua y el reflejo cristalino del agua.',
     descEn: 'The silence of ancient rock and the crystalline reflection of water.',
-    category: 'cenote', images: [],
+    category: 'cenote', images: ['/map-cenote-piedra.webp'],
   },
   {
     id: 'cenote-luz', n: 4, px: 686, py: 680,
@@ -197,7 +197,7 @@ export const SPOTS: Spot[] = [
     labelEs: 'Cenote Caverna', labelEn: 'Cenote Caverna',
     descEs: 'Una catedral de piedra donde la luz y el agua se encuentran.',
     descEn: 'A cathedral of stone where light and water meet.',
-    category: 'cenote', images: ['/hero-cenote.webp'],
+    category: 'cenote', images: ['/map-cenote-caverna.webp'],
   },
 ];
 
