@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Play } from 'lucide-react';
 
 interface VideoEmbedProps {
@@ -8,18 +8,35 @@ interface VideoEmbedProps {
 }
 
 /**
- * Click-to-load YouTube embed. Until the visitor clicks Play, only the YouTube
- * thumbnail (or our own poster) loads — the iframe + player JS only mount on
- * click. Keeps the hero section fast.
+ * YouTube embed with device-dependent loading (per Hoshi):
+ * - Desktop (≥1024px): iframe mounts immediately, no click step (no autoplay).
+ * - Mobile/tablet: click-to-load — only the poster renders until the visitor
+ *   taps Play, then the iframe mounts with autoplay. Keeps mobile fast.
  */
 export default function VideoEmbed({ youtubeId, posterSrc, title }: VideoEmbedProps) {
-  const [loaded, setLoaded] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  const loaded = clicked || isDesktop;
 
   if (loaded) {
+    // Autoplay only after an explicit tap (mobile flow) — never on the
+    // desktop auto-mounted player.
+    const params = clicked
+      ? 'autoplay=1&rel=0&modestbranding=1'
+      : 'rel=0&modestbranding=1';
     return (
       <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-brand-verde-osc/15 bg-brand-verde-osc">
         <iframe
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+          src={`https://www.youtube.com/embed/${youtubeId}?${params}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -35,7 +52,7 @@ export default function VideoEmbed({ youtubeId, posterSrc, title }: VideoEmbedPr
   return (
     <button
       type="button"
-      onClick={() => setLoaded(true)}
+      onClick={() => setClicked(true)}
       className="group relative block w-full aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-brand-verde-osc/15 bg-brand-verde-osc focus:outline-none focus:ring-4 focus:ring-brand-oro/40"
       aria-label={title}
       style={{

@@ -15,12 +15,14 @@ export default function Footer({ t, lang }: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-3 gap-10 mb-10">
           <div>
+            {/* Wordmark already carries the "tierra de cenotes" tagline —
+                never repeat it as sibling text (see memory: logo is
+                self-contained). */}
             <img
               src="/logo-cream.webp"
-              alt="Selvadentro"
-              className="h-12 w-auto mb-4"
+              alt="Selvadentro — tierra de cenotes"
+              className="h-12 w-auto"
             />
-            <p className="font-serif italic text-sm">{t.footer.tagline}</p>
           </div>
 
           <div className="text-sm space-y-3">
