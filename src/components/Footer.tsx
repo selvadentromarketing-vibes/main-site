@@ -67,7 +67,16 @@ export default function Footer({ t, lang }: FooterProps) {
 
         <div className="border-t border-brand-crema/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-crema/50">
           <span>
-            © {new Date().getFullYear()} Selvadentro · {t.footer.copyright}
+            © {new Date().getFullYear()} Selvadentro · {t.footer.copyright} ·{' '}
+            {/* Agency credit — keep dofollow (no rel=nofollow/sponsored): SEO backlink */}
+            <a
+              href="https://tothemaxmedia.com"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-brand-crema/80 transition-colors"
+            >
+              Built by To The Max Media
+            </a>
           </span>
           <span className="tracking-[0.25em] uppercase">Selvadentrotulum.com</span>
         </div>

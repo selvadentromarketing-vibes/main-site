@@ -46,7 +46,10 @@
     </script>
   </head>
   <body class="bg-brand-crema font-sans text-brand-negro">
-    <div id="root"></div>
+    <!-- Pre-hydration shell: crawlable agency credit in the initial HTML
+         response. React replaces #root children on mount, where Footer.tsx
+         renders the same single link — never two links in the DOM at once. -->
+    <div id="root"><footer><p style="font-size:12px;color:#8a8a7d;text-align:center;padding:24px 0">© 2026 Selvadentro · <a href="https://tothemaxmedia.com" rel="noopener">Built by To The Max Media</a></p></footer></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
