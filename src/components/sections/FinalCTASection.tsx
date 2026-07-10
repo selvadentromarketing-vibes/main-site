@@ -4,6 +4,7 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import type { Value as PhoneValue } from 'react-phone-number-input';
 import Reveal from '../Reveal';
 import MagneticButton from '../MagneticButton';
+import { getStoredTrackingParams } from '../../utils/tracking';
 import type { Translation } from '../../i18n/translations';
 import 'react-phone-number-input/style.css';
 
@@ -53,6 +54,8 @@ export default function FinalCTASection({ t, lang }: Props) {
 
     setStatus('submitting');
 
+    // Same hidden-field standard as the squeeze pages (per Hoshi).
+    const tracking = getStoredTrackingParams();
     const payload = {
       first_name: name.trim().split(' ')[0] || '',
       last_name: name.trim().split(' ').slice(1).join(' ') || '',
@@ -62,11 +65,24 @@ export default function FinalCTASection({ t, lang }: Props) {
       country: country || 'Mexico',
       source_label: 'main-site',
       form_name: 'main-site-final-cta',
-      landing_page: window.location.href,
-      utm_source:
-        new URLSearchParams(window.location.search).get('utm_source') || 'organic',
-      utm_campaign:
-        new URLSearchParams(window.location.search).get('utm_campaign') || '',
+      landing_page: tracking.landing_page,
+      page_url: window.location.href,
+      utm_source: tracking.utm_source || 'organic',
+      utm_medium: tracking.utm_medium,
+      utm_campaign: tracking.utm_campaign || '',
+      utm_term: tracking.utm_term,
+      utm_content: tracking.utm_content,
+      gclid: tracking.gclid,
+      fbclid: tracking.fbclid,
+      ad_id: tracking.ad_id,
+      ad_source_id: tracking.ad_id, // GHL "Ad Source ID" alias
+      adset_id: tracking.adset_id,
+      campaign_id: tracking.campaign_id,
+      search_term: tracking.search_term,
+      'contact.source': tracking.utm_source || 'main-site',
+      'contact.campaign': tracking.utm_campaign,
+      'contact.ad_ctwa_clid': tracking.fbclid || tracking.gclid,
+      campaign_label: tracking.utm_campaign || 'Direct',
       tags: ['main-site'],
     };
 

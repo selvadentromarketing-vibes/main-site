@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLang } from './i18n/useLang';
+import { captureTrackingParams } from './utils/tracking';
 import type { Lang } from './i18n/translations';
 
 import Header from './components/Header';
@@ -33,6 +34,11 @@ export default function App({ lang }: AppProps) {
         ? 'Selvadentro — tierra de cenotes'
         : 'Selvadentro — land of cenotes';
   }, [lang]);
+
+  // Capture ad attribution once on load (persisted for the contact form).
+  useEffect(() => {
+    captureTrackingParams();
+  }, []);
 
   return (
     <div className="bg-brand-crema text-brand-negro">
