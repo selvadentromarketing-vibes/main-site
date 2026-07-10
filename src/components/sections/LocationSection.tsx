@@ -46,7 +46,7 @@ export default function LocationSection({ t, lang }: Props) {
         <Reveal delay={350}>
           <div className="rounded-3xl overflow-hidden shadow-xl border border-brand-verde/10 max-w-5xl mx-auto">
             <img
-              src="/rutas-acceso.webp"
+              src="https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a51171ac36eb22215043337.jpeg"
               alt={mapAlt}
               className="w-full h-auto block"
               loading="lazy"

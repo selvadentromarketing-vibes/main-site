@@ -37,22 +37,11 @@ export default function AboutSection({ t, lang }: Props) {
           </div>
         </Reveal>
         <Reveal delay={150}>
-          {lang === 'es' ? (
-            <div className="aspect-video rounded-2xl bg-brand-crema-osc border border-brand-verde/15 flex items-center justify-center text-center p-8 shadow-inner">
-              <div>
-                <div className="text-3xl mb-3">🎬</div>
-                <div className="font-serif text-lg text-brand-verde-osc mb-2">
-                  Video principal en español
-                </div>
-                <div className="text-xs text-brand-gris tracking-wide max-w-xs mx-auto leading-relaxed">
-                  Película institucional con entrevistas y demostración del proyecto.<br />
-                  Pendiente de subir a YouTube / Vimeo.
-                </div>
-              </div>
-            </div>
-          ) : (
-            <VideoEmbed youtubeId="zFNyICgwD5c" title={t.about.videoTitle} />
-          )}
+          <VideoEmbed
+            youtubeId="zFNyICgwD5c"
+            title={t.about.videoTitle}
+            posterSrc="https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a3ad867ee187be6895f051a.jpg"
+          />
         </Reveal>
       </div>
     </section>

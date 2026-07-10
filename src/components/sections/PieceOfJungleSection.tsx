@@ -7,13 +7,16 @@ interface Props {
   lang: Lang;
 }
 
+const COTIZADOR_URL =
+  'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
+const LOTE_IMAGE_URL =
+  'https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a51171aeada8c1f45ea5fee.jpeg';
+
 export default function PieceOfJungleSection({ t, lang }: Props) {
   const tagLabel = lang === 'es' ? 'Tu lote' : 'Your homesite';
   const cta = lang === 'es' ? 'Ver disponibilidad' : 'View availability';
   const buildLabel = lang === 'es' ? 'Para construir' : 'To build on';
-  const jungleLabel = lang === 'es' ? 'Selva privada' : 'Private jungle';
-  const forever = lang === 'es' ? 'Tuya, para siempre' : 'Yours, forever';
-  // Reglamento copy + lot diagram from Suspiro brochure p.19
+  const jungleLabel = lang === 'es' ? 'Selva privada — tuya, para siempre' : 'Private jungle — yours, forever';
   const regQuote =
     lang === 'es'
       ? 'Un reglamento de construcción que te permite el contacto con la naturaleza, exclusividad y privacidad.'
@@ -22,112 +25,91 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
     lang === 'es'
       ? 'Retiros perimetrales que garantizan selva entre tú y tus vecinos — cada casa respira sola.'
       : 'Perimeter setbacks guarantee jungle between you and your neighbors — every home breathes on its own.';
-  const diagramAlt =
+  const imgAlt =
     lang === 'es'
-      ? 'Diagrama de lote C-60 con retiros de construcción'
-      : 'Lot C-60 diagram with building setbacks';
+      ? 'Vista del lote en Selvadentro — selva privada'
+      : 'View of a Selvadentro lot — private jungle';
 
   return (
     <section className="section bg-brand-crema">
       <div className="max-w-6xl mx-auto">
-      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        {/* Copy — LEFT (7 cols) */}
-        <Reveal className="lg:col-span-7 order-2 lg:order-1">
-          <div>
-            <span className="eyebrow mb-3">{tagLabel}</span>
-            <h2
-              className="font-serif text-brand-verde-osc leading-tight mb-8"
-              style={{ fontSize: 'clamp(2.2rem, 4.4vw, 3.4rem)' }}
-            >
-              {t.pieceOfJungle.eyebrow}
-            </h2>
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* LEFT — unified copy */}
+          <Reveal className="lg:col-span-6 order-2 lg:order-1">
+            <div>
+              <span className="eyebrow mb-3">{tagLabel}</span>
+              <h2
+                className="font-serif text-brand-verde-osc leading-tight mb-6"
+                style={{ fontSize: 'clamp(2.2rem, 4.4vw, 3.4rem)' }}
+              >
+                {t.pieceOfJungle.eyebrow}
+              </h2>
 
-            <p
-              className="font-serif text-brand-verde-osc leading-tight mb-6"
-              style={{ fontSize: 'clamp(1.5rem, 2.6vw, 1.9rem)' }}
-            >
-              {t.pieceOfJungle.ratio}
-            </p>
-            <p className="text-brand-gris mb-8 max-w-md">{t.pieceOfJungle.lots}</p>
+              <p
+                className="font-serif text-brand-verde-osc leading-snug mb-4"
+                style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.7rem)' }}
+              >
+                {t.pieceOfJungle.ratio}
+              </p>
+              <p className="text-brand-gris mb-8 max-w-md">
+                {t.pieceOfJungle.lots}
+              </p>
 
-            <MagneticButton href="#contacto" className="btn-ghost-dark">
-              {cta}
-            </MagneticButton>
-          </div>
-        </Reveal>
-
-        {/* Ratio visualization — RIGHT (5 cols) */}
-        <Reveal delay={150} className="lg:col-span-5 order-1 lg:order-2">
-          <div
-            className="relative w-full rounded-2xl overflow-hidden shadow-lg ring-1 ring-brand-verde/10 flex flex-col"
-            style={{ aspectRatio: '4 / 5' }}
-          >
-            {/* 35% — construir */}
-            <div
-              className="relative bg-brand-oro flex items-center justify-center"
-              style={{ flexBasis: '35%' }}
-            >
-              <div className="text-center px-4">
-                <div
-                  className="font-serif text-brand-verde-osc leading-none"
-                  style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
-                >
-                  35%
+              {/* Subtle split-bar visualization */}
+              <div className="mb-10 max-w-md">
+                <div className="flex items-baseline justify-between text-[11px] font-semibold tracking-[0.22em] uppercase text-brand-verde-osc/75 mb-2">
+                  <span>
+                    <span className="font-serif text-brand-verde-osc text-lg mr-2 not-italic">35%</span>
+                    {buildLabel}
+                  </span>
+                  <span className="text-right">
+                    <span className="font-serif text-brand-verde-osc text-lg mr-2 not-italic">65%</span>
+                    {jungleLabel}
+                  </span>
                 </div>
-                <div className="mt-2 text-[10px] tracking-[0.3em] uppercase text-brand-verde-osc/85 font-semibold">
-                  {buildLabel}
+                <div
+                  className="h-1.5 rounded-full overflow-hidden bg-brand-verde/10 flex"
+                  role="img"
+                  aria-label={`${buildLabel} 35% · ${jungleLabel} 65%`}
+                >
+                  <span className="bg-brand-oro/85" style={{ width: '35%' }} />
+                  <span className="bg-brand-verde-osc/85" style={{ width: '65%' }} />
                 </div>
               </div>
-            </div>
 
-            {/* 65% — selva */}
-            <div
-              className="relative bg-brand-verde-osc flex items-center justify-center"
-              style={{ flexBasis: '65%' }}
-            >
-              <div className="text-center px-4">
-                <div
-                  className="font-serif text-brand-crema leading-none"
-                  style={{ fontSize: 'clamp(3.6rem, 8vw, 6.5rem)' }}
+              <div className="border-l-2 border-brand-oro/50 pl-5 mb-6">
+                <p
+                  className="font-serif italic text-brand-verde-osc leading-snug mb-3"
+                  style={{ fontSize: 'clamp(1.15rem, 1.9vw, 1.35rem)' }}
                 >
-                  65%
-                </div>
-                <div className="mt-3 text-[10px] tracking-[0.3em] uppercase text-brand-crema/85 font-semibold">
-                  {jungleLabel}
-                </div>
-                <div className="mt-6 font-serif italic text-brand-crema/70 text-sm">
-                  {forever}
-                </div>
+                  {regQuote}
+                </p>
+                <p className="text-brand-gris text-sm max-w-md">{regNote}</p>
               </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
 
-      {/* Row 2 — lot diagram + reglamento (brochure p.19) */}
-      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-16 lg:mt-24">
-        <Reveal className="lg:col-span-7">
-          <div className="rounded-2xl overflow-hidden bg-white/50 ring-1 ring-brand-verde/10 shadow-lg">
-            <img
-              src="/lot-diagram-c60.webp"
-              alt={diagramAlt}
-              className="w-full h-auto block"
-              loading="lazy"
-            />
-          </div>
-        </Reveal>
-        <Reveal delay={150} className="lg:col-span-5">
-          <div>
-            <p
-              className="font-serif text-brand-verde-osc leading-snug mb-6"
-              style={{ fontSize: 'clamp(1.4rem, 2.4vw, 1.8rem)' }}
-            >
-              {regQuote}
-            </p>
-            <p className="text-brand-gris max-w-md">{regNote}</p>
-          </div>
-        </Reveal>
-      </div>
+              <MagneticButton
+                href={COTIZADOR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost-dark"
+              >
+                {cta}
+              </MagneticButton>
+            </div>
+          </Reveal>
+
+          {/* RIGHT — image */}
+          <Reveal delay={150} className="lg:col-span-6 order-1 lg:order-2">
+            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10 aspect-[4/5]">
+              <img
+                src={LOTE_IMAGE_URL}
+                alt={imgAlt}
+                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

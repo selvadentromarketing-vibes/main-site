@@ -4,6 +4,7 @@ import type { Lang } from './i18n/translations';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import WhatsappSticky from './components/WhatsappSticky';
 import HeroSection from './components/sections/HeroSection';
 import StatsBarSection from './components/sections/StatsBarSection';
 import AboutSection from './components/sections/AboutSection';
@@ -52,6 +53,7 @@ export default function App({ lang }: AppProps) {
         <FinalCTASection t={t} lang={lang} />
       </main>
       <Footer t={t} lang={lang} />
+      <WhatsappSticky lang={lang} />
     </div>
   );
 }

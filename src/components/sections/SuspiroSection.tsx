@@ -18,7 +18,7 @@ const STATS: Stat[] = [
   { value: '20/60/20', labelEs: 'esquema de pagos',      labelEn: 'payment schedule' },
   { value: '$167',     labelEs: 'USD por m²',            labelEn: 'USD per m²' },
   { value: '48',       labelEs: 'meses sin intereses',   labelEn: 'interest-free months' },
-  { value: '2029',     labelEs: 'entrega estimada',      labelEn: 'estimated delivery' },
+  { value: '2029',     labelEs: 'entrega',               labelEn: 'delivery' },
   { value: '100%',     labelEs: 'certeza jurídica',      labelEn: 'legal certainty' },
 ];
 
@@ -29,12 +29,12 @@ interface Service {
 
 const SERVICES: Service[] = [
   { es: 'Avenida Selvadentro',              en: 'Selvadentro Avenue' },
-  { es: 'Calle Suspiro pavimentada',        en: 'Paved Suspiro Street' },
+  { es: 'Calle Suspiro',                    en: 'Suspiro Street' },
   { es: 'Energía eléctrica sustentable',    en: 'Sustainable electric power' },
   { es: 'Red de agua subterránea',          en: 'Underground water network' },
   { es: 'Acceso controlado',                en: 'Controlled access' },
   { es: 'Seguridad 24/7',                   en: '24/7 security' },
-  { es: 'Internet de fibra óptica',         en: 'Fiber-optic internet' },
+  { es: 'Internet wifi en áreas comunes',   en: 'Wi-Fi in common areas' },
   { es: 'Iluminación de bajo impacto',      en: 'Low-impact lighting' },
 ];
 
@@ -93,7 +93,12 @@ export default function SuspiroSection({ t, lang }: Props) {
                 </p>
               </div>
 
-              <MagneticButton href="#contacto" className="btn-ghost-dark">
+              <MagneticButton
+                href="https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost-dark"
+              >
                 {t.suspiro.cta}
               </MagneticButton>
             </div>
