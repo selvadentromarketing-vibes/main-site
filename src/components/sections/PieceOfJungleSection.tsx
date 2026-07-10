@@ -9,8 +9,7 @@ interface Props {
 
 const COTIZADOR_URL =
   'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
-const LOTE_IMAGE_URL =
-  'https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a51171aeada8c1f45ea5fee.jpeg';
+const LOTE_IMAGE_URL = '/lot-jungle.png';
 
 export default function PieceOfJungleSection({ t, lang }: Props) {
   const tagLabel = lang === 'es' ? 'Tu lote' : 'Your homesite';
@@ -31,7 +30,7 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
       : 'View of a Selvadentro lot — private jungle';
 
   return (
-    <section className="section bg-brand-crema">
+    <section className="bg-brand-crema py-10 sm:py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* LEFT — unified copy */}
@@ -98,16 +97,14 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
             </div>
           </Reveal>
 
-          {/* RIGHT — image */}
-          <Reveal delay={150} className="lg:col-span-6 order-1 lg:order-2">
-            <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10 aspect-[4/5]">
-              <img
-                src={LOTE_IMAGE_URL}
-                alt={imgAlt}
-                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-                loading="lazy"
-              />
-            </div>
+          {/* RIGHT — image (full-fit, never cropped) */}
+          <Reveal delay={150} className="lg:col-span-6 order-1 lg:order-2 self-center">
+            <img
+              src={LOTE_IMAGE_URL}
+              alt={imgAlt}
+              className="block w-full h-auto max-w-full object-contain"
+              loading="lazy"
+            />
           </Reveal>
         </div>
       </div>

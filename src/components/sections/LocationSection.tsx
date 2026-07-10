@@ -44,9 +44,9 @@ export default function LocationSection({ t, lang }: Props) {
 
         {/* Rutas de acceso map — extracted from Suspiro brochure p.5 */}
         <Reveal delay={350}>
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-brand-verde/10 max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <img
-              src="https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a51171ac36eb22215043337.jpeg"
+              src="/rutas-acceso-map.png"
               alt={mapAlt}
               className="w-full h-auto block"
               loading="lazy"

@@ -12,12 +12,13 @@ interface HeaderProps {
 
 interface NavLink {
   id: string;
-  key: keyof Translation['nav'];
+  key?: keyof Translation['nav'];
+  label?: string;
+  href?: string;
+  external?: boolean;
   children?: Array<{ label: string; href: string; external?: boolean }>;
 }
 
-const VIRTUAL_TOUR_URL =
-  'https://eva3d.com/recorridos-virtuales-360/jjf-creando/selvadentro/index.htm';
 const COTIZADOR_URL =
   'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
 
@@ -44,12 +45,21 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
       key: 'masterplan',
       children: [
         { label: t.nav.masterplan, href: '#masterplan' },
-        { label: virtualTourLabel, href: VIRTUAL_TOUR_URL, external: true },
+        { label: virtualTourLabel, href: '#tour-virtual' },
       ],
     },
     { id: 'inversion', key: 'investment' },
     { id: 'testimonios', key: 'testimonials' },
+    {
+      id: 'jjf-creando',
+      label: 'JJF Creando',
+      href: 'https://jjfcreando.com/',
+      external: true,
+    },
   ];
+
+  const linkText = (link: NavLink) =>
+    link.label ?? (link.key ? t.nav[link.key] : link.id);
 
   const scheduleClose = () => {
     if (dropdownTimer.current) window.clearTimeout(dropdownTimer.current);
@@ -67,7 +77,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="w-full pl-0 pr-4 sm:pr-6 lg:pr-10 flex items-center justify-between gap-6">
+      <div className="w-full px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-6">
         <a
           href={lang === 'en' ? '/en' : '/'}
           aria-label="Selvadentro"
@@ -76,7 +86,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
           <img
             src="/logo-cream.webp"
             alt="Selvadentro · tierra de cenotes"
-            className="h-[3.125rem] sm:h-[3.75rem] w-auto block"
+            className="h-[2.8125rem] sm:h-[3.375rem] w-auto block"
           />
         </a>
 
@@ -103,7 +113,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
                       aria-expanded={isOpen}
                       aria-haspopup="menu"
                     >
-                      {t.nav[link.key]}
+                      {linkText(link)}
                       <ChevronDown
                         className={`w-3.5 h-3.5 transition-transform ${
                           isOpen ? 'rotate-180' : ''
@@ -142,10 +152,12 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
               return (
                 <a
                   key={link.id}
-                  href={`#${link.id}`}
+                  href={link.href ?? `#${link.id}`}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
                   className="hover:text-brand-oro transition-colors uppercase tracking-[0.14em]"
                 >
-                  {t.nav[link.key]}
+                  {linkText(link)}
                 </a>
               );
             })}
@@ -204,11 +216,13 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
             {NAV_LINKS.map((link) => (
               <div key={link.id} className="flex flex-col gap-3">
                 <a
-                  href={`#${link.id}`}
+                  href={link.href ?? `#${link.id}`}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
                   onClick={() => setOpen(false)}
                   className="text-base font-semibold uppercase tracking-[0.14em] hover:text-brand-oro transition-colors"
                 >
-                  {t.nav[link.key]}
+                  {linkText(link)}
                 </a>
                 {link.children && (
                   <div className="flex flex-col gap-2 pl-4 border-l border-brand-crema/15">

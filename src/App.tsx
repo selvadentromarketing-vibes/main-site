@@ -13,6 +13,7 @@ import LocationSection from './components/sections/LocationSection';
 import SuspiroSection from './components/sections/SuspiroSection';
 import PieceOfJungleSection from './components/sections/PieceOfJungleSection';
 import MasterplanSection from './components/sections/MasterplanSection';
+import TourVirtualSection from './components/sections/TourVirtualSection';
 import AmenitiesSection from './components/sections/AmenitiesSection';
 import InvestmentSection from './components/sections/InvestmentSection';
 import CredentialsSection from './components/sections/CredentialsSection';
@@ -51,6 +52,7 @@ export default function App({ lang }: AppProps) {
         <SuspiroSection t={t} lang={lang} />
         <PieceOfJungleSection t={t} lang={lang} />
         <MasterplanSection t={t} lang={lang} />
+        <TourVirtualSection lang={lang} />
         <AmenitiesSection t={t} />
         <InvestmentSection t={t} lang={lang} />
         <CredentialsSection t={t} lang={lang} />

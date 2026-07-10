@@ -252,9 +252,9 @@ export const translations: Record<Lang, Translation> = {
           title: 'Cuerpo y movimiento',
           image: '/amenity-cuerpo.webp',
           items: [
-            'Wellness',
+            'Wellness center',
             'Jungle Gym',
-            'Canchas de Pádel',
+            'Cancha de pádel y pickleball',
             'Pabellón Holístico',
           ],
         },
@@ -279,12 +279,12 @@ export const translations: Record<Lang, Translation> = {
         'En mayo de 2025, un metro cuadrado en Selvadentro costaba $119 USD. Hoy cuesta $167 USD. La trayectoria es clara.',
         'Selvadentro es el único desarrollo residencial privado en la Ruta de los Cenotes de Tulum. Lo que nos rodea son reservas naturales y atracciones — no competencia. Esa escasez no es marketing. Es geografía.',
         'Con el Libramiento Playa-Cobá en construcción y el Tren Maya a minutos, la infraestructura que multiplica el valor ya está llegando.',
-        'Proyectamos cerrar el proyecto en $390 USD/m². Quien entra hoy, entra antes de que eso ocurra.',
+        'Proyectamos cerrar el proyecto en +$390 USD/m². Quien entra hoy, entra antes de que eso ocurra.',
       ],
       timeline: [
         { milestone: '$119 USD/m²', sub: 'Mayo 2025 · Lanzamiento' },
         { milestone: '$167 USD/m²', sub: 'Hoy · +40% en 12 meses' },
-        { milestone: '$390 USD/m²', sub: 'Proyección al cierre' },
+        { milestone: '+$390 USD/m²', sub: 'Proyección al cierre' },
       ],
     },
 
@@ -467,7 +467,7 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Body & movement',
           image: '/amenity-cuerpo.webp',
-          items: ['Wellness', 'Jungle Gym', 'Pádel courts', 'Holistic pavilion'],
+          items: ['Wellness center', 'Jungle Gym', 'Padel & pickleball court', 'Holistic pavilion'],
         },
         {
           title: 'Community life',
@@ -490,12 +490,12 @@ export const translations: Record<Lang, Translation> = {
         'In May 2025, a square meter in Selvadentro cost $119 USD. Today it costs $167 USD. The trajectory is clear.',
         'Selvadentro is the only private residential development on Tulum’s Ruta de los Cenotes. What surrounds us are nature reserves and attractions — not competition. That scarcity isn’t marketing. It’s geography.',
         'With the Playa-Cobá bypass under construction and the Maya Train minutes away, the infrastructure that multiplies value is already arriving.',
-        'We project closing the project at $390 USD/m². Whoever enters today, enters before that happens.',
+        'We project closing the project at +$390 USD/m². Whoever enters today, enters before that happens.',
       ],
       timeline: [
         { milestone: '$119 USD/m²', sub: 'May 2025 · Launch' },
         { milestone: '$167 USD/m²', sub: 'Today · +40% in 12 months' },
-        { milestone: '$390 USD/m²', sub: 'Closing projection' },
+        { milestone: '+$390 USD/m²', sub: 'Closing projection' },
       ],
     },
 

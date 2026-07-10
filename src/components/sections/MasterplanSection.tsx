@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react';
 import Reveal from '../Reveal';
 import MagneticButton from '../MagneticButton';
 import MasterplanExplorer from '../MasterplanExplorer';
@@ -42,14 +41,8 @@ export default function MasterplanSection({ t, lang }: Props) {
 
         <Reveal delay={200}>
           <div className="text-center mt-10">
-            <MagneticButton
-              href="https://eva3d.com/recorridos-virtuales-360/jjf-creando/selvadentro/index.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-ghost-dark"
-            >
+            <MagneticButton href="#tour-virtual" className="btn-ghost-dark">
               {t.masterplan.cta}
-              <ExternalLink className="w-4 h-4" />
             </MagneticButton>
           </div>
         </Reveal>

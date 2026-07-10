@@ -19,9 +19,19 @@ import type { Lang } from '../i18n/translations';
  * Copy sourced from the Suspiro Español brochure (June 2026).
  */
 
-const MAP_SRC = '/masterplan-map.webp';
+const MAP_SRC = '/masterplan-map.jpg';
+// Logical coordinate space (dot positions are calibrated against this) —
+// SPOTS[] px/py are integer pixels on a 2400×955 crop. Kept as the reference
+// system so dot placements work with any higher-res reissue that preserves
+// the same framing.
 const MAP_W = 2400;
 const MAP_H = 955;
+// Physical image dimensions on disk. The transformed layer is sized to
+// MAP_W_PHYS×MAP_H_PHYS so the GPU compositor rasterizes it at native source
+// resolution — otherwise zooming pixelates because the raster gets stretched
+// beyond its capture size.
+const MAP_W_PHYS = 3840;
+const MAP_H_PHYS = 1528;
 const RATIO = MAP_W / MAP_H;
 const MAX_SCALE = 5;
 
@@ -92,7 +102,7 @@ export const SPOTS: Spot[] = [
   },
   {
     id: 'padel', n: 6, px: 1713, py: 470,
-    labelEs: 'Canchas de Pádel', labelEn: 'Padel Courts',
+    labelEs: 'Cancha de pádel y pickleball', labelEn: 'Padel & pickleball court',
     descEs: 'Un espacio donde la energía y la naturaleza se encuentran. Canchas rodeadas de selva, pensadas para disfrutar el juego a otro ritmo.',
     descEn: 'Where energy meets nature. Courts framed by jungle — designed to play at a different pace.',
     category: 'experiencia', images: ['/map-padel.webp'],
@@ -129,7 +139,7 @@ export const SPOTS: Spot[] = [
   },
   {
     id: 'wellness', n: 12, px: 421, py: 395,
-    labelEs: 'Wellness', labelEn: 'Wellness',
+    labelEs: 'Wellness center', labelEn: 'Wellness center',
     descEs: 'Refugios escondidos entre la selva, donde el agua cristalina y el silencio crean un momento de calma absoluta.',
     descEn: 'Hidden refuges within the jungle, where crystalline water and silence create a moment of absolute calm.',
     category: 'experiencia', images: ['/map-wellness.webp'],
@@ -362,116 +372,83 @@ export default function MasterplanExplorer({ lang }: Props) {
     );
   };
 
+  const openSpot = openId ? SPOTS.find((s) => s.id === openId) ?? null : null;
+
   return (
     <div>
-      {/* ─── Map viewport ─── */}
-      <div
-        ref={containerRef}
-        className="relative h-[340px] sm:h-auto sm:aspect-[2400/955] rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl bg-[#5c6b52] cursor-grab active:cursor-grabbing select-none"
-        style={{ touchAction: 'none' }}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-      >
+      {/* ─── Map viewport + popup overlay ─── */}
+      <div className="relative">
         <div
-          className="absolute top-0 left-0 origin-top-left will-change-transform"
-          style={{
-            width: W,
-            height: Hl,
-            transform: `translate(${view.tx}px, ${view.ty}px) scale(${view.s})`,
-          }}
+          ref={containerRef}
+          className="relative h-[340px] sm:h-auto sm:aspect-[2400/955] rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl bg-[#5c6b52] cursor-grab active:cursor-grabbing select-none"
+          style={{ touchAction: 'none' }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
         >
-          <img
-            src={MAP_SRC}
-            alt="Masterplan Selvadentro"
-            className="w-full h-full block pointer-events-none"
-            draggable={false}
-          />
+          <div
+            className="absolute top-0 left-0 origin-top-left will-change-transform"
+            style={{
+              width: MAP_W_PHYS,
+              height: MAP_H_PHYS,
+              // baseFit maps the natural-pixel layer to the container width,
+              // then view.s applies user zoom on top of that. Rendering at
+              // native resolution keeps the source pixels available to the
+              // GPU when the user zooms in.
+              transform: `translate(${view.tx}px, ${view.ty}px) scale(${(W / MAP_W_PHYS) * view.s})`,
+            }}
+          >
+            <img
+              src={MAP_SRC}
+              alt="Masterplan Selvadentro"
+              className="w-full h-full block pointer-events-none"
+              style={{ imageRendering: 'high-quality' as const }}
+              draggable={false}
+              loading="lazy"
+            />
 
-          {SPOTS.map((spot) => {
-            const isOpen = openId === spot.id;
-            const isHi = highlight === `${spot.category}-${spot.n}`;
-            const label = lang === 'es' ? spot.labelEs : spot.labelEn;
-            const desc = lang === 'es' ? spot.descEs : spot.descEn;
-            const isCenote = spot.category === 'cenote';
-
-            // Screen position → popup direction/alignment
-            const sx = view.tx + (spot.px / MAP_W) * W * view.s;
-            const sy = view.ty + (spot.py / MAP_H) * Hl * view.s;
-            const openDown = sy < 300;
-            const align = sx > W - 170 ? 'right' : sx < 170 ? 'left' : 'center';
-
-            return (
-              <div
-                key={spot.id}
-                className="absolute z-20"
-                style={{
-                  left: `${(spot.px / MAP_W) * 100}%`,
-                  top: `${(spot.py / MAP_H) * 100}%`,
-                  transform: `translate(-50%, -50%) scale(${1 / view.s})`,
-                }}
-              >
-                <button
-                  type="button"
-                  onMouseEnter={() => setOpenId(spot.id)}
-                  onMouseLeave={() => setOpenId((cur) => (cur === spot.id ? null : cur))}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!moved.current) setOpenId(isOpen ? null : spot.id);
+            {SPOTS.map((spot) => {
+              const isOpen = openId === spot.id;
+              const isHi = highlight === `${spot.category}-${spot.n}`;
+              const label = lang === 'es' ? spot.labelEs : spot.labelEn;
+              const isCenote = spot.category === 'cenote';
+              return (
+                <div
+                  key={spot.id}
+                  className="absolute z-10"
+                  style={{
+                    left: `${(spot.px / MAP_W) * 100}%`,
+                    top: `${(spot.py / MAP_H) * 100}%`,
+                    // Counter-scale keeps dot buttons at a constant 24px on
+                    // screen regardless of the parent's total scale factor.
+                    transform: `translate(-50%, -50%) scale(${MAP_W_PHYS / (W * view.s)})`,
                   }}
-                  aria-label={label}
-                  className={`flex items-center justify-center w-6 h-6 rounded-full shadow-md transition-all duration-300 focus:outline-none hover:scale-125 ${
-                    isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
-                  } ${isHi ? 'scale-[1.4] ring-4 ring-brand-oro/70' : ''}`}
                 >
-                  <span className="text-[11px] font-semibold leading-none select-none">
-                    {spot.n}
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div
-                    className={`absolute pointer-events-none z-30 ${
-                      openDown ? 'top-full mt-3' : 'bottom-full mb-3'
-                    } ${
-                      align === 'center'
-                        ? 'left-1/2 -translate-x-1/2'
-                        : align === 'right' ? 'right-0' : 'left-0'
-                    }`}
-                    style={{ width: '270px' }}
+                  <button
+                    type="button"
+                    onMouseEnter={() => setOpenId(spot.id)}
+                    onMouseLeave={() => setOpenId((cur) => (cur === spot.id ? null : cur))}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!moved.current) setOpenId(isOpen ? null : spot.id);
+                    }}
+                    aria-label={label}
+                    className={`flex items-center justify-center w-6 h-6 rounded-full shadow-md transition-all duration-300 focus:outline-none hover:scale-125 ${
+                      isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
+                    } ${isHi ? 'scale-[1.4] ring-4 ring-brand-oro/70' : ''}`}
                   >
-                    <div className="bg-white rounded-xl shadow-2xl border border-brand-verde/10 overflow-hidden">
-                      {spot.images.length > 0 && (
-                        <div className={`grid ${spot.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-brand-crema-osc`}>
-                          {spot.images.map((src, i) => (
-                            <img key={i} src={src} alt={label} className="w-full h-28 object-cover" loading="lazy" />
-                          ))}
-                        </div>
-                      )}
-                      <div className="p-3.5">
-                        <div className="text-[10px] uppercase tracking-widest text-brand-gris mb-1">
-                          {isCenote
-                            ? `Cenote ${spot.n}`
-                            : lang === 'es' ? `Experiencia ${spot.n}` : `Experience ${spot.n}`}
-                        </div>
-                        <div className="font-serif text-base text-brand-verde-osc leading-tight mb-1.5">
-                          {label}
-                        </div>
-                        {desc && (
-                          <p className="text-xs text-brand-gris leading-relaxed">{desc}</p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                    <span className="text-[11px] font-semibold leading-none select-none">
+                      {spot.n}
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
 
-        {/* Zoom controls */}
-        <div className="absolute bottom-4 right-4 flex flex-col gap-1.5 z-30">
+          {/* Zoom controls */}
+          <div className="absolute bottom-4 right-4 flex flex-col gap-1.5 z-30">
           {[
             { icon: Plus, fn: () => zoomAt(W / 2, Hc / 2, 1.4), label: 'Zoom in' },
             { icon: Minus, fn: () => zoomAt(W / 2, Hc / 2, 1 / 1.4), label: 'Zoom out' },
@@ -489,6 +466,62 @@ export default function MasterplanExplorer({ lang }: Props) {
             </button>
           ))}
         </div>
+        </div>
+
+        {/* ─── Popup overlay (outside overflow-hidden so it never clips) ─── */}
+        {openSpot && (() => {
+          const spot = openSpot;
+          const label = lang === 'es' ? spot.labelEs : spot.labelEn;
+          const desc = lang === 'es' ? spot.descEs : spot.descEn;
+          const isCenote = spot.category === 'cenote';
+          // Dot's current screen position within the map viewport
+          const sx = view.tx + (spot.px / MAP_W) * W * view.s;
+          const sy = view.ty + (spot.py / MAP_H) * Hl * view.s;
+          const openDown = sy < Hc / 3;
+          const align: 'left' | 'center' | 'right' =
+            sx > W - 160 ? 'right' : sx < 160 ? 'left' : 'center';
+          return (
+            <div
+              className="absolute z-40 pointer-events-none"
+              style={{ left: sx, top: sy, width: 0, height: 0 }}
+            >
+              <div
+                className={`absolute ${
+                  align === 'center' ? 'left-1/2 -translate-x-1/2'
+                  : align === 'right' ? 'right-0'
+                  : 'left-0'
+                }`}
+                style={{
+                  width: 270,
+                  ...(openDown ? { top: 22 } : { bottom: 22 }),
+                }}
+              >
+                <div className="bg-white rounded-xl shadow-2xl border border-brand-verde/10 overflow-hidden">
+                  {spot.images.length > 0 && (
+                    <div className={`grid ${spot.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-brand-crema-osc`}>
+                      {spot.images.map((src, i) => (
+                        <img key={i} src={src} alt={label} className="w-full h-28 object-cover" loading="lazy" />
+                      ))}
+                    </div>
+                  )}
+                  <div className="p-3.5">
+                    <div className="text-[10px] uppercase tracking-widest text-brand-gris mb-1">
+                      {isCenote
+                        ? `Cenote ${spot.n}`
+                        : lang === 'es' ? `Experiencia ${spot.n}` : `Experience ${spot.n}`}
+                    </div>
+                    <div className="font-serif text-base text-brand-verde-osc leading-tight mb-1.5">
+                      {label}
+                    </div>
+                    {desc && (
+                      <p className="text-xs text-brand-gris leading-relaxed">{desc}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       {/* ─── Legend ─── */}
