@@ -137,9 +137,14 @@ export interface Translation {
     whatsappCta: string;
     formTitle: string;
     formName: string;
+    formLastName: string;
     formPhone: string;
     formEmail: string;
-    formCountry: string;
+    formBudget: string;
+    formBudgetPlaceholder: string;
+    formHorizon: string;
+    formHorizonPlaceholder: string;
+    horizonOptions: { value: string; label: string }[];
     formSubmit: string;
     formSubmitting: string;
     formSuccess: string;
@@ -355,10 +360,21 @@ export const translations: Record<Lang, Translation> = {
       whatsappCta: 'Escribir por WhatsApp',
       formTitle: 'Déjanos tus datos y te contactamos en menos de 24 horas.',
       formName: 'Nombre',
+      formLastName: 'Apellido',
       formPhone: 'Teléfono',
       formEmail: 'Correo',
-      formCountry: 'País',
-      formSubmit: 'Quiero más información',
+      formBudget: 'Presupuesto',
+      formBudgetPlaceholder: 'Selecciona un rango',
+      formHorizon: 'Plazo de inversión',
+      formHorizonPlaceholder: 'Selecciona un plazo',
+      horizonOptions: [
+        { value: 'Immediately', label: 'Inmediatamente' },
+        { value: '0-3 meses', label: '0-3 meses' },
+        { value: '3-6 meses', label: '3-6 meses' },
+        { value: '6-12 meses', label: '6-12 meses' },
+        { value: '12+ meses', label: '12+ meses' },
+      ],
+      formSubmit: 'Ver disponibilidad y precios',
       formSubmitting: 'Enviando...',
       formSuccess:
         '¡Listo! Un asesor de Selvadentro te contactará en menos de 24 horas.',
@@ -565,11 +581,22 @@ export const translations: Record<Lang, Translation> = {
       callCta: 'Schedule a call',
       whatsappCta: 'Message on WhatsApp',
       formTitle: 'Leave us your details and we’ll be in touch within 24 hours.',
-      formName: 'Name',
+      formName: 'First name',
+      formLastName: 'Last name',
       formPhone: 'Phone',
       formEmail: 'Email',
-      formCountry: 'Country',
-      formSubmit: 'I want more information',
+      formBudget: 'Budget',
+      formBudgetPlaceholder: 'Select a range',
+      formHorizon: 'Investment horizon',
+      formHorizonPlaceholder: 'Select a horizon',
+      horizonOptions: [
+        { value: 'Immediately', label: 'Immediately' },
+        { value: '0-3 meses', label: '0–3 months' },
+        { value: '3-6 meses', label: '3–6 months' },
+        { value: '6-12 meses', label: '6–12 months' },
+        { value: '12+ meses', label: '12+ months' },
+      ],
+      formSubmit: 'View availability & pricing',
       formSubmitting: 'Sending...',
       formSuccess:
         'All set! A Selvadentro advisor will be in touch within 24 hours.',

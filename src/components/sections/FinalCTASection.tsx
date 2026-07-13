@@ -16,8 +16,9 @@ interface Props {
 /**
  * Final CTA + Contact form. Posts to the existing GHL inbound webhook with a
  * source_label of 'main-site' so the sales team can route those leads to a
- * dedicated workflow. The team can later create a dedicated webhook for the
- * main site — only the URL constant needs to change.
+ * dedicated workflow. Field set matches the /escape squeeze form on
+ * lotes.selvadentrotulum.com — first name, last name, phone, email, budget,
+ * investment horizon.
  */
 const GHL_WEBHOOK_URL =
   'https://services.leadconnectorhq.com/hooks/crN2IhAuOBAl7D8324yI/webhook-trigger/9270085e-204b-40e0-a565-b2bf60861970';
@@ -28,12 +29,18 @@ const WHATSAPP_URL = 'https://wa.me/529994890828';
 const CALENDAR_URL_ES = 'https://api.leadconnectorhq.com/widget/booking/8nXsnnlYWnit0JbwUFsJ';
 const CALENDAR_URL_EN = 'https://api.leadconnectorhq.com/widget/booking/jL5tqW1PsFp98HZOafHO';
 
+// Budget ranges are universal ($USD) and stay identical across langs so the
+// stored value is stable for reporting.
+const BUDGET_OPTIONS = ['$1M - $2M', '$2M - $3M', '$3M - $5M', '+$5M'] as const;
+
 export default function FinalCTASection({ t, lang }: Props) {
   const calendarUrl = lang === 'en' ? CALENDAR_URL_EN : CALENDAR_URL_ES;
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState<PhoneValue | undefined>(undefined);
   const [email, setEmail] = useState('');
-  const [country, setCountry] = useState('');
+  const [budget, setBudget] = useState('');
+  const [horizon, setHorizon] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
   );
@@ -43,7 +50,14 @@ export default function FinalCTASection({ t, lang }: Props) {
     e.preventDefault();
     setErrorMsg(null);
 
-    if (!name.trim() || !phone || !email.trim()) {
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !phone ||
+      !email.trim() ||
+      !budget ||
+      !horizon
+    ) {
       setErrorMsg(t.finalCta.formError);
       return;
     }
@@ -56,13 +70,15 @@ export default function FinalCTASection({ t, lang }: Props) {
 
     // Same hidden-field standard as the squeeze pages (per Hoshi).
     const tracking = getStoredTrackingParams();
+    const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
     const payload = {
-      first_name: name.trim().split(' ')[0] || '',
-      last_name: name.trim().split(' ').slice(1).join(' ') || '',
-      name: name.trim(),
+      first_name: firstName.trim(),
+      last_name: lastName.trim(),
+      name: fullName,
       email: email.trim(),
       phone,
-      country: country || 'Mexico',
+      budget,
+      investment_horizon: horizon,
       source_label: 'main-site',
       form_name: 'main-site-final-cta',
       landing_page: tracking.landing_page,
@@ -82,6 +98,8 @@ export default function FinalCTASection({ t, lang }: Props) {
       'contact.source': tracking.utm_source || 'main-site',
       'contact.campaign': tracking.utm_campaign,
       'contact.ad_ctwa_clid': tracking.fbclid || tracking.gclid,
+      'contact.budget': budget,
+      'contact.investment_horizon': horizon,
       campaign_label: tracking.utm_campaign || 'Direct',
       tags: ['main-site'],
     };
@@ -100,6 +118,11 @@ export default function FinalCTASection({ t, lang }: Props) {
       setErrorMsg(t.finalCta.formError);
     }
   };
+
+  const inputClass =
+    'w-full px-4 py-3 border border-brand-verde/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-oro/40 focus:border-brand-oro transition bg-white';
+  const labelClass =
+    'block text-xs font-semibold uppercase tracking-wider text-brand-gris mb-1';
 
   return (
     <section
@@ -160,22 +183,37 @@ export default function FinalCTASection({ t, lang }: Props) {
               </h3>
 
               <div className="space-y-4">
-                <label className="block">
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-brand-gris mb-1">
-                    {t.finalCta.formName} <span className="text-brand-oro">*</span>
-                  </span>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 border border-brand-verde/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-oro/40 focus:border-brand-oro transition"
-                    autoComplete="name"
-                    required
-                  />
-                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <label className="block">
+                    <span className={labelClass}>
+                      {t.finalCta.formName} <span className="text-brand-oro">*</span>
+                    </span>
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className={inputClass}
+                      autoComplete="given-name"
+                      required
+                    />
+                  </label>
+                  <label className="block">
+                    <span className={labelClass}>
+                      {t.finalCta.formLastName} <span className="text-brand-oro">*</span>
+                    </span>
+                    <input
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className={inputClass}
+                      autoComplete="family-name"
+                      required
+                    />
+                  </label>
+                </div>
 
                 <label className="block">
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-brand-gris mb-1">
+                  <span className={labelClass}>
                     {t.finalCta.formPhone} <span className="text-brand-oro">*</span>
                   </span>
                   <div className="phone-input-shell px-4 py-3 border border-brand-verde/20 rounded-lg bg-white focus-within:border-brand-oro focus-within:ring-2 focus-within:ring-brand-oro/30 transition">
@@ -190,30 +228,55 @@ export default function FinalCTASection({ t, lang }: Props) {
                 </label>
 
                 <label className="block">
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-brand-gris mb-1">
+                  <span className={labelClass}>
                     {t.finalCta.formEmail} <span className="text-brand-oro">*</span>
                   </span>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-brand-verde/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-oro/40 focus:border-brand-oro transition"
+                    className={inputClass}
                     autoComplete="email"
                     required
                   />
                 </label>
 
                 <label className="block">
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-brand-gris mb-1">
-                    {t.finalCta.formCountry}
+                  <span className={labelClass}>
+                    {t.finalCta.formHorizon} <span className="text-brand-oro">*</span>
                   </span>
-                  <input
-                    type="text"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    className="w-full px-4 py-3 border border-brand-verde/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-oro/40 focus:border-brand-oro transition"
-                    autoComplete="country"
-                  />
+                  <select
+                    value={horizon}
+                    onChange={(e) => setHorizon(e.target.value)}
+                    className={inputClass + ' appearance-none pr-10 cursor-pointer'}
+                    required
+                  >
+                    <option value="">{t.finalCta.formHorizonPlaceholder}</option>
+                    {t.finalCta.horizonOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className={labelClass}>
+                    {t.finalCta.formBudget} <span className="text-brand-oro">*</span>
+                  </span>
+                  <select
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className={inputClass + ' appearance-none pr-10 cursor-pointer'}
+                    required
+                  >
+                    <option value="">{t.finalCta.formBudgetPlaceholder}</option>
+                    {BUDGET_OPTIONS.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
                 </label>
               </div>
 

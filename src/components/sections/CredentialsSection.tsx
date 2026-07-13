@@ -99,25 +99,26 @@ export default function CredentialsSection({ t, lang }: Props) {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {PARTNERS.map((p, i) => (
+          {PARTNERS.map((p, i) => {
+            // Hero portfolio piece per card — one image at full width reads
+            // stronger than a cramped side-by-side. Extra pieces (like JJF's
+            // Aldea Zamá) get mentioned in copy instead.
+            const cover = p.portfolio[0];
+            return (
             <Reveal key={p.name} delay={200 + i * 100}>
               <article className="h-full flex flex-col bg-white rounded-2xl border border-brand-verde/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-500">
-                {/* Portfolio strip */}
-                <div className={`grid ${p.portfolio.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-brand-crema-osc`}>
-                  {p.portfolio.map((piece, j) => (
-                    <figure key={j} className="relative">
-                      <img
-                        src={piece.src}
-                        alt={lang === 'es' ? piece.captionEs : piece.captionEn}
-                        className="w-full h-40 object-cover"
-                        loading="lazy"
-                      />
-                      <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-1.5 bg-gradient-to-t from-black/70 to-transparent text-white text-[11px] uppercase tracking-widest">
-                        {lang === 'es' ? piece.captionEs : piece.captionEn}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
+                {/* Portfolio cover */}
+                <figure className="relative">
+                  <img
+                    src={cover.src}
+                    alt={lang === 'es' ? cover.captionEs : cover.captionEn}
+                    className="w-full h-52 object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption className="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-[11px] uppercase tracking-widest">
+                    {lang === 'es' ? cover.captionEs : cover.captionEn}
+                  </figcaption>
+                </figure>
 
                 {/* Logo + role + award */}
                 <div className="flex-1 flex flex-col p-6">
@@ -148,7 +149,8 @@ export default function CredentialsSection({ t, lang }: Props) {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
