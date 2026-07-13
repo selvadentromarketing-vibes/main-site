@@ -46,6 +46,7 @@ export interface Spot {
   descEn?: string;
   category: 'experiencia' | 'cenote';
   images: string[];       // 0-2 renders; [] → text-only popup
+  imagePosition?: string; // CSS object-position for the popup crop; default center
 }
 
 // Shared copy for experiencias printed at several locations
@@ -83,6 +84,7 @@ export const SPOTS: Spot[] = [
     descEs: 'Un mirador suspendido entre la selva y el cenote, donde cada paso revela una nueva perspectiva.',
     descEn: 'A lookout suspended between jungle and cenote, where every step reveals a new perspective.',
     category: 'experiencia', images: ['/map-mirador.jpg'],
+    imagePosition: 'top left',
   },
   { id: 'kids-1', n: 3, px: 359,  py: 460, category: 'experiencia', ...KIDS },
   { id: 'kids-2', n: 3, px: 933,  py: 488, category: 'experiencia', ...KIDS },
@@ -500,7 +502,14 @@ export default function MasterplanExplorer({ lang }: Props) {
                   {spot.images.length > 0 && (
                     <div className={`grid ${spot.images.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-px bg-brand-crema-osc`}>
                       {spot.images.map((src, i) => (
-                        <img key={i} src={src} alt={label} className="w-full h-28 object-cover" loading="lazy" />
+                        <img
+                          key={i}
+                          src={src}
+                          alt={label}
+                          className="w-full h-28 object-cover"
+                          style={spot.imagePosition ? { objectPosition: spot.imagePosition } : undefined}
+                          loading="lazy"
+                        />
                       ))}
                     </div>
                   )}
