@@ -1,0 +1,5 @@
+# SPA fallback for Netlify — every unmatched path serves index.html so
+# React Router can handle client-side routes (e.g. /en for the English
+# site). Static files in dist/ are served first; this rule only kicks in
+# when no file matches.
+/*    /index.html   200
