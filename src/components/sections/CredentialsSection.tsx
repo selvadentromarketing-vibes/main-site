@@ -10,6 +10,11 @@ interface Partner {
   name: string;
   logo: string;
   isSvg?: boolean;
+  // Per-logo max-height override — the three brand assets have wildly
+  // different intrinsic proportions (JJF is a square with heavy whitespace
+  // padding, Maat is a horizontal wordmark, AMA is 560x90 wide text) so
+  // one shared clamp makes them read at very different optical weights.
+  logoHeightClass?: string;
   roleEs: string;
   roleEn: string;
   portfolio: { src: string; captionEs: string; captionEn: string }[];
@@ -21,6 +26,8 @@ const PARTNERS: Partner[] = [
   {
     name: 'JJF Creando',
     logo: '/jjf-creando.webp',
+    logoHeightClass: 'max-h-20', // 80px — needs the room because the mark
+                                 // sits inside ~30% whitespace border.
     roleEs: 'Desarrollador maestro',
     roleEn: 'Master developer',
     portfolio: [
@@ -39,6 +46,7 @@ const PARTNERS: Partner[] = [
   {
     name: 'Maat Handasa',
     logo: '/maat-handasa.webp',
+    logoHeightClass: 'max-h-12', // 48px — fills its box already, no padding.
     roleEs: 'Masterplan y arquitectura',
     roleEn: 'Masterplan & architecture',
     portfolio: [
@@ -55,6 +63,8 @@ const PARTNERS: Partner[] = [
     name: 'Estudio AMA',
     logo: '/ama-estudio.svg',
     isSvg: true,
+    logoHeightClass: 'max-h-9', // 36px — bold text is optically heavy and
+                                // the wordmark is long; shrink to balance.
     roleEs: 'Arquitectura y diseño',
     roleEn: 'Architecture & design',
     portfolio: [
@@ -122,11 +132,11 @@ export default function CredentialsSection({ t, lang }: Props) {
 
                 {/* Logo + role + award */}
                 <div className="flex-1 flex flex-col p-6">
-                  <div className="h-14 mb-4 flex items-center justify-center">
+                  <div className="h-20 mb-4 flex items-center justify-center">
                     <img
                       src={p.logo}
                       alt={p.name}
-                      className="max-h-12 w-auto object-contain"
+                      className={`${p.logoHeightClass ?? 'max-h-12'} w-auto object-contain`}
                       style={p.isSvg ? { color: '#000' } : undefined}
                       loading="lazy"
                     />
