@@ -25,16 +25,12 @@ const GHL_WEBHOOK_URL =
 
 const WHATSAPP_URL = 'https://wa.me/529994890828';
 
-// Per Hoshi, two GHL calendar widgets — one per language sales rep.
-const CALENDAR_URL_ES = 'https://api.leadconnectorhq.com/widget/booking/8nXsnnlYWnit0JbwUFsJ';
-const CALENDAR_URL_EN = 'https://api.leadconnectorhq.com/widget/booking/jL5tqW1PsFp98HZOafHO';
-
 // Budget ranges are universal ($USD) and stay identical across langs so the
 // stored value is stable for reporting.
 const BUDGET_OPTIONS = ['$1M - $2M', '$2M - $3M', '$3M - $5M', '+$5M'] as const;
 
 export default function FinalCTASection({ t, lang }: Props) {
-  const calendarUrl = lang === 'en' ? CALENDAR_URL_EN : CALENDAR_URL_ES;
+  const schedulePath = lang === 'en' ? '/en/agendar' : '/agendar';
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState<PhoneValue | undefined>(undefined);
@@ -153,12 +149,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                 <MessageCircle className="w-5 h-5" />
                 {t.finalCta.whatsappCta}
               </MagneticButton>
-              <MagneticButton
-                href={calendarUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
+              <MagneticButton href={schedulePath} className="btn-secondary">
                 <Calendar className="w-5 h-5" />
                 {t.finalCta.callCta}
               </MagneticButton>
