@@ -108,6 +108,7 @@ export interface Translation {
       milestone: string;
       sub: string;
     }[];
+    cta: string;
   };
 
   credentials: {
@@ -176,7 +177,7 @@ export const translations: Record<Lang, Translation> = {
       subhead:
         'Privadas exclusivas de baja densidad en el corazón de la selva. Acceso limitado.',
       ctaPrimary: 'Ver disponibilidad',
-      ctaSecondary: 'Conocer el proyecto',
+      ctaSecondary: 'Recorrer el proyecto',
     },
 
     stats: [
@@ -218,7 +219,7 @@ export const translations: Record<Lang, Translation> = {
         'Lotes desde $68,000 USD — desde $167 USD/m² · Plan de pagos a 48 meses sin intereses',
       protection:
         'Lo que protege tu inversión: COS 35% · CUS 70% · Dos niveles + roof deck. Normativa de construcción que garantiza baja densidad para siempre.',
-      cta: 'Ver disponibilidad',
+      cta: 'Cotizar Suspiro',
     },
 
     pieceOfJungle: {
@@ -291,6 +292,7 @@ export const translations: Record<Lang, Translation> = {
         { milestone: '$167 USD/m²', sub: 'Hoy · +40% en 12 meses' },
         { milestone: '+$390 USD/m²', sub: 'Proyección al cierre' },
       ],
+      cta: 'Habla con un asesor',
     },
 
     credentials: {
@@ -410,7 +412,7 @@ export const translations: Record<Lang, Translation> = {
       subhead:
         'Exclusive low-density enclaves in the heart of the jungle. Limited access.',
       ctaPrimary: 'View availability',
-      ctaSecondary: 'Watch film',
+      ctaSecondary: 'Take the tour',
     },
 
     stats: [
@@ -451,7 +453,7 @@ export const translations: Record<Lang, Translation> = {
         'Lots from $68,000 USD — from $167 USD/m² · 48-month interest-free payment plan',
       protection:
         'What protects your investment: Build up to two levels + rooftop. Only 35% lot coverage — by regulation, guaranteeing low density forever. As a foreign buyer, you can own here securely through a bank trust (fideicomiso) — fully legal, fully protected.',
-      cta: 'View availability',
+      cta: 'Price Suspiro',
     },
 
     pieceOfJungle: {
@@ -513,6 +515,7 @@ export const translations: Record<Lang, Translation> = {
         { milestone: '$167 USD/m²', sub: 'Today · +40% in 12 months' },
         { milestone: '+$390 USD/m²', sub: 'Closing projection' },
       ],
+      cta: 'Talk to an advisor',
     },
 
     credentials: {

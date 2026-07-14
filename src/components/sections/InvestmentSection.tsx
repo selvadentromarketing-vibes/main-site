@@ -1,5 +1,6 @@
 import { TrendingUp } from 'lucide-react';
 import Reveal from '../Reveal';
+import MagneticButton from '../MagneticButton';
 import type { Translation, Lang } from '../../i18n/translations';
 
 interface Props {
@@ -63,6 +64,14 @@ export default function InvestmentSection({ t, lang }: Props) {
               </p>
             </Reveal>
           )}
+
+          <Reveal delay={500}>
+            <div className="pt-6 text-center">
+              <MagneticButton href="#contacto" className="btn-primary">
+                {t.investment.cta}
+              </MagneticButton>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

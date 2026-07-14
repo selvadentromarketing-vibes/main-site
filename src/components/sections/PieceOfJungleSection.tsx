@@ -7,13 +7,11 @@ interface Props {
   lang: Lang;
 }
 
-const COTIZADOR_URL =
-  'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
 const LOTE_IMAGE_URL = '/lot-jungle.png';
 
 export default function PieceOfJungleSection({ t, lang }: Props) {
   const tagLabel = lang === 'es' ? 'Tu lote' : 'Your homesite';
-  const cta = lang === 'es' ? 'Ver disponibilidad' : 'View availability';
+  const cta = lang === 'es' ? 'Recorrer 360°' : 'Take the 360° tour';
   const buildLabel = lang === 'es' ? 'Para construir' : 'To build on';
   const jungleLabel = lang === 'es' ? 'Selva privada — tuya, para siempre' : 'Private jungle — yours, forever';
   const regQuote =
@@ -86,12 +84,7 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
                 <p className="text-brand-gris text-sm max-w-md">{regNote}</p>
               </div>
 
-              <MagneticButton
-                href={COTIZADOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost-dark"
-              >
+              <MagneticButton href="#tour-virtual" className="btn-ghost-dark">
                 {cta}
               </MagneticButton>
             </div>
