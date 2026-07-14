@@ -12,16 +12,20 @@ const COTIZADOR_URL =
 export default function HeroSection({ t }: Props) {
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-brand-verde-osc">
-      {/* Static background image, anchored top-right */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: "url('/hero-cenote.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'top right',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      {/* Static background image — responsive via <picture>: portrait
+          Cenote Mirador shot on phones (< sm), the landscape cenote render
+          on ≥ sm. The browser fetches only the source that matches, so we
+          don't pay the desktop hero's bytes on a phone connection. */}
+      <picture className="absolute inset-0 block">
+        <source media="(max-width: 639px)" srcSet="/hero-cenote-mobile.jpg" />
+        <img
+          src="/hero-cenote.webp"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover object-center sm:object-[top_right]"
+        />
+      </picture>
 
       {/* Static gradient veil for legibility */}
       <div

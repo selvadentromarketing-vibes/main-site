@@ -153,7 +153,7 @@ export const SPOTS: Spot[] = [
     labelEs: 'Cenote Mirador', labelEn: 'Cenote Mirador',
     descEs: 'Un cenote contemplado desde una torre suspendida entre la selva.',
     descEn: 'A cenote contemplated from a tower suspended in the jungle.',
-    category: 'cenote', images: ['/map-cenote-mirador.webp'],
+    category: 'cenote', images: ['/map-cenote-mirador.jpg'],
   },
   {
     id: 'cenote-playa', n: 2, px: 824, py: 500,
