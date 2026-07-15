@@ -34,8 +34,12 @@ export function useScrollReveal<T extends Element = HTMLDivElement>(
         }
       },
       {
-        threshold: options.threshold ?? 0.12,
-        rootMargin: options.rootMargin ?? '0px 0px -80px 0px',
+        // Fire as soon as any pixel of the element enters the extended
+        // viewport (root grown 200px past the fold bottom). Prevents the
+        // "empty block" flash on slow connections that scrolls used to
+        // show while the reveal was still waiting for its trigger.
+        threshold: options.threshold ?? 0,
+        rootMargin: options.rootMargin ?? '0px 0px 200px 0px',
       },
     );
     obs.observe(el);

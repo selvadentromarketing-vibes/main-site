@@ -107,6 +107,13 @@ export default function FinalCTASection({ t, lang }: Props) {
         body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      // Meta Pixel Lead event — fires only when the webhook accepted the
+      // submission, so it stays in sync with the CRM.
+      (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.(
+        'track',
+        'Lead',
+        { content_name: 'main-site-final-cta', budget, investment_horizon: horizon },
+      );
       setStatus('success');
     } catch (err) {
       console.error('Main site form submission failed:', err);

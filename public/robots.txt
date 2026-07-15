@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://selvadentrotulum.com/sitemap.xml

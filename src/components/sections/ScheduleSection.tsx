@@ -133,6 +133,11 @@ export default function ScheduleSection({ lang }: Props) {
         body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      (window as unknown as { fbq?: (...a: unknown[]) => void }).fbq?.(
+        'track',
+        'Lead',
+        { content_name: 'main-site-schedule' },
+      );
       setStatus('success');
     } catch (err) {
       console.error('Schedule form submission failed:', err);
