@@ -6,9 +6,6 @@ interface Props {
   t: Translation;
 }
 
-const COTIZADOR_URL =
-  'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
-
 export default function HeroSection({ t }: Props) {
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-brand-verde-osc">
@@ -48,12 +45,7 @@ export default function HeroSection({ t }: Props) {
             {t.hero.subhead}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <MagneticButton
-              href={COTIZADOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
+            <MagneticButton href="#contacto" className="btn-primary">
               {t.hero.ctaPrimary}
             </MagneticButton>
             <MagneticButton href="#tour-virtual" className="btn-secondary">

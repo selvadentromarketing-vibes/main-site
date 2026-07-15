@@ -93,12 +93,7 @@ export default function SuspiroSection({ t, lang }: Props) {
                 </p>
               </div>
 
-              <MagneticButton
-                href="https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost-dark"
-              >
+              <MagneticButton href="#contacto" className="btn-ghost-dark">
                 {t.suspiro.cta}
               </MagneticButton>
             </div>

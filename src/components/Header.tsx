@@ -19,8 +19,10 @@ interface NavLink {
   children?: Array<{ label: string; href: string; external?: boolean }>;
 }
 
-const COTIZADOR_URL =
-  'https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro';
+// Route the CTAs to the qualified form inside the site (#contacto) so
+// budget + investment horizon get captured on every conversion, and the
+// Meta Pixel Lead event fires. Adara CRM and GHL are separate systems —
+// sending traffic to Adara used to split the funnel and drop attribution.
 
 export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -189,12 +191,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
             </a>
           </div>
 
-          <a
-            href={COTIZADOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm"
-          >
+          <a href="#contacto" className="btn-primary text-sm">
             {t.nav.cta}
           </a>
         </div>
@@ -268,9 +265,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
               </a>
             </div>
             <a
-              href={COTIZADOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contacto"
               onClick={() => setOpen(false)}
               className="btn-primary mt-2"
             >
