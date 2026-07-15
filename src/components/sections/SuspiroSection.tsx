@@ -93,7 +93,19 @@ export default function SuspiroSection({ t, lang }: Props) {
                 </p>
               </div>
 
-              <MagneticButton href="#contacto" className="btn-ghost-dark">
+              {/* Suspiro CTA is the one exception in the "everything to the
+                  qualified form" rule — this button sits directly under the
+                  pricing block ("Lotes desde $68,000 USD · $167 USD/m²"), so
+                  the visitor's intent is "show me more prices," not "fill a
+                  form." Sending them to the Adara cotizador here honors that
+                  intent. Every other cotizar/Ver-disponibilidad CTA still
+                  routes to #contacto. */}
+              <MagneticButton
+                href="https://app.adaracrm.com/empresa/selvadentro/cotizador/selvadentro-tulum/selvadentro-tulum/etapa-suspiro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost-dark"
+              >
                 {t.suspiro.cta}
               </MagneticButton>
             </div>
