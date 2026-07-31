@@ -290,7 +290,7 @@ export const translations: Record<Lang, Translation> = {
       timeline: [
         { milestone: '$119 USD/m²', sub: 'Mayo 2025 · Lanzamiento' },
         { milestone: '$167 USD/m²', sub: 'Hoy · +40% en 12 meses' },
-        { milestone: '+$280–360 USD/m²', sub: 'Proyección al cierre' },
+        { milestone: '+$360 USD/m²', sub: 'Proyección al cierre' },
       ],
       cta: 'Habla con un asesor',
     },
@@ -513,7 +513,7 @@ export const translations: Record<Lang, Translation> = {
       timeline: [
         { milestone: '$119 USD/m²', sub: 'May 2025 · Launch' },
         { milestone: '$167 USD/m²', sub: 'Today · +40% in 12 months' },
-        { milestone: '+$280–360 USD/m²', sub: 'Closing projection' },
+        { milestone: '+$360 USD/m²', sub: 'Closing projection' },
       ],
       cta: 'Talk to an advisor',
     },
