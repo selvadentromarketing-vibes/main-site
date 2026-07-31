@@ -24,9 +24,17 @@ export default function HeroSection({ t }: Props) {
         />
       </picture>
 
-      {/* Static gradient veil for legibility */}
+      {/* Static gradient veil for legibility — blue tint on mobile
+          (cenote water reads bluer), green on ≥ sm (jungle context). */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none sm:hidden"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(18,40,70,0.28) 0%, rgba(18,40,70,0.34) 55%, rgba(14,30,55,0.88) 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none hidden sm:block"
         style={{
           background:
             'linear-gradient(180deg, rgba(28,46,28,0.30) 0%, rgba(28,46,28,0.35) 55%, rgba(28,46,28,0.88) 100%)',
