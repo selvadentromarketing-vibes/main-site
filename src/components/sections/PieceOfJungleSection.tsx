@@ -28,7 +28,7 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
       : 'View of a Selvadentro lot — private jungle';
 
   return (
-    <section className="bg-brand-crema py-1.5 sm:py-3 px-4 sm:px-6 lg:px-10">
+    <section className="bg-brand-crema py-0 sm:py-0 px-4 sm:px-6 lg:px-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* LEFT — unified copy */}

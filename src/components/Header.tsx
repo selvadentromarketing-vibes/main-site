@@ -196,14 +196,41 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
           </a>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden text-brand-crema p-2 mr-1"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile: always-visible lang toggle + menu button */}
+        <div className="lg:hidden ml-auto flex items-center gap-3">
+          <div className="flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.18em]">
+            <a
+              href={lang === 'es' ? '#' : swapLangUrl}
+              aria-current={lang === 'es' ? 'true' : undefined}
+              className={
+                lang === 'es'
+                  ? 'text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]'
+                  : 'text-brand-crema/70 hover:text-brand-crema transition-colors'
+              }
+            >
+              ES
+            </a>
+            <span className="text-brand-crema/40">·</span>
+            <a
+              href={lang === 'en' ? '#' : swapLangUrl}
+              aria-current={lang === 'en' ? 'true' : undefined}
+              className={
+                lang === 'en'
+                  ? 'text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]'
+                  : 'text-brand-crema/70 hover:text-brand-crema transition-colors'
+              }
+            >
+              EN
+            </a>
+          </div>
+          <button
+            className="text-brand-crema p-2 -mr-1"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown */}
