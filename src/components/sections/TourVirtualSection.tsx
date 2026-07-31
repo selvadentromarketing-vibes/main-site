@@ -27,7 +27,7 @@ export default function TourVirtualSection({ lang }: Props) {
   const playLabel = lang === 'es' ? 'Iniciar tour virtual' : 'Start virtual tour';
 
   return (
-    <section id="tour-virtual" className="section bg-brand-crema pt-4 sm:pt-8">
+    <section id="tour-virtual" className="section bg-brand-crema pt-3 sm:pt-6">
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center mb-10">
