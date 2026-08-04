@@ -539,7 +539,7 @@ export const translations: Record<Lang, Translation> = {
           name: 'Angela Epstein',
           quote:
             'Selvadentro reminded us of the magic of Mexico and the special connection with nature.',
-          photo: '/testimonial-ricardo.webp',
+          photo: '/testimonial-angela.webp',
         },
         {
           name: 'Ricardo Garza',

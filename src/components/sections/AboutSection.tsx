@@ -38,7 +38,7 @@ export default function AboutSection({ t, lang }: Props) {
         </Reveal>
         <Reveal delay={150}>
           <VideoEmbed
-            youtubeId="zFNyICgwD5c"
+            youtubeId="CGl3Omh5rlU"
             title={t.about.videoTitle}
             posterSrc="https://assets.cdn.filesafe.space/crN2IhAuOBAl7D8324yI/media/6a3ad867ee187be6895f051a.jpg"
           />
