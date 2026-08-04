@@ -135,6 +135,8 @@ export interface Translation {
     headline: string;
     body: string;
     callCta: string;
+    callCtaActive: string;
+    callCtaHint: string;
     whatsappCta: string;
     formTitle: string;
     formName: string;
@@ -146,9 +148,16 @@ export interface Translation {
     formHorizon: string;
     formHorizonPlaceholder: string;
     horizonOptions: { value: string; label: string }[];
+    schedulePreferred: string;
+    formDate: string;
+    formDatePlaceholder: string;
+    formTime: string;
+    formTimePlaceholder: string;
     formSubmit: string;
+    formSubmitSchedule: string;
     formSubmitting: string;
     formSuccess: string;
+    formSuccessSchedule: string;
     formError: string;
     formConsent: string;
   };
@@ -359,6 +368,8 @@ export const translations: Record<Lang, Translation> = {
       headline: 'El momento de entrar es hoy.',
       body: 'Mirador y Refugio ya no están disponibles. Suspiro es la privada activa — con lotes limitados y precio que sigue creciendo. Habla con un asesor y descubre qué lote es el tuyo.',
       callCta: 'Agendar llamada',
+      callCtaActive: 'Quitar horario',
+      callCtaHint: 'Elige día y hora abajo',
       whatsappCta: 'Escribir por WhatsApp',
       formTitle: 'Déjanos tus datos y te contactamos en menos de 24 horas.',
       formName: 'Nombre',
@@ -376,10 +387,18 @@ export const translations: Record<Lang, Translation> = {
         { value: '6-12 meses', label: '6-12 meses' },
         { value: '12+ meses', label: '12+ meses' },
       ],
+      schedulePreferred: 'Horario preferido para tu llamada',
+      formDate: 'Día',
+      formDatePlaceholder: 'Selecciona un día',
+      formTime: 'Hora',
+      formTimePlaceholder: 'Selecciona una hora',
       formSubmit: 'Ver disponibilidad y precios',
+      formSubmitSchedule: 'Confirmar mi llamada',
       formSubmitting: 'Enviando...',
       formSuccess:
         '¡Listo! Un asesor de Selvadentro te contactará en menos de 24 horas.',
+      formSuccessSchedule:
+        '¡Listo! Un asesor de Selvadentro te llamará en el horario que elegiste.',
       formError:
         'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a info@selvadentrotulum.com.',
       formConsent:
@@ -582,6 +601,8 @@ export const translations: Record<Lang, Translation> = {
       headline: 'The moment to enter is today.',
       body: 'Mirador and Refugio are no longer available. Suspiro is the active enclave — with limited lots and a price that keeps growing. Talk to an advisor and discover which lot is yours.',
       callCta: 'Schedule a call',
+      callCtaActive: 'Remove schedule',
+      callCtaHint: 'Pick day & time below',
       whatsappCta: 'Message on WhatsApp',
       formTitle: 'Leave us your details and we’ll be in touch within 24 hours.',
       formName: 'First name',
@@ -599,10 +620,18 @@ export const translations: Record<Lang, Translation> = {
         { value: '6-12 meses', label: '6–12 months' },
         { value: '12+ meses', label: '12+ months' },
       ],
+      schedulePreferred: 'Preferred slot for your call',
+      formDate: 'Day',
+      formDatePlaceholder: 'Select a day',
+      formTime: 'Time',
+      formTimePlaceholder: 'Select a time',
       formSubmit: 'View availability & pricing',
+      formSubmitSchedule: 'Confirm my call',
       formSubmitting: 'Sending...',
       formSuccess:
         'All set! A Selvadentro advisor will be in touch within 24 hours.',
+      formSuccessSchedule:
+        'All set! A Selvadentro advisor will call you at the slot you chose.',
       formError:
         'We couldn’t send your request. Please try again or email info@selvadentrotulum.com.',
       formConsent:
