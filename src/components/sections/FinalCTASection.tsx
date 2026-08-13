@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, FormEvent } from 'react';
+import { useState, useMemo, useRef, useEffect, FormEvent } from 'react';
 import { Calendar, MessageCircle, Loader2, CheckCircle2, Check } from 'lucide-react';
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import type { Value as PhoneValue } from 'react-phone-number-input';
@@ -13,10 +13,59 @@ interface Props {
   lang: 'es' | 'en';
 }
 
-const GHL_WEBHOOK_URL =
-  'https://services.leadconnectorhq.com/hooks/crN2IhAuOBAl7D8324yI/webhook-trigger/9270085e-204b-40e0-a565-b2bf60861970';
+// The form posts to a Netlify Function that verifies reCAPTCHA v3 and
+// forwards to GHL. See netlify/functions/submit-lead.ts. The GHL webhook
+// URL is no longer in the client bundle.
+const SUBMIT_URL = '/.netlify/functions/submit-lead';
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string | undefined;
+const RECAPTCHA_ACTION = 'main_site_lead';
 
 const WHATSAPP_URL = 'https://wa.me/529994890828';
+
+interface GrecaptchaGlobal {
+  ready: (cb: () => void) => void;
+  execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+}
+
+function getGrecaptcha(): GrecaptchaGlobal | undefined {
+  return (window as unknown as { grecaptcha?: GrecaptchaGlobal }).grecaptcha;
+}
+
+/**
+ * Inject the reCAPTCHA v3 script tag once and resolve when grecaptcha is
+ * ready. Safe to call multiple times — re-uses the in-flight promise so
+ * concurrent submits don't stack script tags.
+ */
+let recaptchaLoader: Promise<void> | null = null;
+function loadRecaptcha(siteKey: string): Promise<void> {
+  if (recaptchaLoader) return recaptchaLoader;
+  recaptchaLoader = new Promise<void>((resolve, reject) => {
+    if (getGrecaptcha()) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => resolve();
+    script.onerror = () => {
+      recaptchaLoader = null;
+      reject(new Error('recaptcha_load_failed'));
+    };
+    document.head.appendChild(script);
+  });
+  return recaptchaLoader;
+}
+
+async function getRecaptchaToken(siteKey: string, action: string): Promise<string> {
+  await loadRecaptcha(siteKey);
+  const grecaptcha = getGrecaptcha();
+  if (!grecaptcha) throw new Error('recaptcha_not_available');
+  await new Promise<void>((resolve) => grecaptcha.ready(() => resolve()));
+  return grecaptcha.execute(siteKey, { action });
+}
 
 const BUDGET_OPTIONS = ['$1M - $2M', '$2M - $3M', '$3M - $5M', '+$5M'] as const;
 
@@ -66,9 +115,20 @@ export default function FinalCTASection({ t, lang }: Props) {
   const [preferredTime, setPreferredTime] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  // Honeypot: bots love filling anything called "website". Humans never see it.
+  const [honeypot, setHoneypot] = useState('');
   const formRef = useRef<HTMLDivElement | null>(null);
 
   const dateOptions = useMemo(() => buildDateOptions(lang), [lang]);
+
+  // Warm the reCAPTCHA script on mount so the first submit is fast.
+  useEffect(() => {
+    if (RECAPTCHA_SITE_KEY) {
+      loadRecaptcha(RECAPTCHA_SITE_KEY).catch(() => {
+        /* Non-fatal — we'll surface the error at submit time. */
+      });
+    }
+  }, []);
 
   const toggleSchedule = () => {
     setScheduleMode((prev) => {
@@ -111,6 +171,28 @@ export default function FinalCTASection({ t, lang }: Props) {
     }
 
     setStatus('submitting');
+
+    // Fetch a fresh reCAPTCHA v3 token before building the payload. Any
+    // failure here (missing key, script blocked, network error) surfaces
+    // as a form error — safer than shipping a lead the backend can't
+    // verify.
+    let recaptchaToken = '';
+    if (RECAPTCHA_SITE_KEY) {
+      try {
+        recaptchaToken = await getRecaptchaToken(RECAPTCHA_SITE_KEY, RECAPTCHA_ACTION);
+      } catch (err) {
+        console.error('Main site form recaptcha failed:', err);
+        setStatus('error');
+        setErrorMsg(t.finalCta.formError);
+        return;
+      }
+    } else if (import.meta.env.PROD) {
+      // Fail closed in production if the site key was not built in.
+      console.error('Main site form missing VITE_RECAPTCHA_SITE_KEY at build time');
+      setStatus('error');
+      setErrorMsg(t.finalCta.formError);
+      return;
+    }
 
     const tracking = getStoredTrackingParams();
     const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
@@ -167,10 +249,14 @@ export default function FinalCTASection({ t, lang }: Props) {
       'contact.preferred_datetime': preferredDatetime,
       campaign_label: tracking.utm_campaign || 'Direct',
       tags: scheduleMode ? ['main-site', 'schedule'] : ['main-site'],
+      // Anti-spam fields — verified and stripped server-side before the
+      // payload reaches GHL.
+      _recaptcha_token: recaptchaToken,
+      _hp_website: honeypot,
     };
 
     try {
-      const response = await fetch(GHL_WEBHOOK_URL, {
+      const response = await fetch(SUBMIT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -269,6 +355,36 @@ export default function FinalCTASection({ t, lang }: Props) {
               <h3 className="font-serif text-2xl text-brand-verde-osc mb-6">
                 {t.finalCta.formTitle}
               </h3>
+
+              {/*
+                Honeypot: hidden from humans (aria-hidden, off-screen, no tab
+                stop, autoComplete off) but present in the DOM so naive form
+                fillers happily populate it. Backend rejects any submit where
+                this field arrives non-empty.
+              */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  top: 'auto',
+                  width: '1px',
+                  height: '1px',
+                  overflow: 'hidden',
+                }}
+              >
+                <label>
+                  Website
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </label>
+              </div>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -441,6 +557,31 @@ export default function FinalCTASection({ t, lang }: Props) {
 
               <p className="mt-3 text-[11px] text-brand-gris text-center leading-relaxed">
                 {t.finalCta.formConsent}
+              </p>
+
+              {/*
+                Google requires this attribution when the v3 badge is hidden.
+                Kept small and neutral; links open in a new tab.
+              */}
+              <p className="mt-2 text-[10px] text-brand-gris/70 text-center leading-relaxed">
+                {lang === 'es' ? 'Protegido por reCAPTCHA — ' : 'Protected by reCAPTCHA — '}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  {lang === 'es' ? 'Privacidad' : 'Privacy'}
+                </a>
+                {' · '}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  {lang === 'es' ? 'Términos' : 'Terms'}
+                </a>
               </p>
             </form>
           )}

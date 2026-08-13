@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Hide the floating reCAPTCHA v3 badge. Google allows this as long as the
+  branding is shown inline — we do that under the submit button in
+  FinalCTASection ("Protected by reCAPTCHA · Privacy · Terms").
+  See https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge
+*/
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
