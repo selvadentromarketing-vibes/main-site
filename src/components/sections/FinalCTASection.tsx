@@ -271,6 +271,15 @@ export default function FinalCTASection({ t, lang }: Props) {
           investment_horizon: horizon,
         },
       );
+      (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.(
+        'event',
+        'generate_lead',
+        {
+          form_location: scheduleMode ? 'main-site-schedule' : 'main-site-final-cta',
+          budget,
+          investment_horizon: horizon,
+        },
+      );
       setStatus('success');
     } catch (err) {
       console.error('Main site form submission failed:', err);
