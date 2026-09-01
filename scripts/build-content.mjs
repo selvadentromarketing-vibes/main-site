@@ -148,6 +148,13 @@ function loadLang(collection, lang) {
     if (!SLUG_RE.test(fm.slug)) fail(`${name}: slug "${fm.slug}" must match ${SLUG_RE}`);
     if (String(fm.description).length > 160)
       fail(`${name}: description is ${String(fm.description).length} chars (max 160)`);
+    // Descriptions are user-facing in search results, so they must read as
+    // finished sentences. This catches the failure mode where a description
+    // gets shortened to fit the limit and is left as a fragment.
+    if (!/[.!?…]$/.test(String(fm.description).trim()))
+      fail(
+        `${name}: description must end in terminal punctuation — rewrite it as a complete sentence rather than truncating it`,
+      );
     const date = fm.date instanceof Date ? fm.date.toISOString().slice(0, 10) : String(fm.date);
     const updatedRaw = fm.updated ?? date;
     const updated =

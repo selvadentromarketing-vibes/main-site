@@ -18,7 +18,7 @@ frontmatter fails the build on purpose** — fix the reported field.
 ---
 title: "The post H1 — include the target search query naturally"
 metaTitle: "Optional <title> override (≤60 chars). Omit if title works."
-description: "Meta description. MAX 160 characters — the build enforces it."
+description: "Meta description. MAX 160 chars AND a complete sentence ending in . ! or ?"
 slug: url-slug-goes-here            # letters/numbers/hyphens only
 translationKey: shared-key          # SAME value on the ES and EN versions
 date: 2026-09-01                    # published (YYYY-MM-DD)
@@ -29,6 +29,9 @@ draft: false                        # true = excluded from the site
 ---
 ```
 
+- **Descriptions must be complete sentences** ending in terminal punctuation,
+  within 160 characters. If one runs long, rewrite it shorter — never chop the
+  end off, because the description is what searchers actually read.
 - **translationKey pairs the languages.** The ES and EN versions of the same
   topic carry the same key; slugs stay localized. The pairing produces the
   hreflang tags and the ES·EN language switcher target.
