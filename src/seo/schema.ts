@@ -54,6 +54,7 @@ export function realEstateAgent(lang: Lang): JsonLd {
           },
         }
       : {}),
+    hasMap: ORG.mapsUrl,
     email: ORG.email,
     telephone: ORG.telephone,
     sameAs: [ORG.instagram, ORG.whatsapp],

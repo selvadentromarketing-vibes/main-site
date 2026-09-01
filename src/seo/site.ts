@@ -28,9 +28,13 @@ export const ORG = {
     addressRegion: 'Quintana Roo',
     addressCountry: 'MX',
   },
-  // TODO(owner): exact project coordinates from the Google Business listing.
-  // Left unset on purpose — never publish invented geodata.
-  geo: null as { latitude: number; longitude: number } | null,
+  // Coordinates of the "Selvadentro" pin on the project's Google Maps
+  // listing (provided by the owner, Sept 2026).
+  geo: { latitude: 20.3053142, longitude: -87.4341667 } as {
+    latitude: number;
+    longitude: number;
+  } | null,
+  mapsUrl: 'https://maps.app.goo.gl/mKX3H1a3zaYZfAxT9',
 } as const;
 
 export const PRICING = {
