@@ -1,6 +1,6 @@
 import { Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import type { Translation, Lang } from '../i18n/translations';
-import { STATIC_PAGES } from '../seo/meta';
+import { COLLECTION_INDEXES, STATIC_PAGES } from '../seo/meta';
 
 interface FooterProps {
   t: Translation;
@@ -50,6 +50,8 @@ const NAV_SECTIONS: Array<{
     titleEs: 'Guías',
     titleEn: 'Guides',
     keys: [
+      'guide-index',
+      'glossary-index',
       'cenote-land',
       'plusvalia',
       'preventa',
@@ -60,6 +62,8 @@ const NAV_SECTIONS: Array<{
       'market',
     ],
     labels: {
+      'guide-index': { es: 'Guía del comprador', en: "Buyer's guide" },
+      'glossary-index': { es: 'Glosario inmobiliario', en: 'Glossary' },
       'cenote-land': { es: 'Terrenos con cenote', en: 'Land with a cenote' },
       plusvalia: { es: 'Plusvalía en Tulum', en: 'Tulum appreciation' },
       preventa: { es: 'Preventa en Tulum', en: 'Pre-construction' },
@@ -72,9 +76,11 @@ const NAV_SECTIONS: Array<{
   },
 ];
 
+const NAVIGABLE = [...STATIC_PAGES, ...COLLECTION_INDEXES];
+
 function navLinks(lang: Lang, keys: string[]) {
   return keys
-    .map((key) => STATIC_PAGES.find((p) => p.key === key && p.lang === lang))
+    .map((key) => NAVIGABLE.find((p) => p.key === key && p.lang === lang))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
 }
 

@@ -108,6 +108,30 @@ for (const lang of ['es', 'en']) {
   }
 }
 
+// Internal links must resolve. Content is written by hand across hundreds
+// of cross-links (guides ↔ glossary ↔ pillars), so a typo'd slug would
+// otherwise ship as a 404 on a live page.
+{
+  const known = new Set(ALL_PAGES.map((m) => m.path));
+  known.add('/404');
+  const seen = new Map(); // href → first page that used it
+  for (const meta of ALL_PAGES) {
+    const file = fileFor(meta.path);
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    const body = html.slice(html.indexOf('<div id="root"'));
+    for (const m of body.matchAll(/href="(\/[^"#?]*)(?:[#?][^"]*)?"/g)) {
+      const href = m[1].replace(/\/$/, '') || '/';
+      // Static assets and the Netlify function live outside the registry.
+      if (/\.[a-z0-9]{2,5}$/i.test(href) || href.startsWith('/.netlify')) continue;
+      if (!known.has(href) && !seen.has(href)) seen.set(href, meta.path);
+    }
+  }
+  for (const [href, from] of seen) {
+    errors.push(`broken internal link: ${href} (linked from ${from})`);
+  }
+}
+
 // Structural invariants.
 check(fs.existsSync(path.join(DIST, '404.html')), 'dist/404.html missing');
 check(!fs.existsSync(path.join(DIST, 'agendar')), 'dist/agendar should not exist (301 in netlify.toml)');

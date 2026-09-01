@@ -14,7 +14,7 @@ import { fullFaq } from '../data/faq';
 import { CENOTES, spotDesc, spotLabel } from '../data/masterplan';
 import { absUrl, AUTHORS, ORG, PRICING, SITE_URL } from './site';
 import type { PageMeta } from './meta';
-import type { BlogPost } from '../generated/content';
+import type { ContentRecord } from '../generated/content';
 
 type JsonLd = Record<string, unknown>;
 
@@ -170,7 +170,7 @@ export function breadcrumbList(
   };
 }
 
-export function blogPosting(post: BlogPost): JsonLd {
+export function blogPosting(post: ContentRecord): JsonLd {
   const author = AUTHORS[post.author];
   return {
     '@type': 'BlogPosting',
@@ -194,9 +194,11 @@ export function blogPosting(post: BlogPost): JsonLd {
 }
 
 /**
- * The per-route graph. `post` is provided for blog article routes.
+ * The per-route graph. `record` is provided for markdown-driven routes
+ * (blog posts, buyer-guide pages, glossary terms).
  */
-export function graphFor(meta: PageMeta, post?: BlogPost): JsonLd {
+export function graphFor(meta: PageMeta, record?: ContentRecord): JsonLd {
+  const post = record;
   const lang = meta.lang;
   const pageUrl = absUrl(meta.path);
   const nodes: JsonLd[] = [realEstateAgent(lang), webSite(lang)];
@@ -224,6 +226,57 @@ export function graphFor(meta: PageMeta, post?: BlogPost): JsonLd {
         inLanguage: lang === 'es' ? 'es-MX' : 'en',
         isPartOf: { '@id': WEBSITE_ID },
       });
+      break;
+    case 'guide-page':
+      if (post) {
+        // A buyer-guide page IS one answered question: Article + a
+        // single-question FAQPage whose answer is the page's own
+        // answer-first paragraph (extracted at build time).
+        nodes.push(
+          blogPosting(post),
+          {
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#question`,
+            inLanguage: lang === 'es' ? 'es-MX' : 'en',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: post.title,
+                acceptedAnswer: { '@type': 'Answer', text: post.answerText },
+              },
+            ],
+          },
+          breadcrumbList([
+            {
+              name: lang === 'es' ? 'Guía del comprador' : "Buyer's guide",
+              path: lang === 'es' ? '/guia' : '/en/guide',
+            },
+            { name: post.title, path: post.path },
+          ]),
+        );
+      }
+      break;
+    case 'glossary-term':
+      if (post) {
+        nodes.push(
+          {
+            '@type': 'DefinedTerm',
+            '@id': `${pageUrl}#term`,
+            name: post.term ?? post.title,
+            description: post.answerText,
+            inLanguage: lang === 'es' ? 'es-MX' : 'en',
+            inDefinedTermSet: absUrl(lang === 'es' ? '/glosario' : '/en/glossary'),
+            url: pageUrl,
+          },
+          breadcrumbList([
+            {
+              name: lang === 'es' ? 'Glosario' : 'Glossary',
+              path: lang === 'es' ? '/glosario' : '/en/glossary',
+            },
+            { name: post.term ?? post.title, path: post.path },
+          ]),
+        );
+      }
       break;
     case 'article-page':
       if (post) {

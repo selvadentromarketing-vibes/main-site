@@ -148,10 +148,12 @@ Last updated: ${new Date().toISOString().slice(0, 10)}
 // ─── llms.txt + llms-full.txt ────────────────────────────────────────────
 {
   const pageLine = (m) => `- [${m.title}](${absUrl(m.path)}): ${m.description}`;
-  const staticEs = ALL_PAGES.filter((m) => m.lang === 'es' && !m.key.startsWith('post:'));
-  const staticEn = ALL_PAGES.filter((m) => m.lang === 'en' && !m.key.startsWith('post:'));
-  const postsEs = ALL_PAGES.filter((m) => m.lang === 'es' && m.key.startsWith('post:'));
-  const postsEn = ALL_PAGES.filter((m) => m.lang === 'en' && m.key.startsWith('post:'));
+  // Content pages (blog posts, buyer-guide answers, glossary terms) carry
+  // prefixed keys ("post:", "guide:", "term:"); static pages don't.
+  const staticEs = ALL_PAGES.filter((m) => m.lang === 'es' && !m.key.includes(':'));
+  const staticEn = ALL_PAGES.filter((m) => m.lang === 'en' && !m.key.includes(':'));
+  const postsEs = ALL_PAGES.filter((m) => m.lang === 'es' && m.key.includes(':'));
+  const postsEn = ALL_PAGES.filter((m) => m.lang === 'en' && m.key.includes(':'));
 
   const llms = `# Selvadentro Tulum
 

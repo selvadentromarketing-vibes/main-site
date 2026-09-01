@@ -72,7 +72,7 @@ export default function Header({
       ],
     },
     { id: 'inversion', key: 'investment', href: anchor('inversion') },
-    { id: 'blog', label: 'Blog', href: lang === 'en' ? '/en/blog' : '/blog' },
+    { id: 'testimonios', key: 'testimonials', href: anchor('testimonios') },
     {
       id: 'jjf-creando',
       label: 'JJF Creando',

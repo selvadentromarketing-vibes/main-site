@@ -40,15 +40,25 @@ const PAGES: Record<string, PageComponent> = {
   eco: lazy(() => import('../pages/EcoPage')),
   living: lazy(() => import('../pages/LivingPage')),
   market: lazy(() => import('../pages/MarketPage')),
+  'guide-index': lazy(() => import('../pages/GuideIndexPage')),
+  'glossary-index': lazy(() => import('../pages/GlossaryIndexPage')),
 };
 
 const BlogPostPage = lazy(() => import('../pages/BlogPostPage'));
+const GuidePage = lazy(() => import('../pages/GuidePage'));
+const GlossaryTermPage = lazy(() => import('../pages/GlossaryTermPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 function elementFor(meta: PageMeta) {
   if (meta.key === 'home') return <App lang={meta.lang} />;
   if (meta.key.startsWith('post:')) {
     return <BlogPostPage lang={meta.lang} path={meta.path} />;
+  }
+  if (meta.key.startsWith('guide:')) {
+    return <GuidePage lang={meta.lang} path={meta.path} />;
+  }
+  if (meta.key.startsWith('term:')) {
+    return <GlossaryTermPage lang={meta.lang} path={meta.path} />;
   }
   const Page = PAGES[meta.key];
   if (!Page) throw new Error(`No component registered for page key "${meta.key}"`);

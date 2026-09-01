@@ -18,7 +18,7 @@
 
 import type { Lang } from '../i18n/translations';
 import { DEFAULT_OG_IMAGE } from './site';
-import { POSTS } from '../generated/content';
+import { GUIDES, POSTS, TERMS, type ContentRecord } from '../generated/content';
 
 export interface PageMeta {
   /** Joins the es/en pair, e.g. 'lots'. Also keys the component map. */
@@ -45,6 +45,8 @@ export interface PageMeta {
     | 'cenotes'
     | 'faq'
     | 'article-page'
+    | 'guide-page'
+    | 'glossary-term'
     | 'blog-index'
     | 'default';
 }
@@ -545,21 +547,93 @@ export const STATIC_PAGES: PageMeta[] = [
   },
 ];
 
-/** Blog posts as PageMeta (paths built from generated content). */
-export const POST_PAGES: PageMeta[] = POSTS.map((p) => ({
-  key: `post:${p.translationKey}`,
-  lang: p.lang,
-  path: p.path,
-  altPath: p.altPath,
-  title: p.metaTitle,
-  description: p.description,
-  h1: p.title,
-  ogImage: p.ogImage ?? DEFAULT_OG_IMAGE,
-  updated: p.updated,
-  schemaKey: 'article-page' as const,
-}));
+/** Hub index pages for the markdown collections. */
+export const COLLECTION_INDEXES: PageMeta[] = [
+  {
+    key: 'guide-index',
+    lang: 'es',
+    path: '/guia',
+    altPath: '/en/guide',
+    title: 'Guía del comprador — respuestas directas sobre Tulum',
+    description:
+      'Ejidos, notarios, impuestos, huracanes, seguridad, financiamiento: cada pregunta real de un comprador en Tulum respondida en una página directa y honesta.',
+    h1: 'Guía del comprador: tus preguntas, respondidas',
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-09-01',
+    schemaKey: 'blog-index',
+  },
+  {
+    key: 'guide-index',
+    lang: 'en',
+    path: '/en/guide',
+    altPath: '/guia',
+    title: "Tulum Buyer's Guide — Straight Answers to Real Questions",
+    description:
+      'Ejido land, notarios, taxes, hurricanes, safety, financing: every real question a Tulum buyer asks, answered on one direct, honest page each.',
+    h1: "The buyer's guide: your questions, answered",
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-09-01',
+    schemaKey: 'blog-index',
+  },
+  {
+    key: 'glossary-index',
+    lang: 'es',
+    path: '/glosario',
+    altPath: '/en/glossary',
+    title: 'Glosario inmobiliario de México — términos explicados',
+    description:
+      'Fideicomiso, ejido, escritura, ISABI, COS, dominio pleno: el glosario claro de los términos que vas a firmar al comprar propiedad en México.',
+    h1: 'Glosario inmobiliario: los términos que vas a firmar',
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-09-01',
+    schemaKey: 'blog-index',
+  },
+  {
+    key: 'glossary-index',
+    lang: 'en',
+    path: '/en/glossary',
+    altPath: '/glosario',
+    title: 'Mexico Real Estate Glossary — Every Term, Explained',
+    description:
+      'Fideicomiso, ejido, escritura, notario, ISABI, dominio pleno: clear definitions of the Spanish terms you will sign when buying property in Mexico.',
+    h1: 'The Mexico real estate glossary',
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-09-01',
+    schemaKey: 'blog-index',
+  },
+];
 
-export const ALL_PAGES: PageMeta[] = [...STATIC_PAGES, ...POST_PAGES];
+function contentPages(
+  records: ContentRecord[],
+  keyPrefix: string,
+  schemaKey: PageMeta['schemaKey'],
+): PageMeta[] {
+  return records.map((r) => ({
+    key: `${keyPrefix}:${r.translationKey}`,
+    lang: r.lang,
+    path: r.path,
+    altPath: r.altPath,
+    title: r.metaTitle,
+    description: r.description,
+    h1: r.title,
+    ogImage: r.ogImage ?? DEFAULT_OG_IMAGE,
+    updated: r.updated,
+    schemaKey,
+  }));
+}
+
+/** Markdown-driven pages (paths built from generated content). */
+export const POST_PAGES: PageMeta[] = contentPages(POSTS, 'post', 'article-page');
+export const GUIDE_PAGES: PageMeta[] = contentPages(GUIDES, 'guide', 'guide-page');
+export const TERM_PAGES: PageMeta[] = contentPages(TERMS, 'term', 'glossary-term');
+
+export const ALL_PAGES: PageMeta[] = [
+  ...STATIC_PAGES,
+  ...COLLECTION_INDEXES,
+  ...POST_PAGES,
+  ...GUIDE_PAGES,
+  ...TERM_PAGES,
+];
 
 const byPath = new Map(ALL_PAGES.map((p) => [p.path, p]));
 

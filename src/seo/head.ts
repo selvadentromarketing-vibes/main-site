@@ -9,7 +9,7 @@
 import { absUrl } from './site';
 import { getMeta, type PageMeta } from './meta';
 import { graphFor } from './schema';
-import { POSTS } from '../generated/content';
+import { GUIDES, POSTS, TERMS } from '../generated/content';
 
 function esc(s: string): string {
   return s
@@ -36,13 +36,16 @@ export function renderHeadTags(meta: PageMeta): string {
   const ogImage = absUrl(meta.ogImage);
   const locale = meta.lang === 'es' ? 'es_MX' : 'en_US';
   const altLocale = meta.lang === 'es' ? 'en_US' : 'es_MX';
-  const post =
-    meta.key.startsWith('post:')
-      ? POSTS.find((p) => p.path === meta.path)
-      : undefined;
+  const record = meta.key.startsWith('post:')
+    ? POSTS.find((p) => p.path === meta.path)
+    : meta.key.startsWith('guide:')
+      ? GUIDES.find((p) => p.path === meta.path)
+      : meta.key.startsWith('term:')
+        ? TERMS.find((p) => p.path === meta.path)
+        : undefined;
   // JSON.stringify output is embedded in a <script> — escape the only
   // dangerous sequence (</script) via <.
-  const jsonLd = JSON.stringify(graphFor(meta, post)).replace(/</g, '\\u003c');
+  const jsonLd = JSON.stringify(graphFor(meta, record)).replace(/</g, '\\u003c');
 
   const lines = [
     `<title>${esc(meta.title)}</title>`,
