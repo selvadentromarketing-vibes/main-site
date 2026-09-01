@@ -57,7 +57,9 @@ export default function SuspiroSection({ t, lang }: Props) {
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
               <img
                 src="/suspiro-entrance.webp"
-                alt="Acceso Suspiro"
+                alt="Acceso principal de Suspiro entre la selva — Selvadentro Tulum"
+                width={1600}
+                height={900}
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
               />

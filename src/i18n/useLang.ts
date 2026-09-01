@@ -1,22 +1,20 @@
 import { translations, type Lang } from './translations';
+import { getAltPath } from '../seo/meta';
 
 /**
- * Lang context for the main site. Lang is passed from the router at the App
- * boundary, so this hook just returns the right translation bundle + a
- * helper for swapping languages while preserving the URL.
+ * Lang context for the main site. Lang and the current route's path are
+ * passed from the router boundary (every page knows its path statically
+ * from the SEO registry), so this hook stays render-pure — no window
+ * access, which keeps server and client renders identical.
+ *
+ * Slugs are localized per language (e.g. /lotes-en-venta-tulum ↔
+ * /en/tulum-land-for-sale), so the language switcher resolves its target
+ * through the registry pairing instead of prefixing/stripping /en.
  */
-export function useLang(lang: Lang) {
+export function useLang(lang: Lang, currentPath: string) {
   const t = translations[lang];
   const otherLang: Lang = lang === 'es' ? 'en' : 'es';
-  const swapLangUrl = (() => {
-    const path = typeof window !== 'undefined' ? window.location.pathname : '/';
-    if (lang === 'es') {
-      // ES is at root; switching to EN prepends /en
-      return path === '/' ? '/en' : `/en${path}`;
-    }
-    // EN strips the /en prefix
-    return path.replace(/^\/en/, '') || '/';
-  })();
+  const swapLangUrl = getAltPath(currentPath) ?? (lang === 'es' ? '/en' : '/');
 
   return { lang, t, otherLang, swapLangUrl };
 }

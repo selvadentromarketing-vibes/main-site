@@ -26,15 +26,10 @@ interface AppProps {
 }
 
 export default function App({ lang }: AppProps) {
-  const { t, otherLang, swapLangUrl } = useLang(lang);
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    document.title =
-      lang === 'es'
-        ? 'Selvadentro — tierra de cenotes'
-        : 'Selvadentro — land of cenotes';
-  }, [lang]);
+  // Title, meta and <html lang> are baked into each route's prerendered
+  // HTML at build time (scripts/prerender.mjs) — no runtime patching.
+  const homePath = lang === 'es' ? '/' : '/en';
+  const { t, otherLang, swapLangUrl } = useLang(lang, homePath);
 
   // Capture ad attribution once on load (persisted for the contact form).
   useEffect(() => {

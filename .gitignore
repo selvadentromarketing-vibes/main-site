@@ -19,3 +19,6 @@ dist-ssr
 .netlify
 
 .claude-flow
+
+# Build artifact of scripts/build-content.mjs (regenerated from content/blog)
+src/generated/

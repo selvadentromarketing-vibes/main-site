@@ -1,19 +1,26 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import App from './App';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App lang="es" />} />
-        <Route path="/en" element={<App lang="en" />} />
-        <Route path="/agendar" element={<Navigate to="/#contacto" replace />} />
-        <Route path="/en/agendar" element={<Navigate to="/en#contacto" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );
+
+// Production pages are prerendered (scripts/prerender.mjs marks #root) and
+// hydrate; the dev server serves the empty shell and mounts fresh. The
+// recoverable-error logger stays permanently — it is how hydration
+// mismatches get caught in production builds.
+if (container.dataset.prerendered) {
+  hydrateRoot(container, app, {
+    onRecoverableError: (error) => console.error('[hydration]', error),
+  });
+} else {
+  createRoot(container).render(app);
+}

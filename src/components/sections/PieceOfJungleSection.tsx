@@ -7,7 +7,7 @@ interface Props {
   lang: Lang;
 }
 
-const LOTE_IMAGE_URL = '/lot-jungle.png';
+const LOTE_IMAGE_URL = '/lot-jungle.webp';
 
 export default function PieceOfJungleSection({ t, lang }: Props) {
   const tagLabel = lang === 'es' ? 'Tu lote' : 'Your homesite';
@@ -95,6 +95,8 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
             <img
               src={LOTE_IMAGE_URL}
               alt={imgAlt}
+              width={1600}
+              height={1261}
               className="block w-full h-auto max-w-full object-contain"
               loading="lazy"
             />
