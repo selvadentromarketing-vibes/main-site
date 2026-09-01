@@ -18,6 +18,8 @@ Buena parte de la tierra alrededor de Tulum tiene origen ejidal, así que la pre
 
 Un extranjero nunca puede ser ejidatario, en ninguna parte de México y bajo ninguna estructura. La única versión comprable de una parcela de origen ejidal es la que ya pasó a [dominio pleno](/glosario/dominio-pleno) y quedó inscrita como propiedad privada. Cuando algo suena a ejidal se hacen dos consultas, no una: el estatus agrario en el RAN y el título privado en el Registro Público.
 
+La pregunta que ordena todo cabe en una línea: ¿el terreno es propiedad privada inscrita o de origen ejidal? Un vendedor serio responde con documentos —folio real, escritura vigente, historial de titularidad— y te deja llevarlos a tu notario. Uno que responde con historias ya te dijo lo que necesitabas saber.
+
 ## Cuidado con
 
 La [cesión de derechos](/glosario/cesion-de-derechos) presentada como si fuera una compraventa. Transfiere posesión, no propiedad: no se inscribe, permite que la misma parcela se ceda a varios compradores y deja muy poca defensa práctica cuando eso ocurre. Cuidado también con la promesa de que "el dominio pleno ya está en trámite" — mientras la conversión no esté inscrita, no existe. Y con la idea de que un fideicomiso arregla el problema: no lo hace, porque no hay título que fideicomitir.

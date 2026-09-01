@@ -17,7 +17,7 @@ Vendemos lotes en preventa, así que somos exactamente la parte de la que trata 
 
 Un contrato de preventa que solo dice precio y calendario de pagos no es un contrato: es un recibo. Cuatro cosas tienen que estar por escrito.
 
-**Qué te entregan.** No "un lote", sino su identidad: superficie, colindancias, ubicación dentro del enclave y la infraestructura que lo hace construible. Vialidad de acceso, red de agua, energía, acceso controlado. La infraestructura que aparece en el brochure y no en el contrato es una promesa comercial, no una obligación.
+**Qué te entregan.** No "un lote", sino su identidad: superficie, colindancias, ubicación dentro del enclave y la infraestructura que lo hace construible — vialidad, red de agua, energía, acceso controlado. La infraestructura que aparece en el brochure y no en el contrato es promesa comercial, no obligación.
 
 **Cuándo.** Dos fechas, no una: la de traslado de dominio a tu nombre y la de terminación de infraestructura y amenidades. Casi nunca coinciden. En Selvadentro, la infraestructura y las amenidades de Suspiro están programadas para 2029, y los residentes tienen acceso a cenotes y amenidades desde el día de la compra — las dos cosas van en un documento, no en una plática.
 
@@ -87,6 +87,6 @@ Lleva esa lista a cualquier desarrollo en Tulum. Una contraparte seria negocia l
 
 ## ¿Qué señales de confianza sí significan algo?
 
-Fases agotadas, porque una fase vendida y cerrada es historial, no proyección — en Selvadentro los enclaves Mirador y Refugio están totalmente vendidos y Suspiro es el activo. Proyectos terminados con los mismos apellidos detrás: el historial de nuestro equipo pasa por Aldea Zamá en Tulum y Yucatán Country Club en Mérida. Un expediente de cumplimiento que sobrevivió a una revisión externa. Y una ruta de escrituración que un notario puede verificar sin pedirle permiso a nadie.
+Fases agotadas, porque una fase vendida y cerrada es historial, no proyección — en Selvadentro los enclaves Mirador y Refugio están totalmente vendidos y Suspiro es el activo. Proyectos terminados con los mismos apellidos detrás: Aldea Zamá en Tulum y Yucatán Country Club en Mérida. Un expediente que sobrevivió a una revisión externa. Y una ruta de escrituración que un notario puede verificar sin pedirle permiso a nadie.
 
-Si estás evaluando una preventa ahora mismo, [la guía de preventa](/blog/comprar-preventa-tulum-guia) trae las diez preguntas para la primera llamada, y [cómo funcionan nuestras fases](/preventa-de-terrenos-en-tulum) está explicado en un solo lugar.
+Si estás evaluando una preventa ahora mismo, [la guía de preventa](/blog/comprar-preventa-tulum-guia) trae las diez preguntas para la primera llamada, y [cómo funcionan nuestras fases](/preventa-de-terrenos-en-tulum) está en un solo lugar.

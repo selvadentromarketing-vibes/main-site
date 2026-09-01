@@ -14,7 +14,7 @@ El notario público en México es un profesional del derecho al que el Estado le
 
 ## En la práctica
 
-En una compraventa de terreno, la notaría es el centro operativo del cierre. Pide el folio real y los certificados de libertad de gravamen, verifica quién es el titular y cómo llegó a serlo, revisa que los pagos de predial estén al día, retiene el ISAI y —si el comprador es extranjero— constituye el [fideicomiso](/glosario/fideicomiso) en el mismo instrumento. Sus honorarios suelen rondar 0.5% a 1% del precio, dentro de los costos de cierre típicos de 6% a 8% en la Riviera Maya.
+En una compraventa de terreno, la notaría es el centro operativo del cierre. Pide el folio real y los certificados de libertad de gravamen, verifica quién es el titular y cómo llegó a serlo, revisa que los pagos de predial estén al día, retiene el ISAI y —si el comprador es extranjero— constituye el [fideicomiso](/glosario/fideicomiso) en el mismo instrumento. También ordena el avalúo que sirve de base gravable y presenta las declaraciones de la operación. Sus honorarios suelen rondar 0.5% a 1% del precio, dentro de los costos de cierre típicos de 6% a 8% en la Riviera Maya; conviene pedir el desglose por escrito antes de agendar la firma.
 
 Dos cosas que conviene saber antes de sentarte a firmar. La primera: normalmente el comprador puede elegir su propia notaría, aunque el vendedor sugiera una. La segunda, más importante: el notario es imparcial por diseño. Da fe de lo que ocurre y cuida la legalidad del acto, pero no negocia por ti ni te representa. Quien defiende tus intereses en la mesa es un abogado inmobiliario de tu lado.
 

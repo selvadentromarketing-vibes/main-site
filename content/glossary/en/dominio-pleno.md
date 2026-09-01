@@ -16,6 +16,8 @@ Dominio pleno is the formal conversion of an ejido parcel into full private prop
 
 The process has two halves, and both count. First the decision: the assembly of the [ejido](/en/glossary/ejido) adopts dominio pleno over parcels that have already been individually assigned. Then the registration: the parcel is removed from the agrarian registry and recorded as private property with its own folio real. Until that second half is done, the land is still ejidal for every practical purpose.
 
+A completed conversion leaves a trail in both registries: the parcel comes off the Registro Agrario Nacional and appears at the Public Registry of Property. Both searches are inexpensive, take days rather than months, and belong *before* any deposit changes hands.
+
 Which is why the right request to a seller is two documents, not one: the assembly resolution *and* proof of registration at the Public Registry. With the folio real in hand, a notario you chose can read the registry entry in minutes — who holds title today, what liens exist, and how it got there. That is the moment the conversation stops being a story and becomes a title.
 
 ## Watch out for

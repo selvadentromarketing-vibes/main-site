@@ -18,6 +18,8 @@ Much of the land around Tulum has ejidal origins, so the question finds you the 
 
 A foreigner can never be an ejidatario — nowhere in Mexico, under no structure, including a fideicomiso or a Mexican company. The only buyable version of a formerly ejidal parcel is one that has been converted to [dominio pleno](/en/glossary/dominio-pleno) and registered as private property. When anything sounds ejidal, run two checks rather than one: agrarian status at the RAN, private title at the Public Registry.
 
+One question sorts most of it out: is this lot registered private property, or is it of ejidal origin? A serious seller answers with documents — folio real, current deed, ownership history — and lets you take them to your own notario. A seller who answers with a story has already told you what you needed to know.
+
 ## Watch out for
 
 A [cesión de derechos](/en/glossary/cesion-de-derechos) presented as a sale. It moves possession, not ownership: nothing is registered, the same parcel can be "sold" to several buyers, and there is very little practical recourse when that happens. Be equally wary of "the dominio pleno is already in process" — until the conversion is registered, it does not exist. And of the idea that a trust fixes it: there is no title to put in trust.

@@ -1,7 +1,7 @@
 ---
 title: "What is the Registro Público de la Propiedad? (Mexico's property registry)"
 metaTitle: "Registro Público de la Propiedad explained"
-description: "Mexico's public property registry: where title, owners and liens are recorded, each property under its own folio real."
+description: "Mexico's public property registry: title, owners and liens on record, each property under its own folio real — the check to run before you pay."
 slug: registro-publico-propiedad
 term: "Registro Público de la Propiedad (RPPC)"
 translationKey: registro-publico-propiedad
@@ -16,7 +16,9 @@ The Registro Público de la Propiedad y del Comercio (RPPC) is the state-level p
 
 This is where you, or your notario acting for you, confirm who actually owns a lot and whether it carries mortgages, judgments, litigation or easements. It is the single most important check in the whole purchase, and it happens before any money moves: a folio real in the seller's name, plus a recent lien-free certificate (certificado de libertad de gravamen).
 
-If a parcel does not appear in the registry, it is not yet titleable private property. That is the classic signature of [ejido](/en/glossary/ejido) or irregular land, and no seller's assurance changes it. After closing, your deed goes back to the RPPC to be recorded in your name — that recording, not the private contract, is what makes you owner against the rest of the world.
+Ask for both documents freshly dated; a certificate pulled months ago says nothing about today. If a parcel does not appear in the registry, it is not yet titleable private property. That is the signature of [ejido](/en/glossary/ejido) or irregular land, and where the history is agrarian the check finishes at the Registro Agrario Nacional (RAN) rather than the RPPC.
+
+After closing, your deed goes back to the RPPC to be recorded in your name. That recording, not the private contract, is what makes you owner against the rest of the world.
 
 ## Watch out for
 

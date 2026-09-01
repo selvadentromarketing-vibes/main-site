@@ -10,7 +10,7 @@ author: juan-camara
 tags: [legal]
 ---
 
-A cesión de derechos is a document by which someone transfers the possession or use rights they hold over a piece of land. It does not transfer ownership: it moves whatever the assignor happens to have, without creating registered title in your name. Applied to land sales, it is the instrument at the center of most Mexican land fraud.
+A cesión de derechos transfers the possession or use rights someone holds over a piece of land. It does not transfer ownership: it moves whatever the assignor has, without creating registered title in your name. Used for land sales, it is the instrument behind most Mexican land fraud.
 
 ## In practice
 
@@ -21,5 +21,7 @@ It is not. A real estate purchase in Mexico closes before a [notario](/en/glossa
 ## Watch out for
 
 Three failures repeat. **No registration**: nothing appears at the Public Registry, so your claim is invisible to any third party. **Double sales**: the same rights can be assigned to several buyers, and they are. **No practical recourse**: litigating an unregistered paper takes years and rarely returns the money. Add the variant where fake intermediaries or forged powers of attorney collect deposits and disappear.
+
+If you have already signed something like this, the way out is not signing more paper: take the whole file to a real-estate attorney and a notario, and check the Public Registry for what actually exists and in whose name. And if it is merely being offered to you, the decision is simpler still — don't pay.
 
 Related: [Ejido](/en/glossary/ejido) · [Dominio pleno](/en/glossary/dominio-pleno) · [Escritura pública](/en/glossary/escritura-publica) · [Full guide: ejido land risks](/en/guide/ejido-land-mexico-risks)

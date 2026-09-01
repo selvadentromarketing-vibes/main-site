@@ -1,7 +1,7 @@
 ---
 title: "¿Qué es una escritura pública?"
 metaTitle: "Escritura pública: qué es y cuándo eres dueño"
-description: "El instrumento que redacta y autentica un notario y se inscribe en el Registro Público de la Propiedad: es el documento que te hace dueño."
+description: "La escritura pública es el instrumento que autentica un notario y se inscribe en el Registro Público de la Propiedad: el documento que te hace dueño."
 slug: escritura-publica
 term: "Escritura pública"
 translationKey: escritura-publica
@@ -14,7 +14,7 @@ La escritura pública es el instrumento que redacta y autentica un notario públ
 
 ## En la práctica
 
-La diferencia que más dinero cuesta en México es esta: un **contrato de compraventa** privado es una promesa entre dos partes; la **escritura** es un título oponible frente a terceros. El contrato privado tiene su lugar — reserva el lote, fija el precio y el calendario de pagos — pero no te hace propietario y no te protege de una segunda venta.
+La diferencia que más dinero cuesta en México es esta: un **contrato de compraventa** privado es una promesa entre dos partes; la **escritura** es un título oponible frente a terceros. El contrato privado tiene su lugar — reserva el lote, fija el precio y el calendario de pagos — pero no te hace propietario y no te protege de una segunda venta. En una preventa o un plan de pagos, entre la firma y la escritura pueden pasar meses: ese intervalo se cubre con obligaciones por escrito, no con confianza.
 
 En una compra de terreno en Tulum, el cierre lo arma la notaría: el [notario](/glosario/notario-publico) revisa la cadena de títulos y los gravámenes del folio real, calcula y retiene los impuestos, otorga la escritura y la manda a inscribir. Si eres extranjero, en la misma escritura se constituye el [fideicomiso](/glosario/fideicomiso) que exige la [zona restringida](/glosario/zona-restringida). Los costos de cierre en la Riviera Maya suelen ubicarse entre 6% y 8% del precio — ISAI, derechos de registro y honorarios notariales — y conviene confirmarlos con tu notario antes de firmar, porque varían por municipio.
 

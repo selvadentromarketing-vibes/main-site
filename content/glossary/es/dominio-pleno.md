@@ -16,6 +16,8 @@ El dominio pleno es la conversión formal de una parcela ejidal en propiedad pri
 
 Es un proceso con dos mitades, y las dos importan. Primero la decisión: la asamblea del [ejido](/glosario/ejido) adopta el dominio pleno sobre parcelas ya individualizadas. Después la inscripción: la parcela se da de baja del registro agrario y se inscribe como propiedad privada, con folio real propio. Hasta que la segunda mitad está hecha, la tierra sigue siendo ejidal para cualquier efecto práctico.
 
+La conversión deja rastro en los dos registros: la parcela sale del Registro Agrario Nacional y aparece en el Registro Público de la Propiedad. Ambas consultas son baratas, se hacen en días y se hacen *antes* de entregar cualquier anticipo.
+
 Por eso la petición correcta a un vendedor son dos documentos, no uno: el acta o resolución de asamblea *y* la constancia de inscripción en el Registro Público. Con el folio real en mano, un notario de tu confianza lee el asiento en minutos: quién es el titular hoy, qué gravámenes tiene y cómo llegó ahí. Ese es el momento en que la conversación deja de ser una historia y empieza a ser un título.
 
 ## Cuidado con

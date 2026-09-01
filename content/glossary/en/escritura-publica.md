@@ -1,7 +1,7 @@
 ---
 title: "What is an escritura pública? (Mexico's property deed)"
 metaTitle: "Escritura pública: Mexico's real property deed"
-description: "An escritura pública is the deed drafted and authenticated by a notario and recorded at the Public Registry."
+description: "An escritura pública is the deed a notario drafts and records at the Public Registry — in Mexico, that registered deed is what makes you the owner."
 slug: escritura-publica
 term: "Escritura pública"
 translationKey: escritura-publica

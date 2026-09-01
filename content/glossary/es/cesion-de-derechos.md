@@ -10,7 +10,7 @@ author: juan-camara
 tags: [legal]
 ---
 
-Una cesión de derechos es el documento con el que alguien transfiere los derechos de posesión o de uso que tiene sobre un predio. No transfiere la propiedad: mueve lo que el cedente tenga, sin crear un título inscrito a tu nombre. Aplicada a terrenos, es el instrumento en el centro de la mayoría de los fraudes de tierra en México.
+Una cesión de derechos transfiere los derechos de posesión o de uso que alguien tiene sobre un predio. No transfiere la propiedad: mueve lo que el cedente tenga, sin crear un título inscrito a tu nombre. Aplicada a terrenos, es el instrumento en el centro de casi todo fraude de tierra en México.
 
 ## En la práctica
 
@@ -21,5 +21,7 @@ No es así. La compra de un inmueble en México se cierra ante [notario](/glosar
 ## Cuidado con
 
 Tres fallas que se repiten. **No hay inscripción**: nada consta en el Registro Público, así que tu derecho es invisible para cualquier tercero. **Doble venta**: los mismos derechos se pueden ceder a varios compradores, y ocurre. **Sin recurso práctico**: litigar un papel no inscrito toma años y rara vez recupera el dinero. Súmale la variante con poderes o intermediarios falsos que cobran anticipos y desaparecen.
+
+Si ya firmaste algo así, la salida no es firmar más papeles: es llevar el expediente completo a un abogado inmobiliario y a un notario, y verificar en el Registro Público qué existe realmente a nombre de quién. Y si apenas te lo están ofreciendo, la decisión es más simple todavía: no pagues.
 
 Relacionado: [Ejido](/glosario/ejido) · [Dominio pleno](/glosario/dominio-pleno) · [Escritura pública](/glosario/escritura-publica) · [Guía: riesgos de comprar terreno ejidal](/guia/terreno-ejidal-riesgos)

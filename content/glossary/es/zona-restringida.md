@@ -20,4 +20,6 @@ Para un comprador mexicano no cambia nada: escritura directa a su nombre. La dis
 
 Presupuéstalo desde el principio: la constitución ronda los $1,000 USD por única vez, según el banco, más una anualidad típica de $500 a $700 USD. Es un costo adicional a los gastos de cierre normales, y tu [notario](/glosario/notario-publico) puede darte la cifra exacta antes de firmar.
 
+Lo que la zona restringida no significa: que un extranjero no pueda comprar en México. No limita el uso, la renta, la venta, la herencia ni el plazo real de tenencia — solo la forma en que se sostiene el título. Es una regla de estructura, no de permiso.
+
 Relacionado: [Fideicomiso](/glosario/fideicomiso) · [Escritura pública](/glosario/escritura-publica) · [Notario público](/glosario/notario-publico) · [Guía completa para comprar terreno en Tulum](/blog/como-comprar-terreno-en-tulum)

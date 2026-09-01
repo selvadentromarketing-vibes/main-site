@@ -16,7 +16,9 @@ El ISABI (Impuesto Sobre Adquisición de Bienes Inmuebles, ISAI en varios estado
 
 La notaría lo calcula, lo retiene de los fondos del cierre y lo entera al municipio. No lo presentas tú y no se negocia. Es la línea más grande de los gastos de cierre, que en la Riviera Maya suelen sumar entre 6% y 8% del precio de compra sumando impuesto de adquisición, derechos de registro y honorarios notariales.
 
-Como la tasa es municipal, cambia de un municipio a otro dentro del mismo estado. Pide a la notaría el desglose por escrito antes de firmar, con el ISABI ya calculado sobre tu operación concreta. El ISABI se paga una sola vez; lo que sigue año con año — [predial](/glosario/predial), mantenimiento, anualidad del fideicomiso — es otra conversación.
+Como la tasa es municipal, cambia de un municipio a otro dentro del mismo estado. Pide a la notaría el desglose por escrito antes de firmar, con el ISABI ya calculado sobre tu operación concreta. Mientras no se pague, la escritura no puede inscribirse en el [Registro Público de la Propiedad](/glosario/registro-publico-propiedad): no es una línea opcional.
+
+El ISABI se paga una sola vez. Lo que sigue año con año — [predial](/glosario/predial), mantenimiento, anualidad del fideicomiso — es otro presupuesto. Y un terreno se trata igual que una casa: la base es el valor, no el tipo de inmueble.
 
 ## Cuidado con
 

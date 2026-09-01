@@ -1,7 +1,7 @@
 ---
 title: "¿Qué es el Registro Público de la Propiedad?"
 metaTitle: "Registro Público de la Propiedad (RPPC)"
-description: "El Registro Público de la Propiedad es donde se inscriben la titularidad, los dueños y los gravámenes de un inmueble."
+description: "El Registro Público de la Propiedad inscribe titularidad, dueños y gravámenes de un inmueble; el folio real es el expediente único de cada predio."
 slug: registro-publico-propiedad
 term: "Registro Público de la Propiedad (RPPC)"
 translationKey: registro-publico-propiedad
@@ -16,7 +16,9 @@ El Registro Público de la Propiedad y del Comercio (RPPC) es la oficina estatal
 
 Aquí — o a través de tu notaría, que hace la búsqueda por ti — verificas quién es el dueño real de un lote y si carga hipotecas, embargos, litigios o servidumbres. Es la revisión más importante de toda la compra y va antes de cualquier pago: folio real a nombre de quien te vende, más un certificado de libertad de gravamen reciente.
 
-Si un terreno no aparece inscrito, todavía no es propiedad privada escriturable. Esa es la señal clásica de tierra [ejidal](/glosario/ejido) o irregular, y ahí ninguna promesa del vendedor tiene valor. Después del cierre, tu escritura regresa al RPPC para inscribirse a tu nombre: esa inscripción, no el contrato privado, es lo que te hace dueño frente a terceros.
+Pide los dos documentos con fecha reciente: un certificado de hace meses no dice nada del hoy. Si el terreno no aparece inscrito, todavía no es propiedad privada escriturable. Esa es la señal clásica de tierra [ejidal](/glosario/ejido) o irregular, y cuando el antecedente es agrario la revisión se completa en el Registro Agrario Nacional (RAN), no en el RPPC.
+
+Después del cierre, tu escritura regresa al RPPC para inscribirse a tu nombre. Esa inscripción, no el contrato privado, es lo que te hace dueño frente a terceros.
 
 ## Cuidado con
 
