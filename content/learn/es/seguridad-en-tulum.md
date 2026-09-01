@@ -9,7 +9,7 @@ author: omar-curi
 tags: [tulum-vida]
 ---
 
-En general sí, con matices reales. Tulum es un destino turístico internacional y carga el perfil delictivo de uno: robo de oportunidad, fraudes e incidentes ligados a la vida nocturna que llegan lejos en titulares. La vida diaria del residente suele ser tranquila. A dónde vas, a qué hora y cómo manejas tus valores pesan más que la fama del destino.
+En general sí, con matices reales. Tulum es un destino turístico internacional y carga el perfil delictivo de uno: robo de oportunidad, fraudes e incidentes de vida nocturna que llegan lejos en titulares. La vida diaria del residente suele ser tranquila. A dónde vas, a qué hora y cómo cuidas tus valores pesan más que la fama del destino.
 
 Dirijo el área comercial de Selvadentro, así que tengo un interés obvio en que Tulum te caiga bien. Por eso esta página hace lo contrario de tranquilizarte: te dice qué pasa de verdad, qué hace la gente que vive aquí, y dónde una privada ayuda y dónde no.
 
@@ -35,7 +35,7 @@ Ninguna de las dos fotos miente. Son colonias distintas, a horas distintas, con 
 
 Para la mayoría de quienes viven aquí, sí, y bastante. La textura real de vivir en Tulum se parece más a un pueblo playero que crece rápido que a algo dramático: tráfico, obra, humedad, negocios que solo aceptan efectivo, trámites lentos. La gente pasea a sus perros. Los cafés están llenos de laptops.
 
-Lo que la gente con experiencia hace distinto es aburrido. No cargan mucho efectivo, no van a antros desconocidos a las 3 de la mañana, saben qué tramos están mal iluminados y tratan la cajuela como si fuera transparente. El ajuste es real pero pequeño, y se parece mucho a vivir en cualquier ciudad grande del país.
+Lo que la gente con experiencia hace distinto es aburrido. No cargan mucho efectivo, no van a antros desconocidos a las 3 de la mañana y tratan la cajuela como si fuera transparente. El ajuste es real pero pequeño, y se parece a vivir en cualquier ciudad grande del país.
 
 ## ¿Cuáles son las precauciones prácticas?
 
@@ -52,7 +52,7 @@ Lo que la gente con experiencia hace distinto es aburrido. No cargan mucho efect
 
 ## ¿Debería revisar los avisos de viaje?
 
-Vale la pena, y conviene leerlos directo en la fuente. Estados Unidos, Canadá, Reino Unido y varios gobiernos europeos publican avisos de viaje por estado para México, con sus propios criterios y calendarios, y normalmente tratan a Quintana Roo distinto que al país completo. Si piensas rentar tu propiedad a turismo extranjero, esos avisos son parte del contexto en el que se toman las decisiones de tus futuros huéspedes.
+Vale la pena, y conviene leerlos directo en la fuente. Estados Unidos, Canadá, Reino Unido y varios gobiernos europeos publican avisos de viaje por estado para México, con sus propios criterios, y normalmente tratan a Quintana Roo distinto que al país completo. Si piensas rentar a turismo extranjero, esos avisos son parte del contexto en el que decidirán tus futuros huéspedes.
 
 No cito ningún nivel a propósito: los avisos cambian y un número congelado en una página de marketing es peor que ningún número. Lee el texto vigente del gobierno que te corresponda o te interese, ve qué advierte específicamente y compáralo con lo que piensas hacer aquí.
 
@@ -69,7 +69,7 @@ Cambia el perímetro, las miradas y el mantenimiento — no el país en el que e
 | Iluminación y mantenimiento | Calles mantenidas e iluminadas, pagadas con la cuota | Tus propios hábitos, que siguen haciendo casi todo |
 | Ausencias largas | El beneficio práctico principal para quien no vive de planta | El seguro, que igual conviene contratar |
 
-Esa es la versión honesta de por qué la privada es el formato por defecto del desarrollo residencial en esta costa, incluida la nuestra. No es que el peligro esté en todas partes. Es que un perímetro controlado elimina la categoría más fácil de pérdida y hace razonable dejar una propiedad sola tres meses. Nuestra postura está en [la página de comunidad privada](/comunidad-privada-en-tulum).
+Esa es la versión honesta de por qué la privada es el formato por defecto del desarrollo residencial en esta costa, incluida la nuestra. No es que el peligro esté en todas partes: es que un perímetro controlado elimina la categoría más fácil de pérdida y hace razonable dejar una propiedad sola tres meses. Nuestra postura está en [la página de comunidad privada](/comunidad-privada-en-tulum).
 
 ## Entonces, ¿le recomendaría a un amigo mudarse aquí?
 

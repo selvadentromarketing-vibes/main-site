@@ -1,7 +1,7 @@
 ---
 title: "What tax will you pay when you sell property in Mexico?"
 metaTitle: "Capital gains tax when selling in Mexico"
-description: "ISR on the gain: non-residents are commonly withheld ~25% of the gross price or ~35% of net gain. How the notario withholds, and what paperwork lowers the bill."
+description: "ISR on the gain: non-residents are commonly withheld ~25% of the gross price, or ~35% of net gain. What the notario withholds, and what lowers the bill."
 slug: capital-gains-tax-selling-mexico
 translationKey: impuestos-venta
 date: 2026-09-01

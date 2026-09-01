@@ -9,7 +9,7 @@ author: omar-curi
 tags: [tulum-vida, mercado]
 ---
 
-Depende casi por completo de si tu propiedad toca la playa. El sargazo es un arribo estacional de macroalga, aproximadamente de mayo a septiembre, que varía enormemente de un año a otro y afecta al litoral: olor, costo de limpieza, experiencia del huésped. Una propiedad tierra adentro, del lado selva, no se afecta físicamente — aunque los años fuertes golpean la percepción turística de toda la región.
+Depende de si tu propiedad toca la playa. El sargazo es un arribo estacional de macroalga, de mayo a septiembre, que varía enormemente cada año y afecta al litoral: olor, costo de limpieza, experiencia del huésped. Una propiedad tierra adentro no se afecta físicamente, aunque los años fuertes golpean la percepción turística de la región.
 
 Las dos mitades de esa respuesta importan, y casi todas las páginas de desarrolladores publican solo la conveniente. Dirijo el área comercial de Selvadentro, un proyecto de selva tierra adentro, así que la mitad conveniente es la mía — razón exacta por la que el resto de esta página se dedica a la que no lo es.
 

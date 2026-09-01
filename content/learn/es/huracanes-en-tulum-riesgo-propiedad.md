@@ -9,7 +9,7 @@ author: juan-camara
 tags: [tulum-vida, compra]
 ---
 
-Tulum está dentro del cinturón de huracanes del Caribe y la temporada corre de junio a noviembre, así que ninguna propiedad aquí es inmune. La exposición cambia mucho según la ubicación: la playa enfrenta marea de tormenta, erosión y salitre; la selva tierra adentro enfrenta viento, lluvia y árboles caídos, sin marea de tormenta. El concreto armado y el seguro de daños son el estándar regional.
+Tulum está en el cinturón de huracanes del Caribe y la temporada corre de junio a noviembre: ninguna propiedad aquí es inmune. La exposición cambia según la ubicación. La playa enfrenta marea de tormenta, erosión y salitre; la selva enfrenta viento, lluvia y árboles caídos. El concreto armado y el seguro son el estándar regional.
 
 Dirijo Selvadentro, así que lee la última sección con eso en mente. Todo lo anterior es la misma respuesta que doy a quien compara la costa con el lado selva — incluida la gente que termina comprando en otra parte.
 
@@ -17,7 +17,7 @@ Dirijo Selvadentro, así que lee la última sección con eso en mente. Todo lo a
 
 La temporada de huracanes en el Atlántico va oficialmente del 1 de junio al 30 de noviembre, y la actividad se concentra en los últimos meses. Tulum está en la costa caribeña de la península de Yucatán: dentro del cinturón, no al lado.
 
-El historial es público y vale leerlo antes de comprar cualquier cosa aquí. Wilma cruzó Quintana Roo en octubre de 2005. Beryl entró a tierra en la costa de Quintana Roo cerca de Tulum el 5 de julio de 2024. Ambos están en el archivo de tormentas del Centro Nacional de Huracanes de Estados Unidos (NHC), igual que cada sistema del Atlántico registrado; el Servicio Meteorológico Nacional de CONAGUA da el seguimiento local y Protección Civil de Quintana Roo emite los avisos con los que la gente realmente actúa.
+El historial es público y vale leerlo antes de comprar cualquier cosa aquí. Wilma cruzó Quintana Roo en octubre de 2005. Beryl entró a tierra en la costa de Quintana Roo cerca de Tulum el 5 de julio de 2024. Ambos están en el archivo de tormentas del Centro Nacional de Huracanes de Estados Unidos (NHC); el Servicio Meteorológico Nacional de CONAGUA da el seguimiento local y Protección Civil de Quintana Roo emite los avisos con los que la gente realmente actúa.
 
 La mayoría de las temporadas pasa sin impacto directo cerca de Tulum. Algunas no. El encuadre honesto es un evento de baja frecuencia y alta consecuencia que se planea — no un riesgo que alguien deba minimizar, y tampoco una razón para descartar el Caribe.
 
@@ -44,13 +44,13 @@ Lee la tabla como un cambio de tipo de problema, no como la promesa de que un la
 
 El viento no se detiene en la carretera costera. Un sistema fuerte tierra adentro significa carga sostenida sobre losas y ventanería, lluvia empujada por el viento buscando cada junta mal sellada, y días sin luz ni internet. La selva madura es la variable propia del interior: te da una sombra extraordinaria y también tira ramas. Árboles demasiado cerca de la losa, madera muerta en la copa y crecimiento sin manejo sobre el camino de acceso son la diferencia entre una semana de limpieza y una reparación de techo.
 
-La lluvia es la otra subestimada. Una sola tormenta puede dejar el volumen suficiente para encontrar cualquier falla en el drenaje del predio, así que niveles, escurrimientos de losa y por dónde sale el agua de tu lote merecen atención desde el proyecto.
+La lluvia es la otra subestimada. Una sola tormenta encuentra cualquier falla en el drenaje del predio, así que niveles, escurrimientos de losa y por dónde sale el agua merecen atención desde el proyecto.
 
 ## ¿Cómo se construye en la Riviera Maya para esto?
 
-El estándar regional es concreto armado: block o muros colados, losas macizas, acero de refuerzo amarrado. Es la razón por la que el inventario construido de la península suele salir entero de las tormentas mientras las cubiertas ligeras y las palapas no. Más allá de la estructura, lo que cambia el resultado son las persianas o paneles de protección en todos los vanos, cristal de mayor resistencia al impacto donde el presupuesto lo permita, elementos de cubierta bien anclados y drenaje generoso.
+El estándar regional es concreto armado: block o muros colados, losas macizas, acero de refuerzo amarrado. Por eso el inventario construido de la península suele salir entero de las tormentas mientras las cubiertas ligeras y las palapas no. Más allá de la estructura, lo que cambia el resultado son las persianas o paneles en todos los vanos, cristal de mayor resistencia al impacto donde el presupuesto lo permita, elementos de cubierta bien anclados y drenaje generoso.
 
-Las normas de la comunidad también cuentan. Cuando un desarrollo limita ocupación y altura — en nuestro caso COS 35% y máximo dos niveles más roof deck — el perfil construido se mantiene bajo y la selva se mantiene densa. Eso no es un escudo. Es una variable menos, y un paisaje que se recupera en lugar de un llano despejado.
+Las normas de la comunidad también cuentan. Cuando un desarrollo limita ocupación y altura — COS 35% y máximo dos niveles más roof deck, en nuestro caso — el perfil construido se mantiene bajo y la selva densa. Eso no es un escudo: es una variable menos.
 
 ## ¿Se puede asegurar una propiedad en México contra huracanes?
 
@@ -71,6 +71,6 @@ Mientras tienes terreno y no has construido, hay muy poco que asegurar — la ex
 
 ## ¿Y dónde queda Selvadentro en este mapa?
 
-Directo: Selvadentro está tierra adentro, en el lado selva de Tulum, sobre la Ruta de los Cenotes, a unos veinte minutos de la zona hotelera. La marea de tormenta no forma parte de nuestro perfil de exposición, y el salitre es un tema marginal en lugar de una partida de mantenimiento. El viento, la lluvia, los cortes de luz y los árboles caídos sí lo son, y por eso el 65% de selva conservada viene con manejo de la selva, la red de agua es subterránea y la cuota de mantenimiento incluye una reserva para el largo plazo. Ese es un perfil de exposición, no inmunidad — en esta costa nadie puede vender inmunidad.
+Directo: Selvadentro está tierra adentro, en el lado selva de Tulum, sobre la Ruta de los Cenotes, a unos veinte minutos de la zona hotelera. La marea de tormenta no forma parte de nuestro perfil de exposición, y el salitre es un tema marginal. El viento, la lluvia, los cortes de luz y los árboles caídos sí lo son, y por eso el 65% de selva conservada viene con manejo de la selva, la red de agua es subterránea y la cuota incluye una reserva para el largo plazo. Ese es un perfil de exposición, no inmunidad — en esta costa nadie puede vender inmunidad.
 
 Si estás revisando el lado práctico de vivir aquí, sigue con [cómo es la vida diaria en Tulum](/vivir-en-tulum) y [cómo funcionan los servicios en un lote de selva](/guia/internet-y-servicios-en-la-selva). Cuando quieras comparar tierra concreta, empieza por [los lotes disponibles en Suspiro](/lotes-en-venta-tulum).

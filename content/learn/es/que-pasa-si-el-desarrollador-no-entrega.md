@@ -11,21 +11,21 @@ tags: [legal, compra]
 
 Si un desarrollador no entrega, tu protección es lo que el contrato dejó por escrito antes: obligaciones de entrega con fechas, cláusulas de penalización en ambos sentidos y términos de cancelación. Litigar en México es lento, así que la defensa real va adelante: verifica permisos, ata los pagos a instrumentos notariados y lee las cláusulas de salida.
 
-Vendemos lotes en preventa, así que somos exactamente la parte de la que trata esta pregunta. Léela como lo que es: una guía de primera mano con intereses declarados. Las cláusulas de abajo son las que yo querría que exigiera alguien de mi familia — a nosotros o a cualquier otro que venda tierra en Tulum.
+Vendemos lotes en preventa, así que somos la parte de la que trata esta pregunta. Léela como lo que es: primera mano, con intereses declarados. Las cláusulas de abajo son las que yo querría que exigiera alguien de mi familia — a nosotros o a cualquiera que venda tierra en Tulum.
 
 ## ¿Qué debe especificar el contrato?
 
-Un contrato de preventa que solo dice precio y calendario de pagos no es un contrato: es un recibo. Cuatro cosas tienen que estar por escrito.
+Un contrato de preventa que solo dice precio y calendario no es un contrato: es un recibo. Cuatro cosas van por escrito.
 
 **Qué te entregan.** No "un lote", sino su identidad: superficie, colindancias, ubicación dentro del enclave y la infraestructura que lo hace construible — vialidad, red de agua, energía, acceso controlado. La infraestructura que aparece en el brochure y no en el contrato es promesa comercial, no obligación.
 
-**Cuándo.** Dos fechas, no una: la de traslado de dominio a tu nombre y la de terminación de infraestructura y amenidades. Casi nunca coinciden. En Selvadentro, la infraestructura y las amenidades de Suspiro están programadas para 2029, y los residentes tienen acceso a cenotes y amenidades desde el día de la compra — las dos cosas van en un documento, no en una plática.
+**Cuándo.** Dos fechas, no una: la de traslado de dominio a tu nombre y la de terminación de infraestructura y amenidades. Casi nunca coinciden. En Selvadentro, la infraestructura y las amenidades de Suspiro están programadas para 2029, y los residentes tienen acceso a cenotes y amenidades desde el día de la compra — eso va en un documento, no en una plática.
 
 **Qué pasa si una fecha se mueve.** Va en la siguiente sección.
 
 **Cómo sale cada parte.** Causales de cancelación, fórmula de devolución, porcentaje de retención y plazo real para que el dinero regrese.
 
-Si el equipo de ventas te contesta esto de palabra y el documento no lo dice, lo que tienes es el documento.
+Si el equipo de ventas contesta esto de palabra y el documento no lo dice, lo que tienes es el documento.
 
 ## ¿Las penalizaciones deben ir en los dos sentidos?
 
@@ -46,11 +46,11 @@ Un desarrollador que acepta simetría espera cumplir. Uno que se niega a cualqui
 
 Pregúntalo antes de necesitar la respuesta. En 48 meses la vida cambia. Tres preguntas lo resuelven: ¿desde qué momento las aportaciones dejan de ser recuperables, y en qué escala? ¿Puedes ceder tu posición contractual a otro comprador, y quién la autoriza? ¿Existe algún mecanismo de pausa o reestructura, o la única salida es cancelar?
 
-La respuesta honesta de casi cualquier desarrollador es que cancelar temprano te cuesta dinero. Eso es normal. Lo que no es normal es un contrato donde cancelar te cuesta todo, de inmediato, sin notificación previa.
+La respuesta honesta de casi cualquier desarrollador es que cancelar temprano te cuesta dinero. Eso es normal. Lo anormal es un contrato donde cancelar te cuesta todo, de inmediato y sin notificación previa.
 
 ## ¿Por qué los pagos deben ir contra instrumentos notariados?
 
-Porque un contrato privado es una promesa y un instrumento notariado es un hecho. Estructura los pagos para que cada uno relevante se detone contra un documento que exista en el registro público: la promesa de compraventa notariada, la escritura y su inscripción en el Registro Público — y, si el comprador es extranjero, el [fideicomiso](/glosario/fideicomiso) del cierre.
+Porque un contrato privado es una promesa y un instrumento notariado es un hecho. Estructura los pagos para que cada uno relevante se detone contra un documento del registro público: la promesa de compraventa notariada, la escritura y su inscripción en el Registro Público — y, si el comprador es extranjero, el fideicomiso del cierre.
 
 De ahí salen tres reglas. Paga a la cuenta de la empresa, nunca a la de una persona física. Nunca pagues contra un "luego lo regularizamos": es la misma lógica que vuelve irrecuperables los [tratos informales sobre tierra ejidal](/guia/terreno-ejidal-riesgos). Y verifica que quien firma tenga el poder para hacerlo; los intermediarios apócrifos cobrando apartados son un patrón que se repite en la región.
 
@@ -81,7 +81,7 @@ Nada de eso sobra, y todo eso es un mal sustituto de la diligencia previa: el re
 9. **Pagos contra instrumentos:** cada hito ligado a un documento notariado o inscrito.
 10. **Régimen y cuota:** base de la cuota de mantenimiento, fondo de reserva y reglas de construcción que heredas.
 11. **Anexo de permisos:** el expediente referido por número, con copias adjuntas.
-12. **Jurisdicción e idioma:** qué tribunales y qué versión del texto rige.
+12. **Jurisdicción:** qué tribunales resuelven y qué versión del texto rige.
 
 Lleva esa lista a cualquier desarrollo en Tulum. Una contraparte seria negocia la mayor parte, y su reacción ya es información.
 

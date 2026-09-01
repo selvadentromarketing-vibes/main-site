@@ -1,7 +1,7 @@
 ---
 title: "What does it cost every year to own property in Mexico?"
 metaTitle: "Annual cost of owning property in Mexico"
-description: "Predial, HOA at about 5 MXN per m² a month, the fideicomiso annuity of $500–700 USD, insurance and utilities"
+description: "Predial, an HOA of about 5 MXN per m² a month, the $500–700 fideicomiso annuity, insurance and utilities — plus an illustrative annual table."
 slug: annual-property-costs-mexico
 translationKey: costos-anuales
 date: 2026-09-01
@@ -9,7 +9,7 @@ author: omar-curi
 tags: [costos]
 ---
 
-Less than most owners expect. Budget predial — Mexico's property tax, set by the municipality and famously low — plus an HOA fee if you are in a private community (ours is about 5 MXN per m² per month), a fideicomiso annuity of typically $500–700 USD for foreign owners, and insurance and utilities once you build. Vacant land carries almost nothing.
+Less than most owners expect. Budget predial (Mexico's property tax, municipality-set and famously low), an HOA fee if you are in a private community — ours is about 5 MXN per m² per month — a fideicomiso annuity of typically $500–700 USD for foreign owners, plus insurance and utilities once you build. Vacant land carries almost nothing.
 
 I run the commercial side of Selvadentro, and the annual question is the one buyers ask least and should ask first. The purchase price is a decision you make once; carrying costs are the ones you live with. Below is every recurring line I know of, with our own figures labelled as ours and market ranges labelled as ranges. The one-time costs at purchase are a separate conversation, covered in [what it costs to own in a Tulum private community](/en/blog/tulum-hoa-maintenance-ownership-costs).
 

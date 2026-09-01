@@ -52,7 +52,7 @@ The honest answer from most developers is that early cancellation costs you mone
 
 ## Why should payments track notarized instruments?
 
-Because a private contract is a promise and a notarized instrument is a fact. Structure your payments so that each significant one is triggered by a document that exists in the public record: the notarized promise of sale, the escritura itself, its registration at the Registro Público de la Propiedad — and, for foreign buyers, the [fideicomiso](/en/glossary/fideicomiso) constituted at closing.
+Because a private contract is a promise and a notarized instrument is a fact. Structure your payments so that each significant one is triggered by a document that exists in the public record: the notarized promise of sale, the escritura itself, its registration at the Registro Público de la Propiedad — and, for foreign buyers, the fideicomiso constituted at closing.
 
 Three rules follow. Pay to the company's account, never to an individual's. Never pay against "we will regularize it later" — the same logic that makes [informal ejido deals](/en/guide/ejido-land-mexico-risks) unrecoverable. And verify that whoever signs actually holds the power of attorney to do so; forged intermediaries collecting deposits is one of the region's recurring fraud patterns.
 

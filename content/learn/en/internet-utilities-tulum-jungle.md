@@ -27,7 +27,7 @@ The honest planning rule: if your income depends on being online, budget for two
 
 ## Is the fiber in Tulum town reliable?
 
-Broadly yes, and it has improved substantially as the town has grown. Speeds in the 50 to 150 Mbps range are typical, coworking spaces run on it, and the digital-nomad economy here would not exist otherwise. The caveats are ordinary: installation can take weeks, service interruptions happen during storms, and coverage stops where the town's built-up grid stops — which is precisely why jungle-side lots are a different conversation.
+Broadly yes, and it has improved as the town has grown. Speeds of 50 to 150 Mbps are typical, coworking spaces run on it, and the digital-nomad economy here would not exist otherwise. The caveats are ordinary: installation can take weeks, storms interrupt service, and coverage stops where the built-up grid stops — which is precisely why jungle-side lots are a different conversation.
 
 ## How reliable is the power grid?
 
@@ -41,7 +41,7 @@ No — nowhere in Mexico, including Tulum, and including new construction. This 
 
 ## Is there cell coverage in the jungle?
 
-Along the main roads and around the developed communities on the cenote route, yes. Deep in uncleared jungle, coverage becomes patchy — normal for rural Mexico. Two practical notes: check signal standing on the actual lot, not at the entrance gate, and consider a dual-SIM phone so you are not dependent on one carrier's coverage map.
+Along the main roads and around the communities on the cenote route, yes. Deep in uncleared jungle, coverage becomes patchy — normal for rural Mexico. Two notes: check signal standing on the actual lot, not at the entrance gate, and consider a dual-SIM phone so you do not depend on one carrier's map.
 
 ## Utility by utility: town versus jungle
 
