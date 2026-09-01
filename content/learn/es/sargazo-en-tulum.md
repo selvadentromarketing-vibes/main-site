@@ -1,7 +1,7 @@
 ---
 title: "¿El sargazo afecta a una propiedad en Tulum?"
 metaTitle: "Sargazo en Tulum: ¿afecta tu propiedad?"
-description: "El sargazo es estacional, llega a las playas y varía muchísimo cada año. Qué carga el dueño frente al mar"
+description: "El sargazo es estacional y afecta playas. Qué carga el dueño frente al mar, qué el de tierra adentro y el efecto real en la demanda de renta."
 slug: sargazo-en-tulum
 translationKey: sargazo
 date: 2026-09-01

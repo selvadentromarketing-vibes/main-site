@@ -24,4 +24,4 @@ Guarda el avalúo, la escritura y las facturas de construcción juntos. Son la e
 
 La costumbre de declarar en la escritura un valor menor al realmente pagado para ahorrar impuesto de adquisición. Es un problema doble: fiscalmente infla tu ganancia futura, y legalmente estás firmando ante notario un hecho que no es cierto. Ese ahorro de hoy casi nunca compensa la factura de mañana.
 
-Relacionado: [ISABI](/glosario/isabi) · [Predial](/glosario/predial) · [Escritura pública](/glosario/escritura-publica) · [Impuestos al vender una propiedad en México](/guia/impuestos-al-vender-propiedad-en-mexico)
+Relacionado: [ISABI](/glosario/isabi) · [Predial](/glosario/predial) · [Escritura pública](/glosario/escritura-publica) · [La inversión en números](/inversion)

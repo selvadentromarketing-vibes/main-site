@@ -1,7 +1,7 @@
 ---
 title: "¿Qué tan expuesta está una propiedad en Tulum a los huracanes?"
 metaTitle: "Huracanes en Tulum: riesgo real de una propiedad"
-description: "Tulum está en el cinturón de huracanes del Caribe. Qué cambia entre la primera línea de playa y la selva tierra adentro, cómo se construye y qué tener listo."
+description: "Tulum está en el cinturón de huracanes. Qué cambia entre la playa y la selva tierra adentro, cómo se construye y qué tener listo."
 slug: huracanes-en-tulum-riesgo-propiedad
 translationKey: huracanes
 date: 2026-09-01

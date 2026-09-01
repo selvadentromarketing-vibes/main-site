@@ -1,7 +1,7 @@
 ---
 title: "¿Es seguro Tulum? Respuesta honesta, sin marketing"
 metaTitle: "¿Es seguro Tulum? Respuesta honesta"
-description: "El robo de oportunidad y los incidentes de vida nocturna son reales; la vida diaria del residente es tranquila. Qué pasa, qué hacer y qué cambia una privada."
+description: "El robo de oportunidad y los incidentes nocturnos son reales; la vida del residente es tranquila. Qué pasa, qué hacer y qué cambia una privada."
 slug: seguridad-en-tulum
 translationKey: seguridad
 date: 2026-09-01

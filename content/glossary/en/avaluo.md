@@ -24,4 +24,4 @@ Keep the avalúo, the deed and your construction invoices together. They are the
 
 The habit of declaring a value below what was actually paid, to shave the acquisition tax. It cuts both ways: it inflates your future taxable gain, and it means signing a statement before a notario that is not true. The saving today rarely covers the bill later.
 
-Related: [ISABI](/en/glossary/isabi) · [Predial](/en/glossary/predial) · [Escritura](/en/glossary/escritura-publica) · [Taxes when you sell property in Mexico](/en/guide/capital-gains-tax-selling-mexico)
+Related: [ISABI](/en/glossary/isabi) · [Predial](/en/glossary/predial) · [Escritura](/en/glossary/escritura-publica) · [The investment, in numbers](/en/investment)

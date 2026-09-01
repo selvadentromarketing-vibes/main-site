@@ -50,7 +50,7 @@ La respuesta honesta de casi cualquier desarrollador es que cancelar temprano te
 
 ## ¿Por qué los pagos deben ir contra instrumentos notariados?
 
-Porque un contrato privado es una promesa y un instrumento notariado es un hecho. Estructura tus pagos para que cada uno relevante se detone contra un documento que exista en el registro público: la promesa de compraventa notariada, la escritura y su inscripción en el Registro Público de la Propiedad — y, si el comprador es extranjero, el [fideicomiso](/glosario/fideicomiso) que se constituye al cierre.
+Porque un contrato privado es una promesa y un instrumento notariado es un hecho. Estructura los pagos para que cada uno relevante se detone contra un documento que exista en el registro público: la promesa de compraventa notariada, la escritura y su inscripción en el Registro Público — y, si el comprador es extranjero, el [fideicomiso](/glosario/fideicomiso) del cierre.
 
 De ahí salen tres reglas. Paga a la cuenta de la empresa, nunca a la de una persona física. Nunca pagues contra un "luego lo regularizamos": es la misma lógica que vuelve irrecuperables los [tratos informales sobre tierra ejidal](/guia/terreno-ejidal-riesgos). Y verifica que quien firma tenga el poder para hacerlo; los intermediarios apócrifos cobrando apartados son un patrón que se repite en la región.
 
@@ -83,7 +83,7 @@ Nada de eso sobra, y todo eso es un mal sustituto de la diligencia previa: el re
 11. **Anexo de permisos:** el expediente referido por número, con copias adjuntas.
 12. **Jurisdicción e idioma:** qué tribunales y qué versión del texto rige.
 
-Lleva esa lista a cualquier desarrollo en Tulum. Una contraparte seria negocia la mayor parte; la reacción, por sí sola, ya es información.
+Lleva esa lista a cualquier desarrollo en Tulum. Una contraparte seria negocia la mayor parte, y su reacción ya es información.
 
 ## ¿Qué señales de confianza sí significan algo?
 
