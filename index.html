@@ -110,6 +110,18 @@
     }
     </script>
 
+    <!-- Google tag (gtag.js) — GA4 property G-7F35BWLHTZ, reused from the
+         previous site so reporting history stays continuous. page_view
+         fires on load; generate_lead is dispatched from the React form
+         via window.gtag(). -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F35BWLHTZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7F35BWLHTZ');
+    </script>
+
     <!-- Meta Pixel — 680727997874671 (shared across the marketing sites).
          PageView fires on load; conversion events are dispatched from
          the React forms via window.fbq(). -->
