@@ -8,6 +8,17 @@ interface HeaderProps {
   lang: Lang;
   otherLang: Lang;
   swapLangUrl: string;
+  /**
+   * Subpages sit on cream backgrounds where the transparent-at-top header
+   * is illegible — they pass solid to keep the dark green bar always on.
+   * The homepage keeps the transparent-over-hero treatment (default).
+   */
+  solid?: boolean;
+  /**
+   * True only on / and /en. Off the homepage, section anchors must point
+   * back to the homepage document (e.g. /#contacto instead of #contacto).
+   */
+  isHome?: boolean;
 }
 
 interface NavLink {
@@ -24,7 +35,13 @@ interface NavLink {
 // Meta Pixel Lead event fires. Adara CRM and GHL are separate systems —
 // sending traffic to Adara used to split the funnel and drop attribution.
 
-export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps) {
+export default function Header({
+  t,
+  lang,
+  swapLangUrl,
+  solid = false,
+  isHome = true,
+}: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -38,20 +55,24 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
   }, []);
 
   const virtualTourLabel = lang === 'en' ? 'Virtual tour' : 'Tour virtual';
+  const homePath = lang === 'en' ? '/en' : '/';
+  // Section anchors resolve within the homepage document; from subpages
+  // they navigate back to it.
+  const anchor = (id: string) => (isHome ? `#${id}` : `${homePath}#${id}`);
 
   const NAV_LINKS: NavLink[] = [
-    { id: 'acerca', key: 'project' },
-    { id: 'suspiro', key: 'suspiro' },
+    { id: 'acerca', key: 'project', href: anchor('acerca') },
+    { id: 'suspiro', key: 'suspiro', href: anchor('suspiro') },
     {
       id: 'masterplan',
       key: 'masterplan',
       children: [
-        { label: t.nav.masterplan, href: '#masterplan' },
-        { label: virtualTourLabel, href: '#tour-virtual' },
+        { label: t.nav.masterplan, href: anchor('masterplan') },
+        { label: virtualTourLabel, href: anchor('tour-virtual') },
       ],
     },
-    { id: 'inversion', key: 'investment' },
-    { id: 'testimonios', key: 'testimonials' },
+    { id: 'inversion', key: 'investment', href: anchor('inversion') },
+    { id: 'testimonios', key: 'testimonials', href: anchor('testimonios') },
     {
       id: 'jjf-creando',
       label: 'JJF Creando',
@@ -74,7 +95,7 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
+        scrolled || solid
           ? 'bg-brand-verde-osc/95 backdrop-blur-md py-3 shadow-lg shadow-black/10'
           : 'bg-transparent py-4'
       }`}
@@ -88,6 +109,8 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
           <img
             src="/logo-cream.webp"
             alt="Selvadentro · tierra de cenotes"
+            width={1754}
+            height={625}
             className="h-[2.8125rem] sm:h-[3.375rem] w-auto block"
           />
         </a>
@@ -191,6 +214,8 @@ export default function Header({ t, lang, otherLang, swapLangUrl }: HeaderProps)
             </a>
           </div>
 
+          {/* Every page carries the lead form (PageLayout), so the CTA
+              always scrolls locally instead of navigating home. */}
           <a href="#contacto" className="btn-primary text-sm">
             {t.nav.cta}
           </a>

@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- seo:start — everything between these markers is replaced per-route
+         by scripts/prerender.mjs (title/description/canonical/hreflang/OG/
+         JSON-LD). What sits here is only the dev-server fallback. -->
     <title>Selvadentro — tierra de cenotes</title>
     <meta
       name="description"
       content="La única comunidad privada en Tulum con nueve cenotes dentro. Privadas exclusivas de baja densidad en el corazón de la selva."
     />
-
-    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Selvadentro — tierra de cenotes" />
     <meta property="og:description" content="La única comunidad privada en Tulum con nueve cenotes dentro." />
     <meta property="og:url" content="https://selvadentrotulum.com/" />
-    <meta property="og:image" content="/hero-cenote.webp" />
+    <meta property="og:image" content="https://selvadentrotulum.com/og/og-home.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" as="image" href="/hero-cenote.webp" />
+    <!-- seo:end -->
 
     <!-- Fonts: Cardo (serif headings) + Inter (sans-serif body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,89 +29,6 @@
       href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Preload hero so LCP is fast -->
-    <link rel="preload" as="image" href="/hero-cenote.webp" />
-
-    <!-- Structured data — Organization + FAQPage. Emitted in the initial
-         HTML response so search engines and AI crawlers see it without
-         executing JavaScript (the app itself still hydrates client-side). -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      "@id": "https://selvadentrotulum.com/#organization",
-      "name": "Selvadentro",
-      "alternateName": "Selvadentro Tulum",
-      "description": "La única comunidad privada en Tulum con nueve cenotes dentro. Privadas exclusivas de baja densidad en el corazón de la selva.",
-      "url": "https://selvadentrotulum.com/",
-      "logo": "https://selvadentrotulum.com/logo-cream.webp",
-      "image": "https://selvadentrotulum.com/hero-cenote.webp",
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Tulum, Quintana Roo, México"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tulum",
-        "addressRegion": "Quintana Roo",
-        "addressCountry": "MX"
-      },
-      "email": "info@selvadentrotulum.com",
-      "telephone": "+52 999 489 0828",
-      "sameAs": [
-        "https://wa.me/529994890828"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Cuándo puedo construir mi casa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tú decides cuándo. No hay presión para iniciar. Nuestras normas de construcción protegen a toda la comunidad —ruido, densidad e integración con la selva—, así que el conjunto se mantiene siempre. Una vez que inicias obra, el plazo máximo para terminar es de 2 años."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Hay cuota de mantenimiento?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, aproximadamente 5 pesos por m² al mes. Además, el fideicomiso incluye una reserva de la asociación de colonos que garantiza el mantenimiento correcto de las amenidades y áreas comunes a largo plazo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuándo se entregan los lotes y amenidades?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Suspiro y sus amenidades se entregan en 2029. Sin embargo, los residentes de Selvadentro disfrutan el proyecto desde el momento de su compra: acceso a los cenotes, áreas comunes y experiencias."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Puedo rentar mi propiedad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. Trabajamos con los mejores property managers para asegurar la mejor ocupación y el cuidado de tu residencia. Selvadentro ofrece lo que el viajero de Tulum busca —experiencias, lujo descalzo, desconectar para conectar—, lo que se traduce en mejores tarifas y ocupación."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué incluye la infraestructura?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Energía sustentable, red de agua subterránea, acceso controlado, seguridad 24/7, internet en áreas comunes, iluminación y paisajismo integrado, además de la Avenida Selvadentro y la calle interior de Suspiro."
-          }
-        }
-      ]
-    }
-    </script>
 
     <!-- Google tag (gtag.js) — GA4 property G-7F35BWLHTZ, reused from the
          previous site so reporting history stays continuous. page_view
@@ -154,15 +74,24 @@
     </script>
   </head>
   <body class="bg-brand-crema font-sans text-brand-negro">
+    <!-- Scroll-reveal blocks ship opacity:0 inline; without JS the
+         IntersectionObserver never flips them visible. !important in a
+         stylesheet beats inline styles, so JS-off readers still see
+         everything in the prerendered HTML. -->
+    <noscript
+      ><style>
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style></noscript
+    >
     <!-- Meta Pixel <noscript> fallback lives in <body> (parse5 disallows
          <img> inside a head-level <noscript>). -->
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=680727997874671&ev=PageView&noscript=1"
       alt="" /></noscript>
-    <!-- Pre-hydration shell: crawlable agency credit in the initial HTML
-         response. React replaces #root children on mount, where Footer.tsx
-         renders the same single link — never two links in the DOM at once. -->
-    <div id="root"><footer><p style="font-size:12px;color:#8a8a7d;text-align:center;padding:24px 0">© 2026 Selvadentro · <a href="https://tothemaxmedia.com" rel="noopener">Built by To The Max Media</a></p></footer></div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,12 +1,56 @@
+# Netlify config — the ONLY redirects/headers source. Do not re-create
+# public/_redirects: it takes precedence over this file and a stray
+# `/* /index.html 200` catch-all would resurrect the duplicate-content
+# problem (every URL answering 200 with the SPA shell) and kill real 404s.
+#
+# Every route is a physical prerendered file in dist/ (scripts/prerender.mjs),
+# so no SPA fallback exists on purpose. Unknown paths fall through to
+# dist/404.html, which Netlify serves with a real 404 status.
+
 [build]
   command = "npm run build"
   publish = "dist"
   functions = "netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [functions]
   node_bundler = "esbuild"
 
+# Legacy booking URLs (were client-side redirects; sitemap soft-404s).
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/agendar"
+  to = "/#contacto"
+  status = 301
+
+[[redirects]]
+  from = "/en/agendar"
+  to = "/en#contacto"
+  status = 301
+
+# Hashed bundle assets are immutable.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/og/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

@@ -46,8 +46,10 @@ export default function LocationSection({ t, lang }: Props) {
         <Reveal delay={350}>
           <div className="max-w-5xl mx-auto">
             <img
-              src="/rutas-acceso-map.png"
+              src="/rutas-acceso.webp"
               alt={mapAlt}
+              width={2206}
+              height={1265}
               className="w-full h-auto block"
               loading="lazy"
             />
