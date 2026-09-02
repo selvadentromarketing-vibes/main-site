@@ -22,3 +22,8 @@ dist-ssr
 
 # Build artifact of scripts/build-content.mjs (regenerated from content/blog)
 src/generated/
+
+# Throwaway analysis scripts and image dumps (agents and humans both leave
+# these in the repo root). Never part of the site — public/ is the only
+# directory copied into dist/.
+scratch-*
