@@ -60,8 +60,6 @@ Porque un proyecto que no puede obtener permiso no puede construir, por buenos q
 
 Nuestro expediente es público y lo resumimos sin adornos. El 11 de septiembre de 2025, SEDETUS — la autoridad de desarrollo territorial de Quintana Roo — publicó una alerta que señalaba 26 desarrollos en Tulum por presuntamente operar sin permisos estatales o municipales. Selvadentro estaba en esa lista. El 16 de septiembre de 2025, el boletín actualizado de SEDETUS retiró a 14 de ellos, Selvadentro incluido, tras acreditar cumplimiento con la Ley de Asentamientos Humanos, la Ley de Acciones Urbanísticas y la Ley de Propiedad en Condominio. La alerta original la cubrieron elquintanarroense.com.mx y quintafuerza.mx; el retiro lo reportó [Tulum Times](https://tulumtimes.com/tulum-sedetus-cleared-developments-legal-update-2025). Cinco días, en el expediente público, en los dos sentidos. Todo el rastro documental está en [legalidad y permisos](/legalidad-y-permisos).
 
-<!-- TODO(owner): link official SEDETUS bulletin/PDF -->
-
 ## ¿Cómo se ve el recurso legal en la práctica?
 
 Lento. La exigencia de cumplimiento va por la vía civil, y un caso contencioso medido en años es lo ordinario, no la excepción. PROFECO atiende quejas de consumidores en contratos de adhesión y puede mediar. El notario público, como fedatario, se niega a formalizar una operación cuyos documentos no cuadran — eso sí es protección real, pero llega en el cierre, no después.

@@ -62,8 +62,6 @@ Because a project that cannot get permission cannot build, however good the rend
 
 Our own file is public and we will summarize it plainly. On September 11, 2025, SEDETUS — Quintana Roo's territorial development authority — published an alert naming 26 Tulum developments it said lacked state or municipal permits. Selvadentro was on that list. On September 16, 2025, an updated SEDETUS bulletin removed 14 of them, Selvadentro included, after they demonstrated compliance with the Ley de Asentamientos Humanos, the Ley de Acciones Urbanísticas and the Ley de Propiedad en Condominio. The original alert was covered by elquintanarroense.com.mx and quintafuerza.mx; the clearance was reported by [Tulum Times](https://tulumtimes.com/tulum-sedetus-cleared-developments-legal-update-2025). Five days, on the record, either way. Our full documentation trail sits on the [legal and permits page](/en/legal-compliance).
 
-<!-- TODO(owner): link official SEDETUS bulletin/PDF -->
-
 ## What does recourse actually look like in Mexico?
 
 Slow. Contract enforcement runs through civil courts, and a contested case measured in years is ordinary rather than exceptional. PROFECO handles consumer complaints on adhesion contracts and can mediate. A notario público, as a public official, will refuse to formalize an operation whose documents do not hold up — which is genuine protection, but protection that arrives at closing, not after.

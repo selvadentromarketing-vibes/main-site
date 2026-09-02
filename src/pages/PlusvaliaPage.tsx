@@ -204,7 +204,9 @@ export default function PlusvaliaPage({ lang, path }: PageProps) {
               </Reveal>
             ))}
           </div>
-          {/* TODO(owner): link official SEDETUS bulletin/PDF */}
+          {/* No stable public URL exists for the SEDETUS bulletin and the owner
+              could not obtain the PDF; the dated press reports on
+              /legalidad-y-permisos carry the citation. Closed deliberately. */}
           <Reveal delay={160}>
             <img
               src="/rutas-acceso.webp"

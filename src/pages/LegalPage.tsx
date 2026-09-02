@@ -49,7 +49,7 @@ const copy = {
       ],
     ],
     bulletinNote:
-      'La fuente primaria es el boletín actualizado de SEDETUS del 16 de septiembre de 2025.',
+      'La fuente primaria es el boletín actualizado de SEDETUS del 16 de septiembre de 2025; los reportes de prensa fechados que están abajo documentan su contenido.',
     sourcesTitle: 'Las fuentes, no nuestra palabra',
     sourcesIntro: 'La cobertura es pública. Léela directamente:',
     sources: [
@@ -164,7 +164,7 @@ const copy = {
       ],
     ],
     bulletinNote:
-      'The primary source is the updated SEDETUS bulletin of September 16, 2025.',
+      'The primary source is the updated SEDETUS bulletin of September 16, 2025; the dated press reports below document its contents.',
     sourcesTitle: 'The sources, not our word',
     sourcesIntro: 'The coverage is public. Read it directly:',
     sources: [
@@ -303,8 +303,10 @@ export default function LegalPage({ lang, path }: PageProps) {
                 </tbody>
               </table>
             </div>
-            {/* TODO(owner): link the official SEDETUS bulletin PDF itself. The dated
-                press report of the clearance is already cited below. */}
+            {/* SEDETUS does not publish these bulletins at a stable public URL and
+                the owner could not obtain the PDF, so the citation chain rests on
+                the four dated press reports below — which is what bulletinNote now
+                says. Closed deliberately: do not reopen without the document. */}
             <p className="text-sm text-brand-gris mt-3">{c.bulletinNote}</p>
           </Reveal>
           <Reveal delay={120}>

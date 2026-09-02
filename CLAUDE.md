@@ -121,6 +121,12 @@ tables that need more room than the measure bleed past it with
   in `src/seo/site.ts`; market-wide figures are framed as typical ranges.
 - The SEDETUS episode (Sept 11 2025 listing → Sept 16 2025 clearance) is
   addressed transparently with press citations. Keep the dates exact.
+  **The bulletin PDF itself is not obtainable** — SEDETUS publishes no stable
+  public URL for it and the owner could not get a copy. The citation chain
+  therefore rests on the four dated press reports on `/legalidad-y-permisos`,
+  which is what that page's `bulletinNote` now says. Settled; don't re-add a
+  TODO for it. (Never put such notes in markdown bodies — HTML comments in
+  content pass straight through to the shipped page.)
 - No `Review`/`AggregateRating` schema on our own organization (Google
   penalizes self-serving review markup).
 - SSR-safety: no `window`/`document` access during render, no `new Date()` in

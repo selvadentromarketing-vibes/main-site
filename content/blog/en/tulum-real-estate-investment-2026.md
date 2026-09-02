@@ -30,8 +30,6 @@ On September 11, 2025, SEDETUS (Quintana Roo's ministry of sustainable urban dev
 
 On September 16, 2025, SEDETUS published an updated bulletin removing 14 developments — Selvadentro among them — after they demonstrated full compliance with the Ley de Asentamientos Humanos, the Ley de Acciones Urbanísticas, the state condominium law and related regulations. [Tulum Times](https://tulumtimes.com/tulum-sedetus-cleared-developments-legal-update-2025) covered the outcome in "SEDETUS Clears 14 Tulum Developments After Legal Review" (September 2025).
 
-<!-- TODO(owner): link official SEDETUS bulletin/PDF -->
-
 For a buyer, that five-day sequence is the real story: the state now checks, and it checks publicly. A market where the regulator names projects — and where compliant developers can produce their full file within days — is a healthier market than the Tulum of a decade ago. Twelve developments did not come off that list. The review worked as a quality filter, and serious buyers benefit from it.
 
 The practical lesson: verify any development yourself, ours included. Ask for state and municipal permits, the environmental authorization and the condominium regime before you sign. We explain what to request on our [legal compliance page](/en/legal-compliance), and there is a broader guide at [is it safe to buy property in Tulum](/en/is-it-safe-to-buy-property-in-tulum).

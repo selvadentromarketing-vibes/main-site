@@ -31,8 +31,6 @@ El 11 de septiembre de 2025, SEDETUS (la Secretaría de Desarrollo Territorial U
 
 El 16 de septiembre de 2025, SEDETUS publicó un boletín actualizado retirando a 14 desarrollos — Selvadentro entre ellos — tras acreditar el cumplimiento pleno de la Ley de Asentamientos Humanos, la Ley de Acciones Urbanísticas, la Ley de Propiedad en Condominio y la normativa relacionada.
 
-<!-- TODO(owner): link official SEDETUS bulletin/PDF -->
-
 Para quien invierte, la historia real está en esos cinco días: la autoridad revisa, y revisa en público. Un mercado donde el regulador señala proyectos — y donde el desarrollador cumplido puede exhibir su expediente completo en días — es un mercado más sano que el Tulum de hace una década. Doce desarrollos no salieron de esa lista. La revisión funcionó como filtro de calidad, y el comprador serio es quien gana con eso.
 
 La lección práctica: verifica cualquier desarrollo tú mismo, el nuestro incluido. Pide permisos estatales y municipales, autorización ambiental y régimen de condominio antes de firmar. En [legalidad y permisos](/legalidad-y-permisos) explicamos qué solicitar, y hay una guía más amplia en [¿es seguro invertir en Tulum?](/es-seguro-invertir-en-tulum).
