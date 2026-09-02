@@ -116,8 +116,8 @@ export default function Header({
         </a>
 
         {/* Desktop nav + lang + CTA — all right-aligned */}
-        <div className="hidden lg:flex items-center gap-8 ml-auto">
-          <nav className="flex items-center gap-8 text-brand-crema/85 text-[15px] font-medium uppercase tracking-[0.14em]">
+        <div className="hidden xl:flex items-center gap-5 2xl:gap-8 ml-auto">
+          <nav className="flex items-center gap-5 2xl:gap-8 text-brand-crema/85 text-[13px] 2xl:text-[15px] font-medium uppercase tracking-[0.14em]">
             {NAV_LINKS.map((link) => {
               if (link.children) {
                 const isOpen = openDropdown === link.id;
@@ -216,13 +216,13 @@ export default function Header({
 
           {/* Every page carries the lead form (PageLayout), so the CTA
               always scrolls locally instead of navigating home. */}
-          <a href="#contacto" className="btn-primary text-sm">
+          <a href="#contacto" className="btn-primary text-sm whitespace-nowrap">
             {t.nav.cta}
           </a>
         </div>
 
         {/* Mobile: always-visible lang toggle + menu button */}
-        <div className="lg:hidden ml-auto flex items-center gap-3">
+        <div className="xl:hidden ml-auto flex items-center gap-3">
           <div className="flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.18em]">
             <a
               href={lang === 'es' ? '#' : swapLangUrl}
@@ -260,7 +260,7 @@ export default function Header({
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="lg:hidden bg-brand-verde-osc/98 backdrop-blur-md border-t border-brand-crema/10">
+        <div className="xl:hidden bg-brand-verde-osc/98 backdrop-blur-md border-t border-brand-crema/10">
           <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-5 text-brand-crema">
             {NAV_LINKS.map((link) => (
               <div key={link.id} className="flex flex-col gap-3">

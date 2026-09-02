@@ -97,9 +97,9 @@ export default function BlogPostPage({ lang, path }: PageProps) {
       </section>
 
       <section className="section">
-        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[1fr_260px] lg:gap-12">
+        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[minmax(0,68ch)_260px] lg:gap-12 lg:justify-center">
           <article
-            className="prose prose-selva max-w-copy prose-headings:scroll-mt-28"
+            className="prose prose-selva max-w-none prose-headings:scroll-mt-28"
             // Trusted build-time HTML from our own markdown files.
             dangerouslySetInnerHTML={{ __html: post.html }}
           />

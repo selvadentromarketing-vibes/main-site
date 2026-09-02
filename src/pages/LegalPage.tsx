@@ -317,18 +317,14 @@ export default function LegalPage({ lang, path }: PageProps) {
                 <li key={s.name} className="text-sm sm:text-base leading-relaxed">
                   <span className="font-medium text-brand-verde-osc">{s.name}</span>
                   <span className="text-brand-gris"> · {s.date} — </span>
-                  {s.href ? (
-                    <a
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors"
-                    >
-                      {s.label}
-                    </a>
-                  ) : (
-                    <span>{s.label}</span>
-                  )}
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors"
+                  >
+                    {s.label}
+                  </a>
                 </li>
               ))}
             </ul>

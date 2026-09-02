@@ -52,7 +52,7 @@ export default function GlossaryTermPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-3xl mx-auto">
           <article
-            className="prose prose-selva max-w-copy [&>p:first-of-type]:text-lg [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:bg-white/70 [&>p:first-of-type]:border [&>p:first-of-type]:border-brand-oro/40 [&>p:first-of-type]:rounded-2xl [&>p:first-of-type]:p-6 [&>p:first-of-type]:text-brand-verde-osc"
+            className="prose prose-selva max-w-copy mx-auto [&>p:first-of-type]:text-lg [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:bg-white/70 [&>p:first-of-type]:border [&>p:first-of-type]:border-brand-oro/40 [&>p:first-of-type]:rounded-2xl [&>p:first-of-type]:p-6 [&>p:first-of-type]:text-brand-verde-osc"
             // Trusted build-time HTML from our own markdown files.
             dangerouslySetInnerHTML={{ __html: entry.html }}
           />

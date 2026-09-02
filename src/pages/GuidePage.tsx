@@ -89,9 +89,9 @@ export default function GuidePage({ lang, path }: PageProps) {
       </section>
 
       <section className="section">
-        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[1fr_260px] lg:gap-12">
+        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[minmax(0,68ch)_260px] lg:gap-12 lg:justify-center">
           <article
-            className="prose prose-selva max-w-copy prose-headings:scroll-mt-28 [&>p:first-of-type]:text-lg [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:border-l-4 [&>p:first-of-type]:border-brand-oro [&>p:first-of-type]:pl-5 [&>p:first-of-type]:text-brand-verde-osc"
+            className="prose prose-selva max-w-none prose-headings:scroll-mt-28 [&>p:first-of-type]:text-lg [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:border-l-4 [&>p:first-of-type]:border-brand-oro [&>p:first-of-type]:pl-5 [&>p:first-of-type]:text-brand-verde-osc"
             // Trusted build-time HTML from our own markdown files.
             dangerouslySetInnerHTML={{ __html: guide.html }}
           />

@@ -36,40 +36,29 @@ export default function GlossaryIndexPage({ lang, path }: PageProps) {
   const terms = TERMS.filter((t) => t.lang === lang).sort((a, b) =>
     (a.term ?? '').localeCompare(b.term ?? '', lang === 'es' ? 'es' : 'en'),
   );
-  const groups = new Map<string, typeof terms>();
-  for (const t of terms) {
-    const letter = (t.term ?? t.title).charAt(0).toUpperCase();
-    if (!groups.has(letter)) groups.set(letter, []);
-    groups.get(letter)!.push(t);
-  }
 
   return (
     <PageLayout lang={lang} path={path}>
       <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
 
       <section className="section">
-        <div className="max-w-4xl mx-auto space-y-10">
-          {[...groups.entries()].map(([letter, entries], i) => (
-            <Reveal key={letter} delay={(i % 4) * 40}>
-              <div>
-                <h2 className="font-serif text-3xl text-brand-oro mb-4">{letter}</h2>
-                <ul className="space-y-4">
-                  {entries.map((t) => (
-                    <li key={t.path} className="bg-white/70 border border-brand-verde/10 rounded-2xl p-5 hover:border-brand-oro/50 transition-colors">
-                      <a href={t.path} className="group block">
-                        <h3 className="text-xl mb-1 group-hover:text-brand-verde transition-colors">
-                          {t.term}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-brand-negro/75">
-                          {t.description}
-                        </p>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <ul className="grid sm:grid-cols-2 gap-5">
+            {terms.map((t, i) => (
+              <Reveal key={t.path} delay={(i % 2) * 60}>
+                <li className="h-full bg-white/70 border border-brand-verde/10 rounded-2xl p-6 hover:border-brand-oro/50 transition-colors">
+                  <a href={t.path} className="group block h-full">
+                    <h2 className="text-xl mb-2 group-hover:text-brand-verde transition-colors">
+                      {t.term}
+                    </h2>
+                    <p className="text-sm leading-relaxed text-brand-negro/75">
+                      {t.description}
+                    </p>
+                  </a>
+                </li>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
