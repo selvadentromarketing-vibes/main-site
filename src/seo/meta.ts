@@ -25,6 +25,15 @@ export interface HeroImage {
   /** The crop's real pixel size on disk — check-static asserts it. */
   width: number;
   height: number;
+  /**
+   * What the crop actually depicts, per language. These heroes are project
+   * photography and renders, not decoration, so they get real alt text
+   * rather than alt="" — it is what puts them in image search, and an
+   * empty alt on a meaningful image reads as a missing one to auditors.
+   * Written from the files themselves; if a crop is re-cut, re-check the
+   * sentence.
+   */
+  alt: { es: string; en: string };
 }
 
 export interface PageMeta {
@@ -573,17 +582,105 @@ export const STATIC_PAGES: PageMeta[] = [
  * own size), so they are recorded here and asserted by check-static.
  */
 const HERO_IMAGES: Record<string, HeroImage> = {
-  lots: { src: '/hero/lots.webp', width: 1600, height: 800 },
-  cenotes: { src: '/hero/cenotes.webp', width: 1010, height: 800 },
-  'cenote-land': { src: '/hero/cenote-land.webp', width: 1024, height: 768 },
-  amenities: { src: '/hero/amenities.webp', width: 1600, height: 800 },
-  location: { src: '/hero/location.webp', width: 1600, height: 800 },
-  investment: { src: '/hero/investment.webp', width: 1260, height: 618 },
-  gated: { src: '/hero/gated.webp', width: 1080, height: 608 },
-  eco: { src: '/hero/eco.webp', width: 1200, height: 800 },
-  living: { src: '/hero/living.webp', width: 1600, height: 800 },
-  developer: { src: '/hero/developer.webp', width: 990, height: 680 },
-  preventa: { src: '/hero/preventa.webp', width: 1200, height: 800 },
+  lots: {
+    src: '/hero/lots.webp',
+    width: 1600,
+    height: 800,
+    alt: {
+      es: 'Acceso a Suspiro en Selvadentro: el letrero de piedra entre la selva de la Ruta de los Cenotes',
+      en: 'The entrance to Suspiro at Selvadentro: the stone sign in the jungle on the Ruta de los Cenotes',
+    },
+  },
+  cenotes: {
+    src: '/hero/cenotes.webp',
+    width: 1010,
+    height: 800,
+    alt: {
+      es: 'Render del Cenote Mirador: una torre de madera suspendida sobre el agua entre raíces',
+      en: 'Render of Cenote Mirador: a timber tower suspended above the water among hanging roots',
+    },
+  },
+  'cenote-land': {
+    src: '/hero/cenote-land.webp',
+    width: 1024,
+    height: 768,
+    alt: {
+      es: 'Interior de un cenote de caverna en Selvadentro, con estalactitas sobre agua turquesa',
+      en: 'Inside a cavern cenote at Selvadentro, stalactites above turquoise water',
+    },
+  },
+  amenities: {
+    src: '/hero/amenities.webp',
+    width: 1600,
+    height: 800,
+    alt: {
+      es: 'Render del pabellón de alberca de techo a dos aguas y palapa, entre la selva de Selvadentro',
+      en: 'Render of the A-frame thatched pool pavilion in the jungle at Selvadentro',
+    },
+  },
+  location: {
+    src: '/hero/location.webp',
+    width: 1600,
+    height: 800,
+    alt: {
+      es: 'Vista aérea del Pabellón Holístico circular y los senderos de madera entre la selva conservada',
+      en: 'Aerial view of the circular Holistic Pavilion and timber boardwalks in the preserved jungle',
+    },
+  },
+  investment: {
+    src: '/hero/investment.webp',
+    width: 1260,
+    height: 618,
+    alt: {
+      es: 'Vista aérea de Casa de los Cenotes, su alberca y un cenote abierto en la selva de Suspiro',
+      en: 'Aerial view of Casa de los Cenotes, its pool and an open cenote in the Suspiro jungle',
+    },
+  },
+  gated: {
+    src: '/hero/gated.webp',
+    width: 1080,
+    height: 608,
+    alt: {
+      es: 'Render del Jungle Bar: mesas y lámparas de papel bajo una techumbre abierta entre palmas',
+      en: 'Render of the Jungle Bar: tables and paper lanterns under an open canopy among palms',
+    },
+  },
+  eco: {
+    src: '/hero/eco.webp',
+    width: 1200,
+    height: 800,
+    alt: {
+      es: 'Vista aérea nocturna de tres pabellones circulares iluminados junto a un cenote',
+      en: 'Aerial night view of three lit circular pavilions beside a cenote',
+    },
+  },
+  living: {
+    src: '/hero/living.webp',
+    width: 1600,
+    height: 800,
+    alt: {
+      es: 'Roca caliza y enredaderas bajo la bóveda de selva conservada de Selvadentro',
+      en: 'Limestone rock and hanging vines under the preserved jungle canopy at Selvadentro',
+    },
+  },
+  developer: {
+    src: '/hero/developer.webp',
+    width: 990,
+    height: 680,
+    alt: {
+      es: 'Chablé Resort en Yucatán, obra de Maat Handasa, una de las firmas detrás de Selvadentro',
+      en: 'Chablé Resort in Yucatán, built by Maat Handasa, one of the firms behind Selvadentro',
+    },
+  },
+  preventa: {
+    src: '/hero/preventa.webp',
+    width: 1200,
+    height: 800,
+    alt: {
+      es: 'Render del pabellón restaurante junto a la alberca, en la selva de Selvadentro',
+      en: 'Render of the restaurant pavilion beside the pool, in the jungle at Selvadentro',
+    },
+  },
 };
 
 for (const page of STATIC_PAGES) {

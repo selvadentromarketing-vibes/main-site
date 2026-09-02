@@ -97,7 +97,16 @@ export function lotProduct(lang: Lang, pageUrl: string): JsonLd {
   };
 }
 
-/** FAQPage generated from the SAME arrays the accordions render. */
+/**
+ * FAQPage generated from the SAME arrays the accordions render.
+ *
+ * Emitted on ONE page per language — /preguntas-frecuentes and /en/faq.
+ * Do not call this for the homepage: its five questions are a subset of
+ * the FAQ page's twenty, and the same Q&A marked up on two URLs is
+ * against Google's guidance. (The single-question FAQPage on each buyer
+ * guide is a different thing: that page's whole content IS that one
+ * question, and no other page marks it up.)
+ */
 export function faqPage(
   lang: Lang,
   pageUrl: string,
@@ -139,6 +148,18 @@ export function cenoteList(lang: Lang, pageUrl: string): JsonLd {
   };
 }
 
+/**
+ * The About film, which VideoEmbed renders into the prerendered HTML as a
+ * real <img> poster inside an <a> to the watch page — so the markup
+ * describes a video the crawler can actually find on the page. It did not
+ * before: the facade was a <button> with a CSS background-image, so
+ * Googlebot saw a VideoObject for a video that was nowhere in the DOM.
+ *
+ * TODO(owner): uploadDate below is a placeholder. Supply the real publish
+ * date, and the testimonial film's (wY7KfUCTXPE) — a second VideoObject is
+ * not added until then, because uploadDate is required for video rich
+ * results and inventing one is not an option.
+ */
 export function videoObjects(lang: Lang): JsonLd[] {
   return [
     {
@@ -150,7 +171,9 @@ export function videoObjects(lang: Lang): JsonLd[] {
           : 'A tour of Selvadentro, the private Tulum community built around nine natural cenotes.',
       thumbnailUrl: 'https://img.youtube.com/vi/CGl3Omh5rlU/hqdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/CGl3Omh5rlU',
+      contentUrl: 'https://www.youtube.com/watch?v=CGl3Omh5rlU',
       uploadDate: '2026-06-01',
+      inLanguage: lang === 'es' ? 'es-MX' : 'en',
       publisher: { '@id': ORG_ID },
     },
   ];
@@ -221,7 +244,14 @@ export function graphFor(meta: PageMeta, record?: ContentRecord): JsonLd {
 
   switch (meta.schemaKey) {
     case 'home':
-      nodes.push(faqPage(lang, pageUrl), ...videoObjects(lang));
+      // NO FAQPage here. The homepage accordion's five questions are a
+      // strict subset of the twenty on /preguntas-frecuentes (fullFaq =
+      // those five plus fifteen), so marking them up in both places put
+      // the identical five Q&As on two URLs — which Google's FAQPage
+      // guidance says not to do. The questions stay as visible content;
+      // the markup lives on the FAQ page only, which is the page whose
+      // whole purpose is the FAQ.
+      nodes.push(...videoObjects(lang));
       break;
     case 'lots':
       nodes.push(lotProduct(lang, pageUrl));

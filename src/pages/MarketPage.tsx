@@ -137,7 +137,7 @@ export default function MarketPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage}>
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} lang={lang}>
         <p className="mt-6 text-sm tracking-wide text-brand-crema/60">{c.updatedLine}</p>
       </PageHero>
 

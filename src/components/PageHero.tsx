@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { HeroImage } from '../seo/meta';
+import type { Lang } from '../i18n/translations';
 
 interface PageHeroProps {
   eyebrow: string;
@@ -19,8 +20,8 @@ interface PageHeroProps {
    * none and fall back to the typographic treatment — that is the point.
    */
   image?: HeroImage;
-  /** Alt text for the hero photograph. Decorative by default. */
-  imageAlt?: string;
+  /** Picks the hero's alt text. Required whenever `image` is given. */
+  lang?: Lang;
   children?: ReactNode;
 }
 
@@ -38,7 +39,7 @@ export default function PageHero({
   title,
   lede,
   image,
-  imageAlt,
+  lang = 'es',
   children,
 }: PageHeroProps) {
   return (
@@ -51,10 +52,9 @@ export default function PageHero({
         <>
           <img
             src={image.src}
-            alt={imageAlt ?? ''}
+            alt={image.alt[lang]}
             width={image.width}
             height={image.height}
-            aria-hidden={imageAlt ? undefined : true}
             className="absolute inset-0 -z-10 h-full w-full object-cover"
             {...{ fetchpriority: 'high' }}
           />

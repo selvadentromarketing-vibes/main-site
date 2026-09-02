@@ -22,8 +22,9 @@ export default function HeroSection({ t }: Props) {
         />
         <img
           src="/hero-cenote.webp"
-          alt=""
-          aria-hidden="true"
+          // Not decorative: this is the site's primary photograph, so it
+          // gets real alt text like every other hero.
+          alt={t.hero.imageAlt}
           width={1920}
           height={1080}
           {...{ fetchpriority: "high" }}

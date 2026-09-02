@@ -56,6 +56,10 @@ export interface Translation {
     subhead: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    /** The background photograph. Not decorative — it is the site's
+        primary image. Deliberately does not name which of the nine
+        cenotes it is; that is unresolved. */
+    imageAlt: string;
   };
 
   stats: Stat[];
@@ -191,6 +195,8 @@ export const translations: Record<Lang, Translation> = {
         'Privadas exclusivas de baja densidad en el corazón de la selva. Acceso limitado.',
       ctaPrimary: 'Ver disponibilidad',
       ctaSecondary: 'Recorrer el proyecto',
+      imageAlt:
+        'Un cenote de caverna en Selvadentro: agua turquesa y un andador de madera bajo la roca',
     },
 
     stats: [
@@ -442,6 +448,8 @@ export const translations: Record<Lang, Translation> = {
         'Exclusive low-density enclaves in the heart of the jungle. Limited access.',
       ctaPrimary: 'View availability',
       ctaSecondary: 'Take the tour',
+      imageAlt:
+        'A cavern cenote at Selvadentro: turquoise water and a timber walkway beneath the rock',
     },
 
     stats: [
