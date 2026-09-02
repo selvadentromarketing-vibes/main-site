@@ -17,7 +17,7 @@ import type { PageProps } from '../routes/AppRoutes';
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 
-/** The three showcased cenotes (real render dims verified via sharp). */
+/** The three showcased cenotes (real photo dims verified via sharp). */
 const HIGHLIGHTS = [
   { id: 'cenote-mirador', w: 900, h: 1200 },
   { id: 'cenote-piedra', w: 1200, h: 800 },
@@ -192,7 +192,7 @@ export default function CenoteLandPage({ lang, path }: PageProps) {
         </div>
       </section>
 
-      {/* Three cenote highlights (data + renders from the masterplan) */}
+      {/* Three cenote highlights (data + photographs from the masterplan) */}
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <Reveal>

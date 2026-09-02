@@ -74,6 +74,15 @@ export default function PageHero({
         {children}
       </div>
 
+      {/* Provenance, where the crop is a visualisation rather than a
+          photograph of something that exists. Small and low-contrast — it
+          is a disclosure, not a caption competing with the H1. */}
+      {image?.note && (
+        <p className="relative mt-10 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-brand-crema/55 max-w-4xl mx-auto">
+          {image.note[lang]}
+        </p>
+      )}
+
       {/* Hairline that hands the band off to the cream page body. */}
       <span
         aria-hidden="true"

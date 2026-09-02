@@ -26,6 +26,7 @@ const copy = {
     protectBody:
       'Antes de trazar el masterplan, Estudio AMA y especialistas en hidrología mapearon cada cenote y su flujo subterráneo. Las vialidades y amenidades se acomodaron alrededor del agua — no al revés — y las normas de construcción (35% de ocupación máxima por lote, dos niveles de altura) mantienen la carga sobre el acuífero al mínimo. La prensa de arquitectura internacional ha documentado este enfoque: la selva dictó el plano.',
     ctaLinks: [
+      ['/#masterplan', 'Ver los nueve en el masterplan interactivo'],
       ['/terrenos-con-cenote-en-venta', 'Terrenos con cenote en venta'],
       ['/lotes-en-venta-tulum', 'Precios y disponibilidad de lotes'],
       ['/blog/que-es-un-cenote', 'Guía completa: ¿qué es un cenote?'],
@@ -45,6 +46,7 @@ const copy = {
     protectBody:
       'Before the masterplan was drawn, Estudio AMA and hydrology specialists mapped every cenote and its underground flow. Roads and amenities were arranged around the water — not the other way around — and the building rules (35% max lot coverage, two-level height cap) keep pressure on the aquifer to a minimum. International architecture press has documented the approach: the jungle dictated the plan.',
     ctaLinks: [
+      ['/en#masterplan', 'See all nine on the interactive masterplan'],
       ['/en/land-with-cenote-for-sale-mexico', 'Land with a cenote for sale'],
       ['/en/tulum-land-for-sale', 'Lot pricing and availability'],
       ['/en/blog/what-is-a-cenote-tulum', 'Full guide: what is a cenote?'],

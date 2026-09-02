@@ -34,6 +34,16 @@ export interface HeroImage {
    * sentence.
    */
   alt: { es: string; en: string };
+  /**
+   * Provenance line shown in the corner of the hero band. Suspiro delivers
+   * in 2029, so every image of a built amenity is a visualisation, not a
+   * photograph — and a full-bleed hero is the one position readers
+   * universally parse as a photograph. /amenidades already labels the same
+   * assets as renders in its gallery; this carries that disclosure onto
+   * the heroes. Omitted only where the crop really is a photograph of
+   * something that exists.
+   */
+  note?: { es: string; en: string };
 }
 
 export interface PageMeta {
@@ -141,7 +151,7 @@ export const STATIC_PAGES: PageMeta[] = [
     lang: 'es',
     path: '/cenotes',
     altPath: '/en/cenotes',
-    title: 'Los 9 cenotes de Selvadentro Tulum — nombres, fotos y mapa',
+    title: 'Los 9 cenotes de Selvadentro Tulum — nombres y conservación',
     description:
       'Los nueve cenotes naturales dentro de Selvadentro —Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida y Caverna— y cómo se conservan.',
     h1: 'Nueve cenotes. Una sola comunidad.',
@@ -154,7 +164,7 @@ export const STATIC_PAGES: PageMeta[] = [
     lang: 'en',
     path: '/en/cenotes',
     altPath: '/cenotes',
-    title: 'The 9 Cenotes of Selvadentro Tulum — Names, Photos & Map',
+    title: 'The 9 cenotes of Selvadentro Tulum — names and protection',
     description:
       'The nine natural cenotes inside Selvadentro — Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida and Caverna — and how they are preserved.',
     h1: 'Nine cenotes. One community.',
@@ -590,6 +600,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
       es: 'Acceso a Suspiro en Selvadentro: el letrero de piedra entre la selva de la Ruta de los Cenotes',
       en: 'The entrance to Suspiro at Selvadentro: the stone sign in the jungle on the Ruta de los Cenotes',
     },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
+    },
   },
   cenotes: {
     src: '/hero/cenotes.webp',
@@ -598,6 +612,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
     alt: {
       es: 'Render del Cenote Mirador: una torre de madera suspendida sobre el agua entre raíces',
       en: 'Render of Cenote Mirador: a timber tower suspended above the water among hanging roots',
+    },
+    note: {
+      es: 'Render del proyecto — el mirador es un proyecto por construir',
+      en: 'Project render — the lookout is planned, not built',
     },
   },
   'cenote-land': {
@@ -617,6 +635,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
       es: 'Render del pabellón de alberca de techo a dos aguas y palapa, entre la selva de Selvadentro',
       en: 'Render of the A-frame thatched pool pavilion in the jungle at Selvadentro',
     },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
+    },
   },
   location: {
     src: '/hero/location.webp',
@@ -625,6 +647,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
     alt: {
       es: 'Vista aérea del Pabellón Holístico circular y los senderos de madera entre la selva conservada',
       en: 'Aerial view of the circular Holistic Pavilion and timber boardwalks in the preserved jungle',
+    },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
     },
   },
   investment: {
@@ -635,6 +661,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
       es: 'Vista aérea de Casa de los Cenotes, su alberca y un cenote abierto en la selva de Suspiro',
       en: 'Aerial view of Casa de los Cenotes, its pool and an open cenote in the Suspiro jungle',
     },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
+    },
   },
   gated: {
     src: '/hero/gated.webp',
@@ -643,6 +673,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
     alt: {
       es: 'Render del Jungle Bar: mesas y lámparas de papel bajo una techumbre abierta entre palmas',
       en: 'Render of the Jungle Bar: tables and paper lanterns under an open canopy among palms',
+    },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
     },
   },
   eco: {
@@ -653,6 +687,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
       es: 'Vista aérea nocturna de tres pabellones circulares iluminados junto a un cenote',
       en: 'Aerial night view of three lit circular pavilions beside a cenote',
     },
+    note: {
+      es: 'Imagen ilustrativa',
+      en: 'Illustrative image',
+    },
   },
   living: {
     src: '/hero/living.webp',
@@ -661,6 +699,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
     alt: {
       es: 'Roca caliza y enredaderas bajo la bóveda de selva conservada de Selvadentro',
       en: 'Limestone rock and hanging vines under the preserved jungle canopy at Selvadentro',
+    },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
     },
   },
   developer: {
@@ -671,6 +713,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
       es: 'Chablé Resort en Yucatán, obra de Maat Handasa, una de las firmas detrás de Selvadentro',
       en: 'Chablé Resort in Yucatán, built by Maat Handasa, one of the firms behind Selvadentro',
     },
+    note: {
+      es: 'Chablé Resort, Yucatán — Maat Handasa',
+      en: 'Chablé Resort, Yucatán — Maat Handasa',
+    },
   },
   preventa: {
     src: '/hero/preventa.webp',
@@ -679,6 +725,10 @@ const HERO_IMAGES: Record<string, HeroImage> = {
     alt: {
       es: 'Render del pabellón restaurante junto a la alberca, en la selva de Selvadentro',
       en: 'Render of the restaurant pavilion beside the pool, in the jungle at Selvadentro',
+    },
+    note: {
+      es: 'Render del proyecto',
+      en: 'Project render',
     },
   },
 };
