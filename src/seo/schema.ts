@@ -311,7 +311,12 @@ export function graphFor(meta: PageMeta, record?: ContentRecord): JsonLd {
             '@id': `${pageUrl}#term`,
             name: post.term ?? post.title,
             description: post.answerText,
-            inLanguage: lang === 'es' ? 'es-MX' : 'en',
+            // No inLanguage here: DefinedTerm is Thing > Intangible, and
+            // inLanguage is a CreativeWork property — schema.org's
+            // validator flags it, which was the "structured data has
+            // schema.org validation error" notice on all 24 glossary term
+            // pages. The language lives on the DefinedTermSet above, which
+            // IS a CreativeWork.
             inDefinedTermSet: {
               '@id': `${absUrl(lang === 'es' ? '/glosario' : '/en/glossary')}#termset`,
             },

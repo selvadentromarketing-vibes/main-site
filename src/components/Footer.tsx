@@ -1,4 +1,5 @@
 import { Mail, Phone, Instagram, MapPin } from 'lucide-react';
+import { ORG } from '../seo/site';
 import type { Translation, Lang } from '../i18n/translations';
 import { COLLECTION_INDEXES, STATIC_PAGES } from '../seo/meta';
 
@@ -148,7 +149,7 @@ export default function Footer({ t, lang }: FooterProps) {
               {t.footer.contactPhone}
             </a>
             <a
-              href="https://instagram.com/selvadentro.tulum"
+              href={ORG.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-brand-oro transition-colors"
