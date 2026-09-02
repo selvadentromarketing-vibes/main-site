@@ -24,6 +24,7 @@ export default function GenericLandingPage({
         eyebrow={eyebrow ?? (lang === 'es' ? 'Selvadentro Tulum' : 'Selvadentro Tulum')}
         title={meta.h1}
         lede={lede ?? meta.description}
+        image={meta.heroImage}
       />
       {children}
     </PageLayout>

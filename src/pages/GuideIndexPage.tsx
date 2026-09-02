@@ -39,14 +39,14 @@ export default function GuideIndexPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.map((g, i) => (
               <Reveal key={g.path} delay={(i % 3) * 60}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full flex flex-col hover:border-brand-oro/50 transition-colors">
+                <article className="card-premium p-6 h-full flex flex-col">
                   <h2 className="text-xl leading-snug mb-3">
                     <a href={g.path} className="hover:text-brand-verde transition-colors">
                       {g.title}
@@ -55,7 +55,7 @@ export default function GuideIndexPage({ lang, path }: PageProps) {
                   <p className="text-sm leading-relaxed text-brand-negro/75 mb-4 flex-1">
                     {g.description}
                   </p>
-                  <p className="text-xs text-brand-gris">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-oro pt-4 border-t border-brand-verde/10">
                     {g.readingMinutes} {c.reading}
                   </p>
                 </article>
@@ -67,7 +67,7 @@ export default function GuideIndexPage({ lang, path }: PageProps) {
 
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6">{c.also}</h2>
+          <h2 className="h2-section mb-6">{c.also}</h2>
           <ul className="space-y-3">
             {c.alsoLinks.map(([href, label]) => (
               <li key={href}>

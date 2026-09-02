@@ -137,65 +137,73 @@ export default function MarketPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede}>
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage}>
         <p className="mt-6 text-sm tracking-wide text-brand-crema/60">{c.updatedLine}</p>
       </PageHero>
 
-      {c.sections.map((section, i) => (
-        <section
-          key={section.title}
-          className={`section ${i % 2 === 1 ? 'bg-brand-crema-osc/40' : ''}`}
-        >
-          <div className="max-w-4xl mx-auto">
-            <Reveal>
-              <h2 className="text-2xl sm:text-3xl mb-5">{section.title}</h2>
-              {section.body.map((p) => (
-                <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
-                  {p}
-                </p>
-              ))}
+      {/* One continuous report rather than six tinted bands: numbered
+          parts on a single reading measure, separated by hairlines. Short
+          sections in their own full-height sections read as empty stripes. */}
+      <section className="section">
+        <div className="max-w-prose mx-auto">
+          {c.sections.map((section, i) => (
+            <Reveal key={section.title}>
+              <div
+                className={
+                  i > 0 ? 'mt-14 pt-14 border-t border-brand-verde/15' : ''
+                }
+              >
+                <h2 className="h2-section mb-5">{section.title}</h2>
+                {section.body.map((p) => (
+                  <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
+                    {p}
+                  </p>
+                ))}
+                {i === 2 && (
+                  <div className="mt-9">
+                    <h3 className="font-serif text-xl sm:text-2xl text-brand-verde-osc mb-4">
+                      {c.tableTitle}
+                    </h3>
+                    {/* The series needs more width than the measure: let it
+                        bleed past the column on wide screens. */}
+                    <div className="table-shell lg:-mx-24 xl:-mx-32">
+                      <table className="table-premium text-sm sm:text-base">
+                        <thead>
+                          <tr>
+                            {c.tableHead.map((h) => (
+                              <th key={h} scope="col">
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {c.tableRows.map(([date, price, note]) => (
+                            <tr key={date}>
+                              <th scope="row" className="font-medium text-brand-verde-osc sm:whitespace-nowrap align-top">
+                                {date}
+                              </th>
+                              <td className="sm:whitespace-nowrap">{price}</td>
+                              <td>{note}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-sm text-brand-gris mt-3">{c.tableNote}</p>
+                    {/* TODO(owner): add 2-3 third-party market datapoints (e.g.
+                        Lamudi/Properstar averages) with links when available. */}
+                  </div>
+                )}
+              </div>
             </Reveal>
-            {i === 2 && (
-              <Reveal delay={80}>
-                <h3 className="font-serif text-xl sm:text-2xl text-brand-verde-osc mt-8 mb-4">
-                  {c.tableTitle}
-                </h3>
-                <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-                  <table className="w-full text-left text-sm sm:text-base">
-                    <thead>
-                      <tr className="border-b border-brand-verde/15">
-                        {c.tableHead.map((h) => (
-                          <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
-                            {h}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {c.tableRows.map(([date, price, note]) => (
-                        <tr key={date} className="border-b border-brand-verde/10 last:border-0">
-                          <th scope="row" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc whitespace-nowrap align-top">
-                            {date}
-                          </th>
-                          <td className="py-3.5 px-4 sm:px-6 whitespace-nowrap">{price}</td>
-                          <td className="py-3.5 px-4 sm:px-6">{note}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-sm text-brand-gris mt-3">{c.tableNote}</p>
-                {/* TODO(owner): add 2-3 third-party market datapoints (e.g.
-                    Lamudi/Properstar averages) with links when available. */}
-              </Reveal>
-            )}
-          </div>
-        </section>
-      ))}
+          ))}
+        </div>
+      </section>
 
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

@@ -39,14 +39,14 @@ export default function GlossaryIndexPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <ul className="grid sm:grid-cols-2 gap-5">
             {terms.map((t, i) => (
               <Reveal key={t.path} delay={(i % 2) * 60}>
-                <li className="h-full bg-white/70 border border-brand-verde/10 rounded-2xl p-6 hover:border-brand-oro/50 transition-colors">
+                <li className="h-full card-premium p-6">
                   <a href={t.path} className="group block h-full">
                     <h2 className="text-xl mb-2 group-hover:text-brand-verde transition-colors">
                       {t.term}
@@ -63,8 +63,8 @@ export default function GlossaryIndexPage({ lang, path }: PageProps) {
       </section>
 
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6">{c.also}</h2>
+        <div className="max-w-prose mx-auto">
+          <h2 className="h2-section mb-6">{c.also}</h2>
           <ul className="space-y-3">
             {c.alsoLinks.map(([href, label]) => (
               <li key={href}>

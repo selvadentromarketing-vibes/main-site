@@ -167,13 +167,13 @@ export default function DeveloperPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* 1. Who is JJF Creando */}
       <section className="section">
         <div className="max-w-4xl mx-auto grid md:grid-cols-[1fr_auto] gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.whoTitle}</h2>
+            <h2 className="h2-section mb-5">{c.whoTitle}</h2>
             {c.whoBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -197,12 +197,12 @@ export default function DeveloperPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.principalsTitle}</h2>
+            <h2 className="h2-section mb-8">{c.principalsTitle}</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-5">
             {PRINCIPALS.map((p, i) => (
               <Reveal key={p.nameEs} delay={i * 80}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <article className="card-premium p-6 h-full">
                   <h3 className="text-xl mb-3">{es ? p.nameEs : p.nameEn}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">
                     {es ? p.bodyEs : p.bodyEn}
@@ -218,7 +218,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-3">{c.portfolioTitle}</h2>
+            <h2 className="h2-section mb-3">{c.portfolioTitle}</h2>
             <p className="text-sm text-brand-gris mb-8 max-w-copy">{c.portfolioNote}</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-5">
@@ -247,7 +247,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.archTitle}</h2>
+            <h2 className="h2-section mb-5">{c.archTitle}</h2>
             {c.archBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -281,7 +281,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-4">{c.authorsTitle}</h2>
+            <h2 className="h2-section mb-4">{c.authorsTitle}</h2>
             <p className="leading-relaxed mb-8 max-w-copy">{c.authorsIntro}</p>
           </Reveal>
           <div className="grid md:grid-cols-2 gap-5">
@@ -291,7 +291,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
                 <Reveal key={id} delay={i * 80}>
                   <section
                     id={id}
-                    className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full scroll-mt-28"
+                    className="card-premium p-6 h-full scroll-mt-28"
                   >
                     <span className="eyebrow">{es ? author.roleEs : author.roleEn}</span>
                     <h3 className="text-xl mt-2 mb-3">{author.name}</h3>
@@ -318,7 +318,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
       {/* Keep exploring */}
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.ctaTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.ctaTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.ctaLinks.map(([href, label]) => (
               <li key={href}>

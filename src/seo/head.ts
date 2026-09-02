@@ -70,6 +70,10 @@ export function renderHeadTags(meta: PageMeta): string {
     meta.preloadHero
       ? `<link rel="preload" as="image" href="/hero-cenote.webp" media="(min-width: 640px)" />\n    <link rel="preload" as="image" href="/hero-cenote-mobile.jpg" media="(max-width: 639px)" />`
       : '',
+    // Subpage hero photograph — it is the LCP element on those pages.
+    meta.heroImage
+      ? `<link rel="preload" as="image" href="${meta.heroImage}" />`
+      : '',
     `<script type="application/ld+json">${jsonLd}</script>`,
   ];
   return lines.filter(Boolean).join('\n    ');

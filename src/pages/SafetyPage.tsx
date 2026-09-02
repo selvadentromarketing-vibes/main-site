@@ -207,22 +207,22 @@ export default function SafetyPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* (a) Red flags vs green flags */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.flagsTitle}</h2>
-            <p className="leading-relaxed mb-6 max-w-copy">{c.flagsIntro}</p>
+            <h2 className="h2-section mb-5">{c.flagsTitle}</h2>
+            <p className="leading-relaxed mb-6">{c.flagsIntro}</p>
           </Reveal>
           <Reveal delay={80}>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-              <table className="w-full text-left text-sm sm:text-base">
+            <div className="table-shell lg:-mx-24 xl:-mx-32">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
+                  <tr>
                     {c.flagsHead.map((h) => (
-                      <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc w-1/2">
+                      <th key={h} scope="col" className="w-1/2">
                         {h}
                       </th>
                     ))}
@@ -230,9 +230,9 @@ export default function SafetyPage({ lang, path }: PageProps) {
                 </thead>
                 <tbody>
                   {c.flags.map(([red, green]) => (
-                    <tr key={red} className="border-b border-brand-verde/10 last:border-0">
-                      <td className="py-3.5 px-4 sm:px-6 align-top text-brand-negro/80">{red}</td>
-                      <td className="py-3.5 px-4 sm:px-6 align-top text-brand-verde-osc">{green}</td>
+                    <tr key={red}>
+                      <td className="align-top text-brand-negro/80">{red}</td>
+                      <td className="align-top text-brand-verde-osc">{green}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -246,13 +246,13 @@ export default function SafetyPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-3">{c.stepsTitle}</h2>
+            <h2 className="h2-section mb-3">{c.stepsTitle}</h2>
             <p className="leading-relaxed mb-8 max-w-copy">{c.stepsIntro}</p>
           </Reveal>
           <ol className="space-y-5">
             {c.steps.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <li className="flex gap-4 sm:gap-5 bg-white/70 border border-brand-verde/10 rounded-2xl p-6">
+                <li className="flex gap-4 sm:gap-5 card-premium p-6">
                   <span className="shrink-0 w-9 h-9 rounded-full border border-brand-verde/30 flex items-center justify-center font-serif text-brand-verde">
                     {i + 1}
                   </span>
@@ -269,11 +269,11 @@ export default function SafetyPage({ lang, path }: PageProps) {
 
       {/* (c) Title, closing costs and the fideicomiso */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.titleTitle}</h2>
+            <h2 className="h2-section mb-5">{c.titleTitle}</h2>
             {c.titleBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -285,7 +285,7 @@ export default function SafetyPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.sedetusTitle}</h2>
+            <h2 className="h2-section mb-5">{c.sedetusTitle}</h2>
             {c.sedetusBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -317,11 +317,11 @@ export default function SafetyPage({ lang, path }: PageProps) {
 
       {/* (e) Market-risk honesty */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.riskTitle}</h2>
+            <h2 className="h2-section mb-5">{c.riskTitle}</h2>
             {c.riskBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -331,7 +331,7 @@ export default function SafetyPage({ lang, path }: PageProps) {
 
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

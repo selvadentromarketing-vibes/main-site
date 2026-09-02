@@ -41,15 +41,15 @@ export default function BlogIndexPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <Reveal key={post.path} delay={(i % 3) * 60}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full flex flex-col hover:border-brand-oro/50 transition-colors">
-                  <div className="text-xs text-brand-gris mb-3">
+                <article className="card-premium p-6 h-full flex flex-col">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-oro mb-3">
                     <time dateTime={post.updated}>
                       {c.updatedLabel} {formatDate(post.updated, lang)}
                     </time>
@@ -64,7 +64,7 @@ export default function BlogIndexPage({ lang, path }: PageProps) {
                   <p className="text-sm leading-relaxed text-brand-negro/75 mb-4 flex-1">
                     {post.description}
                   </p>
-                  <div className="text-xs text-brand-gris">
+                  <div className="text-xs text-brand-gris pt-4 border-t border-brand-verde/10">
                     {AUTHORS[post.author].name} ·{' '}
                     {lang === 'es' ? AUTHORS[post.author].roleEs : AUTHORS[post.author].roleEn}
                   </div>

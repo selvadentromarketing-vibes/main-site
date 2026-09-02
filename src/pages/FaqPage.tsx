@@ -44,7 +44,7 @@ export default function FaqPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       <section className="section">
         <div className="max-w-3xl mx-auto">
@@ -56,7 +56,7 @@ export default function FaqPage({ lang, path }: PageProps) {
 
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6">{c.moreTitle}</h2>
+          <h2 className="h2-section mb-6">{c.moreTitle}</h2>
           <ul className="space-y-3">
             {c.moreLinks.map(([href, label]) => (
               <li key={href}>

@@ -188,13 +188,13 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* Intro: philosophy + who designed them */}
       <section className="section">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.introTitle}</h2>
+            <h2 className="h2-section mb-5">{c.introTitle}</h2>
             {c.introBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -218,7 +218,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-3">{c.gridTitle}</h2>
+            <h2 className="h2-section mb-3">{c.gridTitle}</h2>
             <p className="text-sm text-brand-gris mb-8 max-w-copy">{c.gridNote}</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -227,7 +227,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
               const dims = img ? MAP_IMG_DIMS[img] : undefined;
               return (
                 <Reveal key={exp.id} delay={(i % 3) * 80}>
-                  <article className="bg-white/70 border border-brand-verde/10 rounded-2xl overflow-hidden h-full flex flex-col">
+                  <article className="card-premium overflow-hidden h-full flex flex-col">
                     {img && dims && (
                       <img
                         src={img}
@@ -256,7 +256,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.galleryTitle}</h2>
+            <h2 className="h2-section mb-8">{c.galleryTitle}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-5">
             {GALLERY.map((g, i) => (
@@ -284,7 +284,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.accessTitle}</h2>
+            <h2 className="h2-section mb-5">{c.accessTitle}</h2>
             {c.accessBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -292,7 +292,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
             ))}
           </Reveal>
           <Reveal delay={120}>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.hoaTitle}</h2>
+            <h2 className="h2-section mb-5">{c.hoaTitle}</h2>
             {c.hoaBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -305,7 +305,7 @@ export default function AmenitiesPage({ lang, path }: PageProps) {
       {/* Keep exploring */}
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.ctaTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.ctaTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.ctaLinks.map(([href, label]) => (
               <li key={href}>

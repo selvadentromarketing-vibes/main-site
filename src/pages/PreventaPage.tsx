@@ -167,13 +167,13 @@ export default function PreventaPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* (a) What preventa means for land */}
       <section className="section">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.whatTitle}</h2>
+            <h2 className="h2-section mb-5">{c.whatTitle}</h2>
             {c.whatBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -195,15 +195,15 @@ export default function PreventaPage({ lang, path }: PageProps) {
 
       {/* (b) Selvadentro's plan as the worked example */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.planTitle}</h2>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-              <table className="w-full text-left text-sm sm:text-base">
+            <h2 className="h2-section mb-6">{c.planTitle}</h2>
+            <div className="table-shell lg:-mx-24 xl:-mx-32">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
+                  <tr>
                     {c.stepsHead.map((h) => (
-                      <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                      <th key={h} scope="col">
                         {h}
                       </th>
                     ))}
@@ -211,12 +211,12 @@ export default function PreventaPage({ lang, path }: PageProps) {
                 </thead>
                 <tbody>
                   {c.priceSteps.map(([phase, price, date]) => (
-                    <tr key={phase} className="border-b border-brand-verde/10 last:border-0">
-                      <th scope="row" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc align-top whitespace-nowrap">
+                    <tr key={phase}>
+                      <th scope="row" className="font-medium text-brand-verde-osc align-top sm:whitespace-nowrap">
                         {phase}
                       </th>
-                      <td className="py-3.5 px-4 sm:px-6 align-top whitespace-nowrap">{price}</td>
-                      <td className="py-3.5 px-4 sm:px-6 align-top">{date}</td>
+                      <td className="align-top sm:whitespace-nowrap">{price}</td>
+                      <td className="align-top">{date}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -224,15 +224,15 @@ export default function PreventaPage({ lang, path }: PageProps) {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60 mt-5">
-              <table className="w-full text-left text-sm sm:text-base">
+            <div className="table-shell lg:-mx-24 xl:-mx-32 mt-5">
+              <table className="table-premium text-sm sm:text-base">
                 <tbody>
                   {c.termsRows.map(([k, v]) => (
-                    <tr key={k} className="border-b border-brand-verde/10 last:border-0">
-                      <th scope="row" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc whitespace-nowrap align-top">
+                    <tr key={k}>
+                      <th scope="row" className="font-medium text-brand-verde-osc sm:whitespace-nowrap align-top">
                         {k}
                       </th>
-                      <td className="py-3.5 px-4 sm:px-6">{v}</td>
+                      <td>{v}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -240,7 +240,7 @@ export default function PreventaPage({ lang, path }: PageProps) {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="leading-relaxed mt-6 max-w-copy">
+            <p className="leading-relaxed mt-6">
               {c.planOutro.pre}
               <a
                 href={c.planOutro.href}
@@ -258,13 +258,13 @@ export default function PreventaPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-3">{c.checkTitle}</h2>
+            <h2 className="h2-section mb-3">{c.checkTitle}</h2>
             <p className="leading-relaxed mb-8 max-w-copy">{c.checkIntro}</p>
           </Reveal>
           <ol className="space-y-5">
             {c.checklist.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <li className="flex gap-4 sm:gap-5 bg-white/70 border border-brand-verde/10 rounded-2xl p-6">
+                <li className="flex gap-4 sm:gap-5 card-premium p-6">
                   <span className="shrink-0 w-9 h-9 rounded-full border border-brand-verde/30 flex items-center justify-center font-serif text-brand-verde">
                     {i + 1}
                   </span>
@@ -292,7 +292,7 @@ export default function PreventaPage({ lang, path }: PageProps) {
             </a>
             {c.closingLine.post}
           </p>
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

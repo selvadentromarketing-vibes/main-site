@@ -28,6 +28,17 @@
     font-weight: 400;
     letter-spacing: -0.01em;
   }
+  /* Cardo has real ligatures and old-style figures; switching them on is
+     most of what separates "serif font" from "typeset". */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+  ::selection {
+    background-color: rgb(200 169 110 / 0.3);
+  }
 }
 
 @layer components {
@@ -57,6 +68,161 @@
            uppercase text-brand-oro;
   }
   .section {
-    @apply py-14 sm:py-20 px-4 sm:px-6 lg:px-10;
+    @apply py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-10;
+  }
+
+  /* ── Display type ──────────────────────────────────────────────────
+     Fluid sizes with negative tracking, which large Cardo needs to stop
+     looking loose. Used by the page and article headers. */
+  .display-xl {
+    font-size: clamp(2.25rem, 1.35rem + 3.4vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.022em;
+  }
+  .display-lg {
+    font-size: clamp(1.9rem, 1.3rem + 2.1vw, 2.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+  }
+
+  /* Section headings on the pillar and landing pages. One class so the
+     whole site's second-level rhythm moves together, and so the sizes are
+     fluid instead of jumping at the sm breakpoint. */
+  .h2-section {
+    @apply font-serif;
+    font-size: clamp(1.6rem, 1.15rem + 1.05vw, 2.125rem);
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+  }
+
+  /* A hairline gold rule. Sits under an eyebrow to anchor it. */
+  .rule-oro {
+    @apply block h-px w-14 bg-brand-oro/70;
+  }
+
+  /* ── Grain ─────────────────────────────────────────────────────────
+     Large flat fills read as cheap digital colour. A barely-there noise
+     layer gives the dark bands the tooth of print. Needs a positioned
+     parent; never intercepts pointer events. */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* ── Hero scrims ───────────────────────────────────────────────────
+     Photography needs a deep, directional veil for cream text to hold
+     contrast at any crop. Two layers: a vertical wash for legibility and
+     a green cast so photos sit inside the palette rather than beside it. */
+  .hero-veil {
+    background-image:
+      /* Directional: heaviest where the H1 starts, opening up to the
+         right so the photograph is actually seen. Crops are luminance-
+         normalised at build time (scripts/optimize-images.mjs), which is
+         what lets one scrim serve all of them. */
+      linear-gradient(
+        100deg,
+        rgb(28 46 28 / 0.8) 0%,
+        rgb(28 46 28 / 0.6) 45%,
+        rgb(28 46 28 / 0.32) 100%
+      ),
+      /* Anchors the band's foot so it hands off to the cream body. */
+      linear-gradient(to top, rgb(28 46 28 / 0.4) 0%, rgb(28 46 28 / 0) 45%);
+  }
+  /* Editorial pages get no photograph — depth comes from a soft radial
+     bloom instead, so they read as considered rather than unfinished. */
+  .hero-editorial {
+    background-color: #1c2e1c;
+    background-image:
+      radial-gradient(ellipse 80% 120% at 12% -10%, rgb(45 74 45 / 0.95) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 100% at 92% 110%, rgb(200 169 110 / 0.13) 0%, transparent 55%);
+  }
+
+  /* ── Surfaces ──────────────────────────────────────────────────────
+     Replaces the flat bordered box. Opaque white, a hairline, and a
+     two-stage shadow so cards lift off the cream without a drop-shadow
+     halo. Gold keyline on hover. */
+  .card-premium {
+    @apply relative bg-white rounded-2xl border border-brand-verde/10
+           transition-all duration-300;
+    box-shadow:
+      0 1px 2px rgb(28 46 28 / 0.04),
+      0 10px 30px -18px rgb(28 46 28 / 0.16);
+  }
+  .card-premium:hover {
+    @apply border-brand-oro/45;
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 2px rgb(28 46 28 / 0.05),
+      0 18px 42px -20px rgb(28 46 28 / 0.24);
+  }
+
+  /* A non-interactive sibling of .card-premium: identical surface, no
+     hover motion. For panels that get read rather than clicked — sticky
+     tables of contents, definition boxes, data callouts. */
+  .panel-premium {
+    @apply relative bg-white rounded-2xl border border-brand-verde/10;
+    box-shadow:
+      0 1px 2px rgb(28 46 28 / 0.04),
+      0 10px 30px -18px rgb(28 46 28 / 0.14);
+  }
+
+  /* The glossary definition — the one paragraph AI extractors lift. The
+     first paragraph of the rendered markdown gets a gold left rule and a
+     white ground so it reads as the answer, not as the opening of an
+     essay. Targeted in CSS rather than with an arbitrary variant because
+     the body is dangerouslySetInnerHTML: there is no element to class. */
+  .prose-definition > p:first-of-type {
+    @apply bg-white rounded-r-2xl rounded-l-sm border border-brand-verde/10
+           border-l-2 border-l-brand-oro p-6 sm:p-7
+           text-lg leading-relaxed text-brand-verde-osc;
+    box-shadow:
+      0 1px 2px rgb(28 46 28 / 0.04),
+      0 10px 30px -18px rgb(28 46 28 / 0.14);
+  }
+
+  /* Guide pages open with the extractable answer (40–60 words). Set it
+     larger against a gold rule so it reads as the answer rather than as
+     the first paragraph of body copy. Targeted in CSS because the body is
+     dangerouslySetInnerHTML — there is no element to put a class on. */
+  .prose-answer > p:first-of-type {
+    @apply text-[1.1875rem] leading-relaxed text-brand-verde-osc
+           border-l-2 border-brand-oro pl-6;
+  }
+
+  /* ── Tables ────────────────────────────────────────────────────────
+     Data is a big part of this site's credibility, so tables get a
+     proper editorial treatment: gold small-caps headers, hairline rows,
+     lining figures aligned in columns, no boxy grid. */
+  .table-premium {
+    @apply w-full text-left border-collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .table-premium thead th {
+    @apply py-3.5 px-4 sm:px-6 text-[11px] font-semibold uppercase
+           tracking-[0.18em] text-brand-oro align-bottom;
+    border-bottom: 1px solid rgb(45 74 45 / 0.22);
+  }
+  .table-premium tbody th {
+    @apply py-4 px-4 sm:px-6 font-medium text-brand-verde-osc align-top;
+    border-bottom: 1px solid rgb(45 74 45 / 0.09);
+  }
+  .table-premium tbody td {
+    @apply py-4 px-4 sm:px-6 align-top;
+    border-bottom: 1px solid rgb(45 74 45 / 0.09);
+  }
+  .table-premium tbody tr:last-child th,
+  .table-premium tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .table-shell {
+    @apply overflow-x-auto rounded-2xl border border-brand-verde/10 bg-white;
+    box-shadow:
+      0 1px 2px rgb(28 46 28 / 0.04),
+      0 10px 30px -18px rgb(28 46 28 / 0.14);
   }
 }

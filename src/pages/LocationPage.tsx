@@ -107,32 +107,32 @@ export default function LocationPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* Drive-times table (single source: translations[lang].location.distances) */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.tableTitle}</h2>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-              <table className="w-full text-left text-sm sm:text-base">
+            <h2 className="h2-section mb-6">{c.tableTitle}</h2>
+            <div className="table-shell lg:-mx-24 xl:-mx-32">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
-                    <th scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                  <tr>
+                    <th scope="col">
                       {c.tableHeadDest}
                     </th>
-                    <th scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                    <th scope="col">
                       {c.tableHeadTime}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {distances.map((d) => (
-                    <tr key={d.label} className="border-b border-brand-verde/10 last:border-0">
-                      <th scope="row" className="py-3.5 px-4 sm:px-6 font-normal align-top">
+                    <tr key={d.label}>
+                      <th scope="row" className="font-normal align-top">
                         {d.label}
                       </th>
-                      <td className="py-3.5 px-4 sm:px-6 whitespace-nowrap">
+                      <td className="sm:whitespace-nowrap">
                         {d.minutes} {c.minutes}
                       </td>
                     </tr>
@@ -149,7 +149,7 @@ export default function LocationPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.sideTitle}</h2>
+            <h2 className="h2-section mb-5">{c.sideTitle}</h2>
             {c.sideBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -176,12 +176,12 @@ export default function LocationPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.routesTitle}</h2>
+            <h2 className="h2-section mb-8">{c.routesTitle}</h2>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-5">
             {c.routes.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <article className="card-premium p-6 h-full">
                   <h3 className="text-xl mb-2">{title}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{body}</p>
                 </article>
@@ -193,10 +193,10 @@ export default function LocationPage({ lang, path }: PageProps) {
 
       {/* Showroom */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.visitTitle}</h2>
-            <p className="leading-relaxed max-w-copy">{c.visitBody}</p>
+            <h2 className="h2-section mb-5">{c.visitTitle}</h2>
+            <p className="leading-relaxed">{c.visitBody}</p>
           </Reveal>
         </div>
       </section>
@@ -204,7 +204,7 @@ export default function LocationPage({ lang, path }: PageProps) {
       {/* Keep exploring */}
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.ctaTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.ctaTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.ctaLinks.map(([href, label]) => (
               <li key={href}>

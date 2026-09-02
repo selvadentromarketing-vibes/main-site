@@ -142,15 +142,15 @@ export default function EcoPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* The three-question test */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.wordTitle}</h2>
+            <h2 className="h2-section mb-5">{c.wordTitle}</h2>
             {c.wordBody.map((p, i) => (
-              <p key={i} className="leading-relaxed mb-4 max-w-copy">
+              <p key={i} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -160,15 +160,15 @@ export default function EcoPage({ lang, path }: PageProps) {
 
       {/* Claim vs commitment checklist table */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.tableTitle}</h2>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-              <table className="w-full text-left text-sm sm:text-base">
+            <h2 className="h2-section mb-6">{c.tableTitle}</h2>
+            <div className="table-shell lg:-mx-24 xl:-mx-32">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
+                  <tr>
                     {c.tableHead.map((h) => (
-                      <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                      <th key={h} scope="col">
                         {h}
                       </th>
                     ))}
@@ -176,9 +176,9 @@ export default function EcoPage({ lang, path }: PageProps) {
                 </thead>
                 <tbody>
                   {c.tableRows.map(([claim, commitment]) => (
-                    <tr key={claim} className="border-b border-brand-verde/10 last:border-0">
-                      <td className="py-3.5 px-4 sm:px-6 align-top text-brand-negro/70">{claim}</td>
-                      <td className="py-3.5 px-4 sm:px-6 align-top font-medium text-brand-verde-osc">{commitment}</td>
+                    <tr key={claim}>
+                      <td className="align-top text-brand-negro/70">{claim}</td>
+                      <td className="align-top font-medium text-brand-verde-osc">{commitment}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -193,12 +193,12 @@ export default function EcoPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.commitTitle}</h2>
+            <h2 className="h2-section mb-8">{c.commitTitle}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {c.commitCards.map(([title, body], i) => (
               <Reveal key={title} delay={(i % 3) * 80}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <article className="card-premium p-6 h-full">
                   <h3 className="text-xl mb-2">{title}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{body}</p>
                 </article>
@@ -222,12 +222,12 @@ export default function EcoPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.verifyTitle}</h2>
+            <h2 className="h2-section mb-8">{c.verifyTitle}</h2>
           </Reveal>
           <ol className="grid sm:grid-cols-2 gap-5">
             {c.verifySteps.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <li className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <li className="card-premium p-6 h-full">
                   <span className="eyebrow">{lang === 'es' ? 'Paso' : 'Step'} {i + 1}</span>
                   <h3 className="text-xl mt-2 mb-2">{title}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{body}</p>
@@ -244,7 +244,7 @@ export default function EcoPage({ lang, path }: PageProps) {
       {/* Closing links */}
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

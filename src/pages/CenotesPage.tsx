@@ -59,14 +59,14 @@ export default function CenotesPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.whatTitle}</h2>
+            <h2 className="h2-section mb-5">{c.whatTitle}</h2>
             {c.whatBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -77,13 +77,13 @@ export default function CenotesPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-5xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.gridTitle}</h2>
+            <h2 className="h2-section mb-8">{c.gridTitle}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {CENOTES.map((cenote, i) => (
               <Reveal key={cenote.id} delay={(i % 3) * 80}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl overflow-hidden h-full flex flex-col">
-                  {cenote.images[0] && (
+                <article className="card-premium overflow-hidden h-full flex flex-col">
+                  {cenote.images[0] ? (
                     <img
                       src={cenote.images[0]}
                       alt={`${spotLabel(cenote, lang)} — Selvadentro Tulum`}
@@ -92,6 +92,26 @@ export default function CenotesPage({ lang, path }: PageProps) {
                       loading="lazy"
                       className="w-full aspect-[8/5] object-cover"
                     />
+                  ) : (
+                    /* Five of the nine have not been photographed yet. A
+                       designed plate — ripples, the shape of a cenote seen
+                       from above — keeps the grid regular instead of
+                       leaving a stretched blank card, and never implies a
+                       photograph of one cenote is of another. */
+                    <div className="hero-editorial grain relative w-full aspect-[8/5] flex items-center justify-center overflow-hidden">
+                      <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                        className="relative w-20 h-20 text-brand-oro"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <circle cx="32" cy="32" r="5.5" strokeWidth="1.5" opacity="0.95" />
+                        <circle cx="32" cy="32" r="13" strokeWidth="1" opacity="0.7" />
+                        <circle cx="32" cy="32" r="21" strokeWidth="1" opacity="0.48" />
+                        <circle cx="32" cy="32" r="29" strokeWidth="1" opacity="0.3" />
+                      </svg>
+                    </div>
                   )}
                   <div className="p-6 flex-1">
                     <h3 className="text-xl mb-2">{spotLabel(cenote, lang)}</h3>
@@ -107,17 +127,17 @@ export default function CenotesPage({ lang, path }: PageProps) {
       </section>
 
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.protectTitle}</h2>
-            <p className="leading-relaxed max-w-copy">{c.protectBody}</p>
+            <h2 className="h2-section mb-5">{c.protectTitle}</h2>
+            <p className="leading-relaxed">{c.protectBody}</p>
           </Reveal>
         </div>
       </section>
 
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.ctaTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.ctaTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.ctaLinks.map(([href, label]) => (
               <li key={href}>

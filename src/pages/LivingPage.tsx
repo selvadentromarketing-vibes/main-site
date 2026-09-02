@@ -203,13 +203,13 @@ export default function LivingPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* Daily life */}
       <section className="section">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.dailyTitle}</h2>
+            <h2 className="h2-section mb-5">{c.dailyTitle}</h2>
             {c.dailyBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -231,16 +231,16 @@ export default function LivingPage({ lang, path }: PageProps) {
 
       {/* Climate table */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-4">{c.climateTitle}</h2>
-            <p className="leading-relaxed mb-6 max-w-copy">{c.climateIntro}</p>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-              <table className="w-full text-left text-sm sm:text-base">
+            <h2 className="h2-section mb-4">{c.climateTitle}</h2>
+            <p className="leading-relaxed mb-6">{c.climateIntro}</p>
+            <div className="table-shell lg:-mx-24 xl:-mx-32">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
+                  <tr>
                     {c.climateHead.map((h) => (
-                      <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                      <th key={h} scope="col">
                         {h}
                       </th>
                     ))}
@@ -248,29 +248,29 @@ export default function LivingPage({ lang, path }: PageProps) {
                 </thead>
                 <tbody>
                   {c.climateRows.map(([month, season, note]) => (
-                    <tr key={month} className="border-b border-brand-verde/10 last:border-0">
-                      <th scope="row" className="py-3 px-4 sm:px-6 font-medium text-brand-verde-osc whitespace-nowrap align-top">
+                    <tr key={month}>
+                      <th scope="row" className="font-medium text-brand-verde-osc sm:whitespace-nowrap align-top">
                         {month}
                       </th>
-                      <td className="py-3 px-4 sm:px-6 whitespace-nowrap align-top">{season}</td>
-                      <td className="py-3 px-4 sm:px-6">{note}</td>
+                      <td className="sm:whitespace-nowrap align-top">{season}</td>
+                      <td>{note}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-sm text-brand-gris mt-3 max-w-copy">{c.climateNote}</p>
+            <p className="text-sm text-brand-gris mt-3">{c.climateNote}</p>
           </Reveal>
         </div>
       </section>
 
       {/* Connectivity */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.connectTitle}</h2>
+            <h2 className="h2-section mb-5">{c.connectTitle}</h2>
             {c.connectBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -282,11 +282,11 @@ export default function LivingPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.whoTitle}</h2>
+            <h2 className="h2-section mb-8">{c.whoTitle}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-5">
             <Reveal>
-              <div className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+              <div className="card-premium p-6 h-full">
                 <h3 className="text-xl mb-4">{c.forTitle}</h3>
                 <ul className="space-y-3">
                   {c.forItems.map((it) => (
@@ -298,7 +298,7 @@ export default function LivingPage({ lang, path }: PageProps) {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+              <div className="card-premium p-6 h-full">
                 <h3 className="text-xl mb-4">{c.notForTitle}</h3>
                 <ul className="space-y-3">
                   {c.notForItems.map((it) => (
@@ -317,12 +317,12 @@ export default function LivingPage({ lang, path }: PageProps) {
       <section className="section">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.zonesTitle}</h2>
+            <h2 className="h2-section mb-8">{c.zonesTitle}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-5">
             {c.zones.map(([name, body], i) => (
               <Reveal key={name} delay={(i % 2) * 80}>
-                <article className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <article className="card-premium p-6 h-full">
                   <h3 className="text-xl mb-2">{name}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{body}</p>
                 </article>
@@ -334,11 +334,11 @@ export default function LivingPage({ lang, path }: PageProps) {
 
       {/* Cost of living */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.costTitle}</h2>
+            <h2 className="h2-section mb-5">{c.costTitle}</h2>
             {c.costBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -348,10 +348,10 @@ export default function LivingPage({ lang, path }: PageProps) {
 
       {/* Soft close */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.closeTitle}</h2>
-            <p className="leading-relaxed max-w-copy">
+            <h2 className="h2-section mb-5">{c.closeTitle}</h2>
+            <p className="leading-relaxed">
               {c.closeBefore}
               <a href={c.closeLink1[0]} className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors">
                 {c.closeLink1[1]}
@@ -368,7 +368,7 @@ export default function LivingPage({ lang, path }: PageProps) {
 
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

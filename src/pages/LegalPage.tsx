@@ -266,26 +266,26 @@ export default function LegalPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* (a) The direct answer, with dates, laws and sources */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.sedetusTitle}</h2>
+            <h2 className="h2-section mb-5">{c.sedetusTitle}</h2>
             {c.sedetusBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
           </Reveal>
           <Reveal delay={80}>
-            <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60 mt-6">
-              <table className="w-full text-left text-sm sm:text-base">
+            <div className="table-shell lg:-mx-24 xl:-mx-32 mt-6">
+              <table className="table-premium text-sm sm:text-base">
                 <thead>
-                  <tr className="border-b border-brand-verde/15">
+                  <tr>
                     {c.timelineHead.map((h) => (
-                      <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                      <th key={h} scope="col">
                         {h}
                       </th>
                     ))}
@@ -293,11 +293,11 @@ export default function LegalPage({ lang, path }: PageProps) {
                 </thead>
                 <tbody>
                   {c.timeline.map(([date, event]) => (
-                    <tr key={date} className="border-b border-brand-verde/10 last:border-0">
-                      <th scope="row" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc whitespace-nowrap align-top">
+                    <tr key={date}>
+                      <th scope="row" className="font-medium text-brand-verde-osc sm:whitespace-nowrap align-top">
                         {date}
                       </th>
-                      <td className="py-3.5 px-4 sm:px-6">{event}</td>
+                      <td>{event}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -311,8 +311,8 @@ export default function LegalPage({ lang, path }: PageProps) {
             <h3 className="font-serif text-xl sm:text-2xl text-brand-verde-osc mt-10 mb-3">
               {c.sourcesTitle}
             </h3>
-            <p className="leading-relaxed mb-4 max-w-copy">{c.sourcesIntro}</p>
-            <ul className="space-y-3 max-w-copy">
+            <p className="leading-relaxed mb-4">{c.sourcesIntro}</p>
+            <ul className="space-y-3">
               {c.sources.map((s) => (
                 <li key={s.name} className="text-sm sm:text-base leading-relaxed">
                   <span className="font-medium text-brand-verde-osc">{s.name}</span>
@@ -336,13 +336,13 @@ export default function LegalPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.permitsTitle}</h2>
+            <h2 className="h2-section mb-5">{c.permitsTitle}</h2>
             <p className="leading-relaxed mb-6 max-w-copy">{c.permitsIntro}</p>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-5">
             {c.permitsList.map(([term, def], i) => (
               <Reveal key={term} delay={i * 80}>
-                <div className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <div className="card-premium p-6 h-full">
                   <h3 className="text-lg sm:text-xl mb-2">{term}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{def}</p>
                 </div>
@@ -357,11 +357,11 @@ export default function LegalPage({ lang, path }: PageProps) {
 
       {/* (c) How ownership is titled */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.titleTitle}</h2>
+            <h2 className="h2-section mb-5">{c.titleTitle}</h2>
             {c.titleBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -373,13 +373,13 @@ export default function LegalPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-3">{c.verifyTitle}</h2>
+            <h2 className="h2-section mb-3">{c.verifyTitle}</h2>
             <p className="leading-relaxed mb-8 max-w-copy">{c.verifyIntro}</p>
           </Reveal>
           <ol className="space-y-5">
             {c.verifySteps.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <li className="flex gap-4 sm:gap-5 bg-white/70 border border-brand-verde/10 rounded-2xl p-6">
+                <li className="flex gap-4 sm:gap-5 card-premium p-6">
                   <span className="shrink-0 w-9 h-9 rounded-full border border-brand-verde/30 flex items-center justify-center font-serif text-brand-verde">
                     {i + 1}
                   </span>
@@ -407,7 +407,7 @@ export default function LegalPage({ lang, path }: PageProps) {
             </a>
             {c.devLine.post}
           </p>
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.linksTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.linksTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.links.map(([href, label]) => (
               <li key={href}>

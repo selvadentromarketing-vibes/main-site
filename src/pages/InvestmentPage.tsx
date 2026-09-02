@@ -146,12 +146,13 @@ function DataTable({
 }) {
   return (
     <>
-      <div className="overflow-x-auto rounded-2xl border border-brand-verde/15 bg-white/60">
-        <table className="w-full text-left text-sm sm:text-base">
+      {/* Wider than the reading measure it sits in, on wide screens. */}
+      <div className="table-shell lg:-mx-24 xl:-mx-32">
+        <table className="table-premium text-sm sm:text-base">
           <thead>
-            <tr className="border-b border-brand-verde/15">
+            <tr>
               {head.map((h) => (
-                <th key={h} scope="col" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc">
+                <th key={h} scope="col">
                   {h}
                 </th>
               ))}
@@ -159,12 +160,12 @@ function DataTable({
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r[0]} className="border-b border-brand-verde/10 last:border-0">
-                <th scope="row" className="py-3.5 px-4 sm:px-6 font-medium text-brand-verde-osc align-top">
+              <tr key={r[0]}>
+                <th scope="row" className="font-medium text-brand-verde-osc align-top">
                   {r[0]}
                 </th>
                 {r.slice(1).map((cell) => (
-                  <td key={cell} className="py-3.5 px-4 sm:px-6 align-top">
+                  <td key={cell} className="align-top">
                     {cell}
                   </td>
                 ))}
@@ -184,13 +185,13 @@ export default function InvestmentPage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} />
+      <PageHero eyebrow={c.eyebrow} title={meta.h1} lede={c.lede} image={meta.heroImage} />
 
       {/* 1. Price series */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.seriesTitle}</h2>
+            <h2 className="h2-section mb-6">{c.seriesTitle}</h2>
             <DataTable head={c.seriesHead} rows={c.seriesRows} note={c.seriesNote} />
           </Reveal>
         </div>
@@ -200,7 +201,7 @@ export default function InvestmentPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.scarcityTitle}</h2>
+            <h2 className="h2-section mb-5">{c.scarcityTitle}</h2>
             {c.scarcityBody.map((p) => (
               <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
                 {p}
@@ -222,9 +223,9 @@ export default function InvestmentPage({ lang, path }: PageProps) {
 
       {/* 3. Catalysts */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.catalystsTitle}</h2>
+            <h2 className="h2-section mb-6">{c.catalystsTitle}</h2>
             <DataTable head={c.catalystsHead} rows={c.catalystsRows} note={c.catalystsNote} />
           </Reveal>
         </div>
@@ -234,12 +235,12 @@ export default function InvestmentPage({ lang, path }: PageProps) {
       <section className="section bg-brand-crema-osc/40">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-8">{c.planTitle}</h2>
+            <h2 className="h2-section mb-8">{c.planTitle}</h2>
           </Reveal>
           <ol className="grid sm:grid-cols-2 gap-5">
             {c.planSteps.map(([title, body], i) => (
               <Reveal key={title} delay={i * 80}>
-                <li className="bg-white/70 border border-brand-verde/10 rounded-2xl p-6 h-full">
+                <li className="card-premium p-6 h-full">
                   <span className="eyebrow">{lang === 'es' ? 'Paso' : 'Step'} {i + 1}</span>
                   <h3 className="text-xl mt-2 mb-2">{title}</h3>
                   <p className="text-sm leading-relaxed text-brand-negro/80">{body}</p>
@@ -252,11 +253,11 @@ export default function InvestmentPage({ lang, path }: PageProps) {
 
       {/* 5. Protections */}
       <section className="section">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-5">{c.protectTitle}</h2>
+            <h2 className="h2-section mb-5">{c.protectTitle}</h2>
             {c.protectBody.map((p) => (
-              <p key={p.slice(0, 24)} className="leading-relaxed mb-4 max-w-copy">
+              <p key={p.slice(0, 24)} className="leading-relaxed mb-4">
                 {p}
               </p>
             ))}
@@ -266,9 +267,9 @@ export default function InvestmentPage({ lang, path }: PageProps) {
 
       {/* 6. Full cost table */}
       <section className="section bg-brand-crema-osc/40">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-prose mx-auto">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl mb-6">{c.costsTitle}</h2>
+            <h2 className="h2-section mb-6">{c.costsTitle}</h2>
             <DataTable head={c.costsHead} rows={c.costsRows} note={c.costsNote} />
           </Reveal>
         </div>
@@ -277,7 +278,7 @@ export default function InvestmentPage({ lang, path }: PageProps) {
       {/* Keep exploring */}
       <section className="section bg-brand-verde-osc text-brand-crema">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl mb-6 text-brand-crema">{c.ctaTitle}</h2>
+          <h2 className="h2-section mb-6 text-brand-crema">{c.ctaTitle}</h2>
           <ul className="grid sm:grid-cols-2 gap-3">
             {c.ctaLinks.map(([href, label]) => (
               <li key={href}>

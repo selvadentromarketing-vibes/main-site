@@ -1,4 +1,5 @@
 import PageLayout from '../components/PageLayout';
+import ArticleHero from '../components/ArticleHero';
 import { AUTHORS } from '../seo/site';
 import { GUIDES } from '../generated/content';
 import type { PageProps } from '../routes/AppRoutes';
@@ -54,19 +55,12 @@ export default function GuidePage({ lang, path }: PageProps) {
 
   return (
     <PageLayout lang={lang} path={path}>
-      <section className="bg-brand-verde-osc text-brand-crema pt-32 sm:pt-36 pb-12 px-4 sm:px-6 lg:px-10">
-        <div className="max-w-3xl mx-auto">
-          <nav aria-label="breadcrumb" className="text-xs tracking-wide text-brand-crema/60 mb-5">
-            <a href={hubPath} className="hover:text-brand-oro transition-colors">
-              {l.hub}
-            </a>
-            <span className="mx-2">/</span>
-            <span>{guide.title}</span>
-          </nav>
-          <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight text-brand-crema mb-6">
-            {guide.title}
-          </h1>
-          <div className="text-sm text-brand-crema/70 flex flex-wrap gap-x-4 gap-y-1">
+      <ArticleHero
+        hub={{ label: l.hub, href: hubPath }}
+        crumb={guide.title}
+        title={guide.title}
+        meta={
+          <>
             <span>
               {l.byline}{' '}
               <a
@@ -84,14 +78,14 @@ export default function GuidePage({ lang, path }: PageProps) {
             <span>
               {guide.readingMinutes} {l.reading}
             </span>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="section">
         <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[minmax(0,68ch)_260px] lg:gap-12 lg:justify-center">
           <article
-            className="prose prose-selva max-w-none prose-headings:scroll-mt-28 [&>p:first-of-type]:text-lg [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:border-l-4 [&>p:first-of-type]:border-brand-oro [&>p:first-of-type]:pl-5 [&>p:first-of-type]:text-brand-verde-osc"
+            className="prose prose-selva lg:prose-lg prose-answer max-w-none prose-headings:scroll-mt-28"
             // Trusted build-time HTML from our own markdown files.
             dangerouslySetInnerHTML={{ __html: guide.html }}
           />
@@ -99,7 +93,7 @@ export default function GuidePage({ lang, path }: PageProps) {
             <aside className="hidden lg:block">
               <nav
                 aria-label={l.toc}
-                className="sticky top-28 bg-white/60 border border-brand-verde/10 rounded-2xl p-6 text-sm"
+                className="sticky top-28 panel-premium p-6 text-sm"
               >
                 <span className="eyebrow">{l.toc}</span>
                 <ul className="mt-3 space-y-2">
@@ -125,13 +119,13 @@ export default function GuidePage({ lang, path }: PageProps) {
       {fallbackRelated.length > 0 && (
         <section className="section bg-brand-crema-osc/40">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl mb-8">{l.related}</h2>
+            <h2 className="h2-section mb-8">{l.related}</h2>
             <div className="grid sm:grid-cols-3 gap-5">
               {fallbackRelated.map((g) => (
                 <a
                   key={g.path}
                   href={g.path}
-                  className="bg-white/70 border border-brand-verde/10 rounded-2xl p-5 hover:border-brand-oro/50 transition-colors"
+                  className="card-premium p-5"
                 >
                   <h3 className="text-lg leading-snug mb-2">{g.title}</h3>
                   <p className="text-xs text-brand-gris">

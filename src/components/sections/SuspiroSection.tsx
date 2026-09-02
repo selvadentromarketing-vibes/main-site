@@ -135,7 +135,7 @@ export default function SuspiroSection({ t, lang }: Props) {
 
         {/* Row 3 — services checklist */}
         <Reveal delay={300}>
-          <div className="mt-14 bg-white/60 rounded-3xl border border-brand-verde/10 p-8 lg:p-10">
+          <div className="mt-14 panel-premium rounded-3xl p-8 lg:p-10">
             <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-oro mb-6 text-center">
               {servicesTitle}
             </div>

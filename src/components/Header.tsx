@@ -96,7 +96,7 @@ export default function Header({
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled || solid
-          ? 'bg-brand-verde-osc/95 backdrop-blur-md py-3 shadow-lg shadow-black/10'
+          ? 'bg-brand-verde-osc/95 backdrop-blur-md py-3 border-b border-brand-oro/15 shadow-[0_10px_30px_-22px_rgb(0_0_0_/_0.65)]'
           : 'bg-transparent py-4'
       }`}
     >
