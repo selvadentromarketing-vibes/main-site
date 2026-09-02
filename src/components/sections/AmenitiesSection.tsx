@@ -6,6 +6,13 @@ interface Props {
   t: Translation;
 }
 
+/** Real pixel size of each card photograph, so the <img> can declare it. */
+const CARD_DIMS: Record<string, { width: number; height: number }> = {
+  '/amenity-naturaleza.webp': { width: 1200, height: 900 },
+  '/amenity-cuerpo.webp': { width: 1200, height: 1200 },
+  '/amenity-comunidad.webp': { width: 1200, height: 1050 },
+};
+
 export default function AmenitiesSection({ t }: Props) {
   return (
     <section id="amenidades" className="section bg-brand-crema-osc">
@@ -29,7 +36,9 @@ export default function AmenitiesSection({ t }: Props) {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={card.image}
-                    alt={card.title}
+                    alt={card.imageAlt}
+                    width={CARD_DIMS[card.image]?.width}
+                    height={CARD_DIMS[card.image]?.height}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />

@@ -25,7 +25,7 @@ const copy = {
       'La postal — beach clubs, boutiques, atardeceres — es real, pero pertenece a la economía turística. La mayoría de quienes viven en Tulum pasa su semana lejos de ella: en el pueblo, en La Veleta o del lado de la selva, donde el día empieza con pájaros y no con música de DJ.',
       'Del lado de la Ruta de los Cenotes el ritmo es otro: mañanas de selva, cenotes sin filas, noches donde el silencio no es promesa de folleto. A cambio, aceptas la logística de un pueblo tropical — calor, humedad, trámites que toman su tiempo. Ese intercambio, naturaleza por conveniencia inmediata, es la decisión central de vivir aquí.',
     ],
-    dailyImgAlt: 'Sendero entre la selva conservada de Selvadentro, en la Ruta de los Cenotes de Tulum',
+    dailyImgAlt: 'Vista aérea nocturna de los pabellones junto a un cenote en Selvadentro, en la Ruta de los Cenotes de Tulum',
     climateTitle: 'El clima en Tulum, mes a mes',
     climateIntro:
       'Dos temporadas mandan: la seca (noviembre–abril) y la calurosa-húmeda (mayo–octubre). El sargazo llega a las playas aproximadamente de mayo a septiembre, y la temporada de huracanes del Atlántico corre de junio a noviembre. Así se ve un año típico:',
@@ -114,7 +114,7 @@ const copy = {
       'The postcard — beach clubs, boutiques, sunsets — is real, but it belongs to the tourist economy. Most people who live in Tulum spend their week away from it: in town, in La Veleta, or out on the jungle side, where mornings start with birdsong rather than a DJ set.',
       'On the Ruta de los Cenotes side, the rhythm changes: jungle mornings, cenotes without lines, nights where silence is not a brochure promise. In exchange, you accept tropical-town logistics — heat, humidity, errands that take their time. That trade, nature for instant convenience, is the central decision of living here.',
     ],
-    dailyImgAlt: 'Trail through the preserved jungle at Selvadentro, on Tulum’s Ruta de los Cenotes',
+    dailyImgAlt: 'Aerial night view of the pavilions beside a cenote at Selvadentro, on Tulum’s Ruta de los Cenotes',
     climateTitle: 'Tulum’s climate, month by month',
     climateIntro:
       'Two seasons run the year: dry (November–April) and hot-humid (May–October). Sargassum seaweed reaches the beaches roughly May through September, and the Atlantic hurricane season runs June to November. Here is a typical year:',

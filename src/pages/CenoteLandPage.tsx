@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import { getMeta } from '../seo/meta';
 import { PRICING } from '../seo/site';
-import { CENOTES, spotDesc, spotLabel } from '../data/masterplan';
+import { CENOTES, SPOT_IMAGE_DIMS, spotDesc, spotLabel } from '../data/masterplan';
 import type { PageProps } from '../routes/AppRoutes';
 
 /**
@@ -69,7 +69,7 @@ const copy = {
     accessLink: ['/amenidades', 'Ver todas las amenidades'],
     linksTitle: 'Sigue explorando',
     links: [
-      ['/cenotes', 'Los 9 cenotes: nombres, fotos y cómo se protegen'],
+      ['/cenotes', 'Los 9 cenotes: nombres y cómo se protegen'],
       ['/lotes-en-venta-tulum', 'Lotes en venta: precios y disponibilidad'],
       ['/amenidades', 'Las +12 experiencias entre la selva'],
       ['/preguntas-frecuentes', 'Preguntas frecuentes'],
@@ -120,7 +120,7 @@ const copy = {
     accessLink: ['/en/amenities', 'See all the amenities'],
     linksTitle: 'Keep exploring',
     links: [
-      ['/en/cenotes', 'The 9 cenotes: names, photos and how they are protected'],
+      ['/en/cenotes', 'The 9 cenotes: names and how they are protected'],
       ['/en/tulum-land-for-sale', 'Lots for sale: pricing and availability'],
       ['/en/is-it-safe-to-buy-property-in-tulum', 'Is it safe to buy property in Tulum? A due-diligence guide'],
       ['/en/faq', 'Frequently asked questions'],
@@ -205,14 +205,17 @@ export default function CenoteLandPage({ lang, path }: PageProps) {
               return (
                 <Reveal key={id} delay={i * 80}>
                   <article className="card-premium overflow-hidden h-full flex flex-col">
-                    <img
-                      src={cenote.images[0]}
-                      alt={`${spotLabel(cenote, lang)} — ${c.cenoteAltSuffix}`}
-                      width={w}
-                      height={h}
-                      loading="lazy"
-                      className="w-full aspect-[4/3] object-cover"
-                    />
+                    {cenote.images[0] && (
+                      <img
+                        src={cenote.images[0]}
+                        alt={`${spotLabel(cenote, lang)} — ${c.cenoteAltSuffix}`}
+                        width={SPOT_IMAGE_DIMS[cenote.images[0]]?.width ?? w}
+                        height={SPOT_IMAGE_DIMS[cenote.images[0]]?.height ?? h}
+                        loading="lazy"
+                        style={{ objectPosition: cenote.imagePosition ?? 'center' }}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
+                    )}
                     <div className="p-6 flex-1">
                       <h3 className="text-xl mb-2">{spotLabel(cenote, lang)}</h3>
                       <p className="text-sm leading-relaxed text-brand-negro/80">

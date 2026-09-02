@@ -65,13 +65,19 @@ console.log('done');
 // originals are 250–470 KB each, which is too much to put behind ten
 // headers; these land around 100 KB at 2000px wide, and they always sit
 // under a dark scrim so fine detail is not doing any work.
+// [source, output, crop?] — crop is a pre-resize sharp extract, used where
+// the source is a brochure banner rather than a clean plate: the cream page
+// margin and the burnt-in SUSPIRO wordmark have to come off before the crop
+// can serve as a page hero.
 const HEROES = [
   ['suspiro-entrance.webp', 'hero/lots.webp'],
   ['amenity-cenote-mirador.webp', 'hero/cenotes.webp'],
   ['map-cenote-caverna.jpg', 'hero/cenote-land.webp'],
   ['render-pool.webp', 'hero/amenities.webp'],
   ['render-aerial.webp', 'hero/location.webp'],
-  ['amenity-casa-cenotes.webp', 'hero/investment.webp'],
+  // 2060×650 brochure banner: rows 0-31 are cream page, and the wordmark
+  // starts near x=1290. Keep the clean left plate (pavilion, pool, cenote).
+  ['amenity-casa-cenotes.webp', 'hero/investment.webp', { left: 0, top: 32, width: 1260, height: 618 }],
   ['render-jungle-bar.webp', 'hero/gated.webp'],
   ['amenity-naturaleza.webp', 'hero/eco.webp'],
   ['render-spa.webp', 'hero/living.webp'],
@@ -84,25 +90,40 @@ fs.mkdirSync(path.join(PUB, 'hero'), { recursive: true });
 // "some pages are black bands". Normalising every crop toward one
 // luminance is what makes the set feel like one publication.
 const HERO_TARGET_LUMA = 112;
-for (const [src, dest] of HEROES) {
+const heroDims = [];
+for (const [src, dest, crop] of HEROES) {
   const from = path.join(PUB, src);
   if (!fs.existsSync(from)) { console.warn(`hero source missing: ${src}`); continue; }
   const to = path.join(PUB, dest);
+  const base = sharp(from);
+  if (crop) base.extract(crop);
   // 1600px is plenty behind a scrim, and withoutEnlargement stops a
-  // smaller source being upscaled into a *bigger* file than the original.
-  const resized = await sharp(from)
+  // smaller source being upscaled into a *bigger* file than the original —
+  // which is why most outputs are NOT 1600×800 and the real size has to be
+  // recorded (HERO_IMAGES in src/seo/meta.ts, asserted by check-static).
+  const resized = await base
     .resize(1600, 800, { fit: 'cover', position: 'attention', withoutEnlargement: true })
     .toBuffer();
   const { channels } = await sharp(resized).stats();
   const [r, g, b] = channels.slice(0, 3).map((c) => c.mean);
   const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
   const brightness = Math.min(2.4, Math.max(1, HERO_TARGET_LUMA / Math.max(luma, 1)));
-  await sharp(resized)
+  const info = await sharp(resized)
     .modulate({ brightness, saturation: 1.06 })
     .webp({ quality: 56, effort: 6 })
     .toFile(to);
+  heroDims.push([dest, info.width, info.height]);
   console.log(
     `${src} (${kb(from)} KB, luma ${Math.round(luma)}) → ${dest} ` +
-      `(${kb(to)} KB, ×${brightness.toFixed(2)})`,
+      `(${kb(to)} KB, ${info.width}×${info.height}, ×${brightness.toFixed(2)})`,
   );
+}
+
+// Paste-ready block for HERO_IMAGES in src/seo/meta.ts. The declared sizes
+// must match the files on disk or the build gate fails, so print them here
+// rather than leaving someone to measure by hand.
+console.log('\n--- HERO_IMAGES dimensions (src/seo/meta.ts) ---');
+for (const [dest, w, h] of heroDims) {
+  const key = dest.replace('hero/', '').replace('.webp', '');
+  console.log(`  '${key}': { src: '/${dest}', width: ${w}, height: ${h} },`);
 }

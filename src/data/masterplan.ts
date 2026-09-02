@@ -190,6 +190,31 @@ export const SPOTS: Spot[] = [
   },
 ];
 
+/**
+ * Real pixel size of every image referenced above, so each render site can
+ * declare honest width/height instead of one guessed pair (the files run
+ * from 900×1200 portrait to 1200×600 landscape). Asserted by
+ * scripts/check-static.mjs against the files on disk.
+ */
+export const SPOT_IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  '/map-acceso.jpg': { width: 1200, height: 600 },
+  '/map-casa-arbol.jpg': { width: 1200, height: 792 },
+  '/map-casa-cenotes.jpg': { width: 1200, height: 675 },
+  '/map-cenote-caverna.jpg': { width: 1024, height: 768 },
+  '/map-cenote-madera.jpg': { width: 1200, height: 675 },
+  '/map-cenote-mirador.jpg': { width: 900, height: 1200 },
+  '/map-cenote-piedra.jpg': { width: 1200, height: 800 },
+  '/map-jungle-bar.jpg': { width: 1200, height: 675 },
+  '/map-jungle-gym.jpg': { width: 1200, height: 675 },
+  '/map-kids-jungle.jpg': { width: 1200, height: 761 },
+  '/map-mirador.jpg': { width: 1200, height: 900 },
+  '/map-pabellon.jpg': { width: 1200, height: 900 },
+  '/map-padel.jpg': { width: 1200, height: 675 },
+  '/map-pets-jungle.jpg': { width: 1200, height: 771 },
+  '/map-village.jpg': { width: 1200, height: 800 },
+  '/map-wellness.jpg': { width: 1200, height: 675 },
+};
+
 export const CENOTES = SPOTS.filter((s) => s.category === 'cenote');
 
 /** Unique experiencias (Kids/Pets/Pabellón repeat as map dots — dedupe by n). */

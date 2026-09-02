@@ -1,4 +1,5 @@
 import VideoEmbed from '../VideoEmbed';
+import { IMAGE_DIMS } from '../../seo/site';
 import Reveal from '../Reveal';
 import TiltCard from '../TiltCard';
 import type { Translation } from '../../i18n/translations';
@@ -40,6 +41,8 @@ export default function TestimonialsSection({ t }: Props) {
                   <img
                     src={tm.photo}
                     alt={tm.name}
+                    width={IMAGE_DIMS[tm.photo]?.width}
+                    height={IMAGE_DIMS[tm.photo]?.height}
                     loading="lazy"
                     className="w-16 h-16 rounded-full object-cover mb-5 ring-2 ring-brand-oro/30"
                   />

@@ -176,6 +176,72 @@ check(
   );
 }
 
+// ── Images: honest intrinsic dimensions ──────────────────────────────────
+// Every <img> pointing at a file we ship must declare width and height, and
+// the declared aspect must match the real file. A missing pair causes layout
+// shift (CLS, which Search Console reports); a wrong pair is worse, because
+// the browser reserves the wrong box and shifts anyway. This is gate-checked
+// because the crops are generated (withoutEnlargement means an output is
+// often NOT the size the generator asked for) and the numbers drift.
+{
+  const sharp = (await import('sharp')).default;
+  const dims = new Map();
+  const realSize = async (src) => {
+    if (dims.has(src)) return dims.get(src);
+    const file = path.join(DIST, src.replace(/^\//, ''));
+    let out = null;
+    if (fs.existsSync(file)) {
+      const m = await sharp(file).metadata();
+      out = { width: m.width, height: m.height };
+    }
+    dims.set(src, out);
+    return out;
+  };
+
+  const seen = new Set();
+  for (const meta of ALL_PAGES) {
+    const file = fileFor(meta.path);
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+      const tag = m[0];
+      const src = tag.match(/\bsrc="([^"]+)"/)?.[1];
+      // Only our own raster files; data: URIs and remote hosts are exempt.
+      if (!src || !/^\/[^/]/.test(src) || !/\.(?:webp|jpe?g|png)$/i.test(src)) continue;
+      const w = Number(tag.match(/\bwidth="(\d+)"/)?.[1]);
+      const h = Number(tag.match(/\bheight="(\d+)"/)?.[1]);
+      if (!w || !h) {
+        const key = `nodims:${src}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          check(false, `${meta.path}: <img src="${src}"> declares no width/height (layout shift)`);
+        }
+        continue;
+      }
+      const real = await realSize(src);
+      if (!real) {
+        check(false, `${meta.path}: <img src="${src}"> points at a file missing from dist/`);
+        continue;
+      }
+      const declared = w / h;
+      const actual = real.width / real.height;
+      // 1% covers rounding in a hand-written pair; anything looser is a
+      // genuinely different aspect.
+      if (Math.abs(declared - actual) / actual > 0.01) {
+        const key = `aspect:${src}:${w}x${h}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          check(
+            false,
+            `${meta.path}: <img src="${src}"> declares ${w}×${h} but the file is ` +
+              `${real.width}×${real.height} — the reserved box has the wrong shape`,
+          );
+        }
+      }
+    }
+  }
+}
+
 if (errors.length) {
   console.error(`\n[check-static] FAILED — ${errors.length} problem(s):\n`);
   for (const e of errors) console.error(`  ✗ ${e}`);

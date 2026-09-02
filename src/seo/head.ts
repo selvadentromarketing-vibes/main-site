@@ -72,7 +72,7 @@ export function renderHeadTags(meta: PageMeta): string {
       : '',
     // Subpage hero photograph — it is the LCP element on those pages.
     meta.heroImage
-      ? `<link rel="preload" as="image" href="${meta.heroImage}" />`
+      ? `<link rel="preload" as="image" href="${meta.heroImage.src}" />`
       : '',
     `<script type="application/ld+json">${jsonLd}</script>`,
   ];

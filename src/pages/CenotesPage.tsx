@@ -2,7 +2,7 @@ import PageLayout from '../components/PageLayout';
 import PageHero from '../components/PageHero';
 import Reveal from '../components/Reveal';
 import { getMeta } from '../seo/meta';
-import { CENOTES, spotDesc, spotLabel } from '../data/masterplan';
+import { CENOTES, SPOT_IMAGE_DIMS, spotDesc, spotLabel } from '../data/masterplan';
 import type { PageProps } from '../routes/AppRoutes';
 
 /**
@@ -87,9 +87,13 @@ export default function CenotesPage({ lang, path }: PageProps) {
                     <img
                       src={cenote.images[0]}
                       alt={`${spotLabel(cenote, lang)} — Selvadentro Tulum`}
-                      width={640}
-                      height={400}
+                      width={SPOT_IMAGE_DIMS[cenote.images[0]]?.width}
+                      height={SPOT_IMAGE_DIMS[cenote.images[0]]?.height}
                       loading="lazy"
+                      // The four photographs have four different aspects,
+                      // one of them portrait; imagePosition says which part
+                      // of each must survive the 8:5 card crop.
+                      style={{ objectPosition: cenote.imagePosition ?? 'center' }}
                       className="w-full aspect-[8/5] object-cover"
                     />
                   ) : (

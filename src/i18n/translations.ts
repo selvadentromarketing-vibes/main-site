@@ -34,6 +34,10 @@ export interface FAQItem {
 export interface AmenityCard {
   title: string;
   image: string;
+  /** Describes the photograph. The card title is a section label ("Living
+      nature"), which is not alt text — screen readers and Google Images get
+      this instead. */
+  imageAlt: string;
   items: string[];
 }
 
@@ -256,6 +260,8 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Naturaleza viva',
           image: '/amenity-naturaleza.webp',
+          imageAlt:
+            'Vista aérea nocturna de los pabellones circulares iluminados junto a un cenote en Selvadentro Tulum',
           items: [
             '9 cenotes',
             'Senderos entre la selva',
@@ -266,6 +272,8 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Cuerpo y movimiento',
           image: '/amenity-cuerpo.webp',
+          imageAlt:
+            'Camastro de masaje bajo un alero de roca caliza en el wellness center de Selvadentro',
           items: [
             'Wellness center',
             'Jungle Gym',
@@ -276,6 +284,8 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Vida en comunidad',
           image: '/amenity-comunidad.webp',
+          imageAlt:
+            'Pabellón restaurante de techo a dos aguas junto a la alberca, en la selva de Selvadentro',
           items: [
             'Casa de los Cenotes',
             'Jungle Bar',
@@ -499,16 +509,22 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Living nature',
           image: '/amenity-naturaleza.webp',
+          imageAlt:
+            'Aerial night view of the lit circular pavilions beside a cenote at Selvadentro Tulum',
           items: ['9 cenotes', 'Jungle trails', 'Lookouts', 'Treehouse'],
         },
         {
           title: 'Body & movement',
           image: '/amenity-cuerpo.webp',
+          imageAlt:
+            'Massage table under a limestone overhang at the Selvadentro wellness center',
           items: ['Wellness center', 'Jungle Gym', 'Padel & pickleball court', 'Holistic pavilion'],
         },
         {
           title: 'Community life',
           image: '/amenity-comunidad.webp',
+          imageAlt:
+            'A-frame restaurant pavilion beside the pool, in the jungle at Selvadentro',
           items: [
             'Cenote House',
             'Jungle Bar',

@@ -38,7 +38,7 @@ const MAX_SCALE = 5;
 // Spot data (9 cenotes + 12 experiencias, bilingual) lives in the shared
 // data module so CenotesPage and the JSON-LD builders render the same
 // copy as the map popups. Re-exported here for backwards compatibility.
-import { SPOTS } from '../data/masterplan';
+import { SPOTS, SPOT_IMAGE_DIMS } from '../data/masterplan';
 import type { Spot } from '../data/masterplan';
 
 export { SPOTS };
@@ -235,6 +235,8 @@ export default function MasterplanExplorer({ lang }: Props) {
             <img
               src={MAP_SRC}
               alt="Masterplan Selvadentro"
+              width={MAP_W_PHYS}
+              height={MAP_H_PHYS}
               className="w-full h-full block pointer-events-none"
               style={{ imageRendering: 'high-quality' as unknown as CSSProperties['imageRendering'] }}
               draggable={false}
@@ -337,6 +339,8 @@ export default function MasterplanExplorer({ lang }: Props) {
                           key={i}
                           src={src}
                           alt={label}
+                          width={SPOT_IMAGE_DIMS[src]?.width}
+                          height={SPOT_IMAGE_DIMS[src]?.height}
                           className="w-full h-28 object-cover"
                           style={spot.imagePosition ? { objectPosition: spot.imagePosition } : undefined}
                           loading="lazy"

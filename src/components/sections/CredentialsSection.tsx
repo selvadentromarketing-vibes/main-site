@@ -1,4 +1,5 @@
 import Reveal from '../Reveal';
+import { IMAGE_DIMS } from '../../seo/site';
 import type { Translation, Lang } from '../../i18n/translations';
 
 interface Props {
@@ -122,6 +123,8 @@ export default function CredentialsSection({ t, lang }: Props) {
                   <img
                     src={cover.src}
                     alt={lang === 'es' ? cover.captionEs : cover.captionEn}
+                    width={IMAGE_DIMS[cover.src]?.width}
+                    height={IMAGE_DIMS[cover.src]?.height}
                     className="w-full h-52 object-cover"
                     loading="lazy"
                   />
@@ -136,6 +139,8 @@ export default function CredentialsSection({ t, lang }: Props) {
                     <img
                       src={p.logo}
                       alt={p.name}
+                      width={IMAGE_DIMS[p.logo]?.width}
+                      height={IMAGE_DIMS[p.logo]?.height}
                       className={`${p.logoHeightClass ?? 'max-h-12'} w-auto object-contain`}
                       style={p.isSvg ? { color: '#000' } : undefined}
                       loading="lazy"

@@ -14,11 +14,18 @@ export default function HeroSection({ t }: Props) {
           on ≥ sm. The browser fetches only the source that matches, so we
           don't pay the desktop hero's bytes on a phone connection. */}
       <picture className="absolute inset-0 block">
-        <source media="(max-width: 639px)" srcSet="/hero-cenote-mobile.jpg" />
+        <source
+          media="(max-width: 639px)"
+          srcSet="/hero-cenote-mobile.jpg"
+          width={1200}
+          height={1600}
+        />
         <img
           src="/hero-cenote.webp"
           alt=""
           aria-hidden="true"
+          width={1920}
+          height={1080}
           {...{ fetchpriority: "high" }}
           className="absolute inset-0 w-full h-full object-cover object-center sm:object-[top_right]"
         />

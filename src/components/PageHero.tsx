@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { HeroImage } from '../seo/meta';
 
 interface PageHeroProps {
   eyebrow: string;
@@ -12,12 +13,12 @@ interface PageHeroProps {
    */
   lede?: ReactNode;
   /**
-   * Site-relative hero crop (`/hero/*.webp`, 1600×800) from the page's
-   * registry entry. Commercial pages are photographic; editorial pages
-   * (guides, glossary, FAQ) deliberately get none and fall back to the
-   * typographic treatment — that contrast is the point.
+   * Hero crop from the page's registry entry, carrying its real intrinsic
+   * size (the crops are not all one size). Commercial pages are
+   * photographic; editorial pages (guides, glossary, FAQ) deliberately get
+   * none and fall back to the typographic treatment — that is the point.
    */
-  image?: string;
+  image?: HeroImage;
   /** Alt text for the hero photograph. Decorative by default. */
   imageAlt?: string;
   children?: ReactNode;
@@ -49,10 +50,10 @@ export default function PageHero({
       {image && (
         <>
           <img
-            src={image}
+            src={image.src}
             alt={imageAlt ?? ''}
-            width={1600}
-            height={800}
+            width={image.width}
+            height={image.height}
             aria-hidden={imageAlt ? undefined : true}
             className="absolute inset-0 -z-10 h-full w-full object-cover"
             {...{ fetchpriority: 'high' }}

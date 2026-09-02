@@ -135,8 +135,8 @@ export default function LotsPage({ lang, path }: PageProps) {
             <img
               src="/suspiro-entrance.webp"
               alt={c.imgAlt}
-              width={1280}
-              height={853}
+              width={1600}
+              height={900}
               loading="lazy"
               className="rounded-2xl w-full h-auto object-cover"
             />

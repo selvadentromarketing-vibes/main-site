@@ -83,3 +83,21 @@ export function absUrl(path: string): string {
   if (path === '/' || path === '') return `${SITE_URL}/`;
   return `${SITE_URL}${path}`;
 }
+
+/**
+ * Real pixel size of the static marketing images rendered by the homepage
+ * sections and the developer page. Declared so every <img> can reserve the
+ * right box (CLS); asserted against the files on disk by
+ * scripts/check-static.mjs, which is what keeps this honest.
+ */
+export const IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  '/jjf-creando.webp': { width: 1080, height: 1080 },
+  '/maat-handasa.webp': { width: 380, height: 119 },
+  '/portfolio-yucatan-country-club.webp': { width: 1000, height: 420 },
+  '/portfolio-chable-resort.webp': { width: 990, height: 680 },
+  '/portfolio-casa-chacala.webp': { width: 1000, height: 660 },
+  '/testimonial-shawn.webp': { width: 800, height: 662 },
+  '/testimonial-angela.webp': { width: 800, height: 550 },
+  '/testimonial-ricardo.webp': { width: 800, height: 637 },
+  '/suspiro-entrance.webp': { width: 1600, height: 900 },
+};
