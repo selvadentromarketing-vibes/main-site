@@ -18,17 +18,13 @@
 [functions]
   node_bundler = "esbuild"
 
-# Pretty URLs: 301 /page.html → /page. Every route is a flat file
-# (dist/<path>.html) so Netlify happily serves BOTH /cenotes and
-# /cenotes.html with a 200 — 122 duplicate crawlable URLs, and the .html
-# twin hydrates into the 404 component because the router has no route for
-# it. This is the only knob that removes the twin; the pages' canonical tags
-# already point at the clean URL as a second line of defence.
-# NOTE: only pretty_urls is enabled here. Do not add css/js/html
-# minification — post-processing rewrites the markup and would strip the
-# Suspense comment markers that hydration depends on.
-[build.processing.html]
-  pretty_urls = true
+# NOTE: pretty_urls was tried here and does nothing for this site —
+# Netlify's Pretty URLs strips index.html and normalises trailing slashes,
+# it does NOT 301 a flat <path>.html file. Verified live: /cenotes.html
+# still returned 200. Don't re-add it. The .html twins are handled by the
+# X-Robots-Tag header at the bottom of this file.
+# And never enable css/js/html minification: post-processing rewrites the
+# markup and would strip the Suspense comment markers hydration needs.
 
 # Legacy booking URLs (were client-side redirects; sitemap soft-404s).
 [[redirects]]
@@ -72,3 +68,24 @@
   for = "/hero/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# ── The .html twins ──────────────────────────────────────────────────────
+# Every route is a flat file (dist/<path>.html — deliberate: directory
+# indexes made Netlify 301 every canonical URL), so Netlify serves the same
+# page at BOTH /cenotes and /cenotes.html. That is 122 duplicate crawlable
+# URLs, and the twin hydrates into the 404 component because the router has
+# no route for a .html path.
+#
+# This matches on the REQUEST path, so it hits /cenotes.html and leaves
+# /cenotes alone — the clean URL never ends in .html even though the file
+# behind it does. The same shape as the /*.webp and /*.jpg rules above.
+#
+# VERIFY AFTER ANY DEPLOY THAT TOUCHES THIS BLOCK:
+#   curl -sSI https://selvadentrotulum.com/cenotes.html | grep -i x-robots  → noindex
+#   curl -sSI https://selvadentrotulum.com/cenotes      | grep -i x-robots  → NOTHING
+# If a clean URL ever carries the header, delete this block immediately:
+# it would deindex the site.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
