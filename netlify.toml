@@ -18,6 +18,18 @@
 [functions]
   node_bundler = "esbuild"
 
+# Pretty URLs: 301 /page.html → /page. Every route is a flat file
+# (dist/<path>.html) so Netlify happily serves BOTH /cenotes and
+# /cenotes.html with a 200 — 122 duplicate crawlable URLs, and the .html
+# twin hydrates into the 404 component because the router has no route for
+# it. This is the only knob that removes the twin; the pages' canonical tags
+# already point at the clean URL as a second line of defence.
+# NOTE: only pretty_urls is enabled here. Do not add css/js/html
+# minification — post-processing rewrites the markup and would strip the
+# Suspense comment markers that hydration depends on.
+[build.processing.html]
+  pretty_urls = true
+
 # Legacy booking URLs (were client-side redirects; sitemap soft-404s).
 [[redirects]]
   from = "/agendar"

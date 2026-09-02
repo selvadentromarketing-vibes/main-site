@@ -57,6 +57,18 @@ function outFileFor(routePath) {
  * contains `$68,000` and String.replace treats $-sequences in replacement
  * STRINGS as patterns, silently corrupting output.
  */
+/**
+ * React 18's streaming renderer fills a preallocated byte view with
+ * TextEncoder.encodeInto, and when a multi-byte character lands on the view
+ * boundary it leaves the unwritten tail as zero bytes — so a handful of
+ * pages come out with a NUL immediately before an accented character
+ * ("Pabellón Hol\0ístico", "Casa de los Cenotes \0\0—"). The character
+ * itself is intact; only the padding is spurious, so dropping the NULs
+ * restores the exact intended text. A NUL is never legitimate in our HTML,
+ * and check-static fails the build if one survives.
+ */
+const stripNul = (html) => html.replace(/\u0000/g, '');
+
 function assemble(bodyHtml, headHtml, lang, { prerendered = true } = {}) {
   let out = template;
   out = out.replace(/<html lang="[a-z-]+">/, () => `<html lang="${lang}">`);
@@ -65,8 +77,8 @@ function assemble(bodyHtml, headHtml, lang, { prerendered = true } = {}) {
     '<div id="root"></div>',
     () =>
       prerendered
-        ? `<div id="root" data-prerendered="true">${bodyHtml}</div>`
-        : `<div id="root">${bodyHtml}</div>`,
+        ? `<div id="root" data-prerendered="true">${stripNul(bodyHtml)}</div>`
+        : `<div id="root">${stripNul(bodyHtml)}</div>`,
   );
   return out;
 }

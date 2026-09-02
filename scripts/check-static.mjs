@@ -157,6 +157,16 @@ for (const meta of ALL_PAGES) {
   );
 }
 
+// A NUL byte in HTML is always a defect. React 18's streaming renderer
+// emits them next to multi-byte characters (see stripNul in prerender.mjs);
+// this asserts the strip actually ran, on every file including 404.html.
+for (const rel of ['404.html', ...ALL_PAGES.map((m) => path.relative(DIST, fileFor(m.path)))]) {
+  const file = path.join(DIST, rel);
+  if (!fs.existsSync(file)) continue;
+  const buf = fs.readFileSync(file);
+  check(!buf.includes(0), `${rel}: contains a NUL byte (U+0000) — prerender.mjs stripNul did not run`);
+}
+
 check(fs.existsSync(path.join(DIST, '404.html')), 'dist/404.html missing');
 check(!fs.existsSync(path.join(DIST, 'agendar')), 'dist/agendar should not exist (301 in netlify.toml)');
 check(fs.existsSync(path.join(DIST, 'sitemap.xml')), 'dist/sitemap.xml missing');
