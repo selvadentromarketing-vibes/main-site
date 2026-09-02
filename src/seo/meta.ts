@@ -120,7 +120,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/cenotes',
     title: 'Los 9 cenotes de Selvadentro Tulum — nombres, fotos y mapa',
     description:
-      'Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida y Caverna: los nueve cenotes naturales dentro de Selvadentro, la única comunidad privada de Tulum construida alrededor de ellos.',
+      'Los nueve cenotes naturales dentro de Selvadentro —Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida y Caverna— y cómo se conservan.',
     h1: 'Nueve cenotes. Una sola comunidad.',
     ogImage: '/og/og-cenotes.jpg',
     updated: UPDATED,
@@ -133,7 +133,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/cenotes',
     title: 'The 9 Cenotes of Selvadentro Tulum — Names, Photos & Map',
     description:
-      'Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida and Caverna: the nine natural cenotes inside Selvadentro, the only private community in Tulum built around them.',
+      'The nine natural cenotes inside Selvadentro — Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida and Caverna — and how they are preserved.',
     h1: 'Nine cenotes. One community.',
     ogImage: '/og/og-cenotes.jpg',
     updated: UPDATED,
@@ -161,7 +161,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/amenidades',
     title: 'Selvadentro Tulum Amenities: 12+ Experiences in the Jungle',
     description:
-      'Casa de los Cenotes clubhouse, Jungle Bar, wellness center, padel courts, Kids Jungle, Pets Jungle and more: the 12+ jungle experiences included in Selvadentro Tulum.',
+      'Casa de los Cenotes, Jungle Bar, wellness center, padel, Kids Jungle, Pets Jungle: the 12+ jungle experiences included at Selvadentro Tulum.',
     h1: '12+ experiences within the jungle',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -176,7 +176,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/location',
     title: 'Ubicación de Selvadentro Tulum — a 8 min del Tren Maya',
     description:
-      'Selvadentro está en la Ruta de los Cenotes de Tulum: a 8 minutos del Tren Maya, 20 de la Zona Hotelera y 35 del Aeropuerto de Tulum. Rutas de acceso y tiempos reales.',
+      'Selvadentro está en la Ruta de los Cenotes: a 8 minutos del Tren Maya, 20 de la Zona Hotelera y 35 del aeropuerto de Tulum. Rutas y tiempos reales.',
     h1: 'Dónde está Selvadentro: selva adentro, a minutos de todo',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -189,7 +189,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/ubicacion',
     title: 'Selvadentro Tulum Location — 8 Min from the Maya Train',
     description:
-      'Selvadentro sits on Tulum’s Ruta de los Cenotes: 8 minutes from the Maya Train, 20 from the Hotel Zone and 35 from Tulum International Airport. Real access routes and drive times.',
+      'Selvadentro sits on Tulum’s cenote route: 8 minutes from the Maya Train, 20 from the Hotel Zone, 35 from the airport. Real routes and drive times.',
     h1: 'Where Selvadentro is: deep in the jungle, minutes from everything',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -204,7 +204,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/investment',
     title: 'Invertir en Selvadentro Tulum: de $119 a $167 USD/m² en 12 meses',
     description:
-      'Los datos de la inversión: precio por m² de $119 (mayo 2025) a $167 USD hoy, proyección de cierre en $280–360 USD/m², Tren Maya, aeropuerto y Libramiento Playa-Cobá.',
+      'Los datos: de $119 USD/m² en mayo de 2025 a $167 hoy, con proyección de cierre en $280–360 USD/m². Tren Maya, aeropuerto y Libramiento.',
     h1: 'La inversión en números',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -217,7 +217,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/inversion',
     title: 'Investing in Selvadentro Tulum: $119 to $167 USD/m² in 12 Months',
     description:
-      'The investment in numbers: price per m² from $119 (May 2025) to $167 USD today, a $280–360 USD/m² closing projection, the Maya Train, Tulum airport and the Playa-Cobá bypass.',
+      'The numbers: $119 USD/m² in May 2025 to $167 today, with a $280–360 closing projection. The Maya Train, Tulum airport and the bypass.',
     h1: 'The investment, in numbers',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -232,7 +232,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/faq',
     title: 'Preguntas frecuentes sobre Selvadentro Tulum',
     description:
-      'Cuotas de mantenimiento, entrega en 2029, rentas, fideicomiso para extranjeros, reglas de construcción y legalidad: todas las respuestas sobre Selvadentro Tulum.',
+      'Cuotas, entrega en 2029, rentas, fideicomiso para extranjeros, reglas de construcción y legalidad: las respuestas sobre Selvadentro Tulum.',
     h1: 'Preguntas frecuentes',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -245,7 +245,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/preguntas-frecuentes',
     title: 'Selvadentro Tulum FAQ — Fees, Delivery, Rentals & Legal',
     description:
-      'Maintenance fees, 2029 delivery, rental rules, the fideicomiso for foreign buyers, construction guidelines and legal status: every answer about Selvadentro Tulum.',
+      'Fees, 2029 delivery, rentals, the fideicomiso for foreign buyers, construction rules and legal status: the answers about Selvadentro Tulum.',
     h1: 'Frequently asked questions',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -260,7 +260,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/legal-compliance',
     title: 'Legalidad y permisos de Selvadentro Tulum — verificado por SEDETUS',
     description:
-      'Selvadentro acreditó el cumplimiento total de sus permisos ante SEDETUS Quintana Roo (septiembre 2025). Aquí está la documentación, el proceso de escrituración y cómo verificarlo tú mismo.',
+      'Selvadentro acreditó cumplimiento total ante SEDETUS en septiembre de 2025. La documentación, la escrituración y cómo verificarlo tú mismo.',
     h1: 'Legalidad y permisos: verificable, no prometido',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -273,7 +273,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/legalidad-y-permisos',
     title: 'Is Selvadentro Tulum Legal? Permits & SEDETUS Verification',
     description:
-      'Selvadentro proved full permit compliance to SEDETUS Quintana Roo in September 2025. Here is the documentation, the titling process, and how to verify it yourself.',
+      'Selvadentro proved full permit compliance to SEDETUS in September 2025. The documentation, the titling process, and how to verify it yourself.',
     h1: 'Legal status and permits: verifiable, not promised',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -288,7 +288,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/developer',
     title: 'Quién desarrolla Selvadentro: JJF Creando, Estudio AMA y Maat Handasa',
     description:
-      'Selvadentro es desarrollado por JJF Creando (Aldea Zamá, Yucatán Country Club) con arquitectura de Estudio AMA y Maat Handasa (Chablé Resort). El equipo y su trayectoria.',
+      'JJF Creando (Aldea Zamá, Yucatán Country Club) desarrolla Selvadentro, con arquitectura de Estudio AMA y Maat Handasa (Chablé Resort).',
     h1: 'El equipo detrás de Selvadentro',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -301,7 +301,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/desarrollador',
     title: 'The Developer Behind Selvadentro Tulum: JJF Creando & Partners',
     description:
-      'Selvadentro is developed by JJF Creando (Aldea Zamá, Yucatán Country Club) with architecture by Estudio AMA and Maat Handasa (Chablé Resort). Meet the team and track record.',
+      'JJF Creando (Aldea Zamá, Yucatán Country Club) develops Selvadentro, with architecture by Estudio AMA and Maat Handasa (Chablé Resort).',
     h1: 'The team behind Selvadentro',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -329,7 +329,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/blog',
     title: 'Selvadentro Blog — Buying Land & Living in Tulum',
     description:
-      'Data-driven guides to buying land and investing in Tulum: prices per m², the fideicomiso, SEDETUS legal checks, neighborhoods, pre-construction and jungle living.',
+      'Data-driven guides to buying land in Tulum: prices per m², the fideicomiso, SEDETUS checks, neighborhoods, pre-construction and jungle living.',
     h1: 'Guides to buying land and living in Tulum',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -370,7 +370,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/tulum-property-appreciation-data',
     title: 'Plusvalía en Tulum 2026: datos reales de precio por m²',
     description:
-      'Serie de precios documentada: $119 USD/m² en mayo 2025, $167 hoy (+40%). Qué está impulsando la plusvalía en Tulum: Tren Maya, aeropuerto y Libramiento Playa-Cobá.',
+      'Serie documentada: $119 USD/m² en mayo de 2025, $167 hoy (+40%). Qué impulsa la plusvalía en Tulum: Tren Maya, aeropuerto y Libramiento.',
     h1: 'Plusvalía en Tulum: los datos, no la promesa',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -383,7 +383,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/plusvalia-en-tulum',
     title: 'Tulum Property Appreciation: Real Price Data 2025–2026',
     description:
-      'A documented price series: $119 USD/m² in May 2025, $167 today (+40%). What is driving Tulum appreciation: the Maya Train, the new airport and the Playa-Cobá bypass.',
+      'A documented series: $119 USD/m² in May 2025, $167 today (+40%). What drives Tulum appreciation: the Maya Train, the airport and the bypass.',
     h1: 'Tulum property appreciation: the data, not the promise',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -396,7 +396,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/pre-construction-lots-tulum',
     title: 'Preventa de terrenos en Tulum: 48 meses sin intereses | Selvadentro',
     description:
-      'Cómo funciona la preventa en Selvadentro: apartado, plan de pagos a 48 meses sin intereses, entrega 2029 y qué documentos revisar antes de firmar cualquier preventa en Tulum.',
+      'Cómo funciona la preventa: apartado, plan a 48 meses sin intereses, entrega 2029 y qué documentos revisar antes de firmar en Tulum.',
     h1: 'Preventa de terrenos en Tulum, explicada completa',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -409,7 +409,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/preventa-de-terrenos-en-tulum',
     title: 'Pre-Construction Lots in Tulum: 48-Month 0% Plans | Selvadentro',
     description:
-      'How pre-construction works at Selvadentro: reservation, a 48-month interest-free payment plan, 2029 delivery, and which documents to review before signing any Tulum pre-sale.',
+      'How pre-construction works: reservation, a 48-month interest-free plan, 2029 delivery, and which documents to review before signing in Tulum.',
     h1: 'Pre-construction lots in Tulum, explained end to end',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -422,7 +422,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/is-it-safe-to-buy-property-in-tulum',
     title: '¿Es seguro invertir en Tulum? Guía para comprar sin riesgo',
     description:
-      'Sí — si verificas permisos, escrituras y desarrollador. Checklist de due diligence con SEDETUS y Registro Público, y las señales de alerta que descartan un desarrollo.',
+      'Sí, si verificas permisos, escrituras y desarrollador. Checklist con SEDETUS y Registro Público, y las señales de alerta que descartan un proyecto.',
     h1: '¿Es seguro invertir en Tulum? Depende de cómo compres.',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -435,7 +435,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/es-seguro-invertir-en-tulum',
     title: 'Is It Safe to Buy Property in Tulum? A Due-Diligence Guide',
     description:
-      'Yes — if you verify permits, titles and the developer. A due-diligence checklist using SEDETUS and the Public Registry, plus the red flags that rule a development out.',
+      'Yes, if you verify permits, titles and the developer. A due-diligence checklist using SEDETUS and the Public Registry, plus the red flags.',
     h1: 'Is it safe to buy property in Tulum? It depends on how you buy.',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -461,7 +461,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/comunidad-privada-en-tulum',
     title: 'Gated Community in Tulum with 9 Cenotes | Selvadentro',
     description:
-      'Controlled access, 24/7 security, low density guaranteed by regulation, and 65% of the jungle preserved: life inside Selvadentro, Tulum’s cenote-reserve gated community.',
+      'Controlled access, 24/7 security, low density guaranteed by regulation and 65% of the jungle preserved: life inside a Tulum gated community.',
     h1: 'A gated community inside the Tulum jungle',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -474,7 +474,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/eco-friendly-developments-tulum',
     title: 'Desarrollos ecológicos en Tulum: 65% de selva conservada',
     description:
-      'Qué hace ecológico a un desarrollo de verdad: masterplan de Estudio AMA que preserva 65% de la selva, cenotes protegidos con especialistas y construcción regulada al 35% del lote.',
+      'Qué hace ecológico a un desarrollo de verdad: 65% de selva preservada, cenotes protegidos con especialistas y construcción limitada al 35% del lote.',
     h1: 'Desarrollo ecológico en Tulum: preservar no es un eslogan',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -487,7 +487,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/desarrollos-ecologicos-en-tulum',
     title: 'Eco-Friendly Development in Tulum: 65% Jungle Preserved',
     description:
-      'What makes a development genuinely eco-friendly: an Estudio AMA masterplan preserving 65% of the jungle, specialist-protected cenotes and construction capped at 35% per lot.',
+      'What makes a development genuinely eco-friendly: 65% of the jungle preserved, specialist-protected cenotes and construction capped at 35% per lot.',
     h1: 'Eco-friendly development in Tulum: preservation is not a slogan',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -500,7 +500,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/living-in-tulum-guide',
     title: 'Vivir en Tulum: guía honesta 2026 (clima, costos, zonas)',
     description:
-      'Cómo es vivir en Tulum de verdad: clima mes a mes, costo de vida, zonas para residir, conectividad tras el Tren Maya y el aeropuerto, y para quién sí (y para quién no) es.',
+      'Cómo es vivir en Tulum de verdad: clima mes a mes, costo de vida, zonas para residir, conectividad, y para quién sí y para quién no es.',
     h1: 'Vivir en Tulum: la guía honesta',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -513,7 +513,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/vivir-en-tulum',
     title: 'Living in Tulum: An Honest Guide for 2026',
     description:
-      'What living in Tulum is really like: month-by-month climate, cost of living, where residents actually live, connectivity after the Maya Train and airport — and who it is (and isn’t) for.',
+      'What living in Tulum is really like: month-by-month climate, cost of living, where residents actually live, connectivity — and who it is not for.',
     h1: 'Living in Tulum: the honest guide',
     ogImage: DEFAULT_OG_IMAGE,
     updated: UPDATED,
@@ -526,7 +526,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/tulum-real-estate-market-2026',
     title: 'Mercado inmobiliario de Tulum 2026: precios, datos y tendencias',
     description:
-      'Reporte 2026 del mercado de tierra en Tulum: precios por m² documentados, efecto del Tren Maya y el aeropuerto, oferta regulada por SEDETUS y hacia dónde va la plusvalía.',
+      'Reporte 2026 del mercado de tierra en Tulum: precios por m² documentados, efecto del Tren Maya y el aeropuerto, y hacia dónde va la plusvalía.',
     h1: 'El mercado inmobiliario de Tulum en 2026',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,

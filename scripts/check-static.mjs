@@ -21,8 +21,10 @@ const check = (cond, msg) => {
 };
 
 const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
+// Mirrors outFileFor() in prerender.mjs: `<path>.html`, never a directory
+// index, so Netlify answers the slash-less canonical URL with a 200.
 const fileFor = (p) =>
-  p === '/' ? path.join(DIST, 'index.html') : path.join(DIST, p.replace(/^\//, ''), 'index.html');
+  p === '/' ? path.join(DIST, 'index.html') : path.join(DIST, `${p.replace(/^\//, '')}.html`);
 
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const htmlEsc = (s) =>
@@ -68,6 +70,16 @@ for (const meta of ALL_PAGES) {
       `${where}: hreflang does not reference paired URL ${meta.altPath}`,
     );
   }
+  // Descriptions are truncated in SERPs past ~160 chars, and the static
+  // registry is not covered by the content build's validator.
+  check(
+    meta.description.length <= 160,
+    `${where}: meta description is ${meta.description.length} chars (max 160)`,
+  );
+  check(
+    /[.!?…]$/.test(meta.description.trim()),
+    `${where}: meta description must end in terminal punctuation`,
+  );
   check(textPattern(meta.h1).test(html), `${where}: H1 text not found in body ("${meta.h1}")`);
   check(/<h1[\s>]/.test(html), `${where}: no <h1> tag in prerendered body`);
   check(html.includes('data-prerendered="true"'), `${where}: #root not marked prerendered`);
@@ -133,6 +145,18 @@ for (const lang of ['es', 'en']) {
 }
 
 // Structural invariants.
+// No route may be emitted as a directory index: Netlify would then
+// 301 the slash-less canonical URL to the trailing-slash form, putting a
+// redirect behind every canonical, sitemap entry and internal link.
+for (const meta of ALL_PAGES) {
+  if (meta.path === '/') continue;
+  const asDirIndex = path.join(DIST, meta.path.replace(/^\//, ''), 'index.html');
+  check(
+    !fs.existsSync(asDirIndex),
+    `${meta.path}: emitted as a directory index — Netlify will 301 the canonical URL. Emit <path>.html instead.`,
+  );
+}
+
 check(fs.existsSync(path.join(DIST, '404.html')), 'dist/404.html missing');
 check(!fs.existsSync(path.join(DIST, 'agendar')), 'dist/agendar should not exist (301 in netlify.toml)');
 check(fs.existsSync(path.join(DIST, 'sitemap.xml')), 'dist/sitemap.xml missing');

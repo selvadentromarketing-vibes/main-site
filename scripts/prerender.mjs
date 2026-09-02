@@ -37,9 +37,19 @@ if (!template.includes('<div id="root"></div>')) {
 
 const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
 
+/**
+ * Route path → output file.
+ *
+ * We emit `<path>.html`, NOT `<path>/index.html`. Netlify serves a file at
+ * `cenotes.html` directly for a request to `/cenotes` (200), whereas a
+ * directory index at `cenotes/index.html` makes it 301-redirect `/cenotes`
+ * → `/cenotes/`. Since every canonical, sitemap entry, hreflang and
+ * internal link we emit uses the slash-less form, the directory layout put
+ * a redirect behind all 121 of them. Keep this as-is.
+ */
 function outFileFor(routePath) {
   if (routePath === '/') return path.join(DIST, 'index.html');
-  return path.join(DIST, routePath.replace(/^\//, ''), 'index.html');
+  return path.join(DIST, `${routePath.replace(/^\//, '')}.html`);
 }
 
 /**

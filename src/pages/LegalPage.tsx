@@ -22,6 +22,9 @@ const PRESS = {
     'https://quintafuerza.mx/quintana-roo/sedetus-alerta-sobre-26-desarrollos-inmobiliarios-en-tulum-que-operan-sin-permisos-oficiales/',
   reportur:
     'https://www.reportur.com/estados-unidos/2025/09/18/tulum-alertan-sobre-26-desarrollos-inmobiliarios-sin-permisos-oficiales/',
+  // The clearance itself, dated and naming Selvadentro among the 14.
+  tulumTimes:
+    'https://tulumtimes.com/tulum-sedetus-cleared-developments-legal-update-2025',
 } as const;
 
 const copy = {
@@ -70,9 +73,9 @@ const copy = {
       },
       {
         name: 'Tulum Times',
-        date: 'septiembre de 2025',
-        label: '“SEDETUS Clears 14 Tulum Developments After Legal Review”',
-        href: null,
+        date: '16 de septiembre de 2025',
+        label: '“SEDETUS Clears 14 Tulum Developments After Legal Review” — la nota que reporta el retiro de los 14 desarrollos, Selvadentro incluido',
+        href: PRESS.tulumTimes,
       },
     ],
     permitsTitle: '¿Qué permisos necesita un desarrollo en Tulum?',
@@ -185,9 +188,9 @@ const copy = {
       },
       {
         name: 'Tulum Times',
-        date: 'September 2025',
-        label: '“SEDETUS Clears 14 Tulum Developments After Legal Review”',
-        href: null,
+        date: 'September 16, 2025',
+        label: '“SEDETUS Clears 14 Tulum Developments After Legal Review” — the report naming the 14 cleared developments, Selvadentro among them',
+        href: PRESS.tulumTimes,
       },
     ],
     permitsTitle: 'What permits does a Tulum development need?',
@@ -300,7 +303,8 @@ export default function LegalPage({ lang, path }: PageProps) {
                 </tbody>
               </table>
             </div>
-            {/* TODO(owner): link official SEDETUS bulletin/PDF */}
+            {/* TODO(owner): link the official SEDETUS bulletin PDF itself. The dated
+                press report of the clearance is already cited below. */}
             <p className="text-sm text-brand-gris mt-3">{c.bulletinNote}</p>
           </Reveal>
           <Reveal delay={120}>

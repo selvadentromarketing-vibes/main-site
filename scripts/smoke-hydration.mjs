@@ -16,8 +16,15 @@ const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css
 
 const server = http.createServer((req, res) => {
   const urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  // Resolve like Netlify: an extensionless request maps to `<path>.html`.
   let file = path.join(DIST, urlPath);
-  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+  if (!path.extname(file)) {
+    const asFile = `${file.replace(/\/$/, '')}.html`;
+    if (fs.existsSync(asFile)) file = asFile;
+    else if (fs.existsSync(file) && fs.statSync(file).isDirectory())
+      file = path.join(file, 'index.html');
+  }
+  if (urlPath === '/') file = path.join(DIST, 'index.html');
   if (!fs.existsSync(file)) file = path.join(DIST, '404.html');
   res.writeHead(fs.existsSync(file) ? 200 : 404, { 'content-type': MIME[path.extname(file)] ?? 'application/octet-stream' });
   fs.createReadStream(file).pipe(res);

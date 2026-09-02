@@ -156,6 +156,22 @@ export function videoObjects(lang: Lang): JsonLd[] {
   ];
 }
 
+/** The glossary itself, so each DefinedTerm belongs to a real set. */
+export function definedTermSet(lang: Lang): JsonLd {
+  const hubPath = lang === 'es' ? '/glosario' : '/en/glossary';
+  return {
+    '@type': 'DefinedTermSet',
+    '@id': `${absUrl(hubPath)}#termset`,
+    name:
+      lang === 'es'
+        ? 'Glosario inmobiliario de México'
+        : 'Mexico real estate glossary',
+    url: absUrl(hubPath),
+    inLanguage: lang === 'es' ? 'es-MX' : 'en',
+    publisher: { '@id': ORG_ID },
+  };
+}
+
 export function breadcrumbList(
   items: Array<{ name: string; path: string }>,
 ): JsonLd {
@@ -259,13 +275,16 @@ export function graphFor(meta: PageMeta, record?: ContentRecord): JsonLd {
     case 'glossary-term':
       if (post) {
         nodes.push(
+          definedTermSet(lang),
           {
             '@type': 'DefinedTerm',
             '@id': `${pageUrl}#term`,
             name: post.term ?? post.title,
             description: post.answerText,
             inLanguage: lang === 'es' ? 'es-MX' : 'en',
-            inDefinedTermSet: absUrl(lang === 'es' ? '/glosario' : '/en/glossary'),
+            inDefinedTermSet: {
+              '@id': `${absUrl(lang === 'es' ? '/glosario' : '/en/glossary')}#termset`,
+            },
             url: pageUrl,
           },
           breadcrumbList([

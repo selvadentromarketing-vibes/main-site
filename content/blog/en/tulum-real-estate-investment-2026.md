@@ -28,7 +28,7 @@ We think so — precisely because it was uncomfortable, including for us.
 
 On September 11, 2025, SEDETUS (Quintana Roo's ministry of sustainable urban development) published an alert listing 26 Tulum developments that allegedly lacked state or municipal permits, reported at the time by [El Quintanarroense](https://elquintanarroense.com.mx/2025/09/11/sedetus-alerta-sobre-26-desarrollos-inmobiliarios-en-tulum-que-operan-sin-permisos-oficiales/) and [Reportur](https://www.reportur.com/estados-unidos/2025/09/18/tulum-alertan-sobre-26-desarrollos-inmobiliarios-sin-permisos-oficiales/). Selvadentro was on that initial list.
 
-On September 16, 2025, SEDETUS published an updated bulletin removing 14 developments — Selvadentro among them — after they demonstrated full compliance with the Ley de Asentamientos Humanos, the Ley de Acciones Urbanísticas, the state condominium law and related regulations. Tulum Times covered the outcome in "SEDETUS Clears 14 Tulum Developments After Legal Review" (September 2025).
+On September 16, 2025, SEDETUS published an updated bulletin removing 14 developments — Selvadentro among them — after they demonstrated full compliance with the Ley de Asentamientos Humanos, the Ley de Acciones Urbanísticas, the state condominium law and related regulations. [Tulum Times](https://tulumtimes.com/tulum-sedetus-cleared-developments-legal-update-2025) covered the outcome in "SEDETUS Clears 14 Tulum Developments After Legal Review" (September 2025).
 
 <!-- TODO(owner): link official SEDETUS bulletin/PDF -->
 
