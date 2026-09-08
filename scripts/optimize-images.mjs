@@ -60,6 +60,43 @@ await toOg('suspiro-entrance.webp', 'og/og-lots.jpg');
 await toOg('map-cenote-caverna.jpg', 'og/og-cenotes.jpg');
 console.log('done');
 
+// ─── Right-sized variants ────────────────────────────────────────────────
+// Several assets shipped at their master resolution into small fixed boxes.
+// Measured on a phone at DPR3: the header logo paints a 135x48 CSS px box
+// from a 1754px file (95 KB on all 122 pages), and jjf-creando.webp fills a
+// 160x160 box from 1080px (351 KB). These are fixed-size boxes, so a plain
+// smaller file is the whole fix — no srcset machinery needed.
+//
+// Sources that feed the HEROES table below are deliberately NOT touched:
+// hero/investment.webp extracts exact pixel coordinates from
+// amenity-casa-cenotes.webp, and shrinking a hero source would silently
+// change the crop or its output size.
+const RIGHTSIZED = [
+  ['logo-cream.webp', 'logo-cream-sm.webp', 405],   // header + footer box: 135x48 @DPR3
+  ['jjf-creando.webp', 'jjf-creando-sm.webp', 480], // developer page: 160x160 @DPR3
+  ['portfolio-yucatan-country-club.webp', 'portfolio-yucatan-country-club-sm.webp', 900],
+  ['portfolio-casa-chacala.webp', 'portfolio-casa-chacala-sm.webp', 900],
+];
+for (const [src, dest, width] of RIGHTSIZED) {
+  const from = path.join(PUB, src);
+  if (!fs.existsSync(from)) { console.warn(`rightsize source missing: ${src}`); continue; }
+  const to = path.join(PUB, dest);
+  const info = await sharp(from).resize(width).webp({ quality: 82, effort: 6 }).toFile(to);
+  console.log(`${src} (${kb(from)} KB) → ${dest} (${kb(to)} KB, ${info.width}x${info.height})`);
+}
+
+// The homepage's phone hero is the largest first-party asset on the site and
+// the only one still shipping as JPEG. Same pixels, WebP at the quality the
+// veiled subpage crops already use.
+{
+  const from = path.join(PUB, 'hero-cenote-mobile.jpg');
+  if (fs.existsSync(from)) {
+    const to = path.join(PUB, 'hero-cenote-mobile.webp');
+    const info = await sharp(from).webp({ quality: 70, effort: 6 }).toFile(to);
+    console.log(`hero-cenote-mobile.jpg (${kb(from)} KB) → hero-cenote-mobile.webp (${kb(to)} KB, ${info.width}x${info.height})`);
+  }
+}
+
 // ─── Hero crops ──────────────────────────────────────────────────────────
 // Wide, aggressively compressed crops for the page heroes. The full-size
 // originals are 250–470 KB each, which is too much to put behind ten

@@ -63,9 +63,17 @@
            rounded-full transition-all duration-300
            hover:bg-brand-verde/5 hover:scale-[1.02];
   }
+  /* Gold on a light ground measures 1.70:1 on crema-osc and 1.98:1 on crema —
+     nowhere near the 4.5:1 a 10px label needs. Gold on the DARK bands is
+     fine (3.83:1 at this weight, and it is large-ish text), so the default
+     becomes the readable green and .eyebrow-oro opts back into gold where
+     the ground is dark. The palette itself is untouched. */
   .eyebrow {
     @apply inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em]
-           uppercase text-brand-oro;
+           uppercase text-brand-verde;
+  }
+  .eyebrow-oro {
+    @apply text-brand-oro;
   }
   .section {
     @apply py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-10;
@@ -204,7 +212,7 @@
   }
   .table-premium thead th {
     @apply py-3.5 px-4 sm:px-6 text-[11px] font-semibold uppercase
-           tracking-[0.18em] text-brand-oro align-bottom;
+           tracking-[0.18em] text-brand-verde align-bottom;
     border-bottom: 1px solid rgb(45 74 45 / 0.22);
   }
   .table-premium tbody th {
@@ -221,6 +229,22 @@
   }
   .table-shell {
     @apply overflow-x-auto rounded-2xl border border-brand-verde/10 bg-white;
+    /* A scroll container with no affordance reads as clipped content: at
+       320px /plusvalia-en-tulum hides 130px (31%) of its table and the last
+       column is invisible. The right-edge fade is painted with
+       background-attachment: local so it scrolls away once the reader
+       reaches the end, and it costs nothing at widths where nothing
+       overflows because there is no scroll to reveal it. */
+    background-image: linear-gradient(
+      to left,
+      rgb(28 46 28 / 0.09) 0%,
+      rgb(28 46 28 / 0) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 32px 100%;
+    background-position: right center;
+    background-attachment: local;
+    scrollbar-width: thin;
     box-shadow:
       0 1px 2px rgb(28 46 28 / 0.04),
       0 10px 30px -18px rgb(28 46 28 / 0.14);

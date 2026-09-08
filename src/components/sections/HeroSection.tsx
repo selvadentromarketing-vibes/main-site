@@ -16,7 +16,7 @@ export default function HeroSection({ t }: Props) {
       <picture className="absolute inset-0 block">
         <source
           media="(max-width: 639px)"
-          srcSet="/hero-cenote-mobile.jpg"
+          srcSet="/hero-cenote-mobile.webp"
           width={1200}
           height={1600}
         />

@@ -47,17 +47,23 @@ export default function TourVirtualSection({ lang }: Props) {
             className="relative w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10 bg-brand-verde-osc"
             style={{ aspectRatio: '16 / 9' }}
           >
-            {/* Iframe mounts from the start so its first frame is visible as
-                the "poster". The overlay below intercepts pointer events
-                until the visitor opts in. */}
-            <iframe
-              src={TOUR_URL}
-              title={iframeTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking; fullscreen"
-              allowFullScreen
-              tabIndex={active ? 0 : -1}
-              className="absolute inset-0 w-full h-full border-0"
-            />
+            {/* The iframe used to mount from the start so its first frame
+                could serve as the poster. That cost every homepage visitor
+                1.09 MB of third-party player JS (measured: 1,144,091 B, and
+                6.9 s of the load on a throttled phone) for a tour most never
+                open — and because the iframe is in the prerendered HTML, the
+                preload scanner fetched it during initial parse. It now mounts
+                on the first tap, exactly as VideoEmbed does for YouTube. The
+                dark ground plus the play overlay is the poster. */}
+            {active && (
+              <iframe
+                src={TOUR_URL}
+                title={iframeTitle}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking; fullscreen"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-0"
+              />
+            )}
 
             {!active && (
               <button

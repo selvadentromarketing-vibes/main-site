@@ -23,7 +23,7 @@ export default function ArticleHero({ hub, crumb, title, meta }: ArticleHeroProp
       <div className="relative max-w-3xl mx-auto">
         <nav
           aria-label="breadcrumb"
-          className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-crema/50 mb-6"
+          className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-crema/75 mb-6"
         >
           <a href={hub.href} className="hover:text-brand-oro transition-colors">
             {hub.label}
@@ -31,7 +31,7 @@ export default function ArticleHero({ hub, crumb, title, meta }: ArticleHeroProp
           <span className="mx-2.5 text-brand-oro/70" aria-hidden="true">
             /
           </span>
-          <span className="font-normal normal-case tracking-normal text-xs text-brand-crema/70">
+          <span className="font-normal normal-case tracking-normal text-xs text-brand-crema/80">
             {crumb}
           </span>
         </nav>

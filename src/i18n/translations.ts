@@ -167,6 +167,11 @@ export interface Translation {
     formSuccess: string;
     formSuccessSchedule: string;
     formError: string;
+    /** A field is missing — NOT a network failure. Keeping these separate
+        matters: the old copy told people the send had failed when they had
+        simply left the budget select empty. */
+    formIncomplete: string;
+    formInvalidPhone: string;
     formConsent: string;
   };
 
@@ -417,6 +422,8 @@ export const translations: Record<Lang, Translation> = {
         '¡Listo! Un asesor de Selvadentro te llamará en el horario que elegiste.',
       formError:
         'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a info@selvadentrotulum.com.',
+      formIncomplete: 'Falta un dato: revisa que todos los campos estén completos.',
+      formInvalidPhone: 'Revisa el número de teléfono — incluye la lada del país.',
       formConsent:
         'Al enviar aceptas que un asesor de Selvadentro te contacte. No compartimos tus datos.',
     },
@@ -658,6 +665,8 @@ export const translations: Record<Lang, Translation> = {
         'All set! A Selvadentro advisor will call you at the slot you chose.',
       formError:
         'We couldn’t send your request. Please try again or email info@selvadentrotulum.com.',
+      formIncomplete: 'Something’s missing — please check that every field is filled in.',
+      formInvalidPhone: 'Please check the phone number — include your country code.',
       formConsent:
         'By submitting you agree to be contacted by a Selvadentro advisor. We never share your data.',
     },

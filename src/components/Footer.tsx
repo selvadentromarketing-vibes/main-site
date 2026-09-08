@@ -98,7 +98,7 @@ export default function Footer({ t, lang }: FooterProps) {
                 never repeat it as sibling text (see memory: logo is
                 self-contained). */}
             <img
-              src="/logo-cream.webp"
+              src="/logo-cream-sm.webp"
               alt="Selvadentro — tierra de cenotes"
               width={1754}
               height={625}

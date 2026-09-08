@@ -35,6 +35,11 @@ interface NavLink {
 // Meta Pixel Lead event fires. Adara CRM and GHL are separate systems —
 // sending traffic to Adara used to split the funnel and drop attribution.
 
+/* The two language links were 21x18 — the smallest controls on a bilingual
+   site. Padding plus a negative margin gives them ~44px boxes without
+   changing the header's visible height. */
+const LANG_HIT = 'inline-flex items-center px-2.5 py-3 -my-3 ';
+
 export default function Header({
   t,
   lang,
@@ -107,7 +112,7 @@ export default function Header({
           className="shrink-0"
         >
           <img
-            src="/logo-cream.webp"
+            src="/logo-cream-sm.webp"
             alt="Selvadentro · tierra de cenotes"
             width={1754}
             height={625}
@@ -229,8 +234,8 @@ export default function Header({
               aria-current={lang === 'es' ? 'true' : undefined}
               className={
                 lang === 'es'
-                  ? 'text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]'
-                  : 'text-brand-crema/70 hover:text-brand-crema transition-colors'
+                  ? `${LANG_HIT} text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]`
+                  : `${LANG_HIT} text-brand-crema/70 hover:text-brand-crema transition-colors`
               }
             >
               ES
@@ -241,8 +246,8 @@ export default function Header({
               aria-current={lang === 'en' ? 'true' : undefined}
               className={
                 lang === 'en'
-                  ? 'text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]'
-                  : 'text-brand-crema/70 hover:text-brand-crema transition-colors'
+                  ? `${LANG_HIT} text-brand-oro underline underline-offset-4 decoration-brand-oro decoration-[1.5px]`
+                  : `${LANG_HIT} text-brand-crema/70 hover:text-brand-crema transition-colors`
               }
             >
               EN
@@ -261,7 +266,14 @@ export default function Header({
       {/* Mobile dropdown */}
       {open && (
         <div className="xl:hidden bg-brand-verde-osc/98 backdrop-blur-md border-t border-brand-crema/10">
-          <nav className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-5 text-brand-crema">
+          {/* Bounded scroller: in landscape the panel ran 103px past the
+              viewport with overflow-y: visible, so the primary CTA at the
+              bottom could not be reached by scrolling or swiping. Also
+              future-proofs the keyboard-up case on short viewports. */}
+          <nav
+            className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-5 text-brand-crema
+                       max-h-[calc(100svh-4.5rem)] overflow-y-auto overscroll-contain"
+          >
             {NAV_LINKS.map((link) => (
               <div key={link.id} className="flex flex-col gap-3">
                 <a

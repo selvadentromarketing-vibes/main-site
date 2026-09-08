@@ -119,6 +119,25 @@ function renderMarkdown(md, filename) {
     const inline = marked.parseInline(tokens.map((t) => t.raw).join(''));
     return `<h${depth} id="${id}">${inline}</h${depth}>\n`;
   };
+  // Markdown tables shipped as a bare <table>, which on a phone overflows the
+  // DOCUMENT — a 6-column comparison table is 593px wide inside a 358px
+  // article, and every ancestor is overflow-x: visible, so the whole page
+  // scrolls sideways and the fixed header detaches. Measured: 17 editorial
+  // pages overflowed by 219px at 390px, 19 by up to 289px at 320px. Wrap
+  // them in the same shell the hand-built tables use, which is a scroll
+  // container, and give them the premium treatment for free.
+  renderer.table = ({ header, rows }) => {
+    const cell = (c, tag) =>
+      `<${tag}${c.align ? ` align="${c.align}"` : ''}>` +
+      `${marked.parseInline(c.tokens.map((t) => t.raw).join(''))}</${tag}>`;
+    const head = `<thead><tr>${header.map((c) => cell(c, 'th')).join('')}</tr></thead>`;
+    const body = rows.length
+      ? `<tbody>${rows
+          .map((r) => `<tr>${r.map((c) => cell(c, 'td')).join('')}</tr>`)
+          .join('')}</tbody>`
+      : '';
+    return `<div class="table-shell not-prose my-8"><table class="table-premium text-sm">${head}${body}</table></div>\n`;
+  };
   let html;
   try {
     html = marked.parse(md, { renderer, async: false });

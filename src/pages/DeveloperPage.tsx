@@ -51,7 +51,7 @@ const PORTFOLIO = [
     altEn: 'Aldea Zamá in Tulum, a previous project by the JJF Creando team',
   },
   {
-    src: '/portfolio-yucatan-country-club.webp',
+    src: '/portfolio-yucatan-country-club-sm.webp',
     width: 1000,
     height: 420,
     captionEs: 'Yucatán Country Club, Mérida — desarrollado por la familia Cámara',
@@ -69,7 +69,7 @@ const PORTFOLIO = [
     altEn: 'Chablé Resort, built by Maat Handasa, architects of the Selvadentro amenities',
   },
   {
-    src: '/portfolio-casa-chacala.webp',
+    src: '/portfolio-casa-chacala-sm.webp',
     width: 1000,
     height: 660,
     captionEs: 'Casa Chacala — Estudio AMA',
@@ -182,7 +182,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
           </Reveal>
           <Reveal delay={120}>
             <img
-              src="/jjf-creando.webp"
+              src="/jjf-creando-sm.webp"
               alt={c.jjfLogoAlt}
               width={1080}
               height={1080}

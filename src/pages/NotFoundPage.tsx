@@ -11,7 +11,7 @@ export default function NotFoundPage() {
     <PageLayout lang="es" path="/404" cta={false}>
       <section className="bg-brand-verde-osc text-brand-crema pt-36 pb-20 px-4 sm:px-6 min-h-[70vh]">
         <div className="max-w-2xl mx-auto text-center">
-          <span className="eyebrow">404</span>
+          <span className="eyebrow eyebrow-oro">404</span>
           <h1 className="text-3xl sm:text-5xl mt-4 mb-6 text-brand-crema">
             Esta página no existe
             <span className="block text-brand-crema/60 text-2xl sm:text-3xl mt-2">

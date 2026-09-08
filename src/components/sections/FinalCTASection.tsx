@@ -158,15 +158,18 @@ export default function FinalCTASection({ t, lang }: Props) {
       !budget ||
       !horizon
     ) {
-      setErrorMsg(t.finalCta.formError);
+      // Not a network failure — telling the visitor "we couldn't send your
+      // request" when they simply left a field empty sends them away thinking
+      // the site is broken.
+      setErrorMsg(t.finalCta.formIncomplete);
       return;
     }
     if (!isValidPhoneNumber(phone)) {
-      setErrorMsg(t.finalCta.formError);
+      setErrorMsg(t.finalCta.formInvalidPhone);
       return;
     }
     if (scheduleMode && (!preferredDate || !preferredTime)) {
-      setErrorMsg(t.finalCta.formError);
+      setErrorMsg(t.finalCta.formIncomplete);
       return;
     }
 
@@ -281,6 +284,13 @@ export default function FinalCTASection({ t, lang }: Props) {
         },
       );
       setStatus('success');
+      // The panel collapses from ~900px to ~280px on success, so the
+      // confirmation ends up above the viewport and a phone visitor sees no
+      // acknowledgement at all. Bring it into view — same move the schedule
+      // toggle already makes above.
+      requestAnimationFrame(() =>
+        formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
+      );
     } catch (err) {
       console.error('Main site form submission failed:', err);
       setStatus('error');
@@ -353,7 +363,7 @@ export default function FinalCTASection({ t, lang }: Props) {
         <Reveal delay={150}>
         <div ref={formRef} className="bg-brand-crema text-brand-negro rounded-2xl p-8 sm:p-10 shadow-2xl">
           {status === 'success' ? (
-            <div className="text-center py-6">
+            <div className="text-center py-6" role="status" aria-live="polite">
               <CheckCircle2 className="w-14 h-14 text-brand-verde mx-auto mb-4" />
               <p className="font-serif text-2xl text-brand-verde-osc">
                 {scheduleMode ? t.finalCta.formSuccessSchedule : t.finalCta.formSuccess}
@@ -435,7 +445,11 @@ export default function FinalCTASection({ t, lang }: Props) {
                       value={phone}
                       onChange={setPhone}
                       autoComplete="tel"
-                      numberInputProps={{ 'aria-label': t.finalCta.formPhone, required: true }}
+                      // size: 1 kills the <input>'s default 20-character
+                      // intrinsic width (207px measured), which was
+                      // forcing 42px of document-level sideways scroll
+                      // on every page with this form at 320px.
+                      numberInputProps={{ 'aria-label': t.finalCta.formPhone, required: true, size: 1 }}
                     />
                   </div>
                 </label>
@@ -572,7 +586,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                 Google requires this attribution when the v3 badge is hidden.
                 Kept small and neutral; links open in a new tab.
               */}
-              <p className="mt-2 text-[10px] text-brand-gris/70 text-center leading-relaxed">
+              <p className="mt-2 text-[11px] text-brand-gris text-center leading-relaxed">
                 {lang === 'es' ? 'Protegido por reCAPTCHA — ' : 'Protected by reCAPTCHA — '}
                 <a
                   href="https://policies.google.com/privacy"

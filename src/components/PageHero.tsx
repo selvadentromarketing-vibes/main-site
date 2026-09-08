@@ -63,7 +63,7 @@ export default function PageHero({
       )}
 
       <div className="relative max-w-4xl mx-auto">
-        <span className="eyebrow">{eyebrow}</span>
+        <span className="eyebrow eyebrow-oro">{eyebrow}</span>
         <span className="rule-oro mt-3 mb-5" />
         <h1 className="display-xl font-serif text-brand-crema mb-6">{title}</h1>
         {lede && (
@@ -78,7 +78,7 @@ export default function PageHero({
           photograph of something that exists. Small and low-contrast — it
           is a disclosure, not a caption competing with the H1. */}
       {image?.note && (
-        <p className="relative mt-10 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-brand-crema/55 max-w-4xl mx-auto">
+        <p className="relative mt-10 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-brand-crema/75 max-w-4xl mx-auto">
           {image.note[lang]}
         </p>
       )}

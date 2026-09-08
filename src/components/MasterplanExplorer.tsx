@@ -102,6 +102,14 @@ export default function MasterplanExplorer({ lang }: Props) {
       ty: Hc / 2 - (spot.py / MAP_H) * Hl * s,
     }));
     setOpenId(spot.id);
+    // On a phone the legend sits below the map, so tapping a row flew the map
+    // to a spot the reader could not see — measured: the popup opened 199px
+    // of its 246px above the viewport. Bring the map back under the thumb.
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      requestAnimationFrame(() =>
+        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }),
+      );
+    }
   };
 
   const reset = () => {
@@ -189,7 +197,7 @@ export default function MasterplanExplorer({ lang }: Props) {
         onMouseEnter={() => setHighlight(key)}
         onMouseLeave={() => setHighlight(null)}
         onClick={() => flyTo(spot)}
-        className="flex items-center gap-2.5 py-1 text-left group"
+        className="flex items-center gap-2.5 py-2.5 text-left group"
       >
         <span
           className={`flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-semibold shrink-0 transition-transform duration-200 group-hover:scale-110 ${
@@ -214,7 +222,12 @@ export default function MasterplanExplorer({ lang }: Props) {
         <div
           ref={containerRef}
           className="relative h-[340px] sm:h-auto sm:aspect-[2400/955] rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl bg-[#5c6b52] cursor-grab active:cursor-grabbing select-none"
-          style={{ touchAction: 'none' }}
+          // At fit zoom there is nothing to pan to, so swallowing vertical
+          // touch made the map a dead zone: a 260px finger swipe starting on
+          // it moved neither the page (scrollY unchanged) nor the map. Give
+          // vertical scrolling back until the reader zooms in, at which point
+          // panning is the useful gesture and 'none' is correct.
+          style={{ touchAction: view.s > minScale() + 0.01 ? 'none' : 'pan-y' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -269,12 +282,21 @@ export default function MasterplanExplorer({ lang }: Props) {
                       if (!moved.current) setOpenId(isOpen ? null : spot.id);
                     }}
                     aria-label={label}
-                    className={`flex items-center justify-center w-6 h-6 rounded-full shadow-md transition-all duration-300 focus:outline-none hover:scale-125 ${
-                      isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
-                    } ${isHi ? 'scale-[1.4] ring-4 ring-brand-oro/70' : ''}`}
+                    // p-2.5/-m-2.5 grows the tappable box to 44px while the
+                    // coloured dot inside stays 24px: measured effective hit
+                    // area on a phone was 41-86% of a 24px target, so pins
+                    // were being missed. Purely a hit-area change — nothing
+                    // moves, and the counter-scale above is untouched.
+                    className="p-2.5 -m-2.5 focus:outline-none"
                   >
-                    <span className="text-[11px] font-semibold leading-none select-none">
-                      {spot.n}
+                    <span
+                      className={`flex items-center justify-center w-6 h-6 rounded-full shadow-md transition-all duration-300 hover:scale-125 ${
+                        isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
+                      } ${isHi ? 'scale-[1.4] ring-4 ring-brand-oro/70' : ''}`}
+                    >
+                      <span className="text-[11px] font-semibold leading-none select-none">
+                        {spot.n}
+                      </span>
                     </span>
                   </button>
                 </div>

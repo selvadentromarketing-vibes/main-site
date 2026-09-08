@@ -26,14 +26,14 @@ interface Partner {
 const PARTNERS: Partner[] = [
   {
     name: 'JJF Creando',
-    logo: '/jjf-creando.webp',
+    logo: '/jjf-creando-sm.webp',
     logoHeightClass: 'max-h-20', // 80px — needs the room because the mark
                                  // sits inside ~30% whitespace border.
     roleEs: 'Desarrollador maestro',
     roleEn: 'Master developer',
     portfolio: [
       {
-        src: '/portfolio-yucatan-country-club.webp',
+        src: '/portfolio-yucatan-country-club-sm.webp',
         captionEs: 'Yucatán Country Club',
         captionEn: 'Yucatán Country Club',
       },
@@ -70,7 +70,7 @@ const PARTNERS: Partner[] = [
     roleEn: 'Architecture & design',
     portfolio: [
       {
-        src: '/portfolio-casa-chacala.webp',
+        src: '/portfolio-casa-chacala-sm.webp',
         captionEs: 'Casa Chacala',
         captionEn: 'Casa Chacala',
       },
