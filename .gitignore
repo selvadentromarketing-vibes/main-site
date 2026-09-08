@@ -25,5 +25,10 @@ src/generated/
 
 # Throwaway analysis scripts and image dumps (agents and humans both leave
 # these in the repo root). Never part of the site — public/ is the only
-# directory copied into dist/.
+# directory copied into dist/. Work like this belongs in the session
+# scratchpad; these patterns are the safety net for when it lands here
+# anyway, mid-audit, while something is still using it.
 scratch-*
+.audit/
+*-audit/
+shots/
