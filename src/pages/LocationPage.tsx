@@ -27,7 +27,7 @@ const copy = {
       'Tulum tiene dos caras. Una es la costa: la Zona Hotelera, la playa, la densidad turística. La otra es la selva: el lado interior, donde el terreno se abre hacia los cenotes y las reservas naturales. Selvadentro está en esa segunda cara — el único desarrollo residencial privado sobre la Ruta de los Cenotes de Tulum.',
       'Eso define la vida diaria y también la inversión. Lo que rodea al proyecto son reservas y atracciones naturales, no otros desarrollos: el silencio es real y la oferta vecina no puede crecer. La playa, los restaurantes y el pueblo quedan a 20 minutos; la selva queda en casa.',
     ],
-    mapAlt: 'Mapa de rutas de acceso a Selvadentro: Carretera Federal 307, Tren Maya y Libramiento Playa-Cobá',
+    mapAlt: 'Mapa de rutas de acceso a Selvadentro: Carretera Federal 307, estación del Tren Maya, Libramiento, Ruta de los Cenotes, Parque Jaguar, Bahía Solimán, zona hotelera y centro de Tulum',
     mapCaption: 'Las rutas de acceso a Selvadentro, del brochure oficial de Suspiro.',
     routesTitle: 'Cómo llegar a Selvadentro',
     routes: [
@@ -69,7 +69,7 @@ const copy = {
       'Tulum has two faces. One is the coast: the Hotel Zone, the beach, the tourist density. The other is the jungle: the inland side, where the land opens toward cenotes and nature reserves. Selvadentro is on that second face — the only private residential development on Tulum’s Ruta de los Cenotes.',
       'That shapes daily life, and it shapes the investment. What surrounds the project are reserves and natural attractions, not other developments: the silence is real, and the neighboring supply cannot grow. The beach, the restaurants and the town are 20 minutes away; the jungle is home.',
     ],
-    mapAlt: 'Access-route map for Selvadentro: Federal Highway 307, the Maya Train and the Playa-Cobá bypass',
+    mapAlt: 'Access-route map for Selvadentro: Federal Highway 307, the Maya Train station, the bypass, Ruta de los Cenotes, Parque Jaguar, Bahía Solimán, the hotel zone and downtown Tulum',
     mapCaption: 'Access routes to Selvadentro, from the official Suspiro brochure.',
     routesTitle: 'How to get to Selvadentro',
     routes: [
@@ -161,8 +161,8 @@ export default function LocationPage({ lang, path }: PageProps) {
               <img
                 src="/rutas-acceso.webp"
                 alt={c.mapAlt}
-                width={2206}
-                height={1265}
+                width={1622}
+                height={970}
                 loading="lazy"
                 className="rounded-2xl w-full h-auto"
               />

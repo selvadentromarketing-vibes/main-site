@@ -47,7 +47,7 @@ const copy = {
         body: 'Del lado selva de Tulum, la tierra desarrollable está acotada por reservas naturales y cenotes protegidos. Esa escasez no es marketing: es geografía.',
       },
     ],
-    driversImgAlt: 'Mapa de rutas de acceso a la Ruta de los Cenotes: Tren Maya, Aeropuerto de Tulum y Libramiento Playa-Cobá',
+    driversImgAlt: 'Mapa de rutas de acceso a la Ruta de los Cenotes: estación del Tren Maya, Libramiento, Carretera Federal, Parque Jaguar y la zona hotelera de Tulum',
     brakesTitle: '¿Qué podría frenar la plusvalía? La parte que casi nadie escribe.',
     brakes: [
       ['Los ciclos turísticos', 'Tulum depende del turismo, y el turismo respira: años fuertes y años flojos. La tierra los atraviesa mejor que la renta vacacional, pero los atraviesa.'],
@@ -105,7 +105,7 @@ const copy = {
         body: 'On Tulum’s jungle side, developable land is hemmed in by natural reserves and protected cenotes. That scarcity is not marketing. It is geography.',
       },
     ],
-    driversImgAlt: 'Access-routes map for the Ruta de los Cenotes: Maya Train, Tulum airport and the Playa-Cobá bypass',
+    driversImgAlt: 'Access-routes map for the Ruta de los Cenotes: the Maya Train station, the bypass, Federal Highway, Parque Jaguar and the Tulum hotel zone',
     brakesTitle: 'What could slow appreciation down? The part almost nobody writes.',
     brakes: [
       ['Tourism cycles', 'Tulum runs on tourism, and tourism breathes: strong years and soft years. Land rides those cycles better than vacation rentals do — but it still rides them.'],
@@ -211,8 +211,8 @@ export default function PlusvaliaPage({ lang, path }: PageProps) {
             <img
               src="/rutas-acceso.webp"
               alt={c.driversImgAlt}
-              width={2206}
-              height={1265}
+              width={1622}
+              height={970}
               loading="lazy"
               className="rounded-2xl w-full h-auto object-cover mt-8"
             />

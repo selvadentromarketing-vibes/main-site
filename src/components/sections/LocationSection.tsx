@@ -10,8 +10,8 @@ interface Props {
 export default function LocationSection({ t, lang }: Props) {
   const mapAlt =
     lang === 'es'
-      ? 'Rutas de acceso a Suspiro — Carretera Federal, Tren Maya y Libramiento'
-      : 'Access routes to Suspiro — Federal Highway, Maya Train and bypass road';
+      ? 'Rutas de acceso a Suspiro: Ruta de los Cenotes, Libramiento, Carretera Federal, estación del Tren Maya, Parque Jaguar, Bahía Solimán y el centro de Tulum'
+      : 'Access routes to Suspiro: Ruta de los Cenotes, the bypass, Federal Highway, the Maya Train station, Parque Jaguar, Bahía Solimán and downtown Tulum';
 
   return (
     <section id="ubicacion" className="section bg-brand-crema-osc">
@@ -48,8 +48,8 @@ export default function LocationSection({ t, lang }: Props) {
             <img
               src="/rutas-acceso.webp"
               alt={mapAlt}
-              width={2206}
-              height={1265}
+              width={1622}
+              height={970}
               className="w-full h-auto block"
               loading="lazy"
             />
