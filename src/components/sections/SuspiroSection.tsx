@@ -63,9 +63,9 @@ export default function SuspiroSection({ t, lang }: Props) {
             <div className="aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
               <img
                 src="/suspiro-entrance.webp"
-                alt="Acceso principal de Suspiro entre la selva — Selvadentro Tulum"
-                width={1600}
-                height={900}
+                alt="Vialidad interior de Suspiro: camino entre la selva conservada, con casas retiradas del arroyo vehicular — Selvadentro Tulum"
+                width={1400}
+                height={788}
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
               />

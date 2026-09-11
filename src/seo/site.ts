@@ -99,5 +99,5 @@ export const IMAGE_DIMS: Record<string, { width: number; height: number }> = {
   '/testimonial-shawn.webp': { width: 800, height: 662 },
   '/testimonial-angela.webp': { width: 800, height: 550 },
   '/testimonial-ricardo.webp': { width: 800, height: 637 },
-  '/suspiro-entrance.webp': { width: 1600, height: 900 },
+  '/suspiro-entrance.webp': { width: 1400, height: 788 },
 };

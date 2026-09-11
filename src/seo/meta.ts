@@ -594,8 +594,8 @@ export const STATIC_PAGES: PageMeta[] = [
 const HERO_IMAGES: Record<string, HeroImage> = {
   lots: {
     src: '/hero/lots.webp',
-    width: 1600,
-    height: 800,
+    width: 1400,
+    height: 788,
     alt: {
       es: 'Acceso a Suspiro en Selvadentro: el letrero de piedra entre la selva de la Ruta de los Cenotes',
       en: 'The entrance to Suspiro at Selvadentro: the stone sign in the jungle on the Ruta de los Cenotes',

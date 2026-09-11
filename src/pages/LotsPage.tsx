@@ -50,7 +50,7 @@ const copy = {
       ['/legalidad-y-permisos', 'Permisos verificados por SEDETUS'],
       ['/preguntas-frecuentes', 'Preguntas frecuentes'],
     ],
-    imgAlt: 'Acceso a Suspiro, la privada activa de Selvadentro Tulum',
+    imgAlt: 'Vialidad interior de Suspiro: el camino entre la selva conservada, con lotes a ambos lados',
   },
   en: {
     eyebrow: 'Availability',
@@ -86,7 +86,7 @@ const copy = {
       ['/en/legal-compliance', 'Permits verified by SEDETUS'],
       ['/en/faq', 'Frequently asked questions'],
     ],
-    imgAlt: 'Entrance to Suspiro, the active enclave at Selvadentro Tulum',
+    imgAlt: 'The road through Suspiro: preserved jungle on both sides, with lots set back from it',
   },
 } as const;
 
@@ -135,8 +135,8 @@ export default function LotsPage({ lang, path }: PageProps) {
             <img
               src="/suspiro-entrance.webp"
               alt={c.imgAlt}
-              width={1600}
-              height={900}
+              width={1400}
+              height={788}
               loading="lazy"
               className="rounded-2xl w-full h-auto object-cover"
             />

@@ -28,7 +28,7 @@ const copy = {
       `Lo que sí se entrega después es lo que rodea al lote: infraestructura y amenidades. En Selvadentro esa entrega es ${PRICING.deliveryYear}, con una diferencia práctica: los nueve cenotes y las experiencias son de uso residencial desde el día de tu compra, no desde la entrega.`,
       'Por eso el riesgo de una preventa de tierra es de otra naturaleza — y menor en un punto clave: no dependes de que algo se construya para que tu propiedad exista. Dependes, como en cualquier compra, de que los papeles estén en orden. De eso trata el checklist de abajo.',
     ],
-    imgAlt: 'Acceso de Suspiro, la privada activa de Selvadentro, ya construido entre la selva',
+    imgAlt: 'Render de la vialidad interior de Suspiro, entre la selva conservada de Selvadentro',
     planTitle: 'El plan de Selvadentro, con números y fechas',
     stepsHead: ['Etapa', 'Precio por m²', 'Fecha'],
     priceSteps: [
@@ -98,7 +98,7 @@ const copy = {
       `What arrives later is what surrounds the lot: infrastructure and amenities. At Selvadentro that delivery is ${PRICING.deliveryYear}, with one practical difference — the nine cenotes and the experiences are open to residents from the day of purchase, not from delivery day.`,
       'That is why the risk profile of land pre-construction is different — and smaller on one key point: you are not waiting for something to be built for your property to exist. What you depend on, as in any purchase, is the paperwork being in order. That is what the checklist below is for.',
     ],
-    imgAlt: 'The Suspiro entrance at Selvadentro, already built within the jungle',
+    imgAlt: 'Render of the road through Suspiro, within the preserved jungle at Selvadentro',
     planTitle: 'Selvadentro’s plan, in numbers and dates',
     stepsHead: ['Phase', 'Price per m²', 'Date'],
     priceSteps: [
@@ -184,8 +184,8 @@ export default function PreventaPage({ lang, path }: PageProps) {
             <img
               src="/suspiro-entrance.webp"
               alt={c.imgAlt}
-              width={1600}
-              height={900}
+              width={1400}
+              height={788}
               loading="lazy"
               className="rounded-2xl w-full h-auto object-cover"
             />
