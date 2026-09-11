@@ -54,7 +54,13 @@ export default function SuspiroSection({ t, lang }: Props) {
         {/* Row 1 — image + copy (unchanged) */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal>
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
+            {/* Landscape, not the old 4:5 portrait. The asset is a wide
+                establishing shot of the access road (1.78:1); cropping it to
+                a tall box threw away ~55% of the width — the road sweeping in
+                from the left and the enclave behind the trees. 3:2 keeps
+                essentially the whole composition while still giving the
+                column enough height to sit beside the copy. */}
+            <div className="aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-verde/10">
               <img
                 src="/suspiro-entrance.webp"
                 alt="Acceso principal de Suspiro entre la selva — Selvadentro Tulum"
