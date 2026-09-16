@@ -47,7 +47,7 @@ Most people meet cenotes as attractions, and Tulum has extraordinary ones. Since
 
 Living beside a cenote runs on a different clock. At Selvadentro there are nine named cenotes inside the project — Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida and Caverna — preserved for residents rather than operated as attractions. There is no ticket window and no closing time. A swim before breakfast is not an excursion; it is Tuesday.
 
-Two practical notes, stated plainly because we are the developer. Residents get access to the cenotes and common areas from the day of purchase, even though Suspiro — the active enclave — and its amenities are delivered in 2029. And this kind of setting is scarce by nature: land [with a cenote on or beside it](/en/land-with-cenote-for-sale-mexico) cannot be manufactured, which is part of why our price per square meter moved from $119 USD at launch in May 2025 to $167 USD today. You can read more about the nine on our [cenotes page](/en/cenotes).
+Two practical notes, stated plainly because we are the developer. Residents get access to the cenotes and common areas from the day of purchase, even though Suspiro — the active enclave — and its amenities are delivered in 2029. And this kind of setting is scarce by nature: land [with a cenote on or beside it](/en/land-with-cenote-for-sale-mexico) cannot be manufactured, which is part of why our price per square meter moved from $119 USD at launch in May 2025 to $170 USD today. You can read more about the nine on our [cenotes page](/en/cenotes).
 
 ## How does a community protect its cenotes?
 

@@ -90,6 +90,6 @@ For a personal lot, a family home, or a single property you may rent out, the fi
 
 ## Where Selvadentro fits
 
-At Selvadentro, our lots sit on Tulum's jungle side, on the Ruta de los Cenotes, with nine cenotes inside the project and 65% of the jungle preserved. Lots start at $68,000 USD; our price per m² went from $119 USD at launch in May 2025 to $167 USD today, and we offer a 48-month interest-free plan directly as developers. Foreign buyers close through a fideicomiso, exactly as described above — our team and the notario handle the setup as part of closing.
+At Selvadentro, our lots sit on Tulum's jungle side, on the Ruta de los Cenotes, with nine cenotes inside the project and 65% of the jungle preserved. Lots start at $68,000 USD; our price per m² went from $119 USD at launch in May 2025 to $170 USD today, and we offer a 48-month interest-free plan directly as developers. Foreign buyers close through a fideicomiso, exactly as described above — our team and the notario handle the setup as part of closing.
 
 If you are weighing a purchase, start with [current availability](/en/tulum-land-for-sale), read how we document [legal compliance](/en/legal-compliance), and see [what the numbers look like as an investment](/en/investment). Questions we hear most often are answered in the [FAQ](/en/faq). No pressure — the structure has worked since 1973, and it will still work when you are ready.

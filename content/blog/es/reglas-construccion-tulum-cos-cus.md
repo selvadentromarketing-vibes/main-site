@@ -47,7 +47,7 @@ Tres razones, en orden ascendente de interés propio.
 
 ## ¿Cuánto tiempo tienes para construir?
 
-En Selvadentro: no hay plazo para empezar. Compra en 2026 y construye en 2032 — es tu decisión, y la tierra no se deprecia mientras esperas (como referencia, nuestro precio pasó de $119 USD por m² en el lanzamiento de mayo de 2025 a $167 USD por m² hoy). Una vez que inicias obra, la regla es un máximo de dos años para terminar. La razón es vecinal, no burocrática: una comunidad donde cada obra tiene fecha de fin nunca se convierte en obra permanente. Los cascarones de concreto a medio terminar, conocidos en otros rincones de Tulum, son exactamente lo que esta cláusula evita. Más preguntas prácticas como esta están respondidas en nuestras [preguntas frecuentes](/preguntas-frecuentes).
+En Selvadentro: no hay plazo para empezar. Compra en 2026 y construye en 2032 — es tu decisión, y la tierra no se deprecia mientras esperas (como referencia, nuestro precio pasó de $119 USD por m² en el lanzamiento de mayo de 2025 a $170 USD por m² hoy). Una vez que inicias obra, la regla es un máximo de dos años para terminar. La razón es vecinal, no burocrática: una comunidad donde cada obra tiene fecha de fin nunca se convierte en obra permanente. Los cascarones de concreto a medio terminar, conocidos en otros rincones de Tulum, son exactamente lo que esta cláusula evita. Más preguntas prácticas como esta están respondidas en nuestras [preguntas frecuentes](/preguntas-frecuentes).
 
 ## ¿Qué protegen los lineamientos de diseño además de los coeficientes?
 

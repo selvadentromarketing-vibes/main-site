@@ -50,17 +50,17 @@ None of these are due until you decide to build — and at Selvadentro there is 
 
 ## What does the first year actually total?
 
-An illustrative example — a 600 m² lot at our current $167 USD/m² (the launch price was $119 in May 2025), bought outright. Your numbers will differ; this is the shape, not a quote.
+An illustrative example — a 600 m² lot at our current $170 USD/m² (the launch price was $119 in May 2025), bought outright. Your numbers will differ; this is the shape, not a quote.
 
 | Concept | Basis | Illustrative amount |
 |---|---|---|
-| Lot price | 600 m² × $167 USD/m² | ~$100,200 USD |
+| Lot price | 600 m² × $170 USD/m² | ~$102,000 USD |
 | Closing costs | Typical 6–8% of price | ~$6,000–8,000 USD |
 | Fideicomiso setup | One-time, varies by bank | Quote separately |
 | Fideicomiso annuity | Typical range, year one | $500–700 USD |
 | HOA fee, year one | 600 m² × ~5 MXN × 12 | ~36,000 MXN |
 | Predial | Low; varies by municipality | Minor line item |
 
-The takeaway: beyond the land itself, first-year ownership costs run in the high single-digit percentages of the purchase price, and the recurring costs from year two onward — HOA, annuity, predial — are modest for what they maintain. Set against a market where our own square meter moved from $119 to $167 USD between May 2025 and today, carrying costs are rarely what decides whether Tulum land makes sense; the entry decision is.
+The takeaway: beyond the land itself, first-year ownership costs run in the high single-digit percentages of the purchase price, and the recurring costs from year two onward — HOA, annuity, predial — are modest for what they maintain. Set against a market where our own square meter moved from $119 to $170 USD between May 2025 and today, carrying costs are rarely what decides whether Tulum land makes sense; the entry decision is.
 
 If you want these numbers run against a specific lot — size, current price, payment plan — the current availability is at [Tulum land for sale](/en/tulum-land-for-sale), our [FAQ](/en/faq) answers the questions buyers ask most, and an advisor will give you the full cost sheet before asking anything of you.

@@ -33,7 +33,7 @@ const copy = {
     stepsHead: ['Etapa', 'Precio por m²', 'Fecha'],
     priceSteps: [
       ['Lanzamiento de Suspiro', `$${PRICING.launchPricePerM2USD} USD`, PRICING.launchDateLabelEs],
-      ['Precio actual', `$${PRICING.pricePerM2USD} USD`, 'septiembre de 2026 · +40% en 12 meses'],
+      ['Precio actual', `$${PRICING.pricePerM2USD} USD`, 'septiembre de 2026 · +43% desde mayo de 2025'],
       ['Proyección al cierre', `$${PRICING.projectedClosePerM2USD} USD`, 'proyección del desarrollador, no una promesa'],
     ],
     termsRows: [
@@ -103,7 +103,7 @@ const copy = {
     stepsHead: ['Phase', 'Price per m²', 'Date'],
     priceSteps: [
       ['Suspiro launch', `$${PRICING.launchPricePerM2USD} USD`, PRICING.launchDateLabelEn],
-      ['Current price', `$${PRICING.pricePerM2USD} USD`, 'September 2026 · +40% in 12 months'],
+      ['Current price', `$${PRICING.pricePerM2USD} USD`, 'September 2026 · +43% since May 2025'],
       ['Projected at close', `$${PRICING.projectedClosePerM2USD} USD`, 'a developer projection, not a promise'],
     ],
     termsRows: [

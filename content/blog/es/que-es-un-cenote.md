@@ -47,7 +47,7 @@ La mayoría conocemos los cenotes como paseo, y los de Tulum son extraordinarios
 
 Vivir junto a un cenote corre con otro reloj. En Selvadentro hay nueve cenotes con nombre dentro del proyecto — Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida y Caverna —, conservados para los residentes, no operados como atracción. No hay taquilla ni hora de cierre. Nadar antes del desayuno no es una excursión; es martes.
 
-Dos notas prácticas, dichas sin rodeos porque somos el desarrollador. Los residentes tienen acceso a los cenotes y áreas comunes desde el día de su compra, aunque Suspiro — la privada activa — y sus amenidades se entregan en 2029. Y este tipo de entorno es escaso por naturaleza: un [terreno con cenote](/terrenos-con-cenote-en-venta) no se puede fabricar, y esa escasez explica en parte que nuestro metro cuadrado pasara de $119 USD en el lanzamiento de mayo de 2025 a $167 USD hoy. Puedes conocer los nueve en nuestra [página de cenotes](/cenotes).
+Dos notas prácticas, dichas sin rodeos porque somos el desarrollador. Los residentes tienen acceso a los cenotes y áreas comunes desde el día de su compra, aunque Suspiro — la privada activa — y sus amenidades se entregan en 2029. Y este tipo de entorno es escaso por naturaleza: un [terreno con cenote](/terrenos-con-cenote-en-venta) no se puede fabricar, y esa escasez explica en parte que nuestro metro cuadrado pasara de $119 USD en el lanzamiento de mayo de 2025 a $170 USD hoy. Puedes conocer los nueve en nuestra [página de cenotes](/cenotes).
 
 ## ¿Cómo protege una comunidad sus cenotes?
 

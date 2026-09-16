@@ -240,7 +240,7 @@ export const translations: Record<Lang, Translation> = {
       headline: 'Suspiro',
       body: 'Hay lugares donde llegar a casa se siente como exhalar después de un día largo. Suspiro es ese lugar. Una privada de baja densidad diseñada para quienes buscan una vida más ligera — en conexión con la naturaleza, con sus cenotes, con su propia calma.',
       pricing:
-        'Lotes desde $68,000 USD — desde $167 USD/m² · Plan de pagos a 48 meses sin intereses',
+        'Lotes desde $68,000 USD ($1,360,000 MXN) — desde $170 USD/m² ($3,400 MXN/m²) · Plan de pagos a 48 meses sin intereses · tipo de cambio de referencia 20 MXN/USD',
       protection:
         'Lo que protege tu inversión: COS 35% · CUS 70% · Dos niveles + roof deck. Normativa de construcción que garantiza baja densidad para siempre.',
       cta: 'Cotizar Suspiro',
@@ -312,14 +312,14 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Inversión',
       headline: 'El momento de entrar es ahora.',
       paragraphs: [
-        'En mayo de 2025, un metro cuadrado en Selvadentro costaba $119 USD. Hoy cuesta $167 USD. La trayectoria es clara.',
+        'En mayo de 2025, un metro cuadrado en Selvadentro costaba $119 USD. Hoy cuesta $170 USD ($3,400 MXN). La trayectoria es clara.',
         'Selvadentro es el único desarrollo residencial privado en la Ruta de los Cenotes de Tulum. Lo que nos rodea son reservas naturales y atracciones — no competencia. Esa escasez no es marketing. Es geografía.',
         'Con el Libramiento Playa-Cobá en construcción y el Tren Maya a minutos, la infraestructura que multiplica el valor ya está llegando.',
         'Proyectamos cerrar el proyecto en +$280–360 USD/m². Quien entra hoy, entra antes de que eso ocurra.',
       ],
       timeline: [
         { milestone: '$119 USD/m²', sub: 'Mayo 2025 · Lanzamiento' },
-        { milestone: '$167 USD/m²', sub: 'Hoy · +40% en 12 meses' },
+        { milestone: '$170 USD/m²', sub: 'Hoy · +43% desde mayo de 2025' },
         { milestone: '+$360 USD/m²', sub: 'Proyección al cierre' },
       ],
       cta: 'Habla con un asesor',
@@ -494,7 +494,7 @@ export const translations: Record<Lang, Translation> = {
       headline: 'Suspiro',
       body: 'There are places where coming home feels like exhaling after a long day. Suspiro is that place. A low-density enclave designed for those seeking a lighter life — in connection with nature, with its cenotes, with their own calm.',
       pricing:
-        'Lots from $68,000 USD — from $167 USD/m² · 48-month interest-free payment plan',
+        'Lots from $68,000 USD ($1,360,000 MXN) — from $170 USD/m² ($3,400 MXN/m²) · 48-month interest-free payment plan · reference exchange rate 20 MXN/USD',
       protection:
         'What protects your investment: Build up to two levels + rooftop. Only 35% lot coverage — by regulation, guaranteeing low density forever. As a foreign buyer, you can own here securely through a bank trust (fideicomiso) — fully legal, fully protected.',
       cta: 'Price Suspiro',
@@ -555,14 +555,14 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Investment',
       headline: 'The moment to enter is now.',
       paragraphs: [
-        'In May 2025, a square meter in Selvadentro cost $119 USD. Today it costs $167 USD. The trajectory is clear.',
+        'In May 2025, a square meter in Selvadentro cost $119 USD. Today it costs $170 USD ($3,400 MXN). The trajectory is clear.',
         'Selvadentro is the only private residential development on Tulum’s Ruta de los Cenotes. What surrounds us are nature reserves and attractions — not competition. That scarcity isn’t marketing. It’s geography.',
         'With the Playa-Cobá bypass under construction and the Maya Train minutes away, the infrastructure that multiplies value is already arriving.',
         'We project closing the project at +$280–360 USD/m². Whoever enters today, enters before that happens.',
       ],
       timeline: [
         { milestone: '$119 USD/m²', sub: 'May 2025 · Launch' },
-        { milestone: '$167 USD/m²', sub: 'Today · +40% in 12 months' },
+        { milestone: '$170 USD/m²', sub: 'Today · +43% since May 2025' },
         { milestone: '+$360 USD/m²', sub: 'Closing projection' },
       ],
       cta: 'Talk to an advisor',

@@ -57,7 +57,7 @@ If your priority is land, canopy, real silence and a house built to your own pla
 
 ## What does the jungle side actually cost?
 
-First-party numbers, clearly labeled: at [Selvadentro](/en/gated-community-tulum), lots run from 400 m² to 1,673 m², from $68,000 USD — $167 USD per m² today, up from $119 USD per m² at launch in May 2025, a 40% move in twelve months. There is a 48-month interest-free payment plan directly with the developer. Suspiro, the active enclave, is delivered with its amenities in 2029, though residents get cenote and amenity access from the day of purchase. Treat these as one data point from one community, not a market index — and compare them against whatever area you are considering.
+First-party numbers, clearly labeled: at [Selvadentro](/en/gated-community-tulum), lots run from 400 m² to 1,673 m², from $68,000 USD — $170 USD per m² today, up from $119 USD per m² at launch in May 2025, a 43% move since May 2025. There is a 48-month interest-free payment plan directly with the developer. Suspiro, the active enclave, is delivered with its amenities in 2029, though residents get cenote and amenity access from the day of purchase. Treat these as one data point from one community, not a market index — and compare them against whatever area you are considering.
 
 ## How isolated is the jungle side, really?
 

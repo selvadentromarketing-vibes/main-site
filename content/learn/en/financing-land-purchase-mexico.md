@@ -48,7 +48,7 @@ What matters more than the monthly figure is what secures your position while yo
 
 ## What does 0% interest actually change?
 
-Two things, and it is worth being precise rather than promotional. First, the total you pay equals the price: with no interest, there is no financing cost stacked on top of the land, which is not true of any bank alternative. Second, the price is fixed at signing rather than at the end of the plan — relevant in a market where our own square metre went from $119 USD in May 2025 to $167 today, and where the developer projects $280–360 USD/m² at project close. A projection is a projection; the locked entry price is contractual.
+Two things, and it is worth being precise rather than promotional. First, the total you pay equals the price: with no interest, there is no financing cost stacked on top of the land, which is not true of any bank alternative. Second, the price is fixed at signing rather than at the end of the plan — relevant in a market where our own square metre went from $119 USD in May 2025 to $170 today, and where the developer projects $280–360 USD/m² at project close. A projection is a projection; the locked entry price is contractual.
 
 One consequence people miss: at 0%, paying early saves you nothing. There is no interest to avoid, so unless your contract says otherwise, keeping your cash and paying on schedule is the rational move. Check the contract for early-payoff clauses anyway — and check the [annual carrying costs](/en/guide/annual-property-costs-mexico) that run alongside the instalments, because those start at purchase, not at delivery.
 

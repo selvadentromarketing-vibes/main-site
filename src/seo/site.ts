@@ -40,8 +40,16 @@ export const ORG = {
 export const PRICING = {
   currency: 'USD',
   lotPriceFromUSD: 68000,
-  pricePerM2USD: 167,
+  pricePerM2USD: 170, // list price since 16 Sep 2026 (was 167)
   launchPricePerM2USD: 119, // May 2025
+  /** Reference exchange rate used for every MXN figure on the site. */
+  fxMXNPerUSD: 20,
+  pricePerM2MXN: 3400, // 170 × 20
+  lotPriceFromMXN: 1360000, // 68,000 × 20
+  /** 119 → 170 since the May 2025 launch (+42.9%, shown as +43%). */
+  appreciationSinceLaunchPct: 43,
+  fxNoteEs: 'tipo de cambio de referencia 20 MXN/USD',
+  fxNoteEn: 'reference exchange rate 20 MXN/USD',
   launchDateLabelEs: 'mayo de 2025',
   launchDateLabelEn: 'May 2025',
   projectedClosePerM2USD: '280–360',

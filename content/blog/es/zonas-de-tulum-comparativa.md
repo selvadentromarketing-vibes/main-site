@@ -57,7 +57,7 @@ Si tu prioridad es tierra, vegetación, silencio real y una casa con tu propio p
 
 ## ¿Cuánto cuesta el lado selva?
 
-Números propios, etiquetados como tales: en [Selvadentro](/comunidad-privada-en-tulum), los lotes van de 400 m² a 1,673 m², desde $68,000 USD — $167 USD por m² hoy, contra $119 USD por m² en el lanzamiento de mayo de 2025: +40% en doce meses. Hay plan de pagos a 48 meses sin intereses, directo con el desarrollador. Suspiro, la privada activa, se entrega con sus amenidades en 2029, aunque los residentes acceden a cenotes y áreas comunes desde la compra. Tómalo como un dato de una comunidad, no como índice de mercado, y compáralo con la zona que estés evaluando. En [plusvalía en Tulum](/plusvalia-en-tulum) explicamos qué hay detrás de esa trayectoria.
+Números propios, etiquetados como tales: en [Selvadentro](/comunidad-privada-en-tulum), los lotes van de 400 m² a 1,673 m², desde $68,000 USD — $170 USD por m² hoy, contra $119 USD por m² en el lanzamiento de mayo de 2025: +43% desde mayo de 2025. Hay plan de pagos a 48 meses sin intereses, directo con el desarrollador. Suspiro, la privada activa, se entrega con sus amenidades en 2029, aunque los residentes acceden a cenotes y áreas comunes desde la compra. Tómalo como un dato de una comunidad, no como índice de mercado, y compáralo con la zona que estés evaluando. En [plusvalía en Tulum](/plusvalia-en-tulum) explicamos qué hay detrás de esa trayectoria.
 
 ## ¿Qué tan lejos queda todo desde la selva?
 

@@ -86,14 +86,25 @@ export function lotProduct(lang: Lang, pageUrl: string): JsonLd {
         : `Lots from ${PRICING.lotSizeMinM2} to ${PRICING.lotSizeMaxM2.toLocaleString('en-US')} m² inside a private community with ${PRICING.cenoteCount} natural cenotes and ${PRICING.jungleSharePercent}% of the jungle preserved. ${PRICING.paymentPlanMonths}-month interest-free payment plan; delivery in ${PRICING.deliveryYear}.`,
     image: ORG.image,
     brand: { '@id': ORG_ID },
-    offers: {
-      '@type': 'Offer',
-      url: pageUrl,
-      price: PRICING.lotPriceFromUSD,
-      priceCurrency: PRICING.currency,
-      availability: 'https://schema.org/InStock',
-      seller: { '@id': ORG_ID },
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        url: pageUrl,
+        price: PRICING.lotPriceFromUSD,
+        priceCurrency: PRICING.currency,
+        availability: 'https://schema.org/InStock',
+        seller: { '@id': ORG_ID },
+      },
+      // Same lot, quoted in pesos at the site-wide reference rate (site.ts).
+      {
+        '@type': 'Offer',
+        url: pageUrl,
+        price: PRICING.lotPriceFromMXN,
+        priceCurrency: 'MXN',
+        availability: 'https://schema.org/InStock',
+        seller: { '@id': ORG_ID },
+      },
+    ],
   };
 }
 

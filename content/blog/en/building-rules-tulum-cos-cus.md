@@ -47,7 +47,7 @@ Three reasons, in ascending order of self-interest.
 
 ## How long do you have to build?
 
-At Selvadentro: there is no deadline to start. Buy in 2026, build in 2032 — that is your call, and land does not depreciate while you wait (for reference, our pricing moved from $119 USD per m² at launch in May 2025 to $167 USD per m² today). Once you do start construction, the rule is a maximum of two years to finish. The reason is neighborly, not bureaucratic: a community where every build has an end date is never a permanent construction site. Half-finished concrete shells, familiar from other corners of Tulum, are what this clause exists to prevent. More practical questions like this are answered in our [FAQ](/en/faq).
+At Selvadentro: there is no deadline to start. Buy in 2026, build in 2032 — that is your call, and land does not depreciate while you wait (for reference, our pricing moved from $119 USD per m² at launch in May 2025 to $170 USD per m² today). Once you do start construction, the rule is a maximum of two years to finish. The reason is neighborly, not bureaucratic: a community where every build has an end date is never a permanent construction site. Half-finished concrete shells, familiar from other corners of Tulum, are what this clause exists to prevent. More practical questions like this are answered in our [FAQ](/en/faq).
 
 ## What do design guidelines protect beyond the coefficients?
 

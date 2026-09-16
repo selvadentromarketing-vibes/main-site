@@ -1,7 +1,7 @@
 ---
 title: "¿Conviene invertir en Tulum en 2026? La plusvalía, con datos"
 metaTitle: "¿Conviene invertir en Tulum en 2026?"
-description: "Análisis con datos fechados: aeropuerto y Tren Maya desde diciembre 2023, la revisión SEDETUS 2025 y terrenos de $119 a $167 USD/m² en 12 meses."
+description: "Análisis con datos fechados: aeropuerto y Tren Maya desde diciembre 2023, la revisión SEDETUS 2025 y terrenos de $119 a $170 USD/m² desde mayo de 2025."
 slug: invertir-en-tulum-plusvalia
 translationKey: invertir-2026
 date: 2026-09-01
@@ -37,7 +37,7 @@ La lección práctica: verifica cualquier desarrollo tú mismo, el nuestro inclu
 
 ## ¿Cuánto ha subido el precio de la tierra?
 
-Series públicas y auditadas de precio por metro cuadrado en Tulum casi no existen, así que aquí va un dato que podemos respaldar porque es nuestro. En Selvadentro, el metro cuadrado se lanzó en $119 USD en mayo de 2025 y hoy se vende en $167 USD: 40% en doce meses. Nuestra proyección al cierre del proyecto es de $280–360 USD/m². Tómala como lo que es: una proyección del desarrollador, no una promesa.
+Series públicas y auditadas de precio por metro cuadrado en Tulum casi no existen, así que aquí va un dato que podemos respaldar porque es nuestro. En Selvadentro, el metro cuadrado se lanzó en $119 USD en mayo de 2025 y hoy se vende en $170 USD: +43% desde mayo de 2025. Nuestra proyección al cierre del proyecto es de $280–360 USD/m². Tómala como lo que es: una proyección del desarrollador, no una promesa.
 
 Un desarrollo no es el mercado. Pero la dirección es consistente con lo que la tesis de infraestructura predice para tierra bien ubicada y con permisos completos. Puedes seguir la serie en nuestra página de [plusvalía en Tulum](/plusvalia-en-tulum).
 

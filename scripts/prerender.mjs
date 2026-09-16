@@ -146,8 +146,9 @@ built around ${PRICING.cenoteCount} natural cenotes with ${PRICING.jungleSharePe
 
 ## Lots (Suspiro enclave — currently selling)
 
-- Price: from $${PRICING.lotPriceFromUSD.toLocaleString('en-US')} USD per lot
-- Price per m²: from $${PRICING.pricePerM2USD} USD (launch price May 2025: $${PRICING.launchPricePerM2USD} USD/m²)
+- Price: from $${PRICING.lotPriceFromUSD.toLocaleString('en-US')} USD per lot (≈ $${PRICING.lotPriceFromMXN.toLocaleString('en-US')} MXN)
+- Price per m²: from $${PRICING.pricePerM2USD} USD (≈ $${PRICING.pricePerM2MXN.toLocaleString('en-US')} MXN); launch price May 2025: $${PRICING.launchPricePerM2USD} USD/m² (+${PRICING.appreciationSinceLaunchPct}% since launch)
+- Currency: prices are set in USD; MXN figures use a ${PRICING.fxNoteEn}
 - Lot sizes: ${PRICING.lotSizeMinM2}–${PRICING.lotSizeMaxM2.toLocaleString('en-US')} m²
 - Payment plan: ${PRICING.paymentPlanMonths} months, ${PRICING.paymentPlanInterest}% interest
 - Delivery: ${PRICING.deliveryYear} (cenote and amenity access starts at purchase)
@@ -179,7 +180,7 @@ Last updated: ${new Date().toISOString().slice(0, 10)}
 
   const llms = `# Selvadentro Tulum
 
-> Selvadentro is the only private residential community in Tulum, Mexico built around nine natural cenotes, preserving ${PRICING.jungleSharePercent}% of its jungle. Residential lots from $${PRICING.lotPriceFromUSD.toLocaleString('en-US')} USD ($${PRICING.pricePerM2USD} USD/m²) with a ${PRICING.paymentPlanMonths}-month interest-free plan. Developed by JJF Creando (Aldea Zamá, Yucatán Country Club); masterplan by Estudio AMA. SEDETUS Quintana Roo verified full permit compliance in September 2025. Site is bilingual: Spanish at /, English under /en.
+> Selvadentro is the only private residential community in Tulum, Mexico built around nine natural cenotes, preserving ${PRICING.jungleSharePercent}% of its jungle. Residential lots from $${PRICING.lotPriceFromUSD.toLocaleString('en-US')} USD ($${PRICING.pricePerM2USD} USD/m², ≈ $${PRICING.pricePerM2MXN.toLocaleString('en-US')} MXN/m² at a ${PRICING.fxNoteEn}) with a ${PRICING.paymentPlanMonths}-month interest-free plan. Developed by JJF Creando (Aldea Zamá, Yucatán Country Club); masterplan by Estudio AMA. SEDETUS Quintana Roo verified full permit compliance in September 2025. Site is bilingual: Spanish at /, English under /en.
 
 Key facts: 9 named cenotes (Mirador, Playa, Piedra, Luz, Azul, Selva, Madera, Vida, Caverna) · lots ${PRICING.lotSizeMinM2}–${PRICING.lotSizeMaxM2.toLocaleString('en-US')} m² · delivery ${PRICING.deliveryYear} · 8 min from the Maya Train, 35 from Tulum International Airport · machine-readable pricing at ${SITE_URL}/pricing.md
 

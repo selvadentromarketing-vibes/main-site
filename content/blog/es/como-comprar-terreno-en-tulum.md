@@ -50,7 +50,7 @@ Presupuesta ese porcentaje desde el inicio, encima del precio del lote. No es un
 | Riesgo | Depende del desarrollador: exige permisos y trayectoria | Menor: lo que ves es lo que recibes |
 | Financiamiento | Planes directos con el desarrollador son comunes | Normalmente contado o crédito bancario |
 
-Un ejemplo documentado de esa curva, con nuestros propios números: en Selvadentro el m² se lanzó en $119 USD en mayo de 2025 y hoy está en $167 USD — +40% en 12 meses. Suspiro, nuestra privada activa, se entrega con amenidades en 2029, pero los residentes acceden a los cenotes y áreas comunes desde el día de su compra, con plan de pagos a 48 meses sin intereses. La [preventa de terrenos en Tulum](/preventa-de-terrenos-en-tulum) tiene sentido justamente cuando el desarrollador puede demostrar permisos y trayectoria — nunca antes.
+Un ejemplo documentado de esa curva, con nuestros propios números: en Selvadentro el m² se lanzó en $119 USD en mayo de 2025 y hoy está en $170 USD — +43% desde mayo de 2025. Suspiro, nuestra privada activa, se entrega con amenidades en 2029, pero los residentes acceden a los cenotes y áreas comunes desde el día de su compra, con plan de pagos a 48 meses sin intereses. La [preventa de terrenos en Tulum](/preventa-de-terrenos-en-tulum) tiene sentido justamente cuando el desarrollador puede demostrar permisos y trayectoria — nunca antes.
 
 ## Checklist antes de firmar
 

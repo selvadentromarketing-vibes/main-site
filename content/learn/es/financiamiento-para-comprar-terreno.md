@@ -49,7 +49,7 @@ Importa más que la mensualidad lo que respalda tu posición mientras pagas. Pre
 
 ## ¿Qué cambia realmente el 0% de interés?
 
-Dos cosas, y conviene decirlas sin exageración. La primera: el total que pagas es igual al precio. Sin intereses no hay costo financiero encima de la tierra, algo que no ocurre con ninguna alternativa bancaria. La segunda: el precio queda fijo al firmar, no al terminar el plan — relevante en un mercado donde nuestro propio metro cuadrado pasó de $119 USD en mayo de 2025 a $167 hoy, y donde el desarrollador proyecta entre $280 y $360 USD/m² al cierre del proyecto. Una proyección es una proyección; el precio de entrada, en cambio, es contractual.
+Dos cosas, y conviene decirlas sin exageración. La primera: el total que pagas es igual al precio. Sin intereses no hay costo financiero encima de la tierra, algo que no ocurre con ninguna alternativa bancaria. La segunda: el precio queda fijo al firmar, no al terminar el plan — relevante en un mercado donde nuestro propio metro cuadrado pasó de $119 USD en mayo de 2025 a $170 hoy, y donde el desarrollador proyecta entre $280 y $360 USD/m² al cierre del proyecto. Una proyección es una proyección; el precio de entrada, en cambio, es contractual.
 
 Una consecuencia que casi nadie nota: con 0%, adelantar pagos no te ahorra nada. No hay interés que evitar, así que salvo que tu contrato diga otra cosa, conservar tu liquidez y pagar en calendario es lo racional. Revisa de todos modos las cláusulas de pago anticipado — y revisa [los costos anuales](/guia/costos-anuales-de-una-propiedad-en-mexico) que corren en paralelo a las mensualidades, porque empiezan en la compra, no en la entrega.
 

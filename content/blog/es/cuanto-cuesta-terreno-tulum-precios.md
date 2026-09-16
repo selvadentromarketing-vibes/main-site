@@ -1,7 +1,7 @@
 ---
 title: "¿Cuánto cuesta un terreno en Tulum en 2026? Precios reales por m²"
 metaTitle: "Precios de terrenos en Tulum 2026: costo por m²"
-description: "Datos de primera mano: en Selvadentro el m² pasó de $119 USD en mayo 2025 a $167 hoy. La corrida completa, costos de escrituración y qué encarece un lote."
+description: "Datos de primera mano: en Selvadentro el m² pasó de $119 USD en mayo 2025 a $170 hoy. La corrida completa, costos de escrituración y qué encarece un lote."
 slug: cuanto-cuesta-terreno-tulum-precios
 translationKey: precios-terreno
 date: 2026-09-01
@@ -9,7 +9,7 @@ author: juan-camara
 tags: [costos, mercado]
 ---
 
-En el lado selva de Tulum, el precio documentado de terreno residencial en 2026 es de $167 USD por m² — es nuestro precio actual en Selvadentro, arriba de los $119 USD/m² del lanzamiento en mayo de 2025, con lotes de entrada de 400 m² desde $68,000 USD. La zona de playa cotiza mucho más alto; la ubicación, la infraestructura y la normativa explican la diferencia.
+En el lado selva de Tulum, el precio documentado de terreno residencial en 2026 es de $170 USD por m² (unos $3,400 MXN, con un tipo de cambio de referencia de 20 MXN/USD) — es nuestro precio actual en Selvadentro, arriba de los $119 USD/m² del lanzamiento en mayo de 2025, con lotes de entrada de 400 m² desde $68,000 USD (unos $1,360,000 MXN). La zona de playa cotiza mucho más alto; la ubicación, la infraestructura y la normativa explican la diferencia.
 
 Una aclaración de método antes de los números. La mayoría de los artículos sobre "precios en Tulum" citan promedios que nadie puede rastrear. Nosotros solo podemos hablar con precisión de los precios que fijamos nosotros mismos, así que este post usa nuestra serie de primera mano — declarada como tal — y rangos de mercado señalados siempre como típicos. Todo se puede contrastar con nuestra [disponibilidad publicada de lotes](/lotes-en-venta-tulum).
 
@@ -20,7 +20,7 @@ Esta es la serie documentada de Selvadentro, comunidad privada de lotes en la Ru
 | Momento | Precio por m² | Nota |
 | --- | --- | --- |
 | Mayo 2025 (lanzamiento) | $119 USD | Abre la privada Suspiro |
-| Hoy | $167 USD | +40% en los primeros 12 meses |
+| Hoy | $170 USD | +43% desde mayo de 2025 |
 | Proyección al cierre del proyecto | $280–360 USD | Proyección del desarrollador, no una garantía |
 
 Las dos privadas anteriores, Mirador y Refugio, se vendieron en su totalidad — parte de la razón por la que la privada activa se reprecia conforme baja el inventario. La proyección es nuestra: tómala como pronóstico de desarrollador y pondérala como tal. El contexto completo de la curva está en [plusvalía en Tulum](/plusvalia-en-tulum).
@@ -32,11 +32,11 @@ El terreno se cotiza por metro cuadrado, así que el precio de lista es una mult
 | Dato | Valor |
 | --- | --- |
 | Superficie (lote de entrada) | 400 m² |
-| Precio por m² | $167 USD |
+| Precio por m² | $170 USD (≈ $3,400 MXN) |
 | Total indicativo | ≈ $66,800 USD |
 | Precio "desde" publicado | $68,000 USD |
 
-¿Por qué la pequeña diferencia entre la multiplicación y el precio "desde"? Porque $167 es la tarifa *desde*: dentro de cualquier desarrollo, cada lote cotiza por encima según posición, superficie y cercanía a atributos — en nuestro caso, los nueve cenotes dentro del proyecto. Los lotes en Selvadentro van de 400 m² a 1,673 m², así que los totales escalan desde ahí. Pide siempre la tarifa por m² *y* el total del lote específico: comparar desarrollos solo por totales esconde diferencias de superficie.
+¿Por qué la pequeña diferencia entre la multiplicación y el precio "desde"? Porque $170 es la tarifa *desde*: dentro de cualquier desarrollo, cada lote cotiza por encima según posición, superficie y cercanía a atributos — en nuestro caso, los nueve cenotes dentro del proyecto. Los lotes en Selvadentro van de 400 m² a 1,673 m², así que los totales escalan desde ahí. Pide siempre la tarifa por m² *y* el total del lote específico: comparar desarrollos solo por totales esconde diferencias de superficie.
 
 ## ¿Qué encarece o abarata un lote en Tulum?
 

@@ -1,6 +1,9 @@
 import Reveal from '../Reveal';
 import MagneticButton from '../MagneticButton';
 import type { Translation, Lang } from '../../i18n/translations';
+import { PRICING } from '../../seo/site';
+
+const fmt = (n: number) => n.toLocaleString('en-US');
 
 interface Props {
   t: Translation;
@@ -16,7 +19,7 @@ interface Stat {
 const STATS: Stat[] = [
   { value: '71',       labelEs: 'lotes exclusivos',      labelEn: 'exclusive lots' },
   { value: '20/60/20', labelEs: 'esquema de pagos',      labelEn: 'payment schedule' },
-  { value: '$167',     labelEs: 'USD por m²',            labelEn: 'USD per m²' },
+  { value: `$${PRICING.pricePerM2USD}`, labelEs: `USD por m² · $${fmt(PRICING.pricePerM2MXN)} MXN`, labelEn: `USD per m² · $${fmt(PRICING.pricePerM2MXN)} MXN` },
   { value: '48',       labelEs: 'meses sin intereses',   labelEn: 'interest-free months' },
   { value: '2029',     labelEs: 'entrega',               labelEn: 'delivery' },
   { value: '100%',     labelEs: 'certeza jurídica',      labelEn: 'legal certainty' },
@@ -40,11 +43,18 @@ const SERVICES: Service[] = [
 
 export default function SuspiroSection({ t, lang }: Props) {
   const privLabel = lang === 'es' ? 'Una privada de Selvadentro' : 'A private enclave of Selvadentro';
-  const priceLarge = lang === 'es' ? 'Lotes desde $68,000 USD' : 'Lots from $68,000 USD';
+  const priceLarge =
+    lang === 'es'
+      ? `Lotes desde $${fmt(PRICING.lotPriceFromUSD)} USD`
+      : `Lots from $${fmt(PRICING.lotPriceFromUSD)} USD`;
   const priceSub =
     lang === 'es'
-      ? 'desde $167 USD/m² · Plan de pagos a 48 meses sin intereses'
-      : 'from $167 USD/m² · 48-month interest-free payment plan';
+      ? `$${fmt(PRICING.lotPriceFromMXN)} MXN · desde $${PRICING.pricePerM2USD} USD/m² ($${fmt(PRICING.pricePerM2MXN)} MXN/m²)`
+      : `$${fmt(PRICING.lotPriceFromMXN)} MXN · from $${PRICING.pricePerM2USD} USD/m² ($${fmt(PRICING.pricePerM2MXN)} MXN/m²)`;
+  const priceFx =
+    lang === 'es'
+      ? `Plan de pagos a ${PRICING.paymentPlanMonths} meses sin intereses · precios en USD, ${PRICING.fxNoteEs}`
+      : `${PRICING.paymentPlanMonths}-month interest-free payment plan · prices in USD, ${PRICING.fxNoteEn}`;
   const protectLabel = lang === 'es' ? 'Lo que protege tu inversión' : 'What protects your investment';
   const servicesTitle = lang === 'es' ? 'Servicios e infraestructura' : 'Services & infrastructure';
 
@@ -90,7 +100,8 @@ export default function SuspiroSection({ t, lang }: Props) {
               <div className="font-serif text-3xl sm:text-4xl text-brand-verde-osc mt-8 mb-1">
                 {priceLarge}
               </div>
-              <div className="text-sm text-brand-gris mb-8">{priceSub}</div>
+              <div className="text-sm text-brand-gris">{priceSub}</div>
+              <div className="text-xs text-brand-gris/80 mt-1 mb-8">{priceFx}</div>
 
               <div className="bg-brand-crema-osc rounded-xl p-5 mb-8 border border-brand-verde/10">
                 <div className="text-xs font-semibold tracking-wider uppercase text-brand-verde-osc mb-2">
@@ -103,7 +114,7 @@ export default function SuspiroSection({ t, lang }: Props) {
 
               {/* Suspiro CTA is the one exception in the "everything to the
                   qualified form" rule — this button sits directly under the
-                  pricing block ("Lotes desde $68,000 USD · $167 USD/m²"), so
+                  pricing block ("Lotes desde $68,000 USD · $170 USD/m²"), so
                   the visitor's intent is "show me more prices," not "fill a
                   form." Sending them to the Adara cotizador here honors that
                   intent. Every other cotizar/Ver-disponibilidad CTA still

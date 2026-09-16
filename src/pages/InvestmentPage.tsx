@@ -19,16 +19,16 @@ const fmt = (n: number) => n.toLocaleString('en-US');
 const copy = {
   es: {
     eyebrow: 'Inversión',
-    lede: `En mayo de 2025, el m² en Selvadentro costaba $${PRICING.launchPricePerM2USD} USD. Hoy cuesta $${PRICING.pricePerM2USD} — +40% en doce meses — y el desarrollador proyecta cerrar el proyecto en $${PRICING.projectedClosePerM2USD} USD/m². Lotes desde $${fmt(PRICING.lotPriceFromUSD)} USD, con plan a ${PRICING.paymentPlanMonths} meses sin intereses, directo con el desarrollador.`,
+    lede: `En mayo de 2025, el m² en Selvadentro costaba $${PRICING.launchPricePerM2USD} USD. Hoy cuesta $${PRICING.pricePerM2USD} — +43% desde mayo de 2025 — y el desarrollador proyecta cerrar el proyecto en $${PRICING.projectedClosePerM2USD} USD/m². Lotes desde $${fmt(PRICING.lotPriceFromUSD)} USD, con plan a ${PRICING.paymentPlanMonths} meses sin intereses, directo con el desarrollador.`,
     seriesTitle: 'La serie de precios, documentada',
     seriesHead: ['Momento', 'Precio por m²', 'Nota'],
     seriesRows: [
       [`Lanzamiento · ${PRICING.launchDateLabelEs}`, `$${PRICING.launchPricePerM2USD} USD`, 'Precio de salida de Selvadentro'],
-      ['Hoy · septiembre 2026', `$${PRICING.pricePerM2USD} USD`, '+40% en 12 meses'],
+      ['Hoy · septiembre 2026', `$${PRICING.pricePerM2USD} USD`, '+43% desde mayo de 2025'],
       ['Cierre del proyecto', `$${PRICING.projectedClosePerM2USD} USD`, 'Proyección del desarrollador — no una garantía'],
     ],
     seriesNote:
-      'Actualizado: septiembre 2026. La proyección de cierre es del desarrollador y depende del ritmo de ventas y de obra; la serie histórica ($119 → $167) sí es precio de lista documentado.',
+      'Actualizado: septiembre 2026. La proyección de cierre es del desarrollador y depende del ritmo de ventas y de obra; la serie histórica ($119 → $170) sí es precio de lista documentado.',
     scarcityTitle: '¿Por qué sube? La escasez es geografía',
     scarcityBody: [
       'Selvadentro es el único desarrollo residencial privado sobre la Ruta de los Cenotes de Tulum. Alrededor no hay competencia construyéndose: hay reservas naturales y atracciones. Del lado selva de Tulum, la oferta comparable no puede crecer — y dentro del proyecto, dos de las tres privadas (Mirador y Refugio) ya se vendieron por completo. Queda Suspiro.',
@@ -77,16 +77,16 @@ const copy = {
   },
   en: {
     eyebrow: 'Investment',
-    lede: `In May 2025, a square meter at Selvadentro cost $${PRICING.launchPricePerM2USD} USD. Today it costs $${PRICING.pricePerM2USD} — up 40% in twelve months — and the developer projects $${PRICING.projectedClosePerM2USD} USD/m² at project close. Lots start at $${fmt(PRICING.lotPriceFromUSD)} USD, on a ${PRICING.paymentPlanMonths}-month interest-free plan, directly with the developer.`,
+    lede: `In May 2025, a square meter at Selvadentro cost $${PRICING.launchPricePerM2USD} USD. Today it costs $${PRICING.pricePerM2USD} — up 43% since May 2025 — and the developer projects $${PRICING.projectedClosePerM2USD} USD/m² at project close. Lots start at $${fmt(PRICING.lotPriceFromUSD)} USD, on a ${PRICING.paymentPlanMonths}-month interest-free plan, directly with the developer.`,
     seriesTitle: 'The price series, documented',
     seriesHead: ['Point in time', 'Price per m²', 'Note'],
     seriesRows: [
       [`Launch · ${PRICING.launchDateLabelEn}`, `$${PRICING.launchPricePerM2USD} USD`, 'Selvadentro’s opening price'],
-      ['Today · September 2026', `$${PRICING.pricePerM2USD} USD`, '+40% in 12 months'],
+      ['Today · September 2026', `$${PRICING.pricePerM2USD} USD`, '+43% since May 2025'],
       ['Project close', `$${PRICING.projectedClosePerM2USD} USD`, 'Developer projection — not a guarantee'],
     ],
     seriesNote:
-      'Updated: September 2026. The closing figure is the developer’s projection and depends on sales pace and construction; the historical series ($119 → $167) is documented list pricing.',
+      'Updated: September 2026. The closing figure is the developer’s projection and depends on sales pace and construction; the historical series ($119 → $170) is documented list pricing.',
     scarcityTitle: 'Why does it rise? Scarcity is geography',
     scarcityBody: [
       'Selvadentro is the only private residential development on Tulum’s Ruta de los Cenotes. Nothing comparable is being built around it: the neighbors are nature reserves and attractions. On the jungle side of Tulum, comparable supply cannot grow — and inside the project, two of the three enclaves (Mirador and Refugio) are already fully sold. Suspiro is what remains.',

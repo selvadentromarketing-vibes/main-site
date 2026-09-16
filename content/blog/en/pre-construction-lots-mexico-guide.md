@@ -17,7 +17,7 @@ We write from the developer's side of the table — Selvadentro sells pre-constr
 
 In a condo presale, you pay for something that does not exist yet; your main risk is that the building never gets finished. In a land presale, the lot already exists — what you are buying is phase pricing and time. The developer commits to delivering infrastructure and amenities around your land, and prices the early phases lower to fund that build-out.
 
-That difference changes the risk profile. You still depend on the developer to deliver streets, utilities and common areas, but your underlying asset is a specific, measurable piece of land, not a promise of one. One concrete example of the price-and-time mechanics: at Selvadentro, the launch price in May 2025 was $119 USD per m²; today it is $167 USD per m², a 40% move in twelve months, with a projected $280–360 USD per m² at project close. Early buyers were paid for their patience — that is the entire logic of preventa.
+That difference changes the risk profile. You still depend on the developer to deliver streets, utilities and common areas, but your underlying asset is a specific, measurable piece of land, not a promise of one. One concrete example of the price-and-time mechanics: at Selvadentro, the launch price in May 2025 was $119 USD per m²; today it is $170 USD per m², a 43% move since May 2025, with a projected $280–360 USD per m² at project close. Early buyers were paid for their patience — that is the entire logic of preventa.
 
 ## How do developer payment plans work?
 

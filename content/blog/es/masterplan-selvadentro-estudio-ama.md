@@ -49,7 +49,7 @@ Un masterplan es abstracto hasta que lo recorres. Esta es la secuencia, de afuer
 | El santuario | Nueve cenotes, senderos, mirador | Nadar, caminar, silencio — acceso de residente, sin boletos ni horarios |
 | El corazón | Casa de los Cenotes y amenidades | Restaurante, pool bar, wellness, deporte y vida en comunidad en un solo centro |
 
-Dos datos de calendario van aquí, dichos sin rodeos. Suspiro y sus amenidades se entregan en 2029 — pero los residentes tienen acceso a los cenotes y áreas comunes desde el día de su compra, así que la capa del santuario funciona desde el primer día. Y el mercado ha ido poniéndole precio al plano: de $119 USD/m² en el lanzamiento de mayo de 2025 a $167 USD/m² hoy, con proyección del desarrollador de $280–360 USD/m² al cierre. La serie completa está en nuestra [página de inversión](/inversion).
+Dos datos de calendario van aquí, dichos sin rodeos. Suspiro y sus amenidades se entregan en 2029 — pero los residentes tienen acceso a los cenotes y áreas comunes desde el día de su compra, así que la capa del santuario funciona desde el primer día. Y el mercado ha ido poniéndole precio al plano: de $119 USD/m² en el lanzamiento de mayo de 2025 a $170 USD/m² hoy, con proyección del desarrollador de $280–360 USD/m² al cierre. La serie completa está en nuestra [página de inversión](/inversion).
 
 ## ¿Por qué le importa el masterplan a un comprador?
 

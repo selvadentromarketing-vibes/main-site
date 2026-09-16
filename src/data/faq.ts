@@ -14,7 +14,7 @@ export const EXTRA_FAQ: Record<Lang, FAQItem[]> = {
   es: [
     {
       q: '¿Cuánto cuesta un lote en Selvadentro?',
-      a: 'Los lotes de Suspiro, la privada activa, parten de $68,000 USD — desde $167 USD por m². Hay lotes desde 400 m² hasta 1,673 m², con plan de pagos a 48 meses sin intereses directamente con el desarrollador.',
+      a: 'Los lotes de Suspiro, la privada activa, parten de $68,000 USD ($1,360,000 MXN) — desde $170 USD por m² ($3,400 MXN; tipo de cambio de referencia 20 MXN/USD). Hay lotes desde 400 m² hasta 1,673 m², con plan de pagos a 48 meses sin intereses directamente con el desarrollador.',
     },
     {
       q: '¿Pueden comprar extranjeros?',
@@ -46,7 +46,7 @@ export const EXTRA_FAQ: Record<Lang, FAQItem[]> = {
     },
     {
       q: '¿Qué plusvalía ha tenido el proyecto?',
-      a: 'El precio por m² pasó de $119 USD en el lanzamiento (mayo de 2025) a $167 USD hoy: +40% en doce meses. La proyección del desarrollador al cierre del proyecto es de $280–360 USD por m², apoyada en el Tren Maya, el aeropuerto de Tulum y el Libramiento Playa-Cobá.',
+      a: 'El precio por m² pasó de $119 USD en el lanzamiento (mayo de 2025) a $170 USD hoy ($3,400 MXN): +43% desde mayo de 2025. La proyección del desarrollador al cierre del proyecto es de $280–360 USD por m², apoyada en el Tren Maya, el aeropuerto de Tulum y el Libramiento Playa-Cobá.',
     },
     {
       q: '¿Quién desarrolla Selvadentro?',
@@ -56,7 +56,7 @@ export const EXTRA_FAQ: Record<Lang, FAQItem[]> = {
   en: [
     {
       q: 'How much does a lot at Selvadentro cost?',
-      a: 'Lots in Suspiro, the active enclave, start at $68,000 USD — from $167 USD per m². Sizes run from 400 m² to 1,673 m², with a 48-month interest-free payment plan directly with the developer.',
+      a: 'Lots in Suspiro, the active enclave, start at $68,000 USD ($1,360,000 MXN) — from $170 USD per m² ($3,400 MXN; reference exchange rate 20 MXN/USD). Sizes run from 400 m² to 1,673 m², with a 48-month interest-free payment plan directly with the developer.',
     },
     {
       q: 'Can foreigners buy land at Selvadentro?',
@@ -88,7 +88,7 @@ export const EXTRA_FAQ: Record<Lang, FAQItem[]> = {
     },
     {
       q: 'How has the project appreciated so far?',
-      a: 'The price per m² went from $119 USD at launch (May 2025) to $167 USD today — +40% in twelve months. The developer’s closing projection is $280–360 USD per m², supported by the Maya Train, Tulum International Airport and the Playa-Cobá bypass.',
+      a: 'The price per m² went from $119 USD at launch (May 2025) to $170 USD today ($3,400 MXN) — +43% since May 2025. The developer’s closing projection is $280–360 USD per m², supported by the Maya Train, Tulum International Airport and the Playa-Cobá bypass.',
     },
     {
       q: 'Who is developing Selvadentro?',

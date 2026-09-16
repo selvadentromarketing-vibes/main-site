@@ -55,13 +55,13 @@ const copy = {
     cenoteAltSuffix: 'uno de los nueve cenotes dentro de Selvadentro Tulum',
     priceTitle: '¿Cuánto cuesta un lote en la reserva de cenotes?',
     priceRows: [
-      ['Precio de lote', `Desde $${fmt(PRICING.lotPriceFromUSD)} USD`],
-      ['Precio por m²', `Desde $${PRICING.pricePerM2USD} USD (lanzamiento en ${PRICING.launchDateLabelEs}: $${PRICING.launchPricePerM2USD} USD)`],
+      ['Precio de lote', `Desde $${fmt(PRICING.lotPriceFromUSD)} USD · $${fmt(PRICING.lotPriceFromMXN)} MXN`],
+      ['Precio por m²', `Desde $${PRICING.pricePerM2USD} USD · $${fmt(PRICING.pricePerM2MXN)} MXN (lanzamiento en ${PRICING.launchDateLabelEs}: $${PRICING.launchPricePerM2USD} USD)`],
       ['Superficies', `${PRICING.lotSizeMinM2} – ${fmt(PRICING.lotSizeMaxM2)} m²`],
       ['Plan de pagos', `${PRICING.paymentPlanMonths} meses sin intereses, directo con el desarrollador`],
       ['Acceso a cenotes', `Desde el día de tu compra · entrega de Suspiro en ${PRICING.deliveryYear}`],
     ],
-    priceNote: 'Actualizado: septiembre 2026. Precios, disponibilidad y el proceso de compra completo están en',
+    priceNote: `Actualizado: septiembre 2026. Precios en USD, ${PRICING.fxNoteEs}. Precios, disponibilidad y el proceso de compra completo están en`,
     priceNoteLink: ['/lotes-en-venta-tulum', 'la página de lotes en venta'],
     accessTitle: 'Acceso desde el día uno',
     accessBody:
@@ -106,13 +106,13 @@ const copy = {
     cenoteAltSuffix: 'one of the nine cenotes inside Selvadentro Tulum',
     priceTitle: 'What does a lot in the cenote reserve cost?',
     priceRows: [
-      ['Lot price', `From $${fmt(PRICING.lotPriceFromUSD)} USD`],
-      ['Price per m²', `From $${PRICING.pricePerM2USD} USD (${PRICING.launchDateLabelEn} launch: $${PRICING.launchPricePerM2USD} USD)`],
+      ['Lot price', `From $${fmt(PRICING.lotPriceFromUSD)} USD · $${fmt(PRICING.lotPriceFromMXN)} MXN`],
+      ['Price per m²', `From $${PRICING.pricePerM2USD} USD · $${fmt(PRICING.pricePerM2MXN)} MXN (${PRICING.launchDateLabelEn} launch: $${PRICING.launchPricePerM2USD} USD)`],
       ['Lot sizes', `${PRICING.lotSizeMinM2} – ${fmt(PRICING.lotSizeMaxM2)} m²`],
       ['Payment plan', `${PRICING.paymentPlanMonths} months at 0% interest, directly with the developer`],
       ['Cenote access', `From the day you buy · Suspiro delivery in ${PRICING.deliveryYear}`],
     ],
-    priceNote: 'Updated: September 2026. Full pricing, availability and the buying process live on',
+    priceNote: `Updated: September 2026. Prices in USD, ${PRICING.fxNoteEn}. Full pricing, availability and the buying process live on`,
     priceNoteLink: ['/en/tulum-land-for-sale', 'the land-for-sale page'],
     accessTitle: 'Access from day one',
     accessBody:

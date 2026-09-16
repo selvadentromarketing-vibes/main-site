@@ -56,7 +56,7 @@ const copy = {
     tableHead: ['Fecha', 'Precio por m²', 'Nota'],
     tableRows: [
       ['Mayo 2025', `$${PRICING.launchPricePerM2USD} USD`, 'Lanzamiento de Suspiro'],
-      ['Septiembre 2026', `$${PRICING.pricePerM2USD} USD`, '+40% en 12 meses · precio vigente'],
+      ['Septiembre 2026', `$${PRICING.pricePerM2USD} USD`, '+43% desde mayo de 2025 · precio vigente'],
       ['Cierre del proyecto', `$${PRICING.projectedClosePerM2USD} USD`, 'Proyección del desarrollador — no es garantía'],
     ],
     tableNote:
@@ -114,7 +114,7 @@ const copy = {
     tableHead: ['Date', 'Price per m²', 'Note'],
     tableRows: [
       ['May 2025', `$${PRICING.launchPricePerM2USD} USD`, 'Suspiro launch'],
-      ['September 2026', `$${PRICING.pricePerM2USD} USD`, '+40% in 12 months · current price'],
+      ['September 2026', `$${PRICING.pricePerM2USD} USD`, '+43% since May 2025 · current price'],
       ['Project close', `$${PRICING.projectedClosePerM2USD} USD`, 'Developer projection — not a guarantee'],
     ],
     tableNote:

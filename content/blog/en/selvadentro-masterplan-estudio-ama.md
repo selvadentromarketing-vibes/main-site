@@ -49,7 +49,7 @@ A masterplan is abstract until you move through it. This is the sequence, from t
 | The sanctuary | Nine cenotes, trails, lookout | Swimming, walking, silence — resident access, no tickets, no hours |
 | The heart | Casa de los Cenotes and amenities | Restaurant, pool bar, wellness, sport, community life in one center |
 
-Two timing facts belong here, stated plainly. Suspiro and its amenities are delivered in 2029 — but residents have access to the cenotes and common areas from the day of purchase, so the sanctuary layer works from day one. And the market has been pricing the plan in: from $119 USD/m² at launch in May 2025 to $167 USD/m² today, with the developer projecting $280–360 USD/m² at close. Our [investment page](/en/investment) shows the full series.
+Two timing facts belong here, stated plainly. Suspiro and its amenities are delivered in 2029 — but residents have access to the cenotes and common areas from the day of purchase, so the sanctuary layer works from day one. And the market has been pricing the plan in: from $119 USD/m² at launch in May 2025 to $170 USD/m² today, with the developer projecting $280–360 USD/m² at close. Our [investment page](/en/investment) shows the full series.
 
 ## Why does the masterplan matter to a buyer?
 

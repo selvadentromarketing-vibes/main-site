@@ -125,7 +125,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/tulum-land-for-sale',
     title: 'Lotes y terrenos en venta en Tulum desde $68,000 USD | Selvadentro',
     description:
-      'Lotes residenciales de 400 a 1,673 m² en Suspiro, la privada activa de Selvadentro. Desde $68,000 USD ($167 USD/m²) con plan a 48 meses sin intereses.',
+      'Lotes residenciales de 400 a 1,673 m² en Suspiro, la privada activa de Selvadentro. Desde $68,000 USD ($170 USD/m²) con plan a 48 meses sin intereses.',
     h1: 'Lotes en venta en Tulum, dentro de una reserva de cenotes',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -138,7 +138,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/lotes-en-venta-tulum',
     title: 'Tulum Land for Sale — Jungle Lots from $68,000 USD | Selvadentro',
     description:
-      'Residential lots from 400 to 1,673 m² in Suspiro, Selvadentro’s active enclave. From $68,000 USD ($167 USD/m²) with a 48-month interest-free payment plan.',
+      'Residential lots from 400 to 1,673 m² in Suspiro, Selvadentro’s active enclave. From $68,000 USD ($170 USD/m²) with a 48-month interest-free payment plan.',
     h1: 'Tulum land for sale, inside a private cenote reserve',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -235,9 +235,9 @@ export const STATIC_PAGES: PageMeta[] = [
     lang: 'es',
     path: '/inversion',
     altPath: '/en/investment',
-    title: 'Invertir en Selvadentro Tulum: de $119 a $167 USD/m² en 12 meses',
+    title: 'Invertir en Selvadentro Tulum: de $119 a $170 USD/m² desde 2025',
     description:
-      'Los datos: de $119 USD/m² en mayo de 2025 a $167 hoy, con proyección de cierre en $280–360 USD/m². Tren Maya, aeropuerto y Libramiento.',
+      'Los datos: de $119 USD/m² en mayo de 2025 a $170 hoy, con proyección de cierre en $280–360 USD/m². Tren Maya, aeropuerto y Libramiento.',
     h1: 'La inversión en números',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -248,9 +248,9 @@ export const STATIC_PAGES: PageMeta[] = [
     lang: 'en',
     path: '/en/investment',
     altPath: '/inversion',
-    title: 'Investing in Selvadentro Tulum: $119 to $167 USD/m² in 12 Months',
+    title: 'Investing in Selvadentro Tulum: $119 to $170 USD/m² Since 2025',
     description:
-      'The numbers: $119 USD/m² in May 2025 to $167 today, with a $280–360 closing projection. The Maya Train, Tulum airport and the bypass.',
+      'The numbers: $119 USD/m² in May 2025 to $170 today, with a $280–360 closing projection. The Maya Train, Tulum airport and the bypass.',
     h1: 'The investment, in numbers',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -403,7 +403,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/en/tulum-property-appreciation-data',
     title: 'Plusvalía en Tulum 2026: datos reales de precio por m²',
     description:
-      'Serie documentada: $119 USD/m² en mayo de 2025, $167 hoy (+40%). Qué impulsa la plusvalía en Tulum: Tren Maya, aeropuerto y Libramiento.',
+      'Serie documentada: $119 USD/m² en mayo de 2025, $170 hoy (+43%). Qué impulsa la plusvalía en Tulum: Tren Maya, aeropuerto y Libramiento.',
     h1: 'Plusvalía en Tulum: los datos, no la promesa',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,
@@ -416,7 +416,7 @@ export const STATIC_PAGES: PageMeta[] = [
     altPath: '/plusvalia-en-tulum',
     title: 'Tulum Property Appreciation: Real Price Data 2025–2026',
     description:
-      'A documented series: $119 USD/m² in May 2025, $167 today (+40%). What drives Tulum appreciation: the Maya Train, the airport and the bypass.',
+      'A documented series: $119 USD/m² in May 2025, $170 today (+43%). What drives Tulum appreciation: the Maya Train, the airport and the bypass.',
     h1: 'Tulum property appreciation: the data, not the promise',
     ogImage: '/og/og-lots.jpg',
     updated: UPDATED,

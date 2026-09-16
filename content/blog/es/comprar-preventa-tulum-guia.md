@@ -17,7 +17,7 @@ Escribimos desde el lado del desarrollador — Selvadentro vende terrenos en pre
 
 En una preventa de departamentos pagas por algo que todavía no existe; el riesgo central es que el edificio no se termine. En una preventa de terrenos, el lote ya existe: lo que compras es precio de fase y tiempo. El desarrollador se obliga a entregar la infraestructura y amenidades alrededor de tu tierra, y por eso las fases tempranas cuestan menos.
 
-Eso cambia el perfil de riesgo. Sigues dependiendo de que el desarrollador entregue calles, servicios y áreas comunes, pero tu activo es un pedazo de tierra específico y medible, no la promesa de uno. Un ejemplo concreto de la mecánica precio-tiempo: en Selvadentro, el precio de lanzamiento en mayo de 2025 fue de $119 USD por m²; hoy es de $167 USD por m² — +40% en doce meses — con una proyección de $280–360 USD por m² al cierre del proyecto. A los primeros compradores se les pagó la paciencia: esa es toda la lógica de la preventa, y la base de la [plusvalía](/plusvalia-en-tulum) que buscas capturar.
+Eso cambia el perfil de riesgo. Sigues dependiendo de que el desarrollador entregue calles, servicios y áreas comunes, pero tu activo es un pedazo de tierra específico y medible, no la promesa de uno. Un ejemplo concreto de la mecánica precio-tiempo: en Selvadentro, el precio de lanzamiento en mayo de 2025 fue de $119 USD por m²; hoy es de $170 USD por m² — +43% desde mayo de 2025 — con una proyección de $280–360 USD por m² al cierre del proyecto. A los primeros compradores se les pagó la paciencia: esa es toda la lógica de la preventa, y la base de la [plusvalía](/plusvalia-en-tulum) que buscas capturar.
 
 ## ¿Cómo funcionan los planes de pago con el desarrollador?
 

@@ -1,6 +1,6 @@
 ---
 title: "Is Tulum real estate still a good investment in 2026?"
-description: "A balanced look at Tulum in 2026: the Dec 2023 airport and Maya Train, the 2025 SEDETUS review, land at $167 USD/m² — and who should not buy."
+description: "A balanced look at Tulum in 2026: the Dec 2023 airport and Maya Train, the 2025 SEDETUS review, land at $170 USD/m² — and who should not buy."
 slug: tulum-real-estate-investment-2026
 translationKey: invertir-2026
 date: 2026-09-01
@@ -36,7 +36,7 @@ The practical lesson: verify any development yourself, ours included. Ask for st
 
 ## What have Tulum land prices actually done?
 
-Public, audited per-square-meter series for Tulum are scarce, so here is a datapoint we can vouch for because it is ours. At Selvadentro, a square meter launched at $119 USD in May 2025 and sells at $167 USD today — a 40% move in twelve months. Our projection at project close is $280–360 USD/m². Treat that last figure as what it is: a developer's projection, not a promise.
+Public, audited per-square-meter series for Tulum are scarce, so here is a datapoint we can vouch for because it is ours. At Selvadentro, a square meter launched at $119 USD in May 2025 and sells at $170 USD today — a 43% move since May 2025. Our projection at project close is $280–360 USD/m². Treat that last figure as what it is: a developer's projection, not a promise.
 
 One development is not the market. But the direction is consistent with what the infrastructure thesis predicts for well-located, fully permitted land, and you can follow the series over time on our [appreciation data page](/en/tulum-property-appreciation-data).
 

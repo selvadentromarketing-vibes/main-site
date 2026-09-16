@@ -47,7 +47,7 @@ So a coverage cap is not an aesthetic gesture. Capping every lot at 35% built su
 
 Scarcity is doing the work here, and it is worth being precise about which scarcity. Buildable land near Tulum is not scarce. Buildable land **surrounded by protected jungle that can never densify** is — because most of what borders Selvadentro on the Ruta de los Cenotes side is nature reserves and attractions, not future competing towers.
 
-Our own price series is one data point, offered with the obvious caveat that it is ours: $119 USD/m² at launch in May 2025, $167 USD/m² today — +40% in 12 months — with the developer projecting $280–360 USD/m² at project close. Access infrastructure compounds it: the Maya Train and the Tulum airport both opened in December 2023, and the Playa–Cobá bypass is under construction nearby. For the broader market context, see our [Tulum appreciation data](/en/tulum-property-appreciation-data).
+Our own price series is one data point, offered with the obvious caveat that it is ours: $119 USD/m² at launch in May 2025, $170 USD/m² today — +43% since May 2025 — with the developer projecting $280–360 USD/m² at project close. Access infrastructure compounds it: the Maya Train and the Tulum airport both opened in December 2023, and the Playa–Cobá bypass is under construction nearby. For the broader market context, see our [Tulum appreciation data](/en/tulum-property-appreciation-data).
 
 The mechanism is intuitive. Anywhere in the world, the properties that hold value hardest are the ones whose surroundings are guaranteed: the house on the park, the lot on the protected coastline. A regulation that freezes 65% of the land as jungle is that guarantee, written down.
 

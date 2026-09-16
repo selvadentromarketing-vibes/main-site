@@ -47,15 +47,15 @@ Si compras con plan de pagos — el nuestro es a 48 meses sin intereses, directo
 
 ## ¿Cómo se ve el primer año completo?
 
-Un ejemplo ilustrativo — un lote de 600 m² al precio actual de $167 USD/m² (el lanzamiento fue a $119 en mayo de 2025), pagado de contado. Tus números serán otros; esto es la forma, no una cotización.
+Un ejemplo ilustrativo — un lote de 600 m² al precio actual de $170 USD/m² (el lanzamiento fue a $119 en mayo de 2025), pagado de contado. Tus números serán otros; esto es la forma, no una cotización.
 
 | Concepto | Base | Monto ilustrativo |
 |---|---|---|
-| Precio del lote | 600 m² × $167 USD/m² | ~$100,200 USD |
+| Precio del lote | 600 m² × $170 USD/m² | ~$102,000 USD |
 | Escrituración | 6–8% típico del precio | ~$6,000–8,000 USD |
 | Cuota de mantenimiento, año uno | 600 m² × ~5 MXN × 12 | ~36,000 MXN |
 | Predial | Bajo; varía por municipio | Renglón menor |
 
-La lectura: más allá de la tierra, el primer año cuesta un dígito alto porcentual del precio — casi todo escrituración — y a partir del segundo año mantener el lote se reduce a la cuota y el predial. Frente a un mercado donde nuestro propio metro cuadrado pasó de $119 a $167 USD entre mayo de 2025 y hoy, el costo de mantener rara vez es lo que decide si la tierra en Tulum tiene sentido; lo que decide es el precio y el momento de entrada. Ese análisis está en [inversión](/inversion).
+La lectura: más allá de la tierra, el primer año cuesta un dígito alto porcentual del precio — casi todo escrituración — y a partir del segundo año mantener el lote se reduce a la cuota y el predial. Frente a un mercado donde nuestro propio metro cuadrado pasó de $119 a $170 USD entre mayo de 2025 y hoy, el costo de mantener rara vez es lo que decide si la tierra en Tulum tiene sentido; lo que decide es el precio y el momento de entrada. Ese análisis está en [inversión](/inversion).
 
 Si quieres estos números corridos sobre un lote específico — superficie, precio vigente, plan de pagos —, la disponibilidad actual está en [lotes en venta en Tulum](/lotes-en-venta-tulum) y nuestras [preguntas frecuentes](/preguntas-frecuentes) responden lo que más nos preguntan. Un asesor te entrega la hoja de costos completa antes de pedirte nada.

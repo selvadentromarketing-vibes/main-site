@@ -47,7 +47,7 @@ Por eso limitar la huella no es un gesto estético. Topar cada lote en 35% de su
 
 Aquí trabaja la escasez, y conviene precisar cuál. Tierra construible cerca de Tulum no es escasa. Tierra construible **rodeada de selva protegida que nunca podrá densificarse** sí lo es — porque lo que colinda con Selvadentro del lado de la Ruta de los Cenotes son reservas naturales y atracciones, no futuras torres competidoras.
 
-Nuestra propia serie de precios es un dato, ofrecido con la advertencia obvia de que es nuestro: $119 USD/m² en el lanzamiento de mayo de 2025, $167 USD/m² hoy — +40% en 12 meses —, con proyección del desarrollador de $280–360 USD/m² al cierre del proyecto. La infraestructura de acceso lo potencia: el Tren Maya y el aeropuerto de Tulum abrieron en diciembre de 2023, y el Libramiento Playa–Cobá está en construcción cerca. El contexto amplio del mercado está en nuestros [datos de plusvalía en Tulum](/plusvalia-en-tulum).
+Nuestra propia serie de precios es un dato, ofrecido con la advertencia obvia de que es nuestro: $119 USD/m² en el lanzamiento de mayo de 2025, $170 USD/m² hoy — +43% desde mayo de 2025 —, con proyección del desarrollador de $280–360 USD/m² al cierre del proyecto. La infraestructura de acceso lo potencia: el Tren Maya y el aeropuerto de Tulum abrieron en diciembre de 2023, y el Libramiento Playa–Cobá está en construcción cerca. El contexto amplio del mercado está en nuestros [datos de plusvalía en Tulum](/plusvalia-en-tulum).
 
 El mecanismo es intuitivo. En cualquier ciudad del mundo, las propiedades que mejor sostienen su valor son las que tienen el entorno garantizado: la casa frente al parque, el lote junto a la costa protegida. Una norma que congela el 65% del suelo como selva es esa garantía, por escrito.
 

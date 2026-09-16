@@ -9,7 +9,7 @@ import type { PageProps } from '../routes/AppRoutes';
  * The data page — /plusvalia-en-tulum ↔ /en/tulum-property-appreciation-data
  * Target queries: "plusvalía en tulum", "plusvalía tulum 2026" /
  * "tulum property appreciation", "tulum real estate appreciation data".
- * Centerpiece: the documented Selvadentro price series ($119 → $167 →
+ * Centerpiece: the documented Selvadentro price series ($119 → $170 →
  * $280–360 projected), always labeled as first-party developer data.
  * Refreshed quarterly — keep the "Datos actualizados / Data updated"
  * line current on every revision.
@@ -19,12 +19,12 @@ const copy = {
   es: {
     eyebrow: 'Los datos',
     updatedLine: 'Datos actualizados: septiembre de 2026 · Esta página se revisa cada trimestre.',
-    lede: `En Tulum la plusvalía se promete mucho y se documenta poco. Esta página publica una serie verificable: en Selvadentro, el metro cuadrado pasó de $${PRICING.launchPricePerM2USD} USD en mayo de 2025 a $${PRICING.pricePerM2USD} USD hoy — +40% en doce meses — con proyección del desarrollador de $${PRICING.projectedClosePerM2USD} USD/m² al cierre.`,
+    lede: `En Tulum la plusvalía se promete mucho y se documenta poco. Esta página publica una serie verificable: en Selvadentro, el metro cuadrado pasó de $${PRICING.launchPricePerM2USD} USD en mayo de 2025 a $${PRICING.pricePerM2USD} USD hoy — +43% desde mayo de 2025 — con proyección del desarrollador de $${PRICING.projectedClosePerM2USD} USD/m² al cierre.`,
     tableTitle: 'La serie de precios, documentada',
     tableHead: ['Momento', 'Fecha', 'Precio por m²', 'Qué es'],
     tableRows: [
       ['Lanzamiento', 'Mayo 2025', `$${PRICING.launchPricePerM2USD} USD`, 'Precio de lista del desarrollador'],
-      ['Hoy', 'Septiembre 2026', `$${PRICING.pricePerM2USD} USD`, 'Precio de lista vigente · +40% en 12 meses'],
+      ['Hoy', 'Septiembre 2026', `$${PRICING.pricePerM2USD} USD`, 'Precio de lista vigente · +43% desde mayo de 2025'],
       ['Cierre del proyecto', 'Proyección', `$${PRICING.projectedClosePerM2USD} USD`, 'Proyección del desarrollador — escenario, no garantía'],
     ],
     tableNote:
@@ -77,12 +77,12 @@ const copy = {
   en: {
     eyebrow: 'The data',
     updatedLine: 'Data updated: September 2026 · This page is reviewed quarterly.',
-    lede: `Tulum appreciation gets promised a lot and documented rarely. This page publishes a verifiable series: at Selvadentro, a square meter went from $${PRICING.launchPricePerM2USD} USD in May 2025 to $${PRICING.pricePerM2USD} USD today — up 40% in twelve months — with a developer projection of $${PRICING.projectedClosePerM2USD} USD/m² at project close.`,
+    lede: `Tulum appreciation gets promised a lot and documented rarely. This page publishes a verifiable series: at Selvadentro, a square meter went from $${PRICING.launchPricePerM2USD} USD in May 2025 to $${PRICING.pricePerM2USD} USD today — up 43% since May 2025 — with a developer projection of $${PRICING.projectedClosePerM2USD} USD/m² at project close.`,
     tableTitle: 'The price series, documented',
     tableHead: ['Milestone', 'Date', 'Price per m²', 'What it is'],
     tableRows: [
       ['Launch', 'May 2025', `$${PRICING.launchPricePerM2USD} USD`, 'Developer list price'],
-      ['Today', 'September 2026', `$${PRICING.pricePerM2USD} USD`, 'Current list price · +40% in 12 months'],
+      ['Today', 'September 2026', `$${PRICING.pricePerM2USD} USD`, 'Current list price · +43% since May 2025'],
       ['Project close', 'Projection', `$${PRICING.projectedClosePerM2USD} USD`, 'Developer projection — a scenario, not a guarantee'],
     ],
     tableNote:
