@@ -21,10 +21,16 @@ const check = (cond, msg) => {
 };
 
 const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
-// Mirrors outFileFor() in prerender.mjs: `<path>.html`, never a directory
-// index, so Netlify answers the slash-less canonical URL with a 200.
-const fileFor = (p) =>
-  p === '/' ? path.join(DIST, 'index.html') : path.join(DIST, `${p.replace(/^\//, '')}.html`);
+// Mirrors outFilesFor() in prerender.mjs: `<path>.html`, never a directory
+// index, so Netlify answers the slash-less canonical URL with a 200. A
+// registry path ending in a slash (the legal pages) is the exception: its
+// canonical file is `<path>/index.html`, with a flat `<path>.html` twin.
+const fileFor = (p) => {
+  if (p === '/') return path.join(DIST, 'index.html');
+  const rel = p.replace(/^\//, '');
+  return rel.endsWith('/') ? path.join(DIST, rel, 'index.html') : path.join(DIST, `${rel}.html`);
+};
+const flatTwinFor = (p) => path.join(DIST, `${p.replace(/^\//, '').replace(/\/$/, '')}.html`);
 
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const htmlEsc = (s) =>
@@ -124,7 +130,9 @@ for (const lang of ['es', 'en']) {
 // of cross-links (guides ↔ glossary ↔ pillars), so a typo'd slug would
 // otherwise ship as a 404 on a live page.
 {
-  const known = new Set(ALL_PAGES.map((m) => m.path));
+  // Hrefs are compared with any trailing slash stripped, so register the
+  // slash-ending legal paths in that form too.
+  const known = new Set(ALL_PAGES.map((m) => m.path.replace(/(.)\/$/, '$1')));
   known.add('/404');
   const seen = new Map(); // href → first page that used it
   for (const meta of ALL_PAGES) {
@@ -150,6 +158,18 @@ for (const lang of ['es', 'en']) {
 // redirect behind every canonical, sitemap entry and internal link.
 for (const meta of ALL_PAGES) {
   if (meta.path === '/') continue;
+  if (meta.path.endsWith('/')) {
+    // Deliberate directory index (the slash IS the canonical form). Its flat
+    // twin must exist and match, or the slash-less URL 301s instead of 200.
+    const twin = flatTwinFor(meta.path);
+    check(
+      fs.existsSync(twin) &&
+        fs.existsSync(fileFor(meta.path)) &&
+        fs.readFileSync(twin).equals(fs.readFileSync(fileFor(meta.path))),
+      `${meta.path}: flat twin ${path.relative(DIST, twin)} missing or different — the slash-less URL would 301`,
+    );
+    continue;
+  }
   const asDirIndex = path.join(DIST, meta.path.replace(/^\//, ''), 'index.html');
   check(
     !fs.existsSync(asDirIndex),

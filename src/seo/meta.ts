@@ -18,7 +18,7 @@
 
 import type { Lang } from '../i18n/translations';
 import { DEFAULT_OG_IMAGE } from './site';
-import { GUIDES, POSTS, TERMS, type ContentRecord } from '../generated/content';
+import { GUIDES, LEGAL_DOCS, POSTS, TERMS, type ContentRecord } from '../generated/content';
 
 export interface HeroImage {
   src: string;
@@ -50,7 +50,10 @@ export interface PageMeta {
   /** Joins the es/en pair, e.g. 'lots'. Also keys the component map. */
   key: string;
   lang: Lang;
-  /** Route path, no trailing slash ('/' for the ES homepage). */
+  /**
+   * Route path, no trailing slash ('/' for the ES homepage) — except the
+   * LEGAL_PAGES, whose externally fixed URLs keep theirs.
+   */
   path: string;
   /** The paired page in the other language, or null when unpaired. */
   altPath: string | null;
@@ -819,12 +822,56 @@ export const POST_PAGES: PageMeta[] = contentPages(POSTS, 'post', 'article-page'
 export const GUIDE_PAGES: PageMeta[] = contentPages(GUIDES, 'guide', 'guide-page');
 export const TERM_PAGES: PageMeta[] = contentPages(TERMS, 'term', 'glossary-term');
 
+function legalTitle(slug: string): string {
+  const doc = LEGAL_DOCS.find((d) => d.slug === slug);
+  if (!doc) throw new Error(`content/legal/${slug}.md is missing`);
+  return doc.title;
+}
+
+/**
+ * Privacy policy and terms — the owner's English text (content/legal),
+ * one unpaired URL each. These are the only routes that keep a trailing
+ * slash: the URLs are fixed outside the site (Google Ads checks
+ * /privacy-policy/ and /terms-and-conditions/), so the slash form is the
+ * canonical and prerender.mjs also writes a flat twin so the slash-less
+ * form answers 200 instead of a 301.
+ */
+export const LEGAL_PAGES: PageMeta[] = [
+  {
+    key: 'privacy-policy',
+    lang: 'en',
+    path: '/privacy-policy/',
+    altPath: null,
+    title: 'Privacy Policy — Selvadentro Tulum',
+    description:
+      'How Selvadentro Tulum, operated by JJF Creando, collects, uses and safeguards your personal information under Mexican data protection law.',
+    h1: legalTitle('privacy-policy'),
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-10-08',
+    schemaKey: 'default',
+  },
+  {
+    key: 'terms-and-conditions',
+    lang: 'en',
+    path: '/terms-and-conditions/',
+    altPath: null,
+    title: 'Terms & Conditions — Selvadentro Tulum',
+    description:
+      'The terms and conditions for using the Selvadentro Tulum website, operated by JJF Creando and governed by the laws of Mexico.',
+    h1: legalTitle('terms-and-conditions'),
+    ogImage: DEFAULT_OG_IMAGE,
+    updated: '2026-10-08',
+    schemaKey: 'default',
+  },
+];
+
 export const ALL_PAGES: PageMeta[] = [
   ...STATIC_PAGES,
   ...COLLECTION_INDEXES,
   ...POST_PAGES,
   ...GUIDE_PAGES,
   ...TERM_PAGES,
+  ...LEGAL_PAGES,
 ];
 
 const byPath = new Map(ALL_PAGES.map((p) => [p.path, p]));

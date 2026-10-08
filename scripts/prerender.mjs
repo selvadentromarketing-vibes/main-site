@@ -46,10 +46,20 @@ const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
  * → `/cenotes/`. Since every canonical, sitemap entry, hreflang and
  * internal link we emit uses the slash-less form, the directory layout put
  * a redirect behind all 121 of them. Keep this as-is.
+ *
+ * The one exception is a registry path that ENDS in a slash (the legal
+ * pages, whose URLs are fixed externally and must answer 200 with and
+ * without it). Those get both files: `privacy-policy/index.html` serves
+ * `/privacy-policy/` and the flat `privacy-policy.html` serves
+ * `/privacy-policy`, so neither form redirects.
  */
-function outFileFor(routePath) {
-  if (routePath === '/') return path.join(DIST, 'index.html');
-  return path.join(DIST, `${routePath.replace(/^\//, '')}.html`);
+function outFilesFor(routePath) {
+  if (routePath === '/') return [path.join(DIST, 'index.html')];
+  const rel = routePath.replace(/^\//, '');
+  if (rel.endsWith('/')) {
+    return [path.join(DIST, rel, 'index.html'), path.join(DIST, `${rel.slice(0, -1)}.html`)];
+  }
+  return [path.join(DIST, `${rel}.html`)];
 }
 
 /**
@@ -87,9 +97,11 @@ let count = 0;
 for (const meta of ALL_PAGES) {
   const bodyHtml = await render(meta.path);
   const headHtml = renderHeadTags(meta);
-  const outFile = outFileFor(meta.path);
-  fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  fs.writeFileSync(outFile, assemble(bodyHtml, headHtml, meta.lang));
+  const html = assemble(bodyHtml, headHtml, meta.lang);
+  for (const outFile of outFilesFor(meta.path)) {
+    fs.mkdirSync(path.dirname(outFile), { recursive: true });
+    fs.writeFileSync(outFile, html);
+  }
   count++;
 }
 console.log(`[prerender] wrote ${count} routes`);

@@ -68,6 +68,13 @@ content/learn/{es,en}/<slug>.md     → /guia/…      · /en/guide/…     (buy
 content/glossary/{es,en}/<slug>.md  → /glosario/…  · /en/glossary/…  (+ `term:`)
 ```
 
+`content/legal/<slug>.md` → `/<slug>/` holds the owner's privacy policy and
+terms (English only, no frontmatter, published verbatim — format, never edit
+the text). Their head metadata is `LEGAL_PAGES` in `src/seo/meta.ts`. They
+are the only routes with a trailing slash (Google Ads checks those exact
+URLs): prerender writes `<slug>/index.html` plus a flat `<slug>.html` twin
+so both forms answer 200 with no redirect.
+
 `content/blog/README.md` documents the frontmatter for editors. Rules the
 build enforces: description ≤160 chars, `translationKey` joins the ES/EN pair,
 author is `juan-camara` or `omar-curi`, and the body must open with a plain

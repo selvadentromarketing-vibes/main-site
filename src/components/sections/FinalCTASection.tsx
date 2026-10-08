@@ -583,24 +583,27 @@ export default function FinalCTASection({ t, lang }: Props) {
               </p>
 
               {/*
-                Google requires this attribution when the v3 badge is hidden.
-                Kept small and neutral; links open in a new tab.
+                reCAPTCHA notice (the v3 badge is hidden in index.css). Its
+                links go to OUR privacy policy and terms, at the owner's
+                request — Google's hidden-badge rule asks for links to
+                Google's own Privacy Policy and Terms here instead. Links
+                open in a new tab so a half-filled form isn't lost.
               */}
               <p className="mt-2 text-[11px] text-brand-gris text-center leading-relaxed">
                 {lang === 'es' ? 'Protegido por reCAPTCHA — ' : 'Protected by reCAPTCHA — '}
                 <a
-                  href="https://policies.google.com/privacy"
+                  href="/privacy-policy/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="underline"
                 >
                   {lang === 'es' ? 'Privacidad' : 'Privacy'}
                 </a>
                 {' · '}
                 <a
-                  href="https://policies.google.com/terms"
+                  href="/terms-and-conditions/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="underline"
                 >
                   {lang === 'es' ? 'Términos' : 'Terms'}

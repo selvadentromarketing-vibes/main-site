@@ -22,6 +22,8 @@ export interface PageProps {
 
 type PageComponent = LazyExoticComponent<ComponentType<PageProps>>;
 
+const LegalDocPage = lazy(() => import('../pages/LegalDocPage'));
+
 const PAGES: Record<string, PageComponent> = {
   lots: lazy(() => import('../pages/LotsPage')),
   cenotes: lazy(() => import('../pages/CenotesPage')),
@@ -42,6 +44,8 @@ const PAGES: Record<string, PageComponent> = {
   market: lazy(() => import('../pages/MarketPage')),
   'guide-index': lazy(() => import('../pages/GuideIndexPage')),
   'glossary-index': lazy(() => import('../pages/GlossaryIndexPage')),
+  'privacy-policy': LegalDocPage,
+  'terms-and-conditions': LegalDocPage,
 };
 
 const BlogPostPage = lazy(() => import('../pages/BlogPostPage'));

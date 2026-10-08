@@ -11,7 +11,10 @@ import './index.css';
 // here is safe — nothing in render() reads location.
 const { pathname, search, hash } = window.location;
 if (pathname.endsWith('.html')) {
-  const clean = pathname === '/index.html' ? '/' : pathname.slice(0, -'.html'.length);
+  // `/x/index.html` (the legal pages' directory indexes) → `/x/`.
+  const clean = pathname.endsWith('/index.html')
+    ? pathname.slice(0, -'index.html'.length)
+    : pathname.slice(0, -'.html'.length);
   window.history.replaceState(null, '', `${clean}${search}${hash}`);
 }
 

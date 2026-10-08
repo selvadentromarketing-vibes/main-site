@@ -1,7 +1,7 @@
 import { Mail, Phone, Instagram, MapPin } from 'lucide-react';
 import { ORG } from '../seo/site';
 import type { Translation, Lang } from '../i18n/translations';
-import { COLLECTION_INDEXES, STATIC_PAGES } from '../seo/meta';
+import { COLLECTION_INDEXES, LEGAL_PAGES, STATIC_PAGES } from '../seo/meta';
 
 interface FooterProps {
   t: Translation;
@@ -78,6 +78,12 @@ const NAV_SECTIONS: Array<{
 ];
 
 const NAVIGABLE = [...STATIC_PAGES, ...COLLECTION_INDEXES];
+
+/** The legal pages are English-only, so both footers link the one URL. */
+const LEGAL_LABELS: Record<string, { es: string; en: string }> = {
+  'privacy-policy': { es: 'Política de privacidad', en: 'Privacy Policy' },
+  'terms-and-conditions': { es: 'Términos y condiciones', en: 'Terms & Conditions' },
+};
 
 function navLinks(lang: Lang, keys: string[]) {
   return keys
@@ -174,6 +180,20 @@ export default function Footer({ t, lang }: FooterProps) {
           <span>
             © {new Date().getFullYear()} Selvadentro · {t.footer.copyright}
           </span>
+          <nav
+            aria-label="Legal"
+            className="flex flex-wrap justify-center gap-x-5 gap-y-1"
+          >
+            {LEGAL_PAGES.map((page) => (
+              <a
+                key={page.path}
+                href={page.path}
+                className="hover:text-brand-oro transition-colors"
+              >
+                {LEGAL_LABELS[page.key]?.[lang] ?? page.h1}
+              </a>
+            ))}
+          </nav>
           <span className="tracking-[0.25em] uppercase">Selvadentrotulum.com</span>
         </div>
       </div>

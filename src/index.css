@@ -202,6 +202,26 @@
            border-l-2 border-brand-oro pl-6;
   }
 
+  /* Legal documents (/privacy-policy/, /terms-and-conditions/). The text
+     cross-references its sections by number ("see Section 6") but the
+     source headings carry none, so number them here — presentation only,
+     the text itself stays verbatim. The prose H2's gold rule moves from
+     ::before to a background so ::before can carry the number. */
+  .prose-legal {
+    counter-reset: legal-section;
+  }
+  .prose-legal h2 {
+    counter-increment: legal-section;
+    background: linear-gradient(#c8a96e, #c8a96e) left top / 2.25rem 1px no-repeat;
+  }
+  .prose-legal h2::before {
+    content: counter(legal-section) '.\00a0\00a0';
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+
   /* ── Tables ────────────────────────────────────────────────────────
      Data is a big part of this site's credibility, so tables get a
      proper editorial treatment: gold small-caps headers, hairline rows,
