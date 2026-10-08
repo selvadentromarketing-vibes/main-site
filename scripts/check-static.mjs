@@ -21,16 +21,18 @@ const check = (cond, msg) => {
 };
 
 const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
-// Mirrors outFilesFor() in prerender.mjs: `<path>.html`, never a directory
+// Mirrors outFileFor() in prerender.mjs: `<path>.html`, never a directory
 // index, so Netlify answers the slash-less canonical URL with a 200. A
-// registry path ending in a slash (the legal pages) is the exception: its
-// canonical file is `<path>/index.html`, with a flat `<path>.html` twin.
+// registry path ending in a slash (the legal pages) is the exception: it is
+// written to `_rewrite/<path>/index.html` and served by a netlify.toml
+// rewrite (asserted below).
 const fileFor = (p) => {
   if (p === '/') return path.join(DIST, 'index.html');
   const rel = p.replace(/^\//, '');
-  return rel.endsWith('/') ? path.join(DIST, rel, 'index.html') : path.join(DIST, `${rel}.html`);
+  return rel.endsWith('/')
+    ? path.join(DIST, '_rewrite', rel, 'index.html')
+    : path.join(DIST, `${rel}.html`);
 };
-const flatTwinFor = (p) => path.join(DIST, `${p.replace(/^\//, '').replace(/\/$/, '')}.html`);
 
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const htmlEsc = (s) =>
@@ -152,6 +154,18 @@ for (const lang of ['es', 'en']) {
   }
 }
 
+// netlify.toml [[redirects]] blocks, for the rewrite assertions below.
+const NETLIFY_REWRITES = fs
+  .readFileSync(path.join(ROOT, 'netlify.toml'), 'utf8')
+  .split(/^\[\[/m)
+  .filter((block) => block.startsWith('redirects]]'))
+  .map((block) => ({
+    from: block.match(/^\s*from\s*=\s*"([^"]*)"/m)?.[1] ?? '',
+    to: block.match(/^\s*to\s*=\s*"([^"]*)"/m)?.[1] ?? '',
+    status: block.match(/^\s*status\s*=\s*(\d+)/m)?.[1] ?? '',
+    force: /^\s*force\s*=\s*true/m.test(block),
+  }));
+
 // Structural invariants.
 // No route may be emitted as a directory index: Netlify would then
 // 301 the slash-less canonical URL to the trailing-slash form, putting a
@@ -159,14 +173,13 @@ for (const lang of ['es', 'en']) {
 for (const meta of ALL_PAGES) {
   if (meta.path === '/') continue;
   if (meta.path.endsWith('/')) {
-    // Deliberate directory index (the slash IS the canonical form). Its flat
-    // twin must exist and match, or the slash-less URL 301s instead of 200.
-    const twin = flatTwinFor(meta.path);
+    // Served only through its forced 200 rewrite, which answers both the
+    // slash and the bare form. Without the rule both forms would 404.
+    const bare = meta.path.slice(0, -1);
+    const rule = NETLIFY_REWRITES.find((r) => r.from.replace(/\/$/, '') === bare);
     check(
-      fs.existsSync(twin) &&
-        fs.existsSync(fileFor(meta.path)) &&
-        fs.readFileSync(twin).equals(fs.readFileSync(fileFor(meta.path))),
-      `${meta.path}: flat twin ${path.relative(DIST, twin)} missing or different — the slash-less URL would 301`,
+      rule && rule.to === `/_rewrite${meta.path}` && rule.status === '200' && rule.force,
+      `${meta.path}: netlify.toml needs [[redirects]] from = "${bare}" to = "/_rewrite${meta.path}" status = 200 force = true`,
     );
     continue;
   }

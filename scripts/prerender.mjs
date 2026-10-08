@@ -48,18 +48,18 @@ const absUrl = (p) => (p === '/' ? `${SITE_URL}/` : `${SITE_URL}${p}`);
  * a redirect behind all 121 of them. Keep this as-is.
  *
  * The one exception is a registry path that ENDS in a slash (the legal
- * pages, whose URLs are fixed externally and must answer 200 with and
- * without it). Those get both files: `privacy-policy/index.html` serves
- * `/privacy-policy/` and the flat `privacy-policy.html` serves
- * `/privacy-policy`, so neither form redirects.
+ * pages, whose URLs are fixed externally and must answer 200 with AND
+ * without it). No file layout does that on Netlify — a flat file 301s the
+ * slash form, a directory index 301s the bare form, and with both present
+ * the flat file wins — so those pages are written to
+ * `_rewrite/<path>/index.html` and served by a forced 200 rewrite in
+ * netlify.toml, which matches both forms. check-static asserts the rule.
  */
-function outFilesFor(routePath) {
-  if (routePath === '/') return [path.join(DIST, 'index.html')];
+function outFileFor(routePath) {
+  if (routePath === '/') return path.join(DIST, 'index.html');
   const rel = routePath.replace(/^\//, '');
-  if (rel.endsWith('/')) {
-    return [path.join(DIST, rel, 'index.html'), path.join(DIST, `${rel.slice(0, -1)}.html`)];
-  }
-  return [path.join(DIST, `${rel}.html`)];
+  if (rel.endsWith('/')) return path.join(DIST, '_rewrite', rel, 'index.html');
+  return path.join(DIST, `${rel}.html`);
 }
 
 /**
@@ -97,11 +97,9 @@ let count = 0;
 for (const meta of ALL_PAGES) {
   const bodyHtml = await render(meta.path);
   const headHtml = renderHeadTags(meta);
-  const html = assemble(bodyHtml, headHtml, meta.lang);
-  for (const outFile of outFilesFor(meta.path)) {
-    fs.mkdirSync(path.dirname(outFile), { recursive: true });
-    fs.writeFileSync(outFile, html);
-  }
+  const outFile = outFileFor(meta.path);
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  fs.writeFileSync(outFile, assemble(bodyHtml, headHtml, meta.lang));
   count++;
 }
 console.log(`[prerender] wrote ${count} routes`);

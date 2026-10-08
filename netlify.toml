@@ -37,6 +37,27 @@
   to = "/en#contacto"
   status = 301
 
+# ── Legal pages: 200 at BOTH /privacy-policy/ and /privacy-policy ────────
+# Google Ads checks these exact URLs. No static layout answers both forms
+# on Netlify (a flat file 301s the slash form, a directory index 301s the
+# bare one, and with both present the flat file wins), so prerender.mjs
+# writes them to dist/_rewrite/<slug>/index.html and these forced rewrites
+# serve them. Netlify matches rules with the trailing slash normalised away,
+# so one rule covers both forms. The target is a directory path, never a
+# .html file, so the /*.html noindex header at the bottom of this file
+# cannot attach to it. check-static fails the build if a rule goes missing.
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/_rewrite/privacy-policy/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms-and-conditions"
+  to = "/_rewrite/terms-and-conditions/"
+  status = 200
+  force = true
+
 # Hashed bundle assets are immutable.
 [[headers]]
   for = "/assets/*"
