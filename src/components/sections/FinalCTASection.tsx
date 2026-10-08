@@ -578,36 +578,71 @@ export default function FinalCTASection({ t, lang }: Props) {
                 )}
               </button>
 
+              {/* Our own privacy policy, at the point where the data is
+                  collected. New tab so a half-filled form isn't lost. */}
               <p className="mt-3 text-[11px] text-brand-gris text-center leading-relaxed">
-                {t.finalCta.formConsent}
-              </p>
-
-              {/*
-                reCAPTCHA notice (the v3 badge is hidden in index.css). Its
-                links go to OUR privacy policy and terms, at the owner's
-                request — Google's hidden-badge rule asks for links to
-                Google's own Privacy Policy and Terms here instead. Links
-                open in a new tab so a half-filled form isn't lost.
-              */}
-              <p className="mt-2 text-[11px] text-brand-gris text-center leading-relaxed">
-                {lang === 'es' ? 'Protegido por reCAPTCHA — ' : 'Protected by reCAPTCHA — '}
+                {t.finalCta.formConsent}{' '}
                 <a
                   href="/privacy-policy/"
                   target="_blank"
                   rel="noopener"
                   className="underline"
                 >
-                  {lang === 'es' ? 'Privacidad' : 'Privacy'}
+                  {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
                 </a>
-                {' · '}
-                <a
-                  href="/terms-and-conditions/"
-                  target="_blank"
-                  rel="noopener"
-                  className="underline"
-                >
-                  {lang === 'es' ? 'Términos' : 'Terms'}
-                </a>
+              </p>
+
+              {/*
+                Google requires this attribution, with links to GOOGLE's
+                policies, when the v3 badge is hidden (index.css). Keep it
+                separate from our own legal links above and in the footer.
+              */}
+              <p className="mt-2 text-[11px] text-brand-gris text-center leading-relaxed">
+                {lang === 'es' ? (
+                  <>
+                    Este sitio está protegido por reCAPTCHA y se aplican la{' '}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Política de privacidad
+                    </a>{' '}
+                    y las{' '}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Condiciones del servicio
+                    </a>{' '}
+                    de Google.
+                  </>
+                ) : (
+                  <>
+                    This site is protected by reCAPTCHA and the Google{' '}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Privacy Policy
+                    </a>{' '}
+                    and{' '}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      Terms of Service
+                    </a>{' '}
+                    apply.
+                  </>
+                )}
               </p>
             </form>
           )}
