@@ -55,7 +55,7 @@ export default function GuideIndexPage({ lang, path }: PageProps) {
                   <p className="text-sm leading-relaxed text-brand-negro/75 mb-4 flex-1">
                     {g.description}
                   </p>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-oro pt-4 border-t border-brand-verde/10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-olivo pt-4 border-t border-brand-verde/10">
                     {g.readingMinutes} {c.reading}
                   </p>
                 </article>
@@ -73,7 +73,7 @@ export default function GuideIndexPage({ lang, path }: PageProps) {
               <li key={href}>
                 <a
                   href={href}
-                  className="underline underline-offset-4 decoration-brand-oro hover:text-brand-verde transition-colors"
+                  className="underline underline-offset-4 decoration-brand-terracota hover:text-brand-verde transition-colors"
                 >
                   {label}
                 </a>

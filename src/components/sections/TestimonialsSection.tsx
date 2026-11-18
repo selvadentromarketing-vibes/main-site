@@ -44,7 +44,7 @@ export default function TestimonialsSection({ t }: Props) {
                     width={IMAGE_DIMS[tm.photo]?.width}
                     height={IMAGE_DIMS[tm.photo]?.height}
                     loading="lazy"
-                    className="w-16 h-16 rounded-full object-cover mb-5 ring-2 ring-brand-oro/30"
+                    className="w-16 h-16 rounded-full object-cover mb-5 ring-2 ring-brand-terracota/30"
                   />
                   <blockquote className="font-serif italic text-brand-verde-osc text-base leading-relaxed mb-5">
                     “{tm.quote}”

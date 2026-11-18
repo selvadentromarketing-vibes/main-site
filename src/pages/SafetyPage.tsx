@@ -295,7 +295,7 @@ export default function SafetyPage({ lang, path }: PageProps) {
               {c.sedetusLink.pre}
               <a
                 href={c.sedetusLink.href}
-                className="underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                className="underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
               >
                 {c.sedetusLink.linkLabel}
               </a>

@@ -235,7 +235,7 @@ export default function GatedPage({ lang, path }: PageProps) {
                 <li key={href}>
                   <a
                     href={href}
-                    className="underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                    className="underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
                   >
                     {label} →
                   </a>

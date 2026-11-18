@@ -323,7 +323,7 @@ export default function LegalPage({ lang, path }: PageProps) {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors"
+                    className="underline underline-offset-4 decoration-brand-terracota/70 hover:text-brand-verde transition-colors"
                   >
                     {s.label}
                   </a>

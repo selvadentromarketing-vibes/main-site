@@ -195,7 +195,7 @@ export default function PlusvaliaPage({ lang, path }: PageProps) {
                   {'link' in d && (
                     <a
                       href={d.link[0]}
-                      className="text-sm mt-4 underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                      className="text-sm mt-4 underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
                     >
                       {d.link[1]}
                     </a>

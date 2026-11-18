@@ -32,7 +32,7 @@ export default function InvestmentSection({ t, lang }: Props) {
           {t.investment.timeline.map((point, i) => (
             <Reveal key={i} delay={i * 200}>
               <div className="relative text-center group">
-                <div className="inline-flex items-center justify-center w-24 h-24 mx-auto mb-4 rounded-full bg-brand-verde border border-brand-oro/30 relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:border-brand-oro/80 group-hover:shadow-[0_0_30px_rgba(200,169,110,0.35)]">
+                <div className="inline-flex items-center justify-center w-24 h-24 mx-auto mb-4 rounded-full bg-brand-verde border border-brand-oro/30 relative z-10 transition-all duration-500 group-hover:scale-110 group-hover:border-brand-oro/80 group-hover:shadow-[0_0_30px_rgba(217,179,126,0.35)]">
                   <TrendingUp className="w-6 h-6 text-brand-oro transition-transform duration-500 group-hover:rotate-12" />
                 </div>
                 <div className="font-serif text-2xl text-brand-oro mb-1">

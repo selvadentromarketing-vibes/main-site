@@ -69,12 +69,12 @@ export default function PieceOfJungleSection({ t, lang }: Props) {
                   role="img"
                   aria-label={`${buildLabel} 35% · ${jungleLabel} 65%`}
                 >
-                  <span className="bg-brand-oro/85" style={{ width: '35%' }} />
+                  <span className="bg-brand-terracota/85" style={{ width: '35%' }} />
                   <span className="bg-brand-verde-osc/85" style={{ width: '65%' }} />
                 </div>
               </div>
 
-              <div className="border-l-2 border-brand-oro/50 pl-5 mb-6">
+              <div className="border-l-2 border-brand-terracota/50 pl-5 mb-6">
                 <p
                   className="font-serif italic text-brand-verde-osc leading-snug mb-3"
                   style={{ fontSize: 'clamp(1.15rem, 1.9vw, 1.35rem)' }}

@@ -244,7 +244,7 @@ export default function PreventaPage({ lang, path }: PageProps) {
               {c.planOutro.pre}
               <a
                 href={c.planOutro.href}
-                className="underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                className="underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
               >
                 {c.planOutro.linkLabel}
               </a>

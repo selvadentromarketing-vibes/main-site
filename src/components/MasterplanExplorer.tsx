@@ -201,7 +201,7 @@ export default function MasterplanExplorer({ lang }: Props) {
       >
         <span
           className={`flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-semibold shrink-0 transition-transform duration-200 group-hover:scale-110 ${
-            isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
+            isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-brand-verde text-brand-crema'
           }`}
         >
           {spot.n}
@@ -221,7 +221,7 @@ export default function MasterplanExplorer({ lang }: Props) {
       <div className="relative">
         <div
           ref={containerRef}
-          className="relative h-[340px] sm:h-auto sm:aspect-[2400/955] rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl bg-[#5c6b52] cursor-grab active:cursor-grabbing select-none"
+          className="relative h-[340px] sm:h-auto sm:aspect-[2400/955] rounded-3xl overflow-hidden border border-brand-verde/10 shadow-xl bg-brand-olivo cursor-grab active:cursor-grabbing select-none"
           // At fit zoom there is nothing to pan to, so swallowing vertical
           // touch made the map a dead zone: a 260px finger swipe starting on
           // it moved neither the page (scrollY unchanged) nor the map. Give
@@ -291,7 +291,7 @@ export default function MasterplanExplorer({ lang }: Props) {
                   >
                     <span
                       className={`flex items-center justify-center w-6 h-6 rounded-full shadow-md transition-all duration-300 hover:scale-125 ${
-                        isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-[#3d4b43] text-brand-crema'
+                        isCenote ? 'bg-[#8fcdd4] text-brand-verde-osc' : 'bg-brand-verde text-brand-crema'
                       } ${isHi ? 'scale-[1.4] ring-4 ring-brand-oro/70' : ''}`}
                     >
                       <span className="text-[11px] font-semibold leading-none select-none">

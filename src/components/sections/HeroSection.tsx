@@ -45,7 +45,7 @@ export default function HeroSection({ t }: Props) {
         className="absolute inset-0 pointer-events-none hidden sm:block"
         style={{
           background:
-            'linear-gradient(180deg, rgba(28,46,28,0.30) 0%, rgba(28,46,28,0.35) 55%, rgba(28,46,28,0.88) 100%)',
+            'linear-gradient(180deg, rgba(43,51,40,0.30) 0%, rgba(43,51,40,0.35) 55%, rgba(43,51,40,0.88) 100%)',
         }}
       />
 

@@ -53,7 +53,7 @@ export default function AmenitiesSection({ t }: Props) {
                         key={j}
                         className="flex items-center gap-2 text-brand-gris text-sm"
                       >
-                        <span className="w-1 h-1 rounded-full bg-brand-oro shrink-0" />
+                        <span className="w-1 h-1 rounded-full bg-brand-terracota shrink-0" />
                         {item}
                       </li>
                     ))}

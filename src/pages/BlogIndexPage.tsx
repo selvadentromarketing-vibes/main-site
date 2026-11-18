@@ -49,7 +49,7 @@ export default function BlogIndexPage({ lang, path }: PageProps) {
             {posts.map((post, i) => (
               <Reveal key={post.path} delay={(i % 3) * 60}>
                 <article className="card-premium p-6 h-full flex flex-col">
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-oro mb-3">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-olivo mb-3">
                     <time dateTime={post.updated}>
                       {c.updatedLabel} {formatDate(post.updated, lang)}
                     </time>
