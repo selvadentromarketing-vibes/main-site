@@ -28,8 +28,8 @@ export default function LocationSection({ t, lang }: Props) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 max-w-5xl mx-auto mb-12">
           {t.location.distances.map((d, i) => (
             <Reveal key={i} delay={i * 60}>
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-brand-verde/10 transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:border-brand-oro/40">
-                <MapPin className="w-5 h-5 text-brand-oro mx-auto mb-2 transition-transform duration-500 group-hover:scale-125" />
+              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-brand-verde/10 transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:border-brand-terracota/40">
+                <MapPin className="w-5 h-5 text-brand-terracota mx-auto mb-2 transition-transform duration-500 group-hover:scale-125" />
                 <div className="font-serif text-2xl text-brand-verde-osc mb-1">
                   {d.minutes}
                   <span className="text-xs text-brand-gris ml-1">min</span>

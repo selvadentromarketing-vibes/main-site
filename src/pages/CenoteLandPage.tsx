@@ -231,7 +231,7 @@ export default function CenoteLandPage({ lang, path }: PageProps) {
             <p className="mt-8">
               <a
                 href={c.highlightsLink[0]}
-                className="underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                className="underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
               >
                 {c.highlightsLink[1]} →
               </a>
@@ -261,7 +261,7 @@ export default function CenoteLandPage({ lang, path }: PageProps) {
             </div>
             <p className="text-sm text-brand-gris mt-3">
               {c.priceNote}{' '}
-              <a href={c.priceNoteLink[0]} className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors">
+              <a href={c.priceNoteLink[0]} className="underline underline-offset-4 decoration-brand-terracota/70 hover:text-brand-verde transition-colors">
                 {c.priceNoteLink[1]}
               </a>
               .
@@ -279,7 +279,7 @@ export default function CenoteLandPage({ lang, path }: PageProps) {
             <p>
               <a
                 href={c.accessLink[0]}
-                className="underline underline-offset-4 decoration-brand-oro/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
+                className="underline underline-offset-4 decoration-brand-terracota/70 text-brand-verde-osc hover:text-brand-verde transition-colors"
               >
                 {c.accessLink[1]} →
               </a>

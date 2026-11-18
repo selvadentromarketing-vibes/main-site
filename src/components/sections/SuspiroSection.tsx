@@ -84,7 +84,7 @@ export default function SuspiroSection({ t, lang }: Props) {
 
           <Reveal delay={150}>
             <div>
-              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-oro mb-3">
+              <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-olivo mb-3">
                 {privLabel}
               </div>
               <h2
@@ -101,7 +101,7 @@ export default function SuspiroSection({ t, lang }: Props) {
                 {priceLarge}
               </div>
               <div className="text-sm text-brand-gris">{priceSub}</div>
-              <div className="text-xs text-brand-gris/80 mt-1 mb-8">{priceFx}</div>
+              <div className="text-xs text-brand-gris mt-1 mb-8">{priceFx}</div>
 
               <div className="bg-brand-crema-osc rounded-xl p-5 mb-8 border border-brand-verde/10">
                 <div className="text-xs font-semibold tracking-wider uppercase text-brand-verde-osc mb-2">
@@ -153,7 +153,7 @@ export default function SuspiroSection({ t, lang }: Props) {
         {/* Row 3 — services checklist */}
         <Reveal delay={300}>
           <div className="mt-14 panel-premium rounded-3xl p-8 lg:p-10">
-            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-oro mb-6 text-center">
+            <div className="text-xs font-semibold tracking-[0.25em] uppercase text-brand-olivo mb-6 text-center">
               {servicesTitle}
             </div>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3">

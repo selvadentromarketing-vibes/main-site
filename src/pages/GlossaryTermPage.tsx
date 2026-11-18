@@ -61,7 +61,7 @@ export default function GlossaryTermPage({ lang, path }: PageProps) {
                   <li key={t.path}>
                     <a
                       href={t.path}
-                      className="inline-block bg-white border border-brand-verde/15 rounded-full px-4 py-2 text-sm shadow-[0_1px_2px_rgb(28_46_28_/_0.05)] hover:border-brand-oro/60 hover:text-brand-verde transition-colors"
+                      className="inline-block bg-white border border-brand-verde/15 rounded-full px-4 py-2 text-sm shadow-[0_1px_2px_rgb(43_51_40_/_0.05)] hover:border-brand-terracota/60 hover:text-brand-verde transition-colors"
                     >
                       {t.term}
                     </a>
@@ -72,7 +72,7 @@ export default function GlossaryTermPage({ lang, path }: PageProps) {
           )}
           <a
             href={hubPath}
-            className="underline underline-offset-4 decoration-brand-oro hover:text-brand-verde transition-colors"
+            className="underline underline-offset-4 decoration-brand-terracota hover:text-brand-verde transition-colors"
           >
             {l.all}
           </a>

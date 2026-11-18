@@ -302,7 +302,7 @@ export default function DeveloperPage({ lang, path }: PageProps) {
                       {c.contactLabel}{' '}
                       <a
                         href="mailto:info@selvadentrotulum.com"
-                        className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde-osc transition-colors"
+                        className="underline underline-offset-4 decoration-brand-terracota/70 hover:text-brand-verde-osc transition-colors"
                       >
                         info@selvadentrotulum.com
                       </a>

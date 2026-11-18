@@ -176,7 +176,7 @@ export default function Footer({ t, lang }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-brand-crema/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-crema/50">
+        <div className="border-t border-brand-crema/15 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-crema/60">
           <span>
             © {new Date().getFullYear()} Selvadentro · {t.footer.copyright}
           </span>

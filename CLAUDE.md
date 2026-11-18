@@ -85,11 +85,26 @@ emitted as FAQPage / DefinedTerm structured data.
 
 ## Design system
 
-The look is refined editorial luxury inside the approved brand (Cardo +
-Inter, fixed palette). One deliberate distinction runs through it:
+The look is refined editorial luxury inside the approved brand (manual
+"Elementos Branding 2024"). One deliberate distinction runs through it:
 **commercial and place pages are photographic, editorial pages are purely
 typographic.** Don't blur that line — it is what keeps 122 pages from
 looking like one template.
+
+**Type:** Cardo Bold for titles, Lexend for text, menus, buttons and forms.
+Both are self-hosted woff2 in `public/fonts/` (latin subset, only the faces
+in use: Cardo 700 + 400 italic for quotations, Lexend 400/500/600), declared
+in `src/index.css` — no Google Fonts request. A new weight needs its woff2
+and an `@font-face`; otherwise the browser synthesises it.
+
+**Colour:** the manual's digital palette is `brand-verde` #465241,
+`brand-olivo` #65713F, `brand-terracota` #CF8543, `brand-arena` #D9B37E
+(`brand-oro` is the historical name of the arena accent; `brand-verde-osc`
+#2B3328 is a deep shade of the verde for dark bands). Terracota and arena are
+accents and never small text on a light ground (they measure 2.6:1 and 1.7:1
+on crema): arena is the accent on dark grounds, terracota is for rules,
+underlines, bullets and keylines on light ones, and small labels on light
+grounds use verde or olivo.
 
 Component classes live in `src/index.css`; use them instead of re-rolling
 the utility strings:

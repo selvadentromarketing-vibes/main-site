@@ -290,7 +290,7 @@ export default function LivingPage({ lang, path }: PageProps) {
                 <h3 className="text-xl mb-4">{c.forTitle}</h3>
                 <ul className="space-y-3">
                   {c.forItems.map((it) => (
-                    <li key={it.slice(0, 24)} className="text-sm leading-relaxed text-brand-negro/80 pl-4 border-l-2 border-brand-oro/60">
+                    <li key={it.slice(0, 24)} className="text-sm leading-relaxed text-brand-negro/80 pl-4 border-l-2 border-brand-terracota/60">
                       {it}
                     </li>
                   ))}
@@ -353,11 +353,11 @@ export default function LivingPage({ lang, path }: PageProps) {
             <h2 className="h2-section mb-5">{c.closeTitle}</h2>
             <p className="leading-relaxed">
               {c.closeBefore}
-              <a href={c.closeLink1[0]} className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors">
+              <a href={c.closeLink1[0]} className="underline underline-offset-4 decoration-brand-terracota/70 hover:text-brand-verde transition-colors">
                 {c.closeLink1[1]}
               </a>
               {c.closeMid}
-              <a href={c.closeLink2[0]} className="underline underline-offset-4 decoration-brand-oro/70 hover:text-brand-verde transition-colors">
+              <a href={c.closeLink2[0]} className="underline underline-offset-4 decoration-brand-terracota/70 hover:text-brand-verde transition-colors">
                 {c.closeLink2[1]}
               </a>
               {c.closeAfter}

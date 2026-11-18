@@ -62,7 +62,7 @@ export default function FaqPage({ lang, path }: PageProps) {
               <li key={href}>
                 <a
                   href={href}
-                  className="underline underline-offset-4 decoration-brand-oro hover:text-brand-verde transition-colors"
+                  className="underline underline-offset-4 decoration-brand-terracota hover:text-brand-verde transition-colors"
                 >
                   {label}
                 </a>

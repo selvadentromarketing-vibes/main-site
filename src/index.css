@@ -13,6 +13,51 @@
   visibility: hidden;
 }
 
+/* ── Brand fonts (Elementos Branding 2024) ─────────────────────────────
+   Self-hosted woff2, latin subset (covers Spanish and English), only the
+   faces the site renders:
+     Cardo 700          titles (manual: Cardo Bold)
+     Cardo 400 italic   quotations and italic lead lines
+     Lexend 400/500/600 text, menus, buttons, forms
+   Lexend has no italic in its family; <em> is slanted by the browser, as it
+   was with the Google-hosted build. If a face is ever replaced, rename the
+   file: /fonts/* is served with a one-year immutable cache. */
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/cardo-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cardo-latin-400-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/lexend-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/lexend-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/lexend-latin-600-normal.woff2') format('woff2');
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -22,12 +67,30 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+  /* Titles are Cardo Bold (brand manual). Weight is set explicitly so the
+     Georgia fallback is bold too while the woff2 loads. */
   h1,
   h2,
   h3 {
     @apply font-serif;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: -0.01em;
+  }
+  /* Any other Cardo on the page (footer column titles, stat figures,
+     numbered steps) follows the same rule; a utility weight on the element
+     still wins. Cardo's italic exists only at 400, so italic Cardo — the
+     quotations — stays at 400 instead of getting a synthesised bold. */
+  .font-serif {
+    font-weight: 700;
+  }
+  .font-serif.italic {
+    font-weight: 400;
+  }
+  /* Lexend ships 400/500/600. Bold runs (<strong> outside .prose, e.g. in
+     the markdown tables) use 600 rather than a synthesised 700. */
+  b,
+  strong {
+    font-weight: 600;
   }
   /* Cardo has real ligatures and old-style figures; switching them on is
      most of what separates "serif font" from "typeset". */
@@ -38,7 +101,7 @@
     font-feature-settings: 'liga' 1, 'kern' 1;
   }
   ::selection {
-    background-color: rgb(200 169 110 / 0.3);
+    background-color: rgb(217 179 126 / 0.35); /* arena */
   }
 }
 
@@ -64,11 +127,11 @@
            rounded-full transition-all duration-300
            hover:bg-brand-verde/5 hover:scale-[1.02];
   }
-  /* Gold on a light ground measures 1.70:1 on crema-osc and 1.98:1 on crema —
-     nowhere near the 4.5:1 a 10px label needs. Gold on the DARK bands is
-     fine (3.83:1 at this weight, and it is large-ish text), so the default
-     becomes the readable green and .eyebrow-oro opts back into gold where
-     the ground is dark. The palette itself is untouched. */
+  /* Arena (the accent behind the historical "oro" token) on a light ground
+     measures 1.49:1 on crema-osc and 1.73:1 on crema — nowhere near the
+     4.5:1 a 10px label needs. On the DARK bands it is 6.66:1, so the default
+     is the readable verde (7.28:1 on crema) and .eyebrow-oro opts into arena
+     where the ground is dark. */
   .eyebrow {
     @apply inline-block text-[10px] sm:text-xs font-semibold tracking-[0.25em]
            uppercase text-brand-verde;
@@ -104,7 +167,8 @@
     letter-spacing: -0.015em;
   }
 
-  /* A hairline gold rule. Sits under an eyebrow to anchor it. */
+  /* A hairline accent rule (arena — only used on dark heroes). Sits under
+     an eyebrow to anchor it. */
   .rule-oro {
     @apply block h-px w-14 bg-brand-oro/70;
   }
@@ -135,39 +199,39 @@
          what lets one scrim serve all of them. */
       linear-gradient(
         100deg,
-        rgb(28 46 28 / 0.8) 0%,
-        rgb(28 46 28 / 0.6) 45%,
-        rgb(28 46 28 / 0.32) 100%
+        rgb(43 51 40 / 0.8) 0%,
+        rgb(43 51 40 / 0.6) 45%,
+        rgb(43 51 40 / 0.32) 100%
       ),
       /* Anchors the band's foot so it hands off to the cream body. */
-      linear-gradient(to top, rgb(28 46 28 / 0.4) 0%, rgb(28 46 28 / 0) 45%);
+      linear-gradient(to top, rgb(43 51 40 / 0.4) 0%, rgb(43 51 40 / 0) 45%);
   }
   /* Editorial pages get no photograph — depth comes from a soft radial
      bloom instead, so they read as considered rather than unfinished. */
   .hero-editorial {
-    background-color: #1c2e1c;
+    background-color: #2b3328; /* verde-osc */
     background-image:
-      radial-gradient(ellipse 80% 120% at 12% -10%, rgb(45 74 45 / 0.95) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 100% at 92% 110%, rgb(200 169 110 / 0.13) 0%, transparent 55%);
+      radial-gradient(ellipse 80% 120% at 12% -10%, rgb(70 82 65 / 0.95) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 100% at 92% 110%, rgb(217 179 126 / 0.13) 0%, transparent 55%);
   }
 
   /* ── Surfaces ──────────────────────────────────────────────────────
      Replaces the flat bordered box. Opaque white, a hairline, and a
      two-stage shadow so cards lift off the cream without a drop-shadow
-     halo. Gold keyline on hover. */
+     halo. Terracota keyline on hover (cards sit on light grounds). */
   .card-premium {
     @apply relative bg-white rounded-2xl border border-brand-verde/10
            transition-all duration-300;
     box-shadow:
-      0 1px 2px rgb(28 46 28 / 0.04),
-      0 10px 30px -18px rgb(28 46 28 / 0.16);
+      0 1px 2px rgb(43 51 40 / 0.04),
+      0 10px 30px -18px rgb(43 51 40 / 0.16);
   }
   .card-premium:hover {
-    @apply border-brand-oro/45;
+    @apply border-brand-terracota/45;
     transform: translateY(-2px);
     box-shadow:
-      0 1px 2px rgb(28 46 28 / 0.05),
-      0 18px 42px -20px rgb(28 46 28 / 0.24);
+      0 1px 2px rgb(43 51 40 / 0.05),
+      0 18px 42px -20px rgb(43 51 40 / 0.24);
   }
 
   /* A non-interactive sibling of .card-premium: identical surface, no
@@ -176,44 +240,44 @@
   .panel-premium {
     @apply relative bg-white rounded-2xl border border-brand-verde/10;
     box-shadow:
-      0 1px 2px rgb(28 46 28 / 0.04),
-      0 10px 30px -18px rgb(28 46 28 / 0.14);
+      0 1px 2px rgb(43 51 40 / 0.04),
+      0 10px 30px -18px rgb(43 51 40 / 0.14);
   }
 
   /* The glossary definition — the one paragraph AI extractors lift. The
-     first paragraph of the rendered markdown gets a gold left rule and a
+     first paragraph of the rendered markdown gets a terracota left rule and a
      white ground so it reads as the answer, not as the opening of an
      essay. Targeted in CSS rather than with an arbitrary variant because
      the body is dangerouslySetInnerHTML: there is no element to class. */
   .prose-definition > p:first-of-type {
     @apply bg-white rounded-r-2xl rounded-l-sm border border-brand-verde/10
-           border-l-2 border-l-brand-oro p-6 sm:p-7
+           border-l-2 border-l-brand-terracota p-6 sm:p-7
            text-lg leading-relaxed text-brand-verde-osc;
     box-shadow:
-      0 1px 2px rgb(28 46 28 / 0.04),
-      0 10px 30px -18px rgb(28 46 28 / 0.14);
+      0 1px 2px rgb(43 51 40 / 0.04),
+      0 10px 30px -18px rgb(43 51 40 / 0.14);
   }
 
   /* Guide pages open with the extractable answer (40–60 words). Set it
-     larger against a gold rule so it reads as the answer rather than as
+     larger against a terracota rule so it reads as the answer rather than as
      the first paragraph of body copy. Targeted in CSS because the body is
      dangerouslySetInnerHTML — there is no element to put a class on. */
   .prose-answer > p:first-of-type {
     @apply text-[1.1875rem] leading-relaxed text-brand-verde-osc
-           border-l-2 border-brand-oro pl-6;
+           border-l-2 border-brand-terracota pl-6;
   }
 
   /* Legal documents (/privacy-policy/, /terms-and-conditions/). The text
      cross-references its sections by number ("see Section 6") but the
      source headings carry none, so number them here — presentation only,
-     the text itself stays verbatim. The prose H2's gold rule moves from
+     the text itself stays verbatim. The prose H2's terracota rule moves from
      ::before to a background so ::before can carry the number. */
   .prose-legal {
     counter-reset: legal-section;
   }
   .prose-legal h2 {
     counter-increment: legal-section;
-    background: linear-gradient(#c8a96e, #c8a96e) left top / 2.25rem 1px no-repeat;
+    background: linear-gradient(#cf8543, #cf8543) left top / 2.25rem 1px no-repeat;
   }
   .prose-legal h2::before {
     content: counter(legal-section) '.\00a0\00a0';
@@ -225,7 +289,7 @@
 
   /* ── Tables ────────────────────────────────────────────────────────
      Data is a big part of this site's credibility, so tables get a
-     proper editorial treatment: gold small-caps headers, hairline rows,
+     proper editorial treatment: small-caps verde headers, hairline rows,
      lining figures aligned in columns, no boxy grid. */
   .table-premium {
     @apply w-full text-left border-collapse;
@@ -234,15 +298,15 @@
   .table-premium thead th {
     @apply py-3.5 px-4 sm:px-6 text-[11px] font-semibold uppercase
            tracking-[0.18em] text-brand-verde align-bottom;
-    border-bottom: 1px solid rgb(45 74 45 / 0.22);
+    border-bottom: 1px solid rgb(70 82 65 / 0.22);
   }
   .table-premium tbody th {
     @apply py-4 px-4 sm:px-6 font-medium text-brand-verde-osc align-top;
-    border-bottom: 1px solid rgb(45 74 45 / 0.09);
+    border-bottom: 1px solid rgb(70 82 65 / 0.09);
   }
   .table-premium tbody td {
     @apply py-4 px-4 sm:px-6 align-top;
-    border-bottom: 1px solid rgb(45 74 45 / 0.09);
+    border-bottom: 1px solid rgb(70 82 65 / 0.09);
   }
   .table-premium tbody tr:last-child th,
   .table-premium tbody tr:last-child td {
@@ -258,8 +322,8 @@
        overflows because there is no scroll to reveal it. */
     background-image: linear-gradient(
       to left,
-      rgb(28 46 28 / 0.09) 0%,
-      rgb(28 46 28 / 0) 100%
+      rgb(43 51 40 / 0.09) 0%,
+      rgb(43 51 40 / 0) 100%
     );
     background-repeat: no-repeat;
     background-size: 32px 100%;
@@ -267,7 +331,7 @@
     background-attachment: local;
     scrollbar-width: thin;
     box-shadow:
-      0 1px 2px rgb(28 46 28 / 0.04),
-      0 10px 30px -18px rgb(28 46 28 / 0.14);
+      0 1px 2px rgb(43 51 40 / 0.04),
+      0 10px 30px -18px rgb(43 51 40 / 0.14);
   }
 }

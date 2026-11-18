@@ -150,7 +150,7 @@ export default function CredentialsSection({ t, lang }: Props) {
                     <div className="text-[10px] uppercase tracking-[0.25em] text-brand-gris mb-2">
                       {lang === 'es' ? p.roleEs : p.roleEn}
                     </div>
-                    <div className="text-[10px] uppercase tracking-widest text-brand-oro/80 mb-1">
+                    <div className="text-[10px] uppercase tracking-widest text-brand-olivo mb-1">
                       {portfolioLabel}
                     </div>
                     {(p.awardEs || p.awardEn) && (
