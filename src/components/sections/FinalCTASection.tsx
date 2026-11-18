@@ -409,7 +409,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <label className="block">
                     <span className={labelClass}>
-                      {t.finalCta.formName} <span className="text-brand-oro">*</span>
+                      {t.finalCta.formName} <span className="text-brand-verde">*</span>
                     </span>
                     <input
                       type="text"
@@ -422,7 +422,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                   </label>
                   <label className="block">
                     <span className={labelClass}>
-                      {t.finalCta.formLastName} <span className="text-brand-oro">*</span>
+                      {t.finalCta.formLastName} <span className="text-brand-verde">*</span>
                     </span>
                     <input
                       type="text"
@@ -437,7 +437,7 @@ export default function FinalCTASection({ t, lang }: Props) {
 
                 <label className="block">
                   <span className={labelClass}>
-                    {t.finalCta.formPhone} <span className="text-brand-oro">*</span>
+                    {t.finalCta.formPhone} <span className="text-brand-verde">*</span>
                   </span>
                   <div className="phone-input-shell px-4 py-3 border border-brand-verde/20 rounded-lg bg-white focus-within:border-brand-oro focus-within:ring-2 focus-within:ring-brand-oro/30 transition">
                     <PhoneInput
@@ -456,7 +456,7 @@ export default function FinalCTASection({ t, lang }: Props) {
 
                 <label className="block">
                   <span className={labelClass}>
-                    {t.finalCta.formEmail} <span className="text-brand-oro">*</span>
+                    {t.finalCta.formEmail} <span className="text-brand-verde">*</span>
                   </span>
                   <input
                     type="email"
@@ -480,7 +480,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <label className="block">
                         <span className={labelClass}>
-                          {t.finalCta.formDate} <span className="text-brand-oro">*</span>
+                          {t.finalCta.formDate} <span className="text-brand-verde">*</span>
                         </span>
                         <select
                           value={preferredDate}
@@ -498,7 +498,7 @@ export default function FinalCTASection({ t, lang }: Props) {
                       </label>
                       <label className="block">
                         <span className={labelClass}>
-                          {t.finalCta.formTime} <span className="text-brand-oro">*</span>
+                          {t.finalCta.formTime} <span className="text-brand-verde">*</span>
                         </span>
                         <select
                           value={preferredTime}
@@ -520,7 +520,7 @@ export default function FinalCTASection({ t, lang }: Props) {
 
                 <label className="block">
                   <span className={labelClass}>
-                    {t.finalCta.formHorizon} <span className="text-brand-oro">*</span>
+                    {t.finalCta.formHorizon} <span className="text-brand-verde">*</span>
                   </span>
                   <select
                     value={horizon}
@@ -539,7 +539,7 @@ export default function FinalCTASection({ t, lang }: Props) {
 
                 <label className="block">
                   <span className={labelClass}>
-                    {t.finalCta.formBudget} <span className="text-brand-oro">*</span>
+                    {t.finalCta.formBudget} <span className="text-brand-verde">*</span>
                   </span>
                   <select
                     value={budget}
